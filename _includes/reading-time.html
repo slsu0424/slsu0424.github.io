@@ -1,4 +1,6 @@
-$ jekyll build
-$ git add .
-$ git commit -m "Added reading time"
-$ git push -u origin main
+{% capture words %}
+{{ content | number_of_words | minus: 180 }}
+{% endcapture %}
+{% unless words contains '-' %}
+{{ words | plus: 150 | divided_by: 150 | append: ' minutes to read' }}
+{% endunless %}
