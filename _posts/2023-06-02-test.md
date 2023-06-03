@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "When a correct diagnosis matters"
-author: sandy
+author: sal
 categories: [ Healthcare, ChatGPT ]
 tags: [red, yellow]
 image: assets/images/DALL·E 2023-06-02 00.15.33 - doctor vs. robot analyzing data.png
