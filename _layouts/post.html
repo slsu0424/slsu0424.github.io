@@ -39,7 +39,6 @@ post_class: post-template
 
                 <!-- Post Title -->
                 <h1 class="posttitle">{{ page.title }}</h1>
-                <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
                 <span class="post-date"><time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time></span>           
                 {% include reading-time.html %}
             </div>
