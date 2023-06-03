@@ -33,11 +33,8 @@ post_class: post-template
                     </div>
                     <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
                         <a target="_blank" class="link-dark" href="{{ author.web }}">{{ author.display_name }}</a><a target="_blank" href="{{ author.twitter }}" class="btn follow">Follow</a>
-                        <span class="author-description">{{ author.description }}</span>
-                        <span class="post-date"><time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time></span>           
-                        {% include reading-time.html %}
+                        <span class="author-description">{{ author.description }}</span></div>
                     </div>
-                </div>
                 {% endif %}
 
                 <!-- Post Title -->
