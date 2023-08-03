@@ -3,7 +3,7 @@ layout: post
 title:  "Encoding PubMed abstracts for NLP tasks"
 author: sandy
 categories: [ PubMed, NLP, tutorial ]
-image: assets/images/My_project.jpg
+image: assets/images/2023-07/tunnel2.jpg
 ---
 
 Last month, I gave a [talk](https://www.meetup.com/new-jersey-sql-data-platform-user-group/events/294231326/) at a local meetup group 
@@ -24,18 +24,18 @@ For NLP, one of the simplest techniques for encoding text is to represent each c
 
 Consider the following text: 'I have a fever'.  The vocabulary consists of 4 unique words (I, have, a, fever), and each word is represented as a one-hot vector.
 
-![PubMed](/assets/images/2023-08-02_fever.png)
+![PubMed](/assets/images/2023-07/fever.png)
 
 
 ## Let's convert a few PubMed abstracts to one-hot vectors
 
 To put the above tutorial into practice, I thought I would give this a try with a few abstracts.  Let's say that we want to perform an NLP task on papers that discuss cardiovascular disease (CVD) risk factors.  This is what my query and results look like in PubMed:
 
-![PubMed](/assets/images/2023-07-28_PubMed.png)
+![PubMed](/assets/images/2023-07/PubMed.png)
 
 Each abstract represents a single document in the corpus.  Let's take the first 5 words from each abstract.  For simplicity purposes, we will ignore header terms such as 'Context', 'Introduction', 'Purpose'.
 
-![PubMed](/assets/images/2023-08-02_PubMed_2.png)
+![PubMed](/assets/images//2023-07/PubMed2.png)
 
 There are 15 total words in the corpus:
 
@@ -55,7 +55,7 @@ We represent these unique words in a vocabulary:
 
 Each word is represented as a one-hot vector with a length equal to the size of the vocabulary (N = 14).  We will have something that looks like this:
 
-![encoding](/assets/images/2023-08-02_encoding.png)
+![encoding](/assets/images//2023-07/encoding.png)
 
 ## Limitations of one-hot encoding
 
@@ -64,7 +64,7 @@ One challenge seen with the one-hot encoding approach is that there is no inform
 
 Another challenge is sparse, highly dimensional data.  When each word in a document is replaced with a one-hot vector, we start to get a large feature space with a lot of zeroes.  In fact, when increase our vocabulary size (for example, double the vocabulary size N = 28 words), the feature space will morph into something like this:
 
-![encoding_sparse](/assets/images/2023-08-02_encoding_sparse.png)
+![encoding_sparse](/assets/images/2023-07/encoding2.png)
 
 
 This dataset is:
