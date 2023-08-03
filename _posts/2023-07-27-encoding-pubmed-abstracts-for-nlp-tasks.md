@@ -14,7 +14,7 @@ This article will begin a series of technical tutorials that are geared towards 
 
 ## A simple approach to NLP - one-hot encoding
 
-To start, I wanted to backtrack the origins of LLMs, which are a type of neural network.  A neural network is a type of machine learning approach that has been shown to perform well on NLP tasks.  For a great overview of NLP, check out this [guide](https://www.deeplearning.ai/resources/natural-language-processing).
+To start, I wanted to backtrack the origins of LLMs, which are a type of neural network.  A neural network is a type of machine learning approach that attempts to mimic the way the brain works (biological neural network).  This approach has been shown to perform better on NLP tasks than previous methods.  For a great overview of NLP, check out this [guide](https://www.deeplearning.ai/resources/natural-language-processing).
 
 The goal of NLP is to enable computers to "understand" natural language in order to perform some task, such as sentiment analysis.  In order to do so, natural language (text format) has to be converted (encode) into a numerical format.
 
@@ -72,12 +72,12 @@ This dataset is:
 - highly-dimensional (a larger vocabulary creates a larger feature space, which requires more computational power and data)
 - hard-coded (machine does not learning anything from the data)
   
-Given these limitations, this technique makes it difficult for a machine to detect any sort of meaningful patterns to make a prediction.
+Given these limitations, this technique makes it difficult for a computer to detect any sort of meaningful patterns to make a prediction.
 
 
 ## Conclusion
 
-In this tutorial, we explored one-hot encoding, a very simple way to convert categorical variables for natural language processing tasks.  Each word is encoded as a binary vector, with '1' representing the unique word and '0' representing all others.  By taking a subset of PubMed abstracts, we were able to see how this approach becomes highly inefficient with larger vocabularies.  These inefficiencies are due to lack of relationships between words, as well as a sparse and highly-dimensional feature space.
+In this tutorial, we explored one-hot encoding, a very simple way to convert categorical variables for natural language processing tasks.  By taking a subset of PubMed abstracts, we were able to see how this approach becomes highly inefficient with larger vocabularies.  These inefficiencies are due to lack of relationships between words, as well as a sparse and highly-dimensional feature space.
 
 There have been different techniques that have improved upon the limitations of one-hot encoding, and they have worked increasingly well with neural networks.  I will explore these in future posts.
 
@@ -88,6 +88,5 @@ There have been different techniques that have improved upon the limitations of 
 + <https://developers.google.com/machine-learning/glossary#one-hot-encoding>
 + <https://www.tensorflow.org/text/guide/word_embeddings>
 + <https://medium.com/intelligentmachines/word-embedding-and-one-hot-encoding-ad17b4bbe111>
-+ <https://machinelearningmastery.com/distance-measures-for-machine-learning/>
 + <https://builtin.com/data-science/curse-dimensionality>
 + <https://towardsdatascience.com/word-embeddings-intuition-behind-the-vector-representation-of-the-words-7e4eb2410bba>
