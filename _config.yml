@@ -3,7 +3,7 @@ name: "Health Tech Bytes"
 title: "Health Tech Bytes"
 description: "Where health and technology meet, one byte at a time."
 logo: 'assets/images/logo.png'
-favicon: 'assets/images/logo.png'
+favicon: 'assets/images/logos/logo_orig.png'
 baseurl: ''
 google_analytics: 'UA-46278016-1'
 disqus: 'demowebsite'
