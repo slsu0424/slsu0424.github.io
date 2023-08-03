@@ -9,7 +9,7 @@ image: assets/images/2023-07/tunnel2.jpg
 Last month, I gave a [talk](https://www.meetup.com/new-jersey-sql-data-platform-user-group/events/294231326/) at a local meetup group 
 on LLMs, LangChain & SQL.  Since then, I've wanted to dig a little deeper into the technical foundations of LLMs, particularly neural networks.
 
-This article will begin a series of technical tutorials that are geared towards healthcare care use cases.  While there is no shortage of resources to learn about LLMs, neural networks, or the latest ML algorithms, my focus will be to reinforce technical concepts I am not as familiar with.
+This article will begin a series of technical tutorials that are geared towards healthcare care use cases.  While there is no shortage of resources to learn about LLMs, neural networks, or the latest ML algorithms, my focus will be to reinforce technical concepts related to deep learning.
 
 
 ## A simple approach to NLP - one-hot encoding
@@ -20,7 +20,7 @@ The goal of NLP is to enable computers to "understand" natural language in order
 
 There are numerous approaches to encode text, with more advanced approaches surfacing over the years.  I will start with one-hot encoding, as it is one of the most familiar data pre-processing techniques for ML.  However, we will also begin to see the limitations of such a technique through the example below. 
 
-For NLP, one of the simplest techniques for encoding text is to represent each categorical variable (a word) as a binary vector.  A one-hot vector is a type of binary vector where the index of the word is denoted as '1', and all other words are denoted as '0'.  The size/dimension of the vector is determined by the total number of unique words (vocabulary) found in the text.
+For NLP, one of the simplest techniques for encoding text is to represent each categorical variable (a word) as a binary vector.  A one-hot vector can be thought of as a type of binary vector where the index of the word is denoted as '1', and all other words are denoted as '0'.  The size/dimension of the vector is determined by the total number of unique words (vocabulary) found in the text.
 
 Consider the following text: 'I have a fever'.  The vocabulary consists of 4 unique words (I, have, a, fever), and each word is represented as a one-hot vector.
 
@@ -59,7 +59,7 @@ Each word is represented as a one-hot vector with a length equal to the size of 
 
 ## Limitations of one-hot encoding
 
-One challenge seen with the one-hot encoding approach is that there is no information about the words the vectors represent, or how the words relate to each other. In other words, it tells us nothing about the similarities between words.  If we were to graph each vector and calculate a similarity measure (e.g., [cosine similarity] between them, we would see that there is 0 similiarity between any two vectors.  
+One challenge seen with the one-hot encoding approach is that there is no information about the words the vectors represent, or how the words relate to each other. In other words, it tells us nothing about the similarities or differences between words.  If we were to graph each vector and calculate a similarity measure (e.g., cosine similarity) between them, we would see that there is 0 similiarity between any two vectors.  Refer to this [article](https://towardsdatascience.com/word-embeddings-intuition-behind-the-vector-representation-of-the-words-7e4eb2410bba) for a mathematical overview of the concept.
 
 
 Another challenge is sparse, highly dimensional data.  When each word in a document is replaced with a one-hot vector, we start to get a large feature space with a lot of zeroes.  In fact, when increase our vocabulary size (for example, double the vocabulary size N = 28 words), the feature space will morph into something like this:
@@ -77,7 +77,7 @@ Given these limitations, this technique makes it difficult for a machine to dete
 
 ## Conclusion
 
-In this tutorial, we explored one-hot encoding, a very simple way to encode categorical variables for natural language processing tasks.  Each word is encoded as a binary vector, with '1' representing the unique word and '0' representing all others.  By taking a subset of PubMed abstracts, we were able to see how this approach becomes highly inefficient with larger vocabularies.  These inefficiencies are due to lack of meaning between words, as well as a sparse and highly-dimensional feature space.
+In this tutorial, we explored one-hot encoding, a very simple way to encode categorical variables for natural language processing tasks.  Each word is encoded as a binary vector, with '1' representing the unique word and '0' representing all others.  By taking a subset of PubMed abstracts, we were able to see how this approach becomes highly inefficient with larger vocabularies.  These inefficiencies are due to lack of relationships (similar/dissimilar) between words, as well as a sparse and highly-dimensional feature space.
 
 There have been different techniques that have improved upon the limitations of one-hot encoding, and they have worked increasingly well with neural networks.  I will explore these in future posts.
 
