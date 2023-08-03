@@ -62,7 +62,7 @@ Each word is represented as a one-hot vector with a length equal to the size of 
 One challenge seen with the one-hot encoding approach is that there is no information about the words the vectors represent, or how the words relate to each other. That is, it tells us nothing about the similarities or differences between words.  If we were to graph each vector and calculate a similarity measure (e.g., cosine similarity) between them, we would see that there is 0 similiarity between any two vectors.  Refer to this [article](https://towardsdatascience.com/word-embeddings-intuition-behind-the-vector-representation-of-the-words-7e4eb2410bba) for a mathematical overview of the concept.
 
 
-Another challenge is sparse, highly dimensional data.  When each word in a document is replaced with a one-hot vector, we start to get a large feature space with a lot of zeroes.  In fact, when increase our vocabulary size (for example, double the vocabulary size N = 28 words), the feature space will morph into something like this:
+A second challenge is sparse, highly dimensional data.  When each word in a document is replaced with a one-hot vector, we start to get a large feature space with a lot of zeroes.  In fact, when increase our vocabulary size (for example, double the vocabulary size N = 28 words), the feature space will morph into something like this:
 
 ![encoding_sparse](/assets/images/2023-07/encoding2.png)
 
@@ -77,7 +77,7 @@ Given these limitations, this technique makes it difficult for a computer to det
 
 ## Conclusion
 
-In this tutorial, we explored one-hot encoding, a very simple way to convert categorical variables for natural language processing tasks.  By taking a subset of PubMed abstracts, we were able to see how this approach becomes highly inefficient with larger vocabularies.  These inefficiencies are due to lack of relationships between words, as well as a sparse and highly-dimensional feature space.
+In this tutorial, we explored one-hot encoding, a very simple way to convert categorical variables for natural language processing tasks.  By taking a subset of PubMed abstracts, we were able to see how this approach becomes highly inefficient with larger vocabularies.  Some of these inefficiencies are due to a lack of understanding relationships between words, as well as a sparse and highly-dimensional feature space.
 
 There have been different techniques that have improved upon the limitations of one-hot encoding, and they have worked increasingly well with neural networks.  I will explore these in future posts.
 
