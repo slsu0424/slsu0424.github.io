@@ -77,7 +77,7 @@ Given these limitations, this technique makes it difficult for a machine to dete
 
 ## Conclusion
 
-In this tutorial, we explored one-hot encoding, a very simple way to encode categorical variables for natural language processing tasks.  Each word is encoded as a binary vector, with '1' representing the unique word and '0' representing all others.  By taking a subset of PubMed abstracts, we were able to see how this approach becomes highly inefficient with larger vocabularies.  These inefficiencies are due to lack of relationships (similar/dissimilar) between words, as well as a sparse and highly-dimensional feature space.
+In this tutorial, we explored one-hot encoding, a very simple way to convert categorical variables for natural language processing tasks.  Each word is encoded as a binary vector, with '1' representing the unique word and '0' representing all others.  By taking a subset of PubMed abstracts, we were able to see how this approach becomes highly inefficient with larger vocabularies.  These inefficiencies are due to lack of relationships between words, as well as a sparse and highly-dimensional feature space.
 
 There have been different techniques that have improved upon the limitations of one-hot encoding, and they have worked increasingly well with neural networks.  I will explore these in future posts.
 
@@ -91,10 +91,3 @@ There have been different techniques that have improved upon the limitations of 
 + <https://machinelearningmastery.com/distance-measures-for-machine-learning/>
 + <https://builtin.com/data-science/curse-dimensionality>
 + <https://towardsdatascience.com/word-embeddings-intuition-behind-the-vector-representation-of-the-words-7e4eb2410bba>
-
-
-## Full HTML
-
-Perhaps the best part of Markdown is that you're never limited to just Markdown. You can write HTML directly in the Markdown editor and it will just work as HTML usually does. No limits! Here's a standard YouTube embed code as an example:
-
-<p><iframe style="width:100%;" height="315" src="https://www.youtube.com/embed/Cniqsc9QfDo?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></p>
