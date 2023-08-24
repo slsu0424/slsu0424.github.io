@@ -8,7 +8,6 @@ image: assets/images/2023-06/dall-e.png
 description: "When a correct diagnosis matters"
 featured: true
 hidden: true
-rating: 4.5
 ---
 
 When does a correct diagnosis matter?  And does it matter who makes it?  I reflect on a recent article by the Mayo Clinic on a diagnosis concluded by ChatGPT vs. cardiologist, and its implications for patient care.
