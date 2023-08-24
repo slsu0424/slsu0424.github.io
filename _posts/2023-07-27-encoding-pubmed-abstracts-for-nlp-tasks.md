@@ -4,6 +4,7 @@ title:  "Encoding PubMed abstracts for NLP tasks"
 author: sandy
 categories: [ PubMed, NLP, tutorial ]
 image: assets/images/2023-07/binary2.png
+featured: true
 ---
 
 Last month, I gave a [talk](https://www.meetup.com/new-jersey-sql-data-platform-user-group/events/294231326/) at a local meetup group 
