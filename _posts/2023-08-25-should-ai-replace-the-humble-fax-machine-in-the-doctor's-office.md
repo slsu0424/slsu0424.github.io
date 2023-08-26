@@ -7,7 +7,7 @@ image: assets/images/2023-08/healthcare-is-keeping-the-fax-machine-alive.png
 ---
 VC firm Andressen Horowitz recently published an interesting [article](https://a16z.com/2023/08/02/where-will-ai-have-the-biggest-impact-healthcare/) on the newest AI technologies that will have a big impact on healthcare.  My first reaction was 'Haven't we seen this before?' and 'What makes things different *this* time around?'  While I see great potential, I remain cautious for AI to have as much impact in a field where human connection is vital.
 
-## Less (useless) software, more productivity
+## Less (cumbersome) software, more productivity
 
 I love new technology.  I love it because it makes me more productive.  As I was booking holiday travel recently, I realized how *easy* it has become to do things on my own - on my own time, in my own way.  No calling a travel agent to arrange a trip.  No taking out a paper map to get to the hotel.  I don't think you'll find too many people who will complain about the convenience this provides.
 
@@ -17,7 +17,7 @@ Healthcare seems to have gotten it backwards, as every new healthcare software s
 
 That's not productivity, that's a nuisance.
 
-The article states that instead of healthtech companies developing new software, they'll develop ”AI ‘people’ who are cheap, fast, cheerful and empathic.”  However, if I'm a patient, I want a human being to help me feel better.  The thought of a machine having empathy discounts any reason to see a doctor at all.
+The article states that instead of healthtech companies developing new software, they'll develop "AI ‘people’ who are cheap, fast, cheerful and empathic.”  However, if I'm a patient, I want a human being to help me feel better.  The thought of a machine having empathy discounts any reason to see a doctor at all.
 
 A good piece of software is one that will handle the simple things like document capture, reconciliation, etc.  I agree with the article that the first revolution will be non-clinical use cases.  If AI can help us get past that hurdle, then I think we will have achieved productivity.
 
