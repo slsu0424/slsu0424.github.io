@@ -17,7 +17,7 @@ Healthcare seems to have gotten it backwards, as every new healthcare software s
 
 That's not productivity, that's a nuisance.
 
-The article states that instead of healthtech companies developing new software, they'll develop ”AI ‘people’ who are cheap, fast, cheerful and empathic.”  However, if I'm a patient, I want a human being to help me feel better.  The thought of a machine having empathy discounts any reason to see a doctor at all.
+The article states that instead of healthtech companies developing new software, they'll develop "AI ‘people’ who are cheap, fast, cheerful and empathic.”  However, if I'm a patient, I want a human being to help me feel better.  The thought of a machine having empathy discounts any reason to see a doctor at all.
 
 A good piece of software is one that will handle the simple things like document capture, reconciliation, etc.  I agree with the article that the first revolution will be non-clinical use cases.  If AI can help us get past that hurdle, then I think we will have achieved productivity.
 
