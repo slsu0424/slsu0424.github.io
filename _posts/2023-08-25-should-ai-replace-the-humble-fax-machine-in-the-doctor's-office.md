@@ -3,7 +3,7 @@ layout: post
 title:  "Should AI replace the humble fax machine in the doctor's office?"
 author: sandy
 categories: [ AI, healthcare ]
-image: assets/images/2023-08/healthcare-is-keeping-the-fax-machine-alive.png
+image: assets/images/2023-09/doctorfax_resize.png
 ---
 VC firm Andressen Horowitz recently published an interesting [article](https://a16z.com/2023/08/02/where-will-ai-have-the-biggest-impact-healthcare/) on the newest AI technologies that will have a big impact on healthcare.  My first reaction was 'Haven't we seen this before?' and 'What makes things different *this* time around?'  While I see great potential, I remain cautious for AI to have as much impact in a field where human connection is vital.
 
