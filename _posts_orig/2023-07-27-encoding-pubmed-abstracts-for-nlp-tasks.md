@@ -91,3 +91,4 @@ There have been different techniques that have improved upon the limitations of 
 + <https://medium.com/intelligentmachines/word-embedding-and-one-hot-encoding-ad17b4bbe111>
 + <https://builtin.com/data-science/curse-dimensionality>
 + <https://towardsdatascience.com/word-embeddings-intuition-behind-the-vector-representation-of-the-words-7e4eb2410bba>
++ <https://wordcounter.net>
