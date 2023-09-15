@@ -11,9 +11,10 @@ VC firm Andressen Horowitz recently published an interesting [article](https://a
 
 I love new technology.  I love it because it makes me more productive.  As I was booking holiday travel recently, I realized how *easy* it has become to do things on my own - on my own time, in my own way.  No calling a travel agent to arrange a trip.  No taking out a paper map to get to the hotel.  I don't think you'll find too many people who will complain about the convenience this provides.
 
-We use new software all the time these days.  Everytime a new app comes out, we can easily download it and check it out.  Its integrated seamlessly into our everyday life; it makes life more simple.
+We use new software all the time these days.  Everytime a new app comes out, we can easily download it and check it out.  It integrates seamlessly into our everyday lives; it makes things a bit more efficient.
 
-Healthcare seems to have gotten it backwards, as every new healthcare software solution promises more productivity, but instead does the opposite.  EHRs require more clicks for physicians.  For patients, my personal favorite is when I am asked to fill out insurance information in the EHR before my next appointment, even though I provided it at the previous appointment.  So, why bother filling out anything online?
+Unfortunately, healthcare seems to have gotten it backwards -
+every new healthcare software solution promises more productivity, but instead does the opposite.  EHRs require more clicks for physicians.  For patients, my personal favorite is when I am asked to fill out insurance information in the EHR before my next appointment, even though I provided it at the previous appointment.  So, why bother filling out anything online?
 
 That's not productivity, that's a nuisance.
 
