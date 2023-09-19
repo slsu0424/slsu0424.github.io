@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Powerful things you can do with the Markdown editor"
+title:  "Create word embeddings from PubMed patient summaries"
 author: sal
-categories: [ Jekyll, tutorial ]
+categories: [ NLP, tutorial ]
 image: assets/images/16.jpg
 ---
 There are lots of powerful things you can do with the Markdown editor. If you've gotten pretty comfortable with writing in Markdown, then you may enjoy some more advanced tips about the types of things you can do with Markdown!
@@ -91,11 +91,10 @@ printf("Hello World");
 
 ![walking]({{ site.baseurl }}/assets/images/8.jpg)
 
-## Reference lists
-
-The quick brown jumped over the lazy.
-
-Another way to insert links in markdown is using reference lists. You might want to use this style of linking to cite reference material in a Wikipedia-style. All of the links are listed at the end of the document, so you can maintain full separation between content and its source or reference.
+## References
++ <https://pmc-patients.github.io/>
++ <https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main>
++ <https://learn.microsoft.com/en-us/sql/relational-databases/databases/create-a-database?view=sql-server-ver16>
 
 ## Full HTML
 
