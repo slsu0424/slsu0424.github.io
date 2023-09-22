@@ -11,7 +11,7 @@ For our example, we will extract patient summaries of diabetic and non-diabetic 
 
 ## A primer - Word Embeddings
 
-Word Embeddings were a bit of an amorphous concept to grasp, until I got into the weeds of building one.  Nonetheless, I've come to learn they are an important concept in deep learning, and 
+Word Embeddings were a bit of a complex concept to grasp, until I got into the weeds of building one.  I've come to learn they are an important concept in deep learning, for the very reason that semantic meaning can be derived mathematically.
 
 To start, I wanted to backtrack the origins of LLMs, which are a type of neural network.  A neural network is a type of machine learning approach that attempts to mimic the way the brain works (biological neural network).  This approach has been shown to perform better on NLP tasks than previous methods.  For a great overview of NLP, check out this [guide](https://www.deeplearning.ai/resources/natural-language-processing).
 
