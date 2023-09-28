@@ -5,9 +5,9 @@ author: sandy
 categories: [ PubMed, NLP, tutorial ]
 image: assets/images/2023-09/OIP_resize.jpg
 ---
-Building upon my previous tutorial on one-hot encoding, this tutorial will review the concept of word embeddings and apply this to real-life data.  
+Building upon my previous [tutorial](https://slsu0424.github.io/encoding-pubmed-abstracts-for-nlp-tasks/) on one-hot encoding, this tutorial will review the concept of word embeddings and apply this to real-life data.  
 
-For our example, we will extract patient summaries of diabetic and non-diabetic patients from PubMed.  From these patient summaries, portions of text will be selected to create word embeddings.  These embeddings will be "trained" in a neural network model to perform a task, such as classification (diabetic vs. non-diabetic).  By training word embeddings, the computer will learn if there are any meaningful relationships between the words in the text. 
+For our example, we will extract patient summaries of diabetic and non-diabetic patients from PubMed.  From these patient summaries, portions of text will be selected to create word embeddings.  These embeddings will be "trained" in a neural network model to perform a task, such as classifying which patients are diabetic vs. non-diabetic.  By training word embeddings, the computer will learn if there are any meaningful relationships between the words in the text. 
 
 ## A primer - Word Embeddings
 
@@ -31,11 +31,11 @@ Consider the following text: 'I have a fever'.  The vocabulary consists of 4 uni
 
 I found a really great dataset of patient profiles extracted from PubMed articles via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  I downloaded this dataset and loaded it into a local SQL Server database on a Mac.  For further instructions on how to set this up, check out this [tutorial](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac). 
 
-Another option would be to load the data into a cloud database, such as Azure SQL DB.  
+Another option would be to load the data into a cloud database, such as Azure SQL Database.  
 
 ## Define the dataset and labels
 
-I wanted to run queries to extract profiles of diabetic patients.  For the purpose of training a neural network to perform a classification task, the query will return a set of patient profiles that are diabetic vs. non-diabetic (labels).
+I wanted to run queries to extract profiles of diabetic patients.  For the purpose of training a neural network to perform the classification task, the query will contain a set of patient profiles that are diabetic and non-diabetic (labels).
 
 To do this, I used Azure Data Studio to access the data.  To connect to a SQL database using Azure Data Studio, check out this tutorial..... Attached are a few screenshots to get the dataset loaded correctly.
 
