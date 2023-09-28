@@ -73,7 +73,7 @@ This dataset is:
 - highly-dimensional (a larger vocabulary creates a larger feature space, which requires more computational power and data)
 - hard-coded (machine does not learning anything from the data)
   
-Given these limitations, this technique makes it difficult for a computer to detect any sort of meaningful patterns to make a prediction.
+Given these limitations, this technique makes it difficult for a computer to detect any sort of meaningful patterns to make an accurate prediction.
 
 
 ## Conclusion
