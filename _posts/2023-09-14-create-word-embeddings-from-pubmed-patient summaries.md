@@ -29,6 +29,8 @@ I found a great dataset of patient profiles extracted from PubMed articles via [
 $ mssql -u <sql server username> -p <sql server password>
 ```
 
+![Docker](/assets/images/2023-09/docker.png)
+
 Another option would be to load the data into a cloud database, such as Azure SQL Database.  
 
 ## Define the dataset and labels
