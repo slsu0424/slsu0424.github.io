@@ -40,17 +40,34 @@ The dataset will consist of diabetic and non-diabetic patient profiles.  These w
 
 I used Azure Data Studio to access and query the data.  To connect to a SQL Server using Azure Data Studio, review this [tutorial](https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/).  
 
-Attached are a few screenshots to load the dataset correctly.
+Attached are screenshots to load the dataset correctly.
 
-Create a new connection
-![AzureDataStudio](/assets/images/2023-09/ads1.png)
+1. Create a new connection:
+![AzureDataStudio](/assets/images/2023-09/azstudio_setup1.png)
 
-![AzureDataStudio](/assets/images/2023-09/ads2.png)
+2. Use the Import flat file wizard:
+![AzureDataStudio](/assets/images/2023-09/azstudio_setup2.png)
 
-![AzureDataStudio](/assets/images/2023-09/ads3.png)
+3. Modify the columns as follows:
+![AzureDataStudio](/assets/images/2023-09/azstudio_setup3.png)
 
 Now we can run a few queries to inspect the data, and create our desired dataset.
 
+```
+SELECT TOP (1000) [patient_id]
+      ,[patient_uid]
+      ,[PMID]
+      ,[file_path]
+      ,[title]
+      ,[patient]
+      ,[age]
+      ,[gender]
+      ,[similar_patients]
+      ,[relevant_articles]
+  FROM [test].[dbo].[PMC-Patients]
+  ```
+
+![AzureDataStudio](/assets/images/2023-09/azstudio_query1.png)
 
 
 ## Convert text to integers
