@@ -27,6 +27,19 @@ Consider the following text: 'I have a fever'.  The vocabulary consists of 4 uni
 
 ## Let's get data
 
+## Convert text to integers
+
+As explored in the previous tutorial, categorical variables (text) have to be converted to numerical variables in order to be processed by a computer.  Hence, the document texts have to be converted into ther integer equivalents.  There are a few approaches to do this:
+
+
+## Pad the documents
+
+## Create an embedding 
+
+## Visualize intial embeddings
+
+
+
 
 
 
@@ -86,14 +99,29 @@ There have been different techniques that have improved upon the limitations of 
 
 
 ## References
+
+Data/Tutorials:
 + <https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main>
-+ <http://colah.github.io/posts/2014-07-NLP-RNNs-Representations>
 + <https://machinelearningmastery.com/prepare-text-data-deep-learning-keras>
 + <https://machinelearningmastery.com/use-word-embedding-layers-deep-learning-keras>
 + <https://medium.com/analytics-vidhya/understanding-embedding-layer-in-keras-bbe3ff1327ce>
++ <https://medium.com/@naidubhavya06/detailed-explanation-of-keras-embedding-layer-afe4c3a596a>
+
+Concepts:
++ <http://colah.github.io/posts/2014-07-NLP-RNNs-Representations>
++ <https://towardsdatascience.com/similarity-metrics-in-nlp-acc0777e234c>
++ <https://stackoverflow.com/questions/42762849/keras-embedding-layers-how-do-they-work>
++ <https://stackoverflow.com/questions/45649520/explain-with-example-how-embedding-layers-in-keras-work>
++ <https://stats.stackexchange.com/questions/270546/how-does-keras-embedding-layer-work?rq=1>
++ <https://github.com/keras-team/keras/issues/3110>
+
+Visualization:
 + <https://towardsdatascience.com/how-to-visualize-text-embeddings-with-tensorboard-47e07e3a12fb?gi=c4a391cf1a39>
 + <https://branyang.gitbooks.io/tfdocs/content/get_started/embedding_viz.html>
++ <https://www.tensorflow.org/tensorboard/tensorboard_projector_plugin>
++ <https://towardsdatascience.com/visualizing-your-embeddings-4c79332581a9>
 + <https://medium.com/analytics-vidhya/how-to-visualize-word-embeddings-7ed0fb047089>
+
 
 ## Full HTML
 
