@@ -29,7 +29,7 @@ Consider the following text: 'I have a fever'.  The vocabulary consists of 4 uni
 
 ## Let's get data
 
-I found a really great dataset of patient profiles extracted from PubMed articles via HuggingFace.  I downloaded this dataset and loaded it into a local SQL Server database on a Mac.  For further instructions on how to set this up, see this [tutorial](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac). Another option would be to load the data into a cloud database.  
+I found a really great dataset of patient profiles extracted from PubMed articles via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  I downloaded this dataset and loaded it into a local SQL Server database on a Mac.  For further instructions on how to set this up, see this [tutorial](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac). Another option would be to load the data into a cloud database.  
 
 Next, I use Azure Data Studio to access the data.  I wanted to run queries to extract profiles of diabetic patients.  For the purpose of training a neural network to perform a classification task, the query will return a set of patient profiles that are diabetic and non-diabetic.
 
