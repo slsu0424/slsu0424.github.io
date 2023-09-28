@@ -11,7 +11,9 @@ For our example, we will extract patient summaries of diabetic and non-diabetic 
 
 ## A primer - Word Embeddings
 
-Word Embeddings were a bit of a complex concept to grasp, until I got into the weeds of building one.  I've come to learn they are an important concept in deep learning, for the very reason that semantic meaning can be derived mathematically.
+Word Embeddings were a bit of a complex concept to grasp, until I got into the weeds of building one.  I've come to learn they are an important concept in deep learning, for the very reason that semantic meaning of words can be approximated mathematically.
+
+There are a number of techniques available to build a word embedding.  As a quick note, LLMs use word embeddings, but the technique used to build them are proprietary.  
 
 To start, I wanted to backtrack the origins of LLMs, which are a type of neural network.  A neural network is a type of machine learning approach that attempts to mimic the way the brain works (biological neural network).  This approach has been shown to perform better on NLP tasks than previous methods.  For a great overview of NLP, check out this [guide](https://www.deeplearning.ai/resources/natural-language-processing).
 
@@ -26,6 +28,10 @@ Consider the following text: 'I have a fever'.  The vocabulary consists of 4 uni
 ![PubMed](/assets/images/2023-07/fever.png)
 
 ## Let's get data
+
+I found a really great dataset of patient profiles extracted from PubMed articles via HuggingFace.  I downloaded this dataset and loaded it into a local SQL Server database on a Mac.  For further instructions on how to set this up, see this [tutorial](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac). Another option would be to load the data into a cloud database.  
+
+Next, I use Azure Data Studio to access the data.  I wanted to run queries to extract profiles of diabetic patients.  For the purpose of training a neural network to perform a classification task, the query will return a set of patient profiles that are diabetic and non-diabetic.
 
 ## Convert text to integers
 
@@ -102,10 +108,12 @@ There have been different techniques that have improved upon the limitations of 
 
 Data/Tutorials:
 + <https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main>
++ <https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac>
 + <https://machinelearningmastery.com/prepare-text-data-deep-learning-keras>
 + <https://machinelearningmastery.com/use-word-embedding-layers-deep-learning-keras>
 + <https://medium.com/analytics-vidhya/understanding-embedding-layer-in-keras-bbe3ff1327ce>
 + <https://medium.com/@naidubhavya06/detailed-explanation-of-keras-embedding-layer-afe4c3a596a>
++ <https://towardsdatascience.com/neural-network-embeddings-explained-4d028e6f0526>
 
 Concepts:
 + <http://colah.github.io/posts/2014-07-NLP-RNNs-Representations>
