@@ -7,7 +7,7 @@ image: assets/images/2023-09/OIP_resize.jpg
 ---
 Building upon my previous [tutorial](https://slsu0424.github.io/encoding-pubmed-abstracts-for-nlp-tasks/) on one-hot encoding, this tutorial will review the concept of word embeddings and apply this to real-life data.  
 
-For our example, we will extract patient summaries of diabetic and non-diabetic patients from PubMed.  From these patient summaries, portions of text will be selected to create word embeddings.  These embeddings will be "trained" in a neural network model to perform a task, such as classifying which patients are diabetic vs. non-diabetic.  By training word embeddings, the computer will learn if there are any meaningful relationships between the words in the text. 
+For our example, we will extract patient summaries of diabetic and non-diabetic patients from PubMed.  From these patient summaries, portions of text will be selected to create word embeddings.  These embeddings will be "trained" as part a neural network model to perform a classification task.  By training the word embeddings, the computer will learn if there are any meaningful relationships between the words in the text. 
 
 ## A primer - Word Embeddings
 
@@ -35,7 +35,7 @@ Another option would be to load the data into a cloud database, such as Azure SQ
 
 ## Define the dataset and labels
 
-The dataset will consist of diabetic and non-diabetic patient profiles.  These will serve as the labels for training a neural network on a classification task (in turn, this will also train the embeddings).
+The dataset will consist of diabetic and non-diabetic patient profiles.  These will serve as the labels for training a neural network on the classification task (in turn, this will also train the embeddings).
 
 I used Azure Data Studio to access the data.  To connect to a SQL database using Azure Data Studio, check out this tutorial..... Attached are a few screenshots to get the dataset loaded correctly.
 
