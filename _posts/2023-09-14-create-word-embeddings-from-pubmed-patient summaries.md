@@ -7,7 +7,7 @@ image: assets/images/2023-09/OIP_resize.jpg
 ---
 Building upon my previous [tutorial](https://slsu0424.github.io/encoding-pubmed-abstracts-for-nlp-tasks/) on one-hot encoding, this tutorial will review the concept of word embeddings and apply this to real-life data.  
 
-For our example, we will extract patient summaries of diabetic and non-diabetic patients from PubMed.  From these patient summaries, portions of text will be selected to create word embeddings.  These embeddings will be "trained" in a neural network model to perform a task, such as classifying which patients are diabetic vs. non-diabetic.  By training word embeddings, the computer will learn if there are any meaningful relationships between the words in the text. 
+For our example, we will extract patient summaries of diabetic and non-diabetic patients from PubMed.  From these patient summaries, portions of text will be selected to create word embeddings.  These embeddings will be "trained" as part a neural network model to perform a classification task.  By training the word embeddings, the computer will learn if there are any meaningful relationships between the words in the text. 
 
 ## A primer - Word Embeddings
 
@@ -19,25 +19,35 @@ To start, I wanted to backtrack the origins of LLMs, which are a type of neural 
 
 The goal of NLP is to enable computers to "understand" natural language in order to perform some task, such as sentiment analysis.  In order to do so, natural language (text format) has to be converted (encode) into a numerical format.
 
-There are numerous approaches to encode text, with more advanced approaches surfacing over the years.  I will start with one-hot encoding, as it is one of the most familiar data pre-processing techniques for ML.  However, we will also begin to see the limitations of such a technique through the example below. 
-
-For NLP, one of the simplest techniques for encoding text is to represent each categorical variable (a word) as a binary vector.  A one-hot vector can be thought of as a type of binary vector where the index of the word is denoted as '1', and all other words are denoted as '0'.  The size/dimension of the vector is determined by the total number of unique words (vocabulary) found in the text.
-
-Consider the following text: 'I have a fever'.  The vocabulary consists of 4 unique words (I, have, a, fever), and each word is represented as a one-hot vector.
-
-![PubMed](/assets/images/2023-07/fever.png)
-
 ## Let's get data
 
-I found a really great dataset of patient profiles extracted from PubMed articles via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  I downloaded this dataset and loaded it into a local SQL Server database on a Mac.  For further instructions on how to set this up, check out this [tutorial](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac). 
+I found a great dataset of patient profiles extracted from PubMed articles via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  I downloaded this dataset and loaded it into a SQL Server on a Mac.  For further instructions on how to set up SQL Server (via SQL Server Management Studio) on a Mac, check out this [tutorial](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac).  
+
+*Note*: this requires Docker to be run on your desktop.  
+
+![Docker](/assets/images/2023-09/docker.png)
+SQL server can then be started via the terminal giving the username and password:
+
+```
+$ mssql -u <sql server username> -p <sql server password>
+```
 
 Another option would be to load the data into a cloud database, such as Azure SQL Database.  
 
 ## Define the dataset and labels
 
-I wanted to run queries to extract profiles of diabetic patients.  For the purpose of training a neural network to perform the classification task, the query will contain a set of patient profiles that are diabetic and non-diabetic (labels).
+The dataset will consist of diabetic and non-diabetic patient profiles.  These will serve as the labels for training a neural network on the classification task (in turn, this will also train the embeddings).
 
-To do this, I used Azure Data Studio to access the data.  To connect to a SQL database using Azure Data Studio, check out this tutorial..... Attached are a few screenshots to get the dataset loaded correctly.
+I used Azure Data Studio to access and query the data.  To connect to a SQL Server using Azure Data Studio, review this [tutorial](https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/).  
+
+Attached are a few screenshots to load the dataset correctly.
+
+Create a new connection
+![AzureDataStudio](/assets/images/2023-09/ads1.png)
+
+![AzureDataStudio](/assets/images/2023-09/ads2.png)
+
+![AzureDataStudio](/assets/images/2023-09/ads3.png)
 
 Now we can run a few queries to inspect the data, and create our desired dataset.
 
@@ -45,7 +55,7 @@ Now we can run a few queries to inspect the data, and create our desired dataset
 
 ## Convert text to integers
 
-As explored in the previous tutorial, categorical variables (text) have to be converted to numerical variables in order to be processed by a computer.  Hence, the document texts have to be converted into ther integer equivalents.  One approach would be to one-hot encode each word, but this would result in a whole bunch of one-hot vectors that would demonstrate no meaning between the words, and computationally expensive.  An alternative approach would be to integer encode each word.   
+As explored in the previous tutorial, categorical variables (text) have to be converted to numerical variables in order to be processed by a computer.  Hence, the document texts have to be converted into ther integer equivalents.  One approach would be to one-hot encode each word, but this would result in a bunch of one-hot vectors that would demonstrate no meaning between the words, and be computationally expensive.  A better approach would be to integer encode each word.   
 
 
 ## Pad the documents
@@ -116,9 +126,12 @@ There have been different techniques that have improved upon the limitations of 
 
 ## References
 
-Data/Tutorials:
+Data/SQL Server:
 + <https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main>
 + <https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac>
++ <https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/>
+
+
 + <https://machinelearningmastery.com/prepare-text-data-deep-learning-keras>
 + <https://machinelearningmastery.com/use-word-embedding-layers-deep-learning-keras>
 + <https://medium.com/analytics-vidhya/understanding-embedding-layer-in-keras-bbe3ff1327ce>
