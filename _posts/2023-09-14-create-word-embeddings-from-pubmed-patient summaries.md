@@ -5,13 +5,15 @@ author: sandy
 categories: [ PubMed, NLP, tutorial ]
 image: assets/images/2023-09/OIP_resize.jpg
 ---
-Building upon last month's tutorial on one-hot encoding, this tutorial will review the concept of word embeddings and apply this to real-life data.  
+Building upon my previous [tutorial](https://slsu0424.github.io/encoding-pubmed-abstracts-for-nlp-tasks/) on one-hot encoding, this tutorial will review the concept of word embeddings and apply this to real-life data.  
 
-For our example, we will extract patient summaries of diabetic and non-diabetic patients from PubMed.  From these patient summaries, portions of text will be selected to create word embeddings.  These embeddings will be "trained" in a neural network model to perform a task, such as classification (diabetic vs. non-diabetic).  By training word embeddings, the computer will learn if there are any meaningful relationships between the words in the text. 
+For our example, we will extract patient summaries of diabetic and non-diabetic patients from PubMed.  From these patient summaries, portions of text will be selected to create word embeddings.  These embeddings will be "trained" in a neural network model to perform a task, such as classifying which patients are diabetic vs. non-diabetic.  By training word embeddings, the computer will learn if there are any meaningful relationships between the words in the text. 
 
 ## A primer - Word Embeddings
 
-Word Embeddings were a bit of a complex concept to grasp, until I got into the weeds of building one.  I've come to learn they are an important concept in deep learning, for the very reason that semantic meaning can be derived mathematically.
+Word Embeddings were a bit of a complex concept to grasp, until I got into the weeds of building one.  I've come to learn they are an important concept in deep learning, for the very reason that semantic meaning of words can be approximated mathematically.
+
+There are a number of techniques available to build a word embedding.  As a quick note, LLMs use word embeddings, but the technique used to build them are proprietary.  
 
 To start, I wanted to backtrack the origins of LLMs, which are a type of neural network.  A neural network is a type of machine learning approach that attempts to mimic the way the brain works (biological neural network).  This approach has been shown to perform better on NLP tasks than previous methods.  For a great overview of NLP, check out this [guide](https://www.deeplearning.ai/resources/natural-language-processing).
 
@@ -27,9 +29,23 @@ Consider the following text: 'I have a fever'.  The vocabulary consists of 4 uni
 
 ## Let's get data
 
+I found a really great dataset of patient profiles extracted from PubMed articles via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  I downloaded this dataset and loaded it into a local SQL Server database on a Mac.  For further instructions on how to set this up, check out this [tutorial](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac). 
+
+Another option would be to load the data into a cloud database, such as Azure SQL Database.  
+
+## Define the dataset and labels
+
+I wanted to run queries to extract profiles of diabetic patients.  For the purpose of training a neural network to perform the classification task, the query will contain a set of patient profiles that are diabetic and non-diabetic (labels).
+
+To do this, I used Azure Data Studio to access the data.  To connect to a SQL database using Azure Data Studio, check out this tutorial..... Attached are a few screenshots to get the dataset loaded correctly.
+
+Now we can run a few queries to inspect the data, and create our desired dataset.
+
+
+
 ## Convert text to integers
 
-As explored in the previous tutorial, categorical variables (text) have to be converted to numerical variables in order to be processed by a computer.  Hence, the document texts have to be converted into ther integer equivalents.  There are a few approaches to do this:
+As explored in the previous tutorial, categorical variables (text) have to be converted to numerical variables in order to be processed by a computer.  Hence, the document texts have to be converted into ther integer equivalents.  One approach would be to one-hot encode each word, but this would result in a whole bunch of one-hot vectors that would demonstrate no meaning between the words, and computationally expensive.  An alternative approach would be to integer encode each word.   
 
 
 ## Pad the documents
@@ -102,10 +118,12 @@ There have been different techniques that have improved upon the limitations of 
 
 Data/Tutorials:
 + <https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main>
++ <https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac>
 + <https://machinelearningmastery.com/prepare-text-data-deep-learning-keras>
 + <https://machinelearningmastery.com/use-word-embedding-layers-deep-learning-keras>
 + <https://medium.com/analytics-vidhya/understanding-embedding-layer-in-keras-bbe3ff1327ce>
 + <https://medium.com/@naidubhavya06/detailed-explanation-of-keras-embedding-layer-afe4c3a596a>
++ <https://towardsdatascience.com/neural-network-embeddings-explained-4d028e6f0526>
 
 Concepts:
 + <http://colah.github.io/posts/2014-07-NLP-RNNs-Representations>
