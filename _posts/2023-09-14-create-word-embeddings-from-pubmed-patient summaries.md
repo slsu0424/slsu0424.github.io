@@ -42,11 +42,13 @@ I used Azure Data Studio to access and query the data.  To connect to a SQL Serv
 
 Attached are a few screenshots to load the dataset correctly.
 
-Create a new connection
+1. Create a new connection:
 ![AzureDataStudio](/assets/images/2023-09/ads1.png)
 
+2. Use the Import flat file wizard:
 ![AzureDataStudio](/assets/images/2023-09/ads2.png)
 
+3. Modify the columns as follows:
 ![AzureDataStudio](/assets/images/2023-09/ads3.png)
 
 Now we can run a few queries to inspect the data, and create our desired dataset.
@@ -65,7 +67,7 @@ SELECT TOP (1000) [patient_id]
   FROM [test].[dbo].[PMC-Patients]
   ```
 
-  
+
 
 ## Convert text to integers
 
