@@ -35,9 +35,9 @@ Another option would be to load the data into a cloud database, such as Azure SQ
 
 ## Define the dataset and labels
 
-I wanted to run queries to extract profiles of diabetic patients.  For the purpose of training a neural network to perform the classification task, the query will contain a set of patient profiles that are diabetic and non-diabetic (labels).
+The dataset will consist of diabetic and non-diabetic patient profiles.  These will serve as the labels for training a neural network on a classification task (in turn, this will also train the embeddings).
 
-To do this, I used Azure Data Studio to access the data.  To connect to a SQL database using Azure Data Studio, check out this tutorial..... Attached are a few screenshots to get the dataset loaded correctly.
+I used Azure Data Studio to access the data.  To connect to a SQL database using Azure Data Studio, check out this tutorial..... Attached are a few screenshots to get the dataset loaded correctly.
 
 Now we can run a few queries to inspect the data, and create our desired dataset.
 
