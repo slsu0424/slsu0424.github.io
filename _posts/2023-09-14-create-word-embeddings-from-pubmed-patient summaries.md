@@ -67,7 +67,7 @@ SELECT TOP (1000) [patient_id]
   FROM [test].[dbo].[PMC-Patients]
   ```
 
-![](/assets/images/2023-09/azstudio_query1.png){width=400px }(/assets/images/2023-09/azstudio_query1.png)
+![](/assets/images/2023-09/azstudio_query1.png){width=400px}(/assets/images/2023-09/azstudio_query1.png)
 
 
 ## Convert text to integers
