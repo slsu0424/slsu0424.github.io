@@ -45,7 +45,7 @@ Now we can run a few queries to inspect the data, and create our desired dataset
 
 ## Convert text to integers
 
-As explored in the previous tutorial, categorical variables (text) have to be converted to numerical variables in order to be processed by a computer.  Hence, the document texts have to be converted into ther integer equivalents.  One approach would be to one-hot encode each word, but this would result in a whole bunch of one-hot vectors that would demonstrate no meaning between the words, and be potentially expensive to compute.  An alternative approach would be to integer encode each word.   
+As explored in the previous tutorial, categorical variables (text) have to be converted to numerical variables in order to be processed by a computer.  Hence, the document texts have to be converted into ther integer equivalents.  One approach would be to one-hot encode each word, but this would result in a whole bunch of one-hot vectors that would demonstrate no meaning between the words, and computationally expensive.  An alternative approach would be to integer encode each word.   
 
 
 ## Pad the documents
