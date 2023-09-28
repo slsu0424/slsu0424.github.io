@@ -29,14 +29,12 @@ Consider the following text: 'I have a fever'.  The vocabulary consists of 4 uni
 
 ## Let's get data
 
-I found a great dataset of patient profiles extracted from PubMed articles via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  I downloaded this dataset and loaded it into a local SQL Server database on a Mac.  For further instructions on how to set this up, check out this [tutorial](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac).    Note: this requires Docker to be run on your desktop.  SQL server can be started via the terminal giving the username and password set for the server:
+I found a great dataset of patient profiles extracted from PubMed articles via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  I downloaded this dataset and loaded it into a local SQL Server database on a Mac.  For further instructions on how to set this up, check out this [tutorial](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac).    **Note: this requires Docker to be run on your desktop.  SQL server can be started via the terminal giving the username and password set for the server:
 
 ```
 $ mssql -u <sql server username> -p <sql server password>
 
 ```
-
-
 
 Another option would be to load the data into a cloud database, such as Azure SQL Database.  
 
