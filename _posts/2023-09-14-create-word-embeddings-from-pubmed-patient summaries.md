@@ -26,7 +26,6 @@ I found a great dataset of patient profiles extracted from PubMed articles via [
 *Note*: this requires Docker to be run on your desktop.  
 
 ![Docker](/assets/images/2023-09/docker.png)
-
 SQL server can then be started via the terminal giving the username and password:
 
 ```
