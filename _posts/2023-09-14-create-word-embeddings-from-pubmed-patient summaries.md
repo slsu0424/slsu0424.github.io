@@ -39,6 +39,7 @@ I used Azure Data Studio to access and query the data.  To connect to a SQL Serv
 
 Attached are a few screenshots to load the dataset correctly.
 
+Create a new connection
 ![AzureDataStudio](/assets/images/2023-09/ads1.png)
 
 ![AzureDataStudio](/assets/images/2023-09/ads2.png)
