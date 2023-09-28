@@ -29,7 +29,14 @@ Consider the following text: 'I have a fever'.  The vocabulary consists of 4 uni
 
 ## Let's get data
 
-I found a really great dataset of patient profiles extracted from PubMed articles via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  I downloaded this dataset and loaded it into a local SQL Server database on a Mac.  For further instructions on how to set this up, check out this [tutorial](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac). 
+I found a great dataset of patient profiles extracted from PubMed articles via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  I downloaded this dataset and loaded it into a local SQL Server database on a Mac.  For further instructions on how to set this up, check out this [tutorial](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac).    Note: this requires Docker to be run on your desktop.  SQL server can be started via the terminal giving the username and password set for the server:
+
+```
+$ mssql -u <sql server username> -p <sql server password>
+
+```
+
+
 
 Another option would be to load the data into a cloud database, such as Azure SQL Database.  
 
@@ -37,7 +44,11 @@ Another option would be to load the data into a cloud database, such as Azure SQ
 
 The dataset will consist of diabetic and non-diabetic patient profiles.  These will serve as the labels for training a neural network on the classification task (in turn, this will also train the embeddings).
 
-I used Azure Data Studio to access the data.  To connect to a SQL database using Azure Data Studio, check out this tutorial..... Attached are a few screenshots to get the dataset loaded correctly.
+I used Azure Data Studio to access and query the data.  To connect to a SQL database using Azure Data Studio, review this [tutorial](https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/).  
+
+Attached are a few screenshots to load the dataset correctly.
+
+![AzureDataStudio](/assets/images/2023-09/fever.png)
 
 Now we can run a few queries to inspect the data, and create our desired dataset.
 
@@ -45,7 +56,7 @@ Now we can run a few queries to inspect the data, and create our desired dataset
 
 ## Convert text to integers
 
-As explored in the previous tutorial, categorical variables (text) have to be converted to numerical variables in order to be processed by a computer.  Hence, the document texts have to be converted into ther integer equivalents.  One approach would be to one-hot encode each word, but this would result in a whole bunch of one-hot vectors that would demonstrate no meaning between the words, and computationally expensive.  An alternative approach would be to integer encode each word.   
+As explored in the previous tutorial, categorical variables (text) have to be converted to numerical variables in order to be processed by a computer.  Hence, the document texts have to be converted into ther integer equivalents.  One approach would be to one-hot encode each word, but this would result in a bunch of one-hot vectors that would demonstrate no meaning between the words, and be computationally expensive.  A better approach would be to integer encode each word.   
 
 
 ## Pad the documents
@@ -116,9 +127,12 @@ There have been different techniques that have improved upon the limitations of 
 
 ## References
 
-Data/Tutorials:
+Data/SQL Server:
 + <https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main>
 + <https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac>
++ <https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/>
+
+
 + <https://machinelearningmastery.com/prepare-text-data-deep-learning-keras>
 + <https://machinelearningmastery.com/use-word-embedding-layers-deep-learning-keras>
 + <https://medium.com/analytics-vidhya/understanding-embedding-layer-in-keras-bbe3ff1327ce>
