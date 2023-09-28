@@ -51,7 +51,21 @@ Create a new connection
 
 Now we can run a few queries to inspect the data, and create our desired dataset.
 
+```
+SELECT TOP (1000) [patient_id]
+      ,[patient_uid]
+      ,[PMID]
+      ,[file_path]
+      ,[title]
+      ,[patient]
+      ,[age]
+      ,[gender]
+      ,[similar_patients]
+      ,[relevant_articles]
+  FROM [test].[dbo].[PMC-Patients]
+  ```
 
+  
 
 ## Convert text to integers
 
