@@ -29,9 +29,19 @@ Consider the following text: 'I have a fever'.  The vocabulary consists of 4 uni
 
 ## Let's get data
 
-I found a really great dataset of patient profiles extracted from PubMed articles via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  I downloaded this dataset and loaded it into a local SQL Server database on a Mac.  For further instructions on how to set this up, see this [tutorial](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac). Another option would be to load the data into a cloud database.  
+I found a really great dataset of patient profiles extracted from PubMed articles via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  I downloaded this dataset and loaded it into a local SQL Server database on a Mac.  For further instructions on how to set this up, check out this [tutorial](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac). 
 
-Next, I use Azure Data Studio to access the data.  I wanted to run queries to extract profiles of diabetic patients.  For the purpose of training a neural network to perform a classification task, the query will return a set of patient profiles that are diabetic and non-diabetic.
+Another option would be to load the data into a cloud database, such as Azure SQL DB.  
+
+## Define the dataset and labels
+
+I wanted to run queries to extract profiles of diabetic patients.  For the purpose of training a neural network to perform a classification task, the query will return a set of patient profiles that are diabetic vs. non-diabetic (labels).
+
+To do this, I used Azure Data Studio to access the data.  To connect to a SQL database using Azure Data Studio, check out this tutorial..... Attached are a few screenshots to get the dataset loaded correctly.
+
+Now we can run a few queries to inspect the data, and create our desired dataset.
+
+
 
 ## Convert text to integers
 
