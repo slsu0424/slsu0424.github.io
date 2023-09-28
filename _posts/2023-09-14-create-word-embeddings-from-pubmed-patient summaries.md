@@ -5,7 +5,7 @@ author: sandy
 categories: [ PubMed, NLP, tutorial ]
 image: assets/images/2023-09/OIP_resize.jpg
 ---
-Building upon last month's tutorial on one-hot encoding, this tutorial will review the concept of word embeddings and apply this to real-life data.  
+Building upon my previous tutorial on one-hot encoding, this tutorial will review the concept of word embeddings and apply this to real-life data.  
 
 For our example, we will extract patient summaries of diabetic and non-diabetic patients from PubMed.  From these patient summaries, portions of text will be selected to create word embeddings.  These embeddings will be "trained" in a neural network model to perform a task, such as classification (diabetic vs. non-diabetic).  By training word embeddings, the computer will learn if there are any meaningful relationships between the words in the text. 
 
@@ -45,7 +45,7 @@ Now we can run a few queries to inspect the data, and create our desired dataset
 
 ## Convert text to integers
 
-As explored in the previous tutorial, categorical variables (text) have to be converted to numerical variables in order to be processed by a computer.  Hence, the document texts have to be converted into ther integer equivalents.  There are a few approaches to do this:
+As explored in the previous tutorial, categorical variables (text) have to be converted to numerical variables in order to be processed by a computer.  Hence, the document texts have to be converted into ther integer equivalents.  One approach would be to one-hot encode each word, but this would be a meaningless and potentially expensive approach.  An alternative approach would be to integer encode each word.   
 
 
 ## Pad the documents
