@@ -21,7 +21,9 @@ The goal of NLP is to enable computers to "understand" natural language in order
 
 ## Let's get data
 
-I found a great dataset of patient profiles extracted from PubMed articles via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  I downloaded this dataset and loaded it into a SQL Server on a Mac.  For further instructions on how to set up SQL Server (via SQL Server Management Studio) on a Mac, check out this [tutorial](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac).  
+I found a great dataset of ~167K patient profiles extracted from PubMed articles via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  To demonstrate a low-code approach, I will be using SQL Server and Azure Data Studio.
+
+ I downloaded this dataset and loaded it into a SQL Server on a Mac.  For further instructions on how to set up this up, check out this [tutorial](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac).  
 
 *Note*: this requires Docker to be run on your desktop.  
 
@@ -31,8 +33,6 @@ SQL server can then be started via the terminal giving the username and password
 ```
 $ mssql -u <sql server username> -p <sql server password>
 ```
-
-Another option would be to load the data into a cloud database, such as Azure SQL Database.  
 
 ## Define the dataset and labels
 
@@ -69,6 +69,25 @@ SELECT TOP (1000) [patient_id]
 
 ![](/assets/images/2023-09/azstudio_query1.png){width=1742px}(/assets/images/2023-09/azstudio_query1.png)
 
+This query will return the top 10 patient profiles for both diabetic and non-diabetic patients:
+
+```
+SELECT TOP 10 * 
+  FROM [dbo].[PMC-Patients] where title in
+      (SELECT title from [dbo].[PMC-Patients] GROUP BY title HAVING COUNT(title)=1 
+        AND title LIKE '%diabetes%')
+UNION
+SELECT TOP 10 *
+  FROM [dbo].[PMC-Patients] where title in
+      (SELECT title from [dbo].[PMC-Patients] GROUP BY title HAVING COUNT(title)=1 
+        AND title NOT LIKE '%diabetes%');
+```
+
+This file can be exported from Azure Data Studio as a .csv.
+
+While this represents one approach to loading and manipulating the dataset, you may wish to explore other approaches:
+- load original dataset into pandas dataframe
+- load original dataset into a cloud database, such as Azure SQL Database 
 
 ## Convert text to integers
 
