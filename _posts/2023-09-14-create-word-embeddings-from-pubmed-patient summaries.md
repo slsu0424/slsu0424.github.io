@@ -21,9 +21,9 @@ The goal of NLP is to enable computers to "understand" natural language in order
 
 ## Let's get data
 
-I found a great dataset of ~167K patient profiles extracted from PubMed articles via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  To demonstrate a low-code approach, I will be using SQL Server and Azure Data Studio.
+I selected a dataset of ~167K patient profiles extracted from PubMed articles via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  To demonstrate a low-code approach, SQL Server and Azure Data Studio will be used.
 
- I downloaded this dataset and loaded it into a SQL Server on a Mac.  For further instructions on how to set up this up, check out this [tutorial](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac).  
+This dataset will be loaded into a SQL Server on a Mac.  For further instructions on how to set this up, check out this [tutorial](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac).  
 
 *Note*: this requires Docker to be run on your desktop.  
 
@@ -38,7 +38,7 @@ $ mssql -u <sql server username> -p <sql server password>
 
 The dataset will consist of diabetic and non-diabetic patient profiles.  These will serve as the labels for training a neural network on the classification task (in turn, this will also train the embeddings).
 
-I used Azure Data Studio to access and query the data.  To connect to a SQL Server using Azure Data Studio, review this [tutorial](https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/).  
+Azure Data Studio will be used to access and query the data.  To connect to a SQL Server using Azure Data Studio, review this [tutorial](https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/).  
 
 Attached are screenshots to load the dataset correctly.
 
@@ -51,7 +51,7 @@ Attached are screenshots to load the dataset correctly.
 3. Modify the columns as follows:
 ![AzureDataStudio](/assets/images/2023-09/azstudio_setup3.png)
 
-Now we can run a few queries to inspect the data, and create our desired dataset.
+We can run a few queries to inspect the data, and create the desired dataset.
 
 ```
 SELECT TOP (1000) [patient_id]
@@ -86,12 +86,21 @@ SELECT TOP 10 *
 This file can be exported from Azure Data Studio as a .csv.
 
 While this represents one approach to loading and manipulating the dataset, you may wish to explore other approaches:
-- load original dataset into pandas dataframe
-- load original dataset into a cloud database, such as Azure SQL Database 
+1. Load dataset into pandas dataframe
+2. Load dataset into a cloud database, such as Azure SQL Database 
+
+
+## Create corpus of documents
+
+Now that we have our desired dataset, we will create a corpus of documents.  
 
 ## Convert text to integers
 
-As explored in the previous tutorial, categorical variables (text) have to be converted to numerical variables in order to be processed by a computer.  Hence, the document texts have to be converted into ther integer equivalents.  One approach would be to one-hot encode each word, but this would result in a bunch of one-hot vectors that would demonstrate no meaning between the words, and be computationally expensive.  A better approach would be to integer encode each word.   
+As explored in the previous tutorial, categorical variables (text) have to be converted to numerical variables in order to be processed by a computer.  Hence, the document texts have to be converted into ther integer equivalents.  One approach would be to one-hot encode each word, but this would result in a bunch of one-hot vectors that would demonstrate no meaning between the words, and be computationally expensive.  
+
+A better approach would be to integer encode each word.  To do this, we will use Keras (a deep learning framework)
+
+
 
 
 ## Pad the documents
@@ -106,14 +115,6 @@ As explored in the previous tutorial, categorical variables (text) have to be co
 
 
 ## Let's convert a few PubMed abstracts to one-hot vectors
-
-To put the above tutorial into practice, I thought I would give this a try with a few abstracts.  Let's say that we want to perform an NLP task on papers that discuss cardiovascular disease (CVD) risk factors.  This is what my query and results look like in PubMed:
-
-![PubMed](/assets/images/2023-07/PubMed.png)
-
-Each abstract represents a single document in the corpus.  Let's take the first 5 words from each abstract.  For simplicity purposes, we will ignore header terms such as 'Context', 'Introduction', 'Purpose'.
-
-![PubMed](/assets/images//2023-07/PubMed2.png)
 
 There are 15 total words in the corpus:
 
