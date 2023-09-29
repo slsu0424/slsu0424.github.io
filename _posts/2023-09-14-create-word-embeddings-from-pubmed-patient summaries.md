@@ -2,7 +2,7 @@
 layout: post
 title:  "Create word embeddings from PubMed patient summaries"
 author: sandy
-categories: [ PubMed, NLP, tutorial ]
+categories: [ PubMed, NLP, tutorial, SQL Server, Azure ]
 image: assets/images/2023-09/OIP_resize.jpg
 ---
 Building upon my previous [tutorial](https://slsu0424.github.io/encoding-pubmed-abstracts-for-nlp-tasks/) on one-hot encoding, this tutorial will review the concept of word embeddings and apply this to real-life data.  
@@ -21,7 +21,9 @@ The goal of NLP is to enable computers to "understand" natural language in order
 
 ## Let's get data
 
-I found a great dataset of patient profiles extracted from PubMed articles via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  I downloaded this dataset and loaded it into a SQL Server on a Mac.  For further instructions on how to set up SQL Server (via SQL Server Management Studio) on a Mac, check out this [tutorial](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac).  
+I selected a dataset of ~167K patient profiles extracted from PubMed articles via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  To demonstrate a low-code approach, SQL Server and Azure Data Studio will be used.
+
+This dataset will be loaded into a SQL Server on a Mac.  For further instructions on how to set this up, check out this [tutorial](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac).  
 
 *Note*: this requires Docker to be run on your desktop.  
 
@@ -32,13 +34,11 @@ SQL server can then be started via the terminal giving the username and password
 $ mssql -u <sql server username> -p <sql server password>
 ```
 
-Another option would be to load the data into a cloud database, such as Azure SQL Database.  
-
 ## Define the dataset and labels
 
 The dataset will consist of diabetic and non-diabetic patient profiles.  These will serve as the labels for training a neural network on the classification task (in turn, this will also train the embeddings).
 
-I used Azure Data Studio to access and query the data.  To connect to a SQL Server using Azure Data Studio, review this [tutorial](https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/).  
+Azure Data Studio will be used to access and query the data.  To connect to a SQL Server using Azure Data Studio, review this [tutorial](https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/).  
 
 Attached are screenshots to load the dataset correctly.
 
@@ -51,7 +51,7 @@ Attached are screenshots to load the dataset correctly.
 3. Modify the columns as follows:
 ![AzureDataStudio](/assets/images/2023-09/azstudio_setup3.png)
 
-Now we can run a few queries to inspect the data, and create our desired dataset.
+We can run a few queries to inspect the data, and create the desired dataset.
 
 ```
 SELECT TOP (1000) [patient_id]
@@ -69,10 +69,43 @@ SELECT TOP (1000) [patient_id]
 
 ![](/assets/images/2023-09/azstudio_query1.png){width=1742px}(/assets/images/2023-09/azstudio_query1.png)
 
+This query will return the top 10 patient profiles for both diabetic and non-diabetic patients:
+
+```
+SELECT TOP 10 * 
+  FROM [dbo].[PMC-Patients] where title in
+      (SELECT title from [dbo].[PMC-Patients] GROUP BY title HAVING COUNT(title)=1 
+        AND title LIKE '%diabetes%')
+UNION
+SELECT TOP 10 *
+  FROM [dbo].[PMC-Patients] where title in
+      (SELECT title from [dbo].[PMC-Patients] GROUP BY title HAVING COUNT(title)=1 
+        AND title NOT LIKE '%diabetes%');
+```
+
+The results can be exported from Azure Data Studio as a .csv.
+
+While this represents a bit of a longer approach to loading and manipulating the dataset, you may wish to explore other approaches:
+1. Load dataset into pandas dataframe
+2. Load dataset into a cloud database, such as Azure SQL Database.  Please keep in mind there are costs associated with running the database in the cloud, as well as querying costs.
+
+
+## Create corpus of documents
+
+Now that we have our desired dataset, we will create a corpus of documents.  We'll start by taking the first 5 rows of the dataset, which will each represent a PubMed article.  The selection will contain a mix of diabetic and non-diabetic patients.  From each document, a random number of words will be selected.  The result is:   
+
+
+
+Next, we will need to define the class labels.  As this is a classification task, 
+
 
 ## Convert text to integers
 
-As explored in the previous tutorial, categorical variables (text) have to be converted to numerical variables in order to be processed by a computer.  Hence, the document texts have to be converted into ther integer equivalents.  One approach would be to one-hot encode each word, but this would result in a bunch of one-hot vectors that would demonstrate no meaning between the words, and be computationally expensive.  A better approach would be to integer encode each word.   
+As explored in the previous tutorial, categorical variables (text) have to be converted to numerical variables in order to be processed by a computer.  Hence, the document texts have to be converted into ther integer equivalents.  One approach would be to one-hot encode each word, but this would result in a bunch of one-hot vectors that would demonstrate no meaning between the words, and be computationally expensive.  
+
+A better approach would be to integer encode each word.  To do this, we will use Keras (a deep learning framework)
+
+
 
 
 ## Pad the documents
@@ -87,14 +120,6 @@ As explored in the previous tutorial, categorical variables (text) have to be co
 
 
 ## Let's convert a few PubMed abstracts to one-hot vectors
-
-To put the above tutorial into practice, I thought I would give this a try with a few abstracts.  Let's say that we want to perform an NLP task on papers that discuss cardiovascular disease (CVD) risk factors.  This is what my query and results look like in PubMed:
-
-![PubMed](/assets/images/2023-07/PubMed.png)
-
-Each abstract represents a single document in the corpus.  Let's take the first 5 words from each abstract.  For simplicity purposes, we will ignore header terms such as 'Context', 'Introduction', 'Purpose'.
-
-![PubMed](/assets/images//2023-07/PubMed2.png)
 
 There are 15 total words in the corpus:
 
