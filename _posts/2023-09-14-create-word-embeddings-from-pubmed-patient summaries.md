@@ -2,7 +2,7 @@
 layout: post
 title:  "Create word embeddings from PubMed patient summaries"
 author: sandy
-categories: [ PubMed, NLP, tutorial ]
+categories: [ PubMed, NLP, tutorial, SQL Server, Azure ]
 image: assets/images/2023-09/OIP_resize.jpg
 ---
 Building upon my previous [tutorial](https://slsu0424.github.io/encoding-pubmed-abstracts-for-nlp-tasks/) on one-hot encoding, this tutorial will review the concept of word embeddings and apply this to real-life data.  
@@ -92,7 +92,12 @@ While this represents a bit of a longer approach to loading and manipulating the
 
 ## Create corpus of documents
 
-Now that we have our desired dataset, we will create a corpus of documents.  
+Now that we have our desired dataset, we will create a corpus of documents.  We'll start by taking the first 5 rows of the dataset, which will each represent a PubMed article.  The selection will contain a mix of diabetic and non-diabetic patients.  From each document, a random number of words will be selected.  The result is:   
+
+
+
+Next, we will need to define the class labels.  As this is a classification task, 
+
 
 ## Convert text to integers
 
