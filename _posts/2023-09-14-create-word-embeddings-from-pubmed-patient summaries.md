@@ -83,11 +83,11 @@ SELECT TOP 10 *
         AND title NOT LIKE '%diabetes%');
 ```
 
-This file can be exported from Azure Data Studio as a .csv.
+The results can be exported from Azure Data Studio as a .csv.
 
-While this represents one approach to loading and manipulating the dataset, you may wish to explore other approaches:
+While this represents a bit of a longer approach to loading and manipulating the dataset, you may wish to explore other approaches:
 1. Load dataset into pandas dataframe
-2. Load dataset into a cloud database, such as Azure SQL Database 
+2. Load dataset into a cloud database, such as Azure SQL Database.  Please keep in mind there are costs associated with running the database in the cloud, as well as querying costs.
 
 
 ## Create corpus of documents
