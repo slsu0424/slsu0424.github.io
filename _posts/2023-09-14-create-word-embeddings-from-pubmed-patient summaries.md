@@ -70,7 +70,7 @@ FROM [test].[dbo].[PMC-Patients] WHERE patient LIKE '%covid-19%'
 ![](/assets/images/2023-09/azstudio_query1.png){width=1742px}(/assets/images/2023-09/azstudio_query1.png)
 
 
-Let's go ahead and select the top 100 records.  The results can be exported from Azure Data Studio as a .csv.
+We will execute the first query to get the top 100 records.  The results can be exported from Azure Data Studio as a .csv.
 
 While this represents a bit of a longer approach to loading and manipulating the dataset, you may wish to explore other approaches:
 1. Load dataset into pandas dataframe
@@ -78,7 +78,11 @@ While this represents a bit of a longer approach to loading and manipulating the
 
 ## Define class labels
 
-Since this is a binary classification task, we will label the dataset for patients that had COVID-19 as '1' and those that did not as '0'.  We set up our python code as follows:
+Since this is a binary classification task, we will label the dataset as:
+- patients that had COVID-19 = '1'
+- patients without COVID-19 = '0'
+
+We set up our python code as follows:
 
 ```python
 labels = []
@@ -99,7 +103,7 @@ labels_arr = np.array(labels).astype(float)
 print(labels_arr)
 ```
 
-We have an array that looks like this:
+We have an output array that looks like this:
 
 ```
 [1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 1. 0.
@@ -111,11 +115,9 @@ We have an array that looks like this:
 
 ## Create corpus of documents
 
-Now that we have our labeled dataset, we will create a corpus of documents.  We'll start by taking the first 5 rows of the dataset, which will each represent a PubMed article.  The selection will contain a mix of diabetic and non-diabetic patients.  From each document, a random number of words will be selected.  The result is:   
+Now that we have our labeled dataset, we will create a corpus of documents.  We'll take the first 3 sentences of each document (100 PubMed articles).  From eac, a random number of words will be selected.  The result is:   
 
 
-
-Next, we will need to define the class labels.  As this is a classification task, 
 
 
 ## Convert text to integers
