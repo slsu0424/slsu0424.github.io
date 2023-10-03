@@ -79,7 +79,7 @@ While this represents a bit of a longer approach to loading and manipulating the
 ## Define class labels
 
 Since this is a binary classification task, we will label the dataset as:
-- patients that had COVID-19 = '1'
+- patients with COVID-19 = '1'
 - patients without COVID-19 = '0'
 
 We set up our python code as follows:
@@ -103,7 +103,7 @@ labels_arr = np.array(labels).astype(float)
 print(labels_arr)
 ```
 
-We have an output array that looks like this:
+Output array:
 
 ```
 [1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 1. 0.
@@ -115,9 +115,14 @@ We have an output array that looks like this:
 
 ## Create corpus of documents
 
-Now that we have our labeled dataset, we will create a corpus of documents.  We'll take the first 3 sentences of each document (100 PubMed articles).  From eac, a random number of words will be selected.  The result is:   
+Now that we have our labeled dataset, we will create a corpus of documents.  We'll take the first 3 sentences from each document (100 PubMed articles).  The resulting corpus will look something like this:
 
+```
+[This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea. We encountered several difficulties during physical therapy on the acute ward. First, any change of position or deep breathing triggered coughing attacks that induced oxygen desaturation and dyspnea
+We describe the case of a 55-year-old male who presented to the emergency department via emergency medical services for the chief complaint of sudden onset shortness of breath that woke him from his sleep just prior to arrival. He reported three days of non-radiating lumbar back pain and two episodes of non-bloody emesis leading up to this event. His medical history included hypertension and type 2 diabetes mellitus
+A 20-year-old Caucasian male (1.75 m tall and 76 kg (BMI 24.8)), was admitted to the medical department for persistent hyperpyrexia, severe sore throat, dyspnea, and impaired consciousness with stupor]
 
+```
 
 
 ## Convert text to integers
