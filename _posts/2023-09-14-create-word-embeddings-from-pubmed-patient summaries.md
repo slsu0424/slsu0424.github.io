@@ -99,6 +99,16 @@ labels_arr = np.array(labels).astype(float)
 print(labels_arr)
 ```
 
+We have an array that looks like this:
+
+```
+[1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 1. 0.
+ 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+ 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+ 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0.
+ 0. 0. 1. 0.]
+```
+
 ## Create corpus of documents
 
 Now that we have our labeled dataset, we will create a corpus of documents.  We'll start by taking the first 5 rows of the dataset, which will each represent a PubMed article.  The selection will contain a mix of diabetic and non-diabetic patients.  From each document, a random number of words will be selected.  The result is:   
