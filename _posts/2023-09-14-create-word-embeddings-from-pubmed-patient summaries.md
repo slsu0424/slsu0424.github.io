@@ -76,15 +76,32 @@ While this represents a bit of a longer approach to loading and manipulating the
 1. Load dataset into pandas dataframe
 2. Load dataset into a cloud database, such as Azure SQL Database.  Please keep in mind there are costs associated with running the database in the cloud, as well as querying costs.
 
-## Define labels
+## Define class labels
 
-The dataset will be labeled for patient profiles that had COVID-19 and those that did not.  
+Since this is a binary classification task, we will label the dataset for patients that had COVID-19 as '1' and those that did not as '0'.  We set up our python code as follows:
 
+```python
+labels = []
 
+df['label'] = ''
+
+for index, row in df.iterrows():
+    if 'COVID-19' in row['patient']:
+        row['label'] = '1'
+    else:
+        row['label'] = '0' 
+
+    labels.append(row['label'])
+
+# convert list to array
+labels_arr = np.array(labels).astype(float)
+
+print(labels_arr)
+```
 
 ## Create corpus of documents
 
-Now that we have our desired dataset, we will create a corpus of documents.  We'll start by taking the first 5 rows of the dataset, which will each represent a PubMed article.  The selection will contain a mix of diabetic and non-diabetic patients.  From each document, a random number of words will be selected.  The result is:   
+Now that we have our labeled dataset, we will create a corpus of documents.  We'll start by taking the first 5 rows of the dataset, which will each represent a PubMed article.  The selection will contain a mix of diabetic and non-diabetic patients.  From each document, a random number of words will be selected.  The result is:   
 
 
 
