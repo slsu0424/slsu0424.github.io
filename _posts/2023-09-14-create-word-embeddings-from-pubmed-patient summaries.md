@@ -7,7 +7,7 @@ image: assets/images/2023-09/OIP_resize.jpg
 ---
 Building upon my previous [tutorial](https://slsu0424.github.io/encoding-pubmed-abstracts-for-nlp-tasks/) on one-hot encoding, this tutorial will review the concept of word embeddings and apply this to real-life data.  
 
-For our example, we will extract patient summaries of diabetic and non-diabetic patients from PubMed.  From these patient summaries, portions of text will be selected to create word embeddings.  These embeddings will be "trained" as part a neural network model to perform a classification task.  By training the word embeddings, the computer will learn if there are any meaningful relationships between the words in the text. 
+For our example, we will extract patient summaries (documents) from PubMed.  From these patient summaries, we will label those that had COVID-19, and those that did not.  Portions of text from each document will be selected to create word embeddings.  These embeddings will be "trained" as part a neural network model to perform a classification task (COVID-19 vs. non-COVID-19).  By training the word embeddings, the computer will learn if there are any meaningful relationships between the words in the text. 
 
 ## A primer - Word Embeddings
 
@@ -21,22 +21,17 @@ The goal of NLP is to enable computers to "understand" natural language in order
 
 ## Let's get data
 
-I selected a dataset of ~167K patient profiles extracted from PubMed articles via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  To demonstrate a low-code approach, SQL Server and Azure Data Studio will be used.
+I selected a dataset of ~167K PubMed patient summaries via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  To demonstrate a low-code approach, SQL Server and Azure Data Studio will be used.
 
 This dataset will be loaded into a SQL Server on a Mac.  For further instructions on how to set this up, check out this [tutorial](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac).  
 
 *Note*: this requires Docker to be run on your desktop.  
 
-![](/assets/images/2023-09/docker.png)
 SQL server can then be started via the terminal giving the username and password:
 
 ```
 $ mssql -u <sql server username> -p <sql server password>
 ```
-
-## Define the dataset and labels
-
-The dataset will consist of diabetic and non-diabetic patient profiles.  These will serve as the labels for training a neural network on the classification task (in turn, this will also train the embeddings).
 
 Azure Data Studio will be used to access and query the data.  To connect to a SQL Server using Azure Data Studio, review this [tutorial](https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/).  
 
@@ -54,40 +49,37 @@ Attached are screenshots to load the dataset correctly.
 We can run a few queries to inspect the data, and create the desired dataset.
 
 ```
-SELECT TOP (1000) [patient_id]
-      ,[patient_uid]
-      ,[PMID]
-      ,[file_path]
-      ,[title]
-      ,[patient]
-      ,[age]
-      ,[gender]
-      ,[similar_patients]
-      ,[relevant_articles]
-  FROM [test].[dbo].[PMC-Patients]
-  ```
+SELECT TOP (100) [patient_id]
+  ,[patient_uid]
+  ,[PMID]
+  ,[file_path]
+  ,[title]
+  ,[patient]
+  ,[age]
+  ,[gender]
+  ,[similar_patients]
+  ,[relevant_articles]
+FROM [test].[dbo].[PMC-Patients]
+```
+
+```
+SELECT count(*)
+FROM [test].[dbo].[PMC-Patients] WHERE patient LIKE '%covid-19%'
+```
 
 ![](/assets/images/2023-09/azstudio_query1.png){width=1742px}(/assets/images/2023-09/azstudio_query1.png)
 
-This query will return the top 10 patient profiles for both diabetic and non-diabetic patients:
 
-```
-SELECT TOP 10 * 
-  FROM [dbo].[PMC-Patients] where title in
-      (SELECT title from [dbo].[PMC-Patients] GROUP BY title HAVING COUNT(title)=1 
-        AND title LIKE '%diabetes%')
-UNION
-SELECT TOP 10 *
-  FROM [dbo].[PMC-Patients] where title in
-      (SELECT title from [dbo].[PMC-Patients] GROUP BY title HAVING COUNT(title)=1 
-        AND title NOT LIKE '%diabetes%');
-```
-
-The results can be exported from Azure Data Studio as a .csv.
+Let's go ahead and select the top 100 records.  The results can be exported from Azure Data Studio as a .csv.
 
 While this represents a bit of a longer approach to loading and manipulating the dataset, you may wish to explore other approaches:
 1. Load dataset into pandas dataframe
 2. Load dataset into a cloud database, such as Azure SQL Database.  Please keep in mind there are costs associated with running the database in the cloud, as well as querying costs.
+
+## Define labels
+
+The dataset will be labeled for patient profiles that had COVID-19 and those that did not.  
+
 
 
 ## Create corpus of documents
