@@ -5,15 +5,15 @@ author: sandy
 categories: [ PubMed, NLP, tutorial, SQL, Azure ]
 image: assets/images/2023-09/OIP_resize.jpg
 ---
-Building upon my previous [tutorial](https://slsu0424.github.io/encoding-pubmed-abstracts-for-nlp-tasks/) on one-hot encoding, this tutorial will review the concept of word embeddings and apply this to real-life data.  
+Building upon the previous [tutorial](https://slsu0424.github.io/encoding-pubmed-abstracts-for-nlp-tasks/) on one-hot encoding, this tutorial will review the concept of word embeddings and apply this to real-life data.  
 
-For our example, we will extract patient summaries of diabetic and non-diabetic patients from PubMed.  From these patient summaries, portions of text will be selected to create word embeddings.  These embeddings will be "trained" as part a neural network model to perform a classification task.  By training the word embeddings, the computer will learn if there are any meaningful relationships between the words in the text. 
+For our example, we will extract patient summaries (documents) from PubMed.  From these patient summaries, we will label those that had COVID-19, and those that did not.  Portions of text from each document will be selected to create word embeddings.  These embeddings will be "trained" as part a neural network model to perform a binary classification task (COVID-19 vs. non-COVID-19).  By training the word embeddings, the computer will learn if there are any meaningful relationships between the words in the text. 
 
 ## A primer - Word Embeddings
 
 Word Embeddings were a bit of a complex concept to grasp, until I got into the weeds of building one.  I've come to learn they are an important concept in deep learning, for the very reason that semantic meaning of words can be approximated mathematically.
 
-There are a number of techniques available to build a word embedding.  As a quick note, LLMs use word embeddings, but the technique used to build them are proprietary.  
+To best understand the intuition behind word embeddings, I highly recommend Colah's blog post of this topic.  In summary There are a number of techniques available to build a word embedding.  As a quick note, LLMs use word embeddings, but the technique used to build them are proprietary.  
 
 To start, I wanted to backtrack the origins of LLMs, which are a type of neural network.  A neural network is a type of machine learning approach that attempts to mimic the way the brain works (biological neural network).  This approach has been shown to perform better on NLP tasks than previous methods.  For a great overview of NLP, check out this [guide](https://www.deeplearning.ai/resources/natural-language-processing).
 
@@ -21,22 +21,17 @@ The goal of NLP is to enable computers to "understand" natural language in order
 
 ## Let's get data
 
-I selected a dataset of ~167K patient profiles extracted from PubMed articles via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  To demonstrate a low-code approach, SQL Server and Azure Data Studio will be used.
+I selected a dataset of ~167K PubMed patient summaries via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  To demonstrate a low-code approach, SQL Server and Azure Data Studio will be used.
 
 This dataset will be loaded into a SQL Server on a Mac.  For further instructions on how to set this up, check out this [tutorial](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac).  
 
 *Note*: this requires Docker to be run on your desktop.  
 
-![](/assets/images/2023-09/docker.png)
 SQL server can then be started via the terminal giving the username and password:
 
 ```
 $ mssql -u <sql server username> -p <sql server password>
 ```
-
-## Define the dataset and labels
-
-The dataset will consist of diabetic and non-diabetic patient profiles.  These will serve as the labels for training a neural network on the classification task (in turn, this will also train the embeddings).
 
 Azure Data Studio will be used to access and query the data.  To connect to a SQL Server using Azure Data Studio, review this [tutorial](https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/).  
 
@@ -54,49 +49,80 @@ Attached are screenshots to load the dataset correctly.
 We can run a few queries to inspect the data, and create the desired dataset.
 
 ```
-SELECT TOP (1000) [patient_id]
-      ,[patient_uid]
-      ,[PMID]
-      ,[file_path]
-      ,[title]
-      ,[patient]
-      ,[age]
-      ,[gender]
-      ,[similar_patients]
-      ,[relevant_articles]
-  FROM [test].[dbo].[PMC-Patients]
-  ```
+SELECT TOP (100) [patient_id]
+  ,[patient_uid]
+  ,[PMID]
+  ,[file_path]
+  ,[title]
+  ,[patient]
+  ,[age]
+  ,[gender]
+  ,[similar_patients]
+  ,[relevant_articles]
+FROM [test].[dbo].[PMC-Patients]
+```
+
+```
+SELECT count(*)
+FROM [test].[dbo].[PMC-Patients] WHERE patient LIKE '%covid-19%'
+```
 
 ![](/assets/images/2023-09/azstudio_query1.png){width=1742px}(/assets/images/2023-09/azstudio_query1.png)
 
-This query will return the top 10 patient profiles for both diabetic and non-diabetic patients:
 
-```
-SELECT TOP 10 * 
-  FROM [dbo].[PMC-Patients] where title in
-      (SELECT title from [dbo].[PMC-Patients] GROUP BY title HAVING COUNT(title)=1 
-        AND title LIKE '%diabetes%')
-UNION
-SELECT TOP 10 *
-  FROM [dbo].[PMC-Patients] where title in
-      (SELECT title from [dbo].[PMC-Patients] GROUP BY title HAVING COUNT(title)=1 
-        AND title NOT LIKE '%diabetes%');
-```
-
-The results can be exported from Azure Data Studio as a .csv.
+We will execute the first query to get the top 100 records.  The results can be exported from Azure Data Studio as a .csv.
 
 While this represents a bit of a longer approach to loading and manipulating the dataset, you may wish to explore other approaches:
 1. Load dataset into pandas dataframe
 2. Load dataset into a cloud database, such as Azure SQL Database.  Please keep in mind there are costs associated with running the database in the cloud, as well as querying costs.
 
+## Define class labels
+
+Since this is a binary classification task, we will label the dataset as:
+- patients with COVID-19 = '1'
+- patients without COVID-19 = '0'
+
+We set up our python code as follows:
+
+```python
+labels = []
+
+df['label'] = ''
+
+for index, row in df.iterrows():
+    if 'COVID-19' in row['patient']:
+        row['label'] = '1'
+    else:
+        row['label'] = '0' 
+
+    labels.append(row['label'])
+
+# convert list to array
+labels_arr = np.array(labels).astype(float)
+
+print(labels_arr)
+```
+
+Output array:
+
+```
+[1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 1. 0.
+ 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+ 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+ 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0.
+ 0. 0. 1. 0.]
+```
 
 ## Create corpus of documents
 
-Now that we have our desired dataset, we will create a corpus of documents.  We'll start by taking the first 5 rows of the dataset, which will each represent a PubMed article.  The selection will contain a mix of diabetic and non-diabetic patients.  From each document, a random number of words will be selected.  The result is:   
+Now that we have our labeled dataset, we will create a corpus of documents.  We'll take the first 3 sentences from each document (100 PubMed articles).  A sampling of the resulting corpus is below:
 
 
+<p>
+ <span style=“color:red”>red</span>['This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea We encountered several difficulties during physical therapy on the acute ward First, any change of position or deep breathing triggered coughing attacks that induced oxygen desaturation and dyspnea', <span style=“color:green”>green</span>'We describe the case of a 55-year-old male who presented to the emergency department via emergency medical services for the chief complaint of sudden onset shortness of breath that woke him from his sleep just prior to arrival He reported three days of non-radiating lumbar back pain and two episodes of non-bloody emesis leading up to this event His medical history included hypertension and type 2 diabetes mellitus', <span style=“color:blue”>blue</span>'A 20-year-old Caucasian male (1.75 m tall and 76 kg (BMI 24.8)), was admitted to the medical department for persistent hyperpyrexia, severe sore throat, dyspnea, and impaired consciousness with stupor Persistent symptoms started at home 4 days before and he assumed clarithromycin as empiric antibiotic therapy The physical examination showed jaundice, dry mucous membranes, pharyngeal hyperemia in the tonsillar region and soft palate, and left laterocervical lymphadenopathy', ...]
+</p>
 
-Next, we will need to define the class labels.  As this is a classification task, 
+
 
 
 ## Convert text to integers
