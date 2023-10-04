@@ -23,7 +23,7 @@ The goal of NLP is to enable computers to "understand" natural language in order
 
 I selected a dataset of ~167K PubMed patient summaries via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  To demonstrate a low-code approach, SQL Server and Azure Data Studio will be used.
 
-This dataset will be loaded into a SQL Server on a Mac.  For further instructions on how to set this up, check out this [tutorial](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac).  
+The data is loaded into SQL Server on a Mac.  For further instructions on how to set this up, check out this [tutorial](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac).  
 
 *Note*: this requires Docker to be run on your desktop.  
 
@@ -123,14 +123,14 @@ Now that we have our labeled dataset, we will create a corpus of documents.  We'
 </p>
 ```
 
-
+For this example, there are X total words in the corpus:
 
 
 ## Convert text to integers
 
-As explored in the previous tutorial, categorical variables (text) have to be converted to numerical variables in order to be processed by a computer.  Hence, the document texts have to be converted into ther integer equivalents.  One approach would be to one-hot encode each word, but this would result in a bunch of one-hot vectors that would demonstrate no meaning between the words, and be computationally expensive.  
+As explored in the previous tutorial, categorical variables (text) has to be converted into numerical variables.  One approach would be to one-hot encode each word, but this would result in a bunch of one-hot vectors that would demonstrate no meaning between the words, and be computationally expensive.  
 
-A better approach would be to integer encode each word.  To do this, we will use Keras (a deep learning framework)
+A better approach would be to tag each word as a unique integer.  To do this, we will use Keras (a deep learning framework)
 
 
 
