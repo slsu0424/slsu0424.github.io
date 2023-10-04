@@ -13,11 +13,11 @@ For our example, we will extract patient summaries (documents) from PubMed.  Fro
 
 Word Embeddings were a bit of a complex concept to grasp, until I got into the weeds of building one.  I've come to learn they are an important concept in deep learning, for the very reason that semantic meaning of words can be approximated mathematically.
 
-To best understand the intuition behind word embeddings, I highly recommend Colah's blog post of this topic.  In summary There are a number of techniques available to build a word embedding.  As a quick note, LLMs use word embeddings, but the technique used to build them are proprietary.  
+To best understand the intuition behind word embeddings, I highly recommend Colah's blog post of this topic.  In summary 
 
-To start, I wanted to backtrack the origins of LLMs, which are a type of neural network.  A neural network is a type of machine learning approach that attempts to mimic the way the brain works (biological neural network).  This approach has been shown to perform better on NLP tasks than previous methods.  For a great overview of NLP, check out this [guide](https://www.deeplearning.ai/resources/natural-language-processing).
+There are a number of techniques available to build a word embedding... 
 
-The goal of NLP is to enable computers to "understand" natural language in order to perform some task, such as sentiment analysis.  In order to do so, natural language (text format) has to be converted (encode) into a numerical format.
+As a quick note, LLMs use word embeddings, but the technique used to build them are proprietary.  
 
 ## Let's get data
 
