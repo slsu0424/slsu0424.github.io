@@ -37,7 +37,7 @@ Attached is a screenshot to modify the columns before importing the data.
 
 ![AzureDataStudio](/assets/images/2023-09/azstudio_setup3.png)
 
-We can run a few [queries](https://github.com/slsu0424/pmc-patients/blob/develop/pmc-patients.sql) to inspect the data, and create the desired dataset.
+We run the below [query](https://github.com/slsu0424/pmc-patients/blob/develop/pmc-patients.sql) to create the desired dataset.
 
 ```
 SELECT TOP (100) [patient_id]
@@ -96,7 +96,7 @@ Output:
 
 ## Create a corpus
 
-Now that we have our labeled dataset, the next step is to create a corpus.  We take the first 3 sentences from each document (100 PubMed articles).  The resulting corpus is a python dictionary; a sample of the output is below:
+Now that we have our labeled dataset, the next step is to create a corpus.  We take the first 3 sentences from each document.  The resulting corpus is a python dictionary; a sample of the output is below:
 
 ```
 ['This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea. We encountered several difficulties during physical therapy on the acute ward. First, any change of position or deep breathing triggered coughing attacks that induced oxygen desaturation and dyspnea.', 
@@ -104,7 +104,7 @@ Now that we have our labeled dataset, the next step is to create a corpus.  We t
 'A 20-year-old Caucasian male (1.75 m tall and 76 kg (BMI 24.8)), was admitted to the medical department for persistent hyperpyrexia, severe sore throat, dyspnea, and impaired consciousness with stupor. Persistent symptoms started at home 4 days before and he assumed clarithromycin as empiric antibiotic therapy. The physical examination showed jaundice, dry mucous membranes, pharyngeal hyperemia in the tonsillar region and soft palate, and left laterocervical lymphadenopathy.', ...]
 ```
 
-There are a total of X words in the corpus.
+For 100 documents, there are X total words in the corpus.
 
 
 ## Convert text to integers
@@ -156,7 +156,7 @@ The size of the vocabulary (1842) will be important as an input for the embeddin
 
 ## Pad the documents
 
-The next thing that Keras requires is that all documents must be of the same length.  As some of documents have more words than others, padding (zeroes) will be added to make the document lengths even.
+The next thing that Keras requires is that all documents must be of the same length.  First, we must find the maximum length of a document in the corpus.  Padding (zeroes) will be added to the shorter documents using the **pad_sequences** function:
 
 ```python
 # pad the docs with zeros
