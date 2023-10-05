@@ -121,9 +121,10 @@ Now that we have our labeled dataset, we will create a corpus of documents.  We'
 >Doc 1: 'This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea. We encountered several difficulties during physical therapy on the acute ward. First, any change of position or deep breathing triggered coughing attacks that induced oxygen desaturation and dyspnea.'  
 >
 >Doc 2: 'We describe the case of a 55-year-old male who presented to the emergency department via emergency medical services for the chief complaint of sudden onset shortness of breath that woke him from his sleep just prior to arrival. He reported three days of non-radiating lumbar back pain and two episodes of non-bloody emesis leading up to this event. His medical history included hypertension and type 2 diabetes mellitus.'   
-Doc 3: 'A 20-year-old Caucasian male (1.75 m tall and 76 kg (BMI 24.8)), was admitted to the medical department for persistent hyperpyrexia, severe sore throat, dyspnea, and impaired consciousness with stupor. Persistent symptoms started at home 4 days before and he assumed clarithromycin as empiric antibiotic therapy. The physical examination showed jaundice, dry mucous membranes, pharyngeal hyperemia in the tonsillar region and soft palate, and left laterocervical lymphadenopathy.'  
+>
+>Doc 3: 'A 20-year-old Caucasian male (1.75 m tall and 76 kg (BMI 24.8)), was admitted to the medical department for persistent hyperpyrexia, severe sore throat, dyspnea, and impaired consciousness with stupor. Persistent symptoms started at home 4 days before and he assumed clarithromycin as empiric antibiotic therapy. The physical examination showed jaundice, dry mucous membranes, pharyngeal hyperemia in the tonsillar region and soft palate, and left laterocervical lymphadenopathy.'  
 
-For this example, there are X words in the corpus.
+For this example, there are a total of X words in the corpus.
 
 
 ## Convert text to integers
