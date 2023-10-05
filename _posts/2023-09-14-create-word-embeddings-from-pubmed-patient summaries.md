@@ -27,13 +27,13 @@ The data is loaded into SQL Server on a Mac.  For further instructions on how to
 
 *Note*: this requires Docker to be run on your desktop.  
 
-SQL Server is started via the terminal giving the username and password (*Note*: Docker must be run on your desktop):
+SQL Server is started via the terminal giving the username and password (Docker must be run on your machine):
 
 ```
 $ mssql -u <sql server username> -p <sql server password>
 ```
 
-Azure Data Studio will be used to access and query the data.  To connect to a SQL Server using Azure Data Studio, review this [tutorial](https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/).  
+Azure Data Studio is used to access and query the data.  To connect to a SQL Server using Azure Data Studio, review this [tutorial](https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/).  
 
 Attached are screenshots to load the dataset correctly.
 
@@ -72,7 +72,7 @@ We will execute the first query to get the top 100 records.  The results can be 
 
 
 *Note:* While this represents a bit of a longer approach to loading and manipulating the dataset, you may wish to explore other approaches:
-1. Load dataset into pandas dataframe
+1. Load dataset into pandas dataframe.
 2. Load dataset into a cloud database, such as Azure SQL Database.  Please keep in mind there are costs associated with running the database in the cloud, as well as querying costs.
 
 ## Define class labels
@@ -80,8 +80,6 @@ We will execute the first query to get the top 100 records.  The results can be 
 Since this is a binary classification task, we will label the dataset as:
 - patients with COVID-19 = '1'
 - patients without COVID-19 = '0'
-
-We set up our python code as follows:
 
 ```python
 labels = []
@@ -132,7 +130,7 @@ As explored in the previous tutorial, categorical variables (text) must be conve
 
 A better approach would be to tag each word with a unique integer.  The nice thing about this approach is that the integer encoding for a specific word remains the same across all documents.  For example, ... 
 
-To do this, we use the Keras (a neural network library) **one_hot** function and the **Tokenizer()** API to handle multiple documents.  For a deeper understanding of how to implement these functions, see this [tutorial](https://machinelearningmastery.com/prepare-text-data-deep-learning-keras).
+To do this, Keras (a neural network library) provides a handy **Tokenizer()API** that can handle multiple documents.  For a deeper understanding of how to implement these functions, see this [tutorial](https://machinelearningmastery.com/prepare-text-data-deep-learning-keras).
 
 ```python
 encod_corp = []
