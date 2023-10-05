@@ -37,7 +37,7 @@ Attached is a screenshot to modify the columns before importing the data.
 
 ![AzureDataStudio](/assets/images/2023-09/azstudio_setup3.png)
 
-We run the below [query](https://github.com/slsu0424/pmc-patients/blob/develop/pmc-patients.sql) to create the desired dataset.
+We run the below [query](https://github.com/slsu0424/pmc-patients/blob/develop/pmc-patients.sql) to extract the first 100 records.
 
 ```
 SELECT TOP (100) [patient_id]
@@ -94,7 +94,7 @@ Output:
 
 ## Create a corpus
 
-Now that we have our labeled dataset, the next step is to create a corpus.  We take the first 3 sentences from each document.  The resulting corpus is a python dictionary; a sample of the first 3 documents is is below:
+Now that we have our labeled dataset, the next step is to create a corpus.  We take the first 3 sentences from each document.  The resulting corpus is a python dictionary; a sample of the first 3 documents is below:
 
 ```
 ['This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea. We encountered several difficulties during physical therapy on the acute ward.', 
@@ -173,13 +173,13 @@ To create the embedding, we create a Keras Sequential model.  By sequential, thi
 - output_dim: how many dimensions the word should be embedded into
 - input_length: maximum length of a document
 
-I like to thik of the output_dim as a form of compression.  That is, we want to compress each word such that its meaning can be represented by N number of dimensions. 
+I like to think of the output_dim as a form of compression.  That is, we want to compress each word such that its meaning can be represented by N number of dimensions. 
 
 To better understand the logic behind creating an embedding, I found these [articles](https://stats.stackexchange.com/questions/270546/how-does-keras-embedding-layer-work?rq=1) particulary helpful.  
 
 ```python
 # create keras model
-model = Sequential() # sequential = each layer has exactly one input tensor and one output tensor
+model = Sequential()
 
 # define embedding
 embedding_layer = Embedding(
@@ -190,7 +190,7 @@ embedding_layer = Embedding(
 # add layers
 model.add(embedding_layer) # layer 0
 model.add(Flatten()) # layer 1
-model.add(Dense(1, activation='sigmoid')) 
+model.add(Dense(1, activation='sigmoid'))  # layer 2
 
 # configure the learning process
 model.compile(
@@ -207,16 +207,23 @@ embedding_output = model.predict(pad_corp)
 
 The output of an embedding layer is a lookup table, which maps each word in the vocabulary to a set of random numbers in the dimension specified.  For example, since we set our output_dim = 2, we should expect to see each word mapped to 2 random numbers:
 
-## Limitations of one-hot encoding
 
-One challenge seen with the one-hot encoding approach is that there is no information about the words the vectors represent, or how the words relate to each other. That is, it tells us nothing about the similarities or differences between words.  If we were to graph each vector and calculate a similarity measure (e.g., cosine similarity) between them, we would see that there is 0 similiarity between any two vectors.  Refer to this [article](https://towardsdatascience.com/word-embeddings-intuition-behind-the-vector-representation-of-the-words-7e4eb2410bba) for a mathematical overview of the concept.
+When we look at a document, we will see that each embedding value is mapped to a word in that document:
+
+
+Let's see how this looks visually.  Since these embeddings are not trained, it would make sense that the words are fairly scattered:
+
+
+
+
+## Visualize trained embeddings
 
 
 ## Conclusion
 
 In this tutorial, we explored one-hot encoding, a very simple way to convert categorical variables for natural language processing tasks.  By taking a subset of PubMed abstracts, we were able to see how this approach becomes highly inefficient with larger vocabularies.  Some of these inefficiencies are due to a lack of understanding relationships between words, as well as a sparse and highly-dimensional feature space.
 
-There have been different techniques that have improved upon the limitations of one-hot encoding, and they have worked increasingly well with neural networks.  I will explore these in future posts.
+We can boost the performance of the training accuracy by adding in another layer, such as a convolution layer.  I will explore these in future posts.
 
 
 ## References
