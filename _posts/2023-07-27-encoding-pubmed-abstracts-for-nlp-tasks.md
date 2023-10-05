@@ -17,7 +17,7 @@ This article will begin a series of technical tutorials that are geared towards 
 
 To start, I wanted to backtrack the origins of LLMs, which are a type of neural network.  A neural network is a type of machine learning approach that attempts to mimic the way the brain works (biological neural network).  This approach has been shown to perform better on NLP tasks than previous methods.  For a great overview of NLP, check out this [guide](https://www.deeplearning.ai/resources/natural-language-processing).
 
-The goal of NLP is to enable computers to "understand" natural language in order to perform some task, such as sentiment analysis.  In order to do so, natural language (text format) has to be converted (encode) into a numerical format.
+The goal of NLP is to enable computers to "understand" natural language in order to perform some task, such as sentiment analysis.  In order to do so, natural language (text) has to be converted (encode) into a numerical format.
 
 There are numerous approaches to encode text, with more advanced approaches surfacing over the years.  I will start with one-hot encoding, as it is one of the most familiar data pre-processing techniques for ML.  However, we will also begin to see the limitations of such a technique through the example below. 
 
@@ -34,7 +34,7 @@ To put the above tutorial into practice, I thought I would give this a try with 
 
 ![PubMed](/assets/images/2023-07/PubMed.png)
 
-Each abstract represents a single document in the corpus.  Let's take the first 5 words from each abstract.  For simplicity purposes, we will ignore header terms such as 'Context', 'Introduction', 'Purpose'.
+Each abstract represents a single document in a corpus (collection of documents).  Let's take the first 5 words from each abstract.  For simplicity purposes, we will ignore header terms such as 'Context', 'Introduction', 'Purpose'.
 
 ![PubMed](/assets/images//2023-07/PubMed2.png)
 

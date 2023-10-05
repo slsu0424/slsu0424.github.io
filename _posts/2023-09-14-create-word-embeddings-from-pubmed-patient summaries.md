@@ -96,7 +96,7 @@ Output:
 
 ## Create a corpus
 
-Now that we have our labeled dataset, the next step is to create a corpus (collection of documents).  We take the first 3 sentences from each document (100 PubMed articles).  The resulting corpus is a python dictionary; a sample of the output is below:
+Now that we have our labeled dataset, the next step is to create a corpus.  We take the first 3 sentences from each document (100 PubMed articles).  The resulting corpus is a python dictionary; a sample of the output is below:
 
 Doc 1 = <span style="color: red;">red</span>  
 Doc 2 = <span style="color: blue;">blue</span>  
@@ -110,7 +110,7 @@ For this example, there are a total of X words in the corpus.
 
 ## Convert text to integers
 
-As explored in the previous tutorial, categorical variables (text) must be converted into numerical variables.  One approach would be one-hot encoding, but a better approach would be to tag each word with a unique integer.  The nice thing about this is that the integer encoding for a specific word remains the same across all documents.  For example, ... 
+As explored in the previous tutorial, categorical variables (text) must be converted into numerical variables.  One approach would be one-hot encoding, but there are limitations with this technique.  A better approach would be to tag each word with a unique integer.  The nice thing about this is that the integer encoding for a specific word remains the same across all documents.  For example, ... 
 
 To do this, Keras (a neural network library) provides a handy **Tokenizer() API** that can handle multiple documents.  For a deeper understanding of how to implement this, see this [tutorial](https://machinelearningmastery.com/prepare-text-data-deep-learning-keras).
 
