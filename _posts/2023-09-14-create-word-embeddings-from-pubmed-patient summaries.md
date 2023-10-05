@@ -7,7 +7,7 @@ image: assets/images/2023-09/OIP_resize.jpg
 ---
 Building upon the previous [tutorial](https://slsu0424.github.io/encoding-pubmed-abstracts-for-nlp-tasks/) on one-hot encoding, this tutorial will review the concept of word embeddings and apply this to real-life data.  
 
-For our example, we will extract patient summaries (documents) from PubMed.  From these patient summaries, we will label those that had COVID-19, and those that did not.  Portions of text from each document will be selected to create word embeddings.  These embeddings will be "trained" as part a neural network model to perform a classification task.  By training the word embeddings, the computer will learn if there are any meaningful relationships between the words in the text. 
+For our example, we will extract patient summaries (documents) from PubMed.  From these patient summaries, we will label those that had COVID-19, and those that did not.  Portions of text from each document will be selected to create word embeddings.  These embeddings will be trained as part a neural network model to perform a classification task.  By training the word embeddings, the computer will learn if there are any meaningful relationships between the words in the text. 
 
 ## A short intro to Word Embeddings
 
@@ -105,9 +105,9 @@ For 100 documents, there are X total words in the corpus.
 
 ## Convert text to integers
 
-As explored in the previous tutorial, categorical variables (text) must be converted into numerical variables.  One approach would be one-hot encoding, but there are limitations with this technique.  A better approach would be to tag each word with a unique integer.  The nice thing about this is that the integer encoding for a specific word remains the same across all documents.  For example, ... 
+One approach would be to one-hot encode each word, but there are limitations with this technique.  A better approach would be to tag each word with a unique integer.  The integer encoding for a specific word remains the same across all documents.  For example, ... 
 
-To do this, Keras (a neural network library) provides a handy **Tokenizer() API** that can handle multiple documents.  For a deeper understanding of how to implement this, see this [tutorial](https://machinelearningmastery.com/prepare-text-data-deep-learning-keras).
+To do this, Keras (neural network library) provides a handy **Tokenizer() API** that can handle multiple documents.  For a deeper understanding of how to implement this, see this [tutorial](https://machinelearningmastery.com/prepare-text-data-deep-learning-keras).
 
 ```python
 encod_corp = []
@@ -238,6 +238,7 @@ Let's see how this looks visually.  Since these embeddings are not trained, it w
 
 ## Visualize trained embeddings
 
+After adding the embedding layer, we have a N dimension.  We need to compress that into a 2D vector.  
 
 ## Conclusion
 
