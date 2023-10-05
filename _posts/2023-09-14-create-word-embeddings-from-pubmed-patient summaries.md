@@ -33,15 +33,8 @@ $ mssql -u <sql server username> -p <sql server password>
 
 Azure Data Studio is used to access and query the data.  To connect to a SQL Server using Azure Data Studio, review this [tutorial](https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/).  
 
-Attached are screenshots to load the dataset correctly.
+Attached is a screenshot to modify the columns before importing the data.
 
-1. Create a new connection:
-![AzureDataStudio](/assets/images/2023-09/azstudio_setup1.png)
-
-2. Use the Import flat file wizard:
-![AzureDataStudio](/assets/images/2023-09/azstudio_setup2.png)
-
-3. Modify the columns as follows:
 ![AzureDataStudio](/assets/images/2023-09/azstudio_setup3.png)
 
 We can run a few queries to inspect the data, and create the desired dataset.
@@ -176,6 +169,18 @@ The size of the vocabulary will be important as an input for the embedding layer
 
 The next thing that Keras requires is that all documents must be of the same length.  As some of documents have more words than others, padding (zeroes) will be added to make the document lengths even.
 
+```python
+maxlen=-1
+
+# find max number of words per doc
+for i, v in enumerate(corp):
+    #print(i,v)
+    print("Document", i+1, "words:", len(v.split()))
+    if (maxlen<len(v.split())):
+        maxlen=len(v.split())
+
+print("Max number of words in any doc is:", maxlen)
+```
 
 ## Create an embedding 
 
