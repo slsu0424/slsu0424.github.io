@@ -113,9 +113,9 @@ Output array:
  0. 0. 1. 0.]
 ```
 
-## Create corpus of documents
+## Create a corpus
 
-Now that we have our labeled dataset, we will create a corpus of documents.  We take the first 3 sentences from each document (100 PubMed articles).  The resulting corpus is a python dictionary, with a sample of the output.
+Now that we have our labeled dataset, the next step is to create a corpus (collection of documents).  We take the first 3 sentences from each document (100 PubMed articles).  The resulting corpus is a python dictionary; a sample of the output is shown below:
 
 Doc 1 = <span style="color: red;">red</span>  
 Doc 2 = <span style="color: blue;">blue</span>  
@@ -129,14 +129,41 @@ For this example, there are a total of X words in the corpus.
 
 ## Convert text to integers
 
-As explored in the previous tutorial, categorical variables (text) has to be converted into numerical variables.  One approach would be to one-hot encode each word, but this would result in a bunch of one-hot vectors that would demonstrate no meaning between the words, and be computationally expensive.  
+As explored in the previous tutorial, categorical variables (text) must be converted into numerical variables.  One approach would be to one-hot encode each word, but this would result in a bunch of one-hot vectors that would demonstrate no meaning between the words, and be computationally expensive.  
 
-A better approach would be to tag each word with a unique integer.  To do this, we will use Keras (a deep learning framework)
+A better approach would be to tag each word with a unique integer.  The nice thing about this approach is that the integer encoding for a specific word remains the same across all documents.  For example, ... 
 
+To do this, we use the Keras (a neural network library) **one_hot** function and the **Tokenizer()** API to handle multiple documents.  For a deeper understanding of how to implement these functions, see this [tutorial](https://machinelearningmastery.com/prepare-text-data-deep-learning-keras).
 
+```python
+encod_corp = []
 
+for i, v in enumerate(corp):
+    print("Document", i+1, "words:", v)
+
+# fit tokenizer on docs
+t = Tokenizer()
+t.fit_on_texts(corp) 
+encod_corp = t.texts_to_sequences(corp) # convert docs to num sequence
+
+# get unique words
+vocab = t.word_index
+
+print("vocab:")
+for i in vocab:
+    print(i)
+
+vocab_size = len(vocab) # input into embedding layer
+print('Vocab size = %s unique words' % vocab_size)
+
+```
+Vocab_size = 1842 unique words
+
+The size of the vocabulary will be important as an input for the embedding layer.
 
 ## Pad the documents
+
+The next thing that Keras requires is that all documents must be of the same length.  Naturally, some documents have more words than others.  We 
 
 ## Create an embedding 
 
@@ -147,27 +174,7 @@ A better approach would be to tag each word with a unique integer.  To do this, 
 
 
 
-## Let's convert a few PubMed abstracts to one-hot vectors
 
-There are 15 total words in the corpus:
-
->Doc 1: "The difference between actual and"  
-Doc 2: "Cardiovascular disease (CVD) is a"  
-Doc 3: "To evaluate awareness about cardiovascular"   
-
-Next, we need to find the unique words.  We have 14 unique words ('cardiovascular' is repeated twice):
-
->Doc 1: The(1) difference(2) between(3) actual(4) and(5)  
-Doc 2: Cardiovascular(6) disease(7) (CVD)(8) is(9) a(10)  
-Doc 3: To(11) evaluate(12) awareness(13) about(14) cardiovascular(6)  
-
-We represent these unique words in a vocabulary:
-    
->Vocabulary = {'The', 'difference', 'between', 'actual', 'and', ‘Cardiovascular', 'disease', '(CVD)', 'is', 'a', 'To', 'evaluate', 'awareness', 'about'}
-
-Each word is represented as a one-hot vector with a length equal to the size of the vocabulary (N = 14).  We will have something that looks like this:
-
-![encoding](/assets/images//2023-07/encoding.png)
 
 ## Limitations of one-hot encoding
 
