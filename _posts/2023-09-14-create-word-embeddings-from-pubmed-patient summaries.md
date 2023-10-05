@@ -53,7 +53,7 @@ SELECT TOP (100) [patient_id]
 FROM [test].[dbo].[PMC-Patients]
 ```
 
-Execute the first query to get the first 100 records.  The results are exported as a .csv.
+Execute the first query to get the first 100 records.  The results are exported as .csv.
 
 *Note:* While this represents a longer approach to loading and manipulating the dataset, you may wish to explore other approaches:
 1. Load dataset into pandas dataframe.
@@ -98,22 +98,13 @@ Output:
 
 Now that we have our labeled dataset, the next step is to create a corpus.  We take the first 3 sentences from each document (100 PubMed articles).  The resulting corpus is a python dictionary; a sample of the output is below:
 
-Doc 1 = <span style="color: red;">red</span>  
-Doc 2 = <span style="color: blue;">blue</span>  
-Doc 3 = <span style="color: green;">green</span>  
-
 ```
 ['This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea. We encountered several difficulties during physical therapy on the acute ward. First, any change of position or deep breathing triggered coughing attacks that induced oxygen desaturation and dyspnea.', 
 'We describe the case of a 55-year-old male who presented to the emergency department via emergency medical services for the chief complaint of sudden onset shortness of breath that woke him from his sleep just prior to arrival. He reported three days of non-radiating lumbar back pain and two episodes of non-bloody emesis leading up to this event. His medical history included hypertension and type 2 diabetes mellitus.', 
 'A 20-year-old Caucasian male (1.75 m tall and 76 kg (BMI 24.8)), was admitted to the medical department for persistent hyperpyrexia, severe sore throat, dyspnea, and impaired consciousness with stupor. Persistent symptoms started at home 4 days before and he assumed clarithromycin as empiric antibiotic therapy. The physical examination showed jaundice, dry mucous membranes, pharyngeal hyperemia in the tonsillar region and soft palate, and left laterocervical lymphadenopathy.', ...]
 ```
 
-
-
-
-[<span style="color: red;">'This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea. We encountered several difficulties during physical therapy on the acute ward.'</span>, <span style="color: blue;">'We describe the case of a 55-year-old male who presented to the emergency department via emergency medical services for the chief complaint of sudden onset shortness of breath that woke him from his sleep just prior to arrival. He reported three days of non-radiating lumbar back pain and two episodes of non-bloody emesis leading up to this event.'</span>, <span style="color: green;">'A 20-year-old Caucasian male (1.75 m tall and 76 kg (BMI 24.8)), was admitted to the medical department for persistent hyperpyrexia, severe sore throat, dyspnea, and impaired consciousness with stupor. Persistent symptoms started at home 4 days before and he assumed clarithromycin as empiric antibiotic therapy.'</span>, ...] 
-
-For this example, there are a total of X words in the corpus.
+There are a total of X words in the corpus.
 
 
 ## Convert text to integers
@@ -237,25 +228,3 @@ Data/SQL Server:
 + <https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main>
 + <https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac>
 + <https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/>
-
-
-+ <https://machinelearningmastery.com/prepare-text-data-deep-learning-keras>
-+ <https://machinelearningmastery.com/use-word-embedding-layers-deep-learning-keras>
-+ <https://medium.com/analytics-vidhya/understanding-embedding-layer-in-keras-bbe3ff1327ce>
-+ <https://medium.com/@naidubhavya06/detailed-explanation-of-keras-embedding-layer-afe4c3a596a>
-+ <https://towardsdatascience.com/neural-network-embeddings-explained-4d028e6f0526>
-
-Concepts:
-+ <http://colah.github.io/posts/2014-07-NLP-RNNs-Representations>
-+ <https://towardsdatascience.com/similarity-metrics-in-nlp-acc0777e234c>
-+ <https://stackoverflow.com/questions/42762849/keras-embedding-layers-how-do-they-work>
-+ <https://stackoverflow.com/questions/45649520/explain-with-example-how-embedding-layers-in-keras-work>
-+ <https://stats.stackexchange.com/questions/270546/how-does-keras-embedding-layer-work?rq=1>
-+ <https://github.com/keras-team/keras/issues/3110>
-
-Visualization:
-+ <https://towardsdatascience.com/how-to-visualize-text-embeddings-with-tensorboard-47e07e3a12fb?gi=c4a391cf1a39>
-+ <https://branyang.gitbooks.io/tfdocs/content/get_started/embedding_viz.html>
-+ <https://www.tensorflow.org/tensorboard/tensorboard_projector_plugin>
-+ <https://towardsdatascience.com/visualizing-your-embeddings-4c79332581a9>
-+ <https://medium.com/analytics-vidhya/how-to-visualize-word-embeddings-7ed0fb047089>
