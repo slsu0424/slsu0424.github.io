@@ -53,7 +53,7 @@ SELECT TOP (100) [patient_id]
 FROM [test].[dbo].[PMC-Patients]
 ```
 
-Execute the first query to get the top 100 records.  The results can be exported from Azure Data Studio as a .csv.
+Execute the first query to get the first 100 records.  The results are exported as a .csv.
 
 *Note:* While this represents a longer approach to loading and manipulating the dataset, you may wish to explore other approaches:
 1. Load dataset into pandas dataframe.
@@ -96,7 +96,7 @@ Output:
 
 ## Create a corpus
 
-Now that we have our labeled dataset, the next step is to create a corpus (collection of documents).  We take the first 3 sentences from each document (100 PubMed articles).  The resulting corpus is a python dictionary; a sample of the output is shown below:
+Now that we have our labeled dataset, the next step is to create a corpus (collection of documents).  We take the first 3 sentences from each document (100 PubMed articles).  The resulting corpus is a python dictionary; a sample of the output is below:
 
 Doc 1 = <span style="color: red;">red</span>  
 Doc 2 = <span style="color: blue;">blue</span>  
@@ -110,9 +110,7 @@ For this example, there are a total of X words in the corpus.
 
 ## Convert text to integers
 
-As explored in the previous tutorial, categorical variables (text) must be converted into numerical variables.  One approach would be to one-hot encode each word, but this would result in a bunch of one-hot vectors that would demonstrate no meaning between the words, and be computationally expensive.  
-
-A better approach would be to tag each word with a unique integer.  The nice thing about this approach is that the integer encoding for a specific word remains the same across all documents.  For example, ... 
+As explored in the previous tutorial, categorical variables (text) must be converted into numerical variables.  One approach would be one-hot encoding, but a better approach would be to tag each word with a unique integer.  The nice thing about this is that the integer encoding for a specific word remains the same across all documents.  For example, ... 
 
 To do this, Keras (a neural network library) provides a handy **Tokenizer() API** that can handle multiple documents.  For a deeper understanding of how to implement this, see this [tutorial](https://machinelearningmastery.com/prepare-text-data-deep-learning-keras).
 
@@ -165,19 +163,52 @@ The size of the vocabulary (1842) will be important as an input for the embeddin
 The next thing that Keras requires is that all documents must be of the same length.  As some of documents have more words than others, padding (zeroes) will be added to make the document lengths even.
 
 ```python
-maxlen=-1
+# pad the docs with zeros
+pad_corp=pad_sequences(encod_corp,maxlen=maxlen,padding='post',value=0.0)
 
-# find max number of words per doc
-for i, v in enumerate(corp):
-    #print(i,v)
-    print("Document", i+1, "words:", len(v.split()))
-    if (maxlen<len(v.split())):
-        maxlen=len(v.split())
+# show full numpy array
 
-print("Max number of words in any doc is:", maxlen)
+print(pad_corp)
 ```
 
 ## Create an embedding 
+
+To create the embedding, we create a Keras Sequential model.  By sequential, this means that each layer in the network has exactly one input (tensor) and one output (tensor).  To define the embedding, we need 3 inputs:
+
+- input_dim
+- output_dim
+- input_length
+
+```python
+# create keras model
+model = Sequential() # sequential = each layer has exactly one input tensor and one output tensor
+
+# define embedding
+embedding_layer = Embedding(
+                        input_dim=vocab_size+1, # vocab_size+1 - https://stackoverflow.com/questions/72263400/why-in-keras-embedding-layers-matrix-is-a-size-of-vocab-size-1
+                        output_dim=2, # defines input_shape for the next layer.  Next layer's input shape is (2,)).  Size of weights for embedding layer has to be [input_dim, output_dim], or [16,2]
+                        input_length=maxlen)
+
+# add layers
+model.add(embedding_layer) # layer 0
+model.add(Flatten()) # layer 1.  Flatten to one vector to send to dense output layer
+# layer 2  
+# Output layer of a Keras model is the final Dense layer, which provides the results of the neural network computations
+# Output layer makes a prediction 
+# https://machinelearningmastery.com/choose-an-activation-function-for-deep-learning/
+# https://saturncloud.io/blog/how-to-properly-size-the-keras-dense-output-layer-a-comprehensive-guide/
+model.add(Dense(1, activation='sigmoid')) 
+
+# configure the learning process
+model.compile(
+        optimizer='adam', # designed to converge faster and more efficiently than stochastic gradient descent (SGD)
+        loss='categorical_crossentropy', # measures model error - https://stackoverflow.com/questions/67227575/keras-categorical-cross-entropy
+        metrics=['accuracy'])
+
+# model prediction
+embedding_output = model.predict(pad_corp)
+
+```
 
 ## Visualize intial embeddings
 
