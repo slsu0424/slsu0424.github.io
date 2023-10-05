@@ -27,7 +27,7 @@ The data is loaded into SQL Server on a Mac.  For further instructions on how to
 
 *Note*: this requires Docker to be run on your desktop.  
 
-SQL server can then be started via the terminal giving the username and password:
+SQL Server is started via the terminal giving the username and password (*Note*: Docker must be run on your desktop):
 
 ```
 $ mssql -u <sql server username> -p <sql server password>
@@ -67,12 +67,11 @@ SELECT count(*)
 FROM [test].[dbo].[PMC-Patients] WHERE patient LIKE '%covid-19%'
 ```
 
-![](/assets/images/2023-09/azstudio_query1.png){width=1742px}(/assets/images/2023-09/azstudio_query1.png)
-
-
 We will execute the first query to get the top 100 records.  The results can be exported from Azure Data Studio as a .csv.
 
-While this represents a bit of a longer approach to loading and manipulating the dataset, you may wish to explore other approaches:
+
+
+*Note:* While this represents a bit of a longer approach to loading and manipulating the dataset, you may wish to explore other approaches:
 1. Load dataset into pandas dataframe
 2. Load dataset into a cloud database, such as Azure SQL Database.  Please keep in mind there are costs associated with running the database in the cloud, as well as querying costs.
 
@@ -180,7 +179,8 @@ Vocab size = 1842 unique words
 
 ## Pad the documents
 
-The next thing that Keras requires is that all documents must be of the same length.  As some of documents have more words than others, padding will be used to add zeroes .  We 
+The next thing that Keras requires is that all documents must be of the same length.  As some of documents have more words than others, padding (zeroes) will be added to make the document lenghts even.
+
 
 ## Create an embedding 
 
@@ -246,10 +246,3 @@ Visualization:
 + <https://www.tensorflow.org/tensorboard/tensorboard_projector_plugin>
 + <https://towardsdatascience.com/visualizing-your-embeddings-4c79332581a9>
 + <https://medium.com/analytics-vidhya/how-to-visualize-word-embeddings-7ed0fb047089>
-
-
-## Full HTML
-
-Perhaps the best part of Markdown is that you're never limited to just Markdown. You can write HTML directly in the Markdown editor and it will just work as HTML usually does. No limits! Here's a standard YouTube embed code as an example:
-
-<p><iframe style="width:100%;" height="315" src="https://www.youtube.com/embed/Cniqsc9QfDo?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></p>
