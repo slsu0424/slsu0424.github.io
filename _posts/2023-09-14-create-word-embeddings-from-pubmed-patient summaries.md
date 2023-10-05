@@ -7,7 +7,7 @@ image: assets/images/2023-09/OIP_resize.jpg
 ---
 Building upon the previous [tutorial](https://slsu0424.github.io/encoding-pubmed-abstracts-for-nlp-tasks/) on one-hot encoding, this tutorial will review the concept of word embeddings and apply this to real-life data.  
 
-For our example, we will extract patient summaries (documents) from PubMed.  From these patient summaries, we will label those that had COVID-19, and those that did not.  Portions of text from each document will be selected to create word embeddings.  These embeddings will be trained as part a neural network model to perform a classification task.  By training the word embeddings, the computer will learn if there are any meaningful relationships between the words in the text. 
+For our example, we will extract patient summaries from PubMed.  From these patient summaries, we will label those that had COVID-19, and those that did not.  Portions of text from each document will be selected to create word embeddings.  These embeddings will be trained as part a neural network model to perform a classification task.  By training the word embeddings, the computer will learn if there are any meaningful relationships between the words in the text. 
 
 ## A short intro to Word Embeddings
 
@@ -23,7 +23,7 @@ As a quick note, LLMs use word embeddings, but the technique used to build them 
 
 I selected a dataset of ~167K PubMed patient summaries via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  To demonstrate a low-code approach, SQL Server and Azure Data Studio will be used.
 
-The data is loaded() into [SQL Server on a Mac](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac).  SQL Server is started via the terminal giving the username and password:
+The data is loaded into [SQL Server on a Mac](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac).  Start SQL Server via the terminal, giving the username and password:
 
 ```
 $ mssql -u <sql server username> -p <sql server password>
@@ -92,7 +92,7 @@ Output:
 
 ## Create a corpus
 
-Now that we have our labeled dataset, the next step is to create a corpus.  We take the first 3 sentences from each document.  A sample of the first 3 documents in the corpus is below:
+Now that we have our labeled dataset, the next step is to create a corpus.  We take the first 3 sentences from each record (document).  A sample of the first 3 documents in the corpus is below:
 
 ```
 ['This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea. We encountered several difficulties during physical therapy on the acute ward.', 
