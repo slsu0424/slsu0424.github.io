@@ -37,7 +37,7 @@ Attached is a screenshot to modify the columns before importing the data.
 
 ![AzureDataStudio](/assets/images/2023-09/azstudio_setup3.png)
 
-We can run a few queries to inspect the data, and create the desired dataset.
+We can run a few [queries](path%20with%20spaces/query_pmc-patients.sql) to inspect the data, and create the desired dataset.
 
 ```
 SELECT TOP (100) [patient_id]
@@ -53,12 +53,7 @@ SELECT TOP (100) [patient_id]
 FROM [test].[dbo].[PMC-Patients]
 ```
 
-```
-SELECT count(*)
-FROM [test].[dbo].[PMC-Patients] WHERE patient LIKE '%covid-19%'
-```
-
-We will execute the first query to get the top 100 records.  The results can be exported from Azure Data Studio as a .csv.
+Execute the first query to get the top 100 records.  The results can be exported from Azure Data Studio as a .csv.
 
 *Note:* While this represents a bit of a longer approach to loading and manipulating the dataset, you may wish to explore other approaches:
 1. Load dataset into pandas dataframe.
@@ -163,7 +158,7 @@ in
 Vocab size = 1842 unique words
 
 ``` 
-The size of the vocabulary will be important as an input for the embedding layer.
+The size of the vocabulary (1842) will be important as an input for the embedding layer.
 
 ## Pad the documents
 
