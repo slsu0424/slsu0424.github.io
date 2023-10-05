@@ -110,9 +110,7 @@ For this example, there are a total of X words in the corpus.
 
 ## Convert text to integers
 
-As explored in the previous tutorial, categorical variables (text) must be converted into numerical variables.  One approach would be to one-hot encode each word, but this would result in a bunch of one-hot vectors that would demonstrate no meaning between the words, and be computationally expensive.  
-
-A better approach would be to tag each word with a unique integer.  The nice thing about this approach is that the integer encoding for a specific word remains the same across all documents.  For example, ... 
+As explored in the previous tutorial, categorical variables (text) must be converted into numerical variables.  One approach would be one-hot encoding, but a better approach would be to tag each word with a unique integer.  The nice thing about this is that the integer encoding for a specific word remains the same across all documents.  For example, ... 
 
 To do this, Keras (a neural network library) provides a handy **Tokenizer() API** that can handle multiple documents.  For a deeper understanding of how to implement this, see this [tutorial](https://machinelearningmastery.com/prepare-text-data-deep-learning-keras).
 
@@ -175,7 +173,42 @@ print(pad_corp)
 
 ## Create an embedding 
 
-To create the embedding, Keras has an embedding layer
+To create the embedding, we create a Keras Sequential model.  By sequential, this means that each layer in the network has exactly one input (tensor) and one output (tensor).  To define the embedding, we need 3 inputs:
+
+- input_dim
+- output_dim
+- input_length
+
+```python
+# create keras model
+model = Sequential() # sequential = each layer has exactly one input tensor and one output tensor
+
+# define embedding
+embedding_layer = Embedding(
+                        input_dim=vocab_size+1, # vocab_size+1 - https://stackoverflow.com/questions/72263400/why-in-keras-embedding-layers-matrix-is-a-size-of-vocab-size-1
+                        output_dim=2, # defines input_shape for the next layer.  Next layer's input shape is (2,)).  Size of weights for embedding layer has to be [input_dim, output_dim], or [16,2]
+                        input_length=maxlen)
+
+# add layers
+model.add(embedding_layer) # layer 0
+model.add(Flatten()) # layer 1.  Flatten to one vector to send to dense output layer
+# layer 2  
+# Output layer of a Keras model is the final Dense layer, which provides the results of the neural network computations
+# Output layer makes a prediction 
+# https://machinelearningmastery.com/choose-an-activation-function-for-deep-learning/
+# https://saturncloud.io/blog/how-to-properly-size-the-keras-dense-output-layer-a-comprehensive-guide/
+model.add(Dense(1, activation='sigmoid')) 
+
+# configure the learning process
+model.compile(
+        optimizer='adam', # designed to converge faster and more efficiently than stochastic gradient descent (SGD)
+        loss='categorical_crossentropy', # measures model error - https://stackoverflow.com/questions/67227575/keras-categorical-cross-entropy
+        metrics=['accuracy'])
+
+# model prediction
+embedding_output = model.predict(pad_corp)
+
+```
 
 ## Visualize intial embeddings
 
