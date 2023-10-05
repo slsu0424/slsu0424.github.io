@@ -9,7 +9,7 @@ Building upon the previous [tutorial](https://slsu0424.github.io/encoding-pubmed
 
 For our example, we will extract patient summaries (documents) from PubMed.  From these patient summaries, we will label those that had COVID-19, and those that did not.  Portions of text from each document will be selected to create word embeddings.  These embeddings will be "trained" as part a neural network model to perform a binary classification task (COVID-19 vs. non-COVID-19).  By training the word embeddings, the computer will learn if there are any meaningful relationships between the words in the text. 
 
-## A primer - Word Embeddings
+## A short intro to Word Embeddings
 
 Word Embeddings were a bit of a complex concept to grasp, until I got into the weeds of building one.  I've come to learn they are an important concept in deep learning, for the very reason that semantic meaning of words can be approximated mathematically.
 
@@ -157,13 +157,13 @@ vocab_size = len(vocab) # input into embedding layer
 print('Vocab size = %s unique words' % vocab_size)
 
 ```
-Vocab_size = 1842 unique words
+vocab_size = 1842 unique words
 
 The size of the vocabulary will be important as an input for the embedding layer.
 
 ## Pad the documents
 
-The next thing that Keras requires is that all documents must be of the same length.  Naturally, some documents have more words than others.  We 
+The next thing that Keras requires is that all documents must be of the same length.  As some of documents have more words than others, padding will be used to add zeroes .  We 
 
 ## Create an embedding 
 
