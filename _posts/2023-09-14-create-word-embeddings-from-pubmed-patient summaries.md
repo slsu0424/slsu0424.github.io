@@ -11,7 +11,9 @@ For our example, we will extract patient summaries (documents) from PubMed.  Fro
 
 ## A short intro to Word Embeddings
 
-Word Embeddings were a bit of a complex concept to grasp, until I got into the weeds of building one.  I've come to learn they are an important concept in deep learning, for the very reason that semantic meaning of words can be approximated mathematically.  To best understand the intuition behind word embeddings, I highly recommend Colah's blog post of this topic...
+Word Embeddings were a bit of a complex concept to grasp, until I got into the weeds of building one.  I've come to learn they are an important concept in deep learning, for the very reason that semantic meaning of words can be approximated mathematically.  
+
+To best understand the intuition behind word embeddings, I highly recommend Colah's [post](http://colah.github.io/posts/2014-07-NLP-RNNs-Representations) on this topic.
 
 There are a number of techniques available to build a word embedding... 
 
@@ -50,8 +52,6 @@ SELECT TOP (100) [patient_id]
   ,[relevant_articles]
 FROM [test].[dbo].[PMC-Patients]
 ```
-
-Execute the first query to get the first 100 records.  The results are exported as .csv.
 
 *Note:* While this represents a longer approach to loading and manipulating the dataset, you may wish to explore other approaches:
 1. Load dataset into pandas dataframe.
@@ -154,7 +154,7 @@ The size of the vocabulary (1842) will be important as an input for the embeddin
 
 ## Pad the documents
 
-The next thing that Keras requires is that all documents must be of the same length.  First, we must find the maximum length of a document in the corpus.  Padding (zeroes) will be added to the shorter documents using the **pad_sequences** function:
+The next thing that Keras requires is that all documents must be of the same length.  We must find the maximum length of a document, and add padding (zeroes) to the shorter documents.  This is accomplished using the **pad_sequences** function:
 
 ```python
 # pad the docs with zeros
