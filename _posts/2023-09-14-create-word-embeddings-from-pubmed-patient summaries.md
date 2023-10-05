@@ -37,7 +37,7 @@ Attached is a screenshot to modify the columns before importing the data.
 
 ![AzureDataStudio](/assets/images/2023-09/azstudio_setup3.png)
 
-We can run a few queries to inspect the data, and create the desired dataset.
+We can run a few [queries](https://github.com/slsu0424/pmc-patients/blob/develop/pmc-patients.sql) to inspect the data, and create the desired dataset.
 
 ```
 SELECT TOP (100) [patient_id]
@@ -53,14 +53,9 @@ SELECT TOP (100) [patient_id]
 FROM [test].[dbo].[PMC-Patients]
 ```
 
-```
-SELECT count(*)
-FROM [test].[dbo].[PMC-Patients] WHERE patient LIKE '%covid-19%'
-```
+Execute the first query to get the top 100 records.  The results can be exported from Azure Data Studio as a .csv.
 
-We will execute the first query to get the top 100 records.  The results can be exported from Azure Data Studio as a .csv.
-
-*Note:* While this represents a bit of a longer approach to loading and manipulating the dataset, you may wish to explore other approaches:
+*Note:* While this represents a longer approach to loading and manipulating the dataset, you may wish to explore other approaches:
 1. Load dataset into pandas dataframe.
 2. Load dataset into a cloud database, such as Azure SQL Database.  Please keep in mind there are costs associated with running the database in the cloud, as well as querying costs.
 
@@ -108,7 +103,7 @@ Doc 2 = <span style="color: blue;">blue</span>
 Doc 3 = <span style="color: green;">green</span>  
 
 
-[<span style="color: red;">'This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea. We encountered several difficulties during physical therapy on the acute ward. First, any change of position or deep breathing triggered coughing attacks that induced oxygen desaturation and dyspnea.'</span>, <span style="color: blue;">'We describe the case of a 55-year-old male who presented to the emergency department via emergency medical services for the chief complaint of sudden onset shortness of breath that woke him from his sleep just prior to arrival. He reported three days of non-radiating lumbar back pain and two episodes of non-bloody emesis leading up to this event. His medical history included hypertension and type 2 diabetes mellitus.'</span>, <span style="color: green;">'A 20-year-old Caucasian male (1.75 m tall and 76 kg (BMI 24.8)), was admitted to the medical department for persistent hyperpyrexia, severe sore throat, dyspnea, and impaired consciousness with stupor. Persistent symptoms started at home 4 days before and he assumed clarithromycin as empiric antibiotic therapy. The physical examination showed jaundice, dry mucous membranes, pharyngeal hyperemia in the tonsillar region and soft palate, and left laterocervical lymphadenopathy.'</span>, ...] 
+[<span style="color: red;">'This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea. We encountered several difficulties during physical therapy on the acute ward.'</span>, <span style="color: blue;">'We describe the case of a 55-year-old male who presented to the emergency department via emergency medical services for the chief complaint of sudden onset shortness of breath that woke him from his sleep just prior to arrival. He reported three days of non-radiating lumbar back pain and two episodes of non-bloody emesis leading up to this event.'</span>, <span style="color: green;">'A 20-year-old Caucasian male (1.75 m tall and 76 kg (BMI 24.8)), was admitted to the medical department for persistent hyperpyrexia, severe sore throat, dyspnea, and impaired consciousness with stupor. Persistent symptoms started at home 4 days before and he assumed clarithromycin as empiric antibiotic therapy.'</span>, ...] 
 
 For this example, there are a total of X words in the corpus.
 
@@ -163,7 +158,7 @@ in
 Vocab size = 1842 unique words
 
 ``` 
-The size of the vocabulary will be important as an input for the embedding layer.
+The size of the vocabulary (1842) will be important as an input for the embedding layer.
 
 ## Pad the documents
 
