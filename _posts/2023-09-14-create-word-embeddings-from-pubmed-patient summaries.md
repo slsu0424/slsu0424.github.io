@@ -172,9 +172,9 @@ print(pad_corp)
 
 To create the embedding, we create a Keras Sequential model.  By sequential, this means that each layer in the network has exactly one input (tensor) and one output (tensor).  To define the embedding, we need 3 inputs:
 
-- input_dim
-- output_dim
-- input_length
+- input_dim: size of vocabulary
+- output_dim: how many dimensions the words should be embedded into?
+- input_length: maximum length of a document
 
 ```python
 # create keras model
