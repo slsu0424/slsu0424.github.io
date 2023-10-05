@@ -103,7 +103,7 @@ labels_arr = np.array(labels).astype(float)
 print(labels_arr)
 ```
 
-Output array:
+Output:
 
 ```
 [1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 1. 0.
@@ -138,8 +138,8 @@ To do this, we use the Keras (a neural network library) **one_hot** function and
 ```python
 encod_corp = []
 
-for i, v in enumerate(corp):
-    print("Document", i+1, "words:", v)
+#for i, v in enumerate(corp):
+#    print("Document", i+1, "words:", v)
 
 # fit tokenizer on docs
 t = Tokenizer()
@@ -157,8 +157,26 @@ vocab_size = len(vocab) # input into embedding layer
 print('Vocab size = %s unique words' % vocab_size)
 
 ```
-vocab_size = 1842 unique words
 
+Output:
+
+```
+vocab:
+a
+and
+the
+of
+with
+was
+to
+year
+old
+in
+...
+
+Vocab size = 1842 unique words
+
+```
 The size of the vocabulary will be important as an input for the embedding layer.
 
 ## Pad the documents
