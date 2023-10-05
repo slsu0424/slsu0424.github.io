@@ -53,7 +53,7 @@ SELECT TOP (100) [patient_id]
 FROM [test].[dbo].[PMC-Patients]
 ```
 
-Execute the first query to get the top 100 records.  The results can be exported from Azure Data Studio as a .csv.
+Execute the first query to get the top 100 records.  The results are exported as a .csv.
 
 *Note:* While this represents a longer approach to loading and manipulating the dataset, you may wish to explore other approaches:
 1. Load dataset into pandas dataframe.
@@ -165,19 +165,17 @@ The size of the vocabulary (1842) will be important as an input for the embeddin
 The next thing that Keras requires is that all documents must be of the same length.  As some of documents have more words than others, padding (zeroes) will be added to make the document lengths even.
 
 ```python
-maxlen=-1
+# pad the docs with zeros
+pad_corp=pad_sequences(encod_corp,maxlen=maxlen,padding='post',value=0.0)
 
-# find max number of words per doc
-for i, v in enumerate(corp):
-    #print(i,v)
-    print("Document", i+1, "words:", len(v.split()))
-    if (maxlen<len(v.split())):
-        maxlen=len(v.split())
+# show full numpy array
 
-print("Max number of words in any doc is:", maxlen)
+print(pad_corp)
 ```
 
 ## Create an embedding 
+
+To create the embedding, Keras has an embedding layer
 
 ## Visualize intial embeddings
 
