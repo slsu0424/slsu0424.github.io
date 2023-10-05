@@ -102,6 +102,14 @@ Doc 1 = <span style="color: red;">red</span>
 Doc 2 = <span style="color: blue;">blue</span>  
 Doc 3 = <span style="color: green;">green</span>  
 
+```
+['This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea. We encountered several difficulties during physical therapy on the acute ward. First, any change of position or deep breathing triggered coughing attacks that induced oxygen desaturation and dyspnea.', 
+'We describe the case of a 55-year-old male who presented to the emergency department via emergency medical services for the chief complaint of sudden onset shortness of breath that woke him from his sleep just prior to arrival. He reported three days of non-radiating lumbar back pain and two episodes of non-bloody emesis leading up to this event. His medical history included hypertension and type 2 diabetes mellitus.', 
+'A 20-year-old Caucasian male (1.75 m tall and 76 kg (BMI 24.8)), was admitted to the medical department for persistent hyperpyrexia, severe sore throat, dyspnea, and impaired consciousness with stupor. Persistent symptoms started at home 4 days before and he assumed clarithromycin as empiric antibiotic therapy. The physical examination showed jaundice, dry mucous membranes, pharyngeal hyperemia in the tonsillar region and soft palate, and left laterocervical lymphadenopathy.', ...]
+```
+
+
+
 
 [<span style="color: red;">'This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea. We encountered several difficulties during physical therapy on the acute ward.'</span>, <span style="color: blue;">'We describe the case of a 55-year-old male who presented to the emergency department via emergency medical services for the chief complaint of sudden onset shortness of breath that woke him from his sleep just prior to arrival. He reported three days of non-radiating lumbar back pain and two episodes of non-bloody emesis leading up to this event.'</span>, <span style="color: green;">'A 20-year-old Caucasian male (1.75 m tall and 76 kg (BMI 24.8)), was admitted to the medical department for persistent hyperpyrexia, severe sore throat, dyspnea, and impaired consciousness with stupor. Persistent symptoms started at home 4 days before and he assumed clarithromycin as empiric antibiotic therapy.'</span>, ...] 
 
