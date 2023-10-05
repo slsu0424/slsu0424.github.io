@@ -38,7 +38,7 @@ Each abstract represents a single document in the corpus.  Let's take the first 
 
 ![PubMed](/assets/images//2023-07/PubMed2.png)
 
-There are 15 total words in the corpus:
+There are 15 words in the corpus:
 
 >Doc 1: "The difference between actual and"  
 Doc 2: "Cardiovascular disease (CVD) is a"  
