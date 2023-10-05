@@ -173,6 +173,8 @@ To create the embedding, we create a Keras Sequential model.  By sequential, thi
 - output_dim: how many dimensions the word should be embedded into
 - input_length: maximum length of a document
 
+I like to thik of the output_dim as a form of compression.  That is,  number by which you will compress a word into.  A word may have many different features, but we want to compres this into a 
+
 To better understand the logic behind creating an embedding, I found these [articles](https://stats.stackexchange.com/questions/270546/how-does-keras-embedding-layer-work?rq=1) particulary useful.  
 
 ```python
