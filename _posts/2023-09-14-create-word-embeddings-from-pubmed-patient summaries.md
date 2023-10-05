@@ -152,29 +152,7 @@ The size of the vocabulary (1842) will be important as an input for the embeddin
 
 ## Pad the documents
 
-Keras requires is that all documents must be of the same length.  We must find the maximum length of a document, and add padding (zeroes) to the shorter documents.  This is accomplished using the **pad_sequences** function:
-
-```python
-maxlen=-1
-
-# find max number of words per doc
-for i, v in enumerate(corp):
-    #print(i,v)
-    print("Document", i+1, "words:", len(v.split()))
-    if (maxlen<len(v.split())):
-        maxlen=len(v.split())
-
-print("Max number of words in any doc is:", maxlen)
-```
-```
-Document 1 words: 47
-Document 2 words: 68
-Document 3 words: 67
-...
-
-Max number of words in any doc is: 145
-
-```
+Keras requires is that all documents must be of the same length.  We must find the maximum length of a document, which we find to be 145 words.  Padding (zeroes) will be added to the shorter documents using the **pad_sequences** function:
 
 ```python
 # pad the docs with zeros
@@ -220,7 +198,6 @@ model.compile(
 
 # model prediction
 embedding_output = model.predict(pad_corp)
-
 ```
 
 ## Visualize intial embeddings
