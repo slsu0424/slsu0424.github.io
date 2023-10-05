@@ -115,7 +115,7 @@ Output array:
 
 ## Create a corpus
 
-Now that we have our labeled dataset, the next step is to create a corpus (collection of documents).  We take the first 3 sentences from each document (100 PubMed articles).  The resulting corpus is a python dictionary, with a sample of the output.
+Now that we have our labeled dataset, the next step is to create a corpus (collection of documents).  We take the first 3 sentences from each document (100 PubMed articles).  The resulting corpus is a python dictionary; a sample of the output is shown below:
 
 Doc 1 = <span style="color: red;">red</span>  
 Doc 2 = <span style="color: blue;">blue</span>  
@@ -131,9 +131,30 @@ For this example, there are a total of X words in the corpus.
 
 As explored in the previous tutorial, categorical variables (text) must be converted into numerical variables.  One approach would be to one-hot encode each word, but this would result in a bunch of one-hot vectors that would demonstrate no meaning between the words, and be computationally expensive.  
 
-A better approach would be to tag each word with a unique integer.  To do this, we will use Keras (a deep learning framework)
+A better approach would be to tag each word with a unique integer.  To do this, we use the Keras (a deep learning framework) **one_hot** function and the **Tokenizer()** API to handle multiple documents.  For a deeper understanding of how to implement these functions, see this [tutorial](https://machinelearningmastery.com/prepare-text-data-deep-learning-keras) .
 
+```python
+encod_corp = []
 
+for i, v in enumerate(corp):
+    print("Document", i+1, "words:", v)
+
+# fit tokenizer on docs
+t = Tokenizer()
+t.fit_on_texts(corp) 
+encod_corp = t.texts_to_sequences(corp) # convert docs to num sequence
+
+# get unique words
+vocab = t.word_index
+
+print("vocab:")
+for i in vocab:
+    print(i)
+
+vocab_size = len(vocab) # input into embedding layer
+print('Vocab size = %s unique words' % vocab_size)
+
+```
 
 
 ## Pad the documents
