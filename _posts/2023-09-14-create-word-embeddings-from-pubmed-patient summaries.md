@@ -53,7 +53,7 @@ SELECT TOP (100) [patient_id]
 FROM [test].[dbo].[PMC-Patients]
 ```
 
-Execute the first query to get the top 100 records.  The results are exported as a .csv.
+Execute the first query to get the first 100 records.  The results are exported as a .csv.
 
 *Note:* While this represents a longer approach to loading and manipulating the dataset, you may wish to explore other approaches:
 1. Load dataset into pandas dataframe.
@@ -96,7 +96,7 @@ Output:
 
 ## Create a corpus
 
-Now that we have our labeled dataset, the next step is to create a corpus (collection of documents).  We take the first 3 sentences from each document (100 PubMed articles).  The resulting corpus is a python dictionary; a sample of the output is shown below:
+Now that we have our labeled dataset, the next step is to create a corpus (collection of documents).  We take the first 3 sentences from each document (100 PubMed articles).  The resulting corpus is a python dictionary; a sample of the output is below:
 
 Doc 1 = <span style="color: red;">red</span>  
 Doc 2 = <span style="color: blue;">blue</span>  
