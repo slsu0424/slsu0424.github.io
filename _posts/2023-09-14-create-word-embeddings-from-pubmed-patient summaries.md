@@ -37,7 +37,7 @@ Attached is a screenshot to modify the columns before importing the data.
 
 ![AzureDataStudio](/assets/images/2023-09/azstudio_setup3.png)
 
-We can run a few [queries](path%20with%20spaces/query_pmc-patients.sql) to inspect the data, and create the desired dataset.
+We can run a few [queries](query_pmc-patients.sql) to inspect the data, and create the desired dataset.
 
 ```
 SELECT TOP (100) [patient_id]
