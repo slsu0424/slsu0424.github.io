@@ -9,7 +9,7 @@ Building upon the previous [tutorial](https://slsu0424.github.io/encoding-pubmed
 
 For our example, we will extract patient summaries (documents) from PubMed.  From these patient summaries, we will label those that had COVID-19, and those that did not.  Portions of text from each document will be selected to create word embeddings.  These embeddings will be "trained" as part a neural network model to perform a binary classification task (COVID-19 vs. non-COVID-19).  By training the word embeddings, the computer will learn if there are any meaningful relationships between the words in the text. 
 
-## A primer - Word Embeddings
+## A short intro to Word Embeddings
 
 Word Embeddings were a bit of a complex concept to grasp, until I got into the weeds of building one.  I've come to learn they are an important concept in deep learning, for the very reason that semantic meaning of words can be approximated mathematically.
 
@@ -27,13 +27,13 @@ The data is loaded into SQL Server on a Mac.  For further instructions on how to
 
 *Note*: this requires Docker to be run on your desktop.  
 
-SQL server can then be started via the terminal giving the username and password:
+SQL Server is started via the terminal giving the username and password (Docker must be run on your machine):
 
 ```
 $ mssql -u <sql server username> -p <sql server password>
 ```
 
-Azure Data Studio will be used to access and query the data.  To connect to a SQL Server using Azure Data Studio, review this [tutorial](https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/).  
+Azure Data Studio is used to access and query the data.  To connect to a SQL Server using Azure Data Studio, review this [tutorial](https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/).  
 
 Attached are screenshots to load the dataset correctly.
 
@@ -67,13 +67,12 @@ SELECT count(*)
 FROM [test].[dbo].[PMC-Patients] WHERE patient LIKE '%covid-19%'
 ```
 
-![](/assets/images/2023-09/azstudio_query1.png){width=1742px}(/assets/images/2023-09/azstudio_query1.png)
-
-
 We will execute the first query to get the top 100 records.  The results can be exported from Azure Data Studio as a .csv.
 
-While this represents a bit of a longer approach to loading and manipulating the dataset, you may wish to explore other approaches:
-1. Load dataset into pandas dataframe
+
+
+*Note:* While this represents a bit of a longer approach to loading and manipulating the dataset, you may wish to explore other approaches:
+1. Load dataset into pandas dataframe.
 2. Load dataset into a cloud database, such as Azure SQL Database.  Please keep in mind there are costs associated with running the database in the cloud, as well as querying costs.
 
 ## Define class labels
@@ -81,8 +80,6 @@ While this represents a bit of a longer approach to loading and manipulating the
 Since this is a binary classification task, we will label the dataset as:
 - patients with COVID-19 = '1'
 - patients without COVID-19 = '0'
-
-We set up our python code as follows:
 
 ```python
 labels = []
@@ -103,7 +100,7 @@ labels_arr = np.array(labels).astype(float)
 print(labels_arr)
 ```
 
-Output array:
+Output:
 
 ```
 [1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 1. 0.
@@ -133,13 +130,13 @@ As explored in the previous tutorial, categorical variables (text) must be conve
 
 A better approach would be to tag each word with a unique integer.  The nice thing about this approach is that the integer encoding for a specific word remains the same across all documents.  For example, ... 
 
-To do this, we use the Keras (a neural network library) **one_hot** function and the **Tokenizer()** API to handle multiple documents.  For a deeper understanding of how to implement these functions, see this [tutorial](https://machinelearningmastery.com/prepare-text-data-deep-learning-keras).
+To do this, Keras (a neural network library) provides a handy **Tokenizer()API** that can handle multiple documents.  For a deeper understanding of how to implement these functions, see this [tutorial](https://machinelearningmastery.com/prepare-text-data-deep-learning-keras).
 
 ```python
 encod_corp = []
 
-for i, v in enumerate(corp):
-    print("Document", i+1, "words:", v)
+#for i, v in enumerate(corp):
+#    print("Document", i+1, "words:", v)
 
 # fit tokenizer on docs
 t = Tokenizer()
@@ -157,13 +154,32 @@ vocab_size = len(vocab) # input into embedding layer
 print('Vocab size = %s unique words' % vocab_size)
 
 ```
-Vocab_size = 1842 unique words
 
+Output:
+
+```
+vocab:
+a
+and
+the
+of
+with
+was
+to
+year
+old
+in
+...
+
+Vocab size = 1842 unique words
+
+``` 
 The size of the vocabulary will be important as an input for the embedding layer.
 
 ## Pad the documents
 
-The next thing that Keras requires is that all documents must be of the same length.  Naturally, some documents have more words than others.  We 
+The next thing that Keras requires is that all documents must be of the same length.  As some of documents have more words than others, padding (zeroes) will be added to make the document lenghts even.
+
 
 ## Create an embedding 
 
@@ -229,10 +245,3 @@ Visualization:
 + <https://www.tensorflow.org/tensorboard/tensorboard_projector_plugin>
 + <https://towardsdatascience.com/visualizing-your-embeddings-4c79332581a9>
 + <https://medium.com/analytics-vidhya/how-to-visualize-word-embeddings-7ed0fb047089>
-
-
-## Full HTML
-
-Perhaps the best part of Markdown is that you're never limited to just Markdown. You can write HTML directly in the Markdown editor and it will just work as HTML usually does. No limits! Here's a standard YouTube embed code as an example:
-
-<p><iframe style="width:100%;" height="315" src="https://www.youtube.com/embed/Cniqsc9QfDo?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></p>
