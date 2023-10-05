@@ -11,7 +11,7 @@ For our example, we will extract patient summaries (documents) from PubMed.  Fro
 
 ## A short intro to Word Embeddings
 
-Word Embeddings were a bit of a complex concept to grasp, until I got into the weeds of building one.  I've come to learn they are an important concept in deep learning, for the very reason that semantic meaning of words can be approximated mathematically.  
+Word Embeddings were a bit of a complex concept to grasp, until I got into the weeds of building one.  I've come to appreciate that they are an important concept in deep learning, for the very reason that the meaning of words can be approximated mathematically.  
 
 To best understand the intuition behind word embeddings, I highly recommend reading this [blog post](http://colah.github.io/posts/2014-07-NLP-RNNs-Representations) from Christopher Olah.
 
@@ -23,9 +23,7 @@ As a quick note, LLMs use word embeddings, but the technique used to build them 
 
 I selected a dataset of ~167K PubMed patient summaries via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  To demonstrate a low-code approach, SQL Server and Azure Data Studio will be used.
 
-The data is loaded into SQL Server on a Mac.  For further instructions on how to set this up, check out this [tutorial](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac).  
-
-SQL Server is started via the terminal giving the username and password (Docker must be run on your machine):
+The data is loaded() into [SQL Server on a Mac](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac).  SQL Server is started via the terminal giving the username and password:
 
 ```
 $ mssql -u <sql server username> -p <sql server password>
@@ -33,7 +31,7 @@ $ mssql -u <sql server username> -p <sql server password>
 
 Azure Data Studio is used to access and query the data.  To connect to a SQL Server using Azure Data Studio, review this [tutorial](https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/).  
 
-Attached is a screenshot to modify the columns before importing the data.
+Attached is a screenshot to modify the columns before importing the data:
 
 ![AzureDataStudio](/assets/images/2023-09/azstudio_setup3.png)
 
@@ -94,7 +92,7 @@ Output:
 
 ## Create a corpus
 
-Now that we have our labeled dataset, the next step is to create a corpus.  We take the first 3 sentences from each document.  The resulting corpus is a python dictionary; a sample of the first 3 documents is below:
+Now that we have our labeled dataset, the next step is to create a corpus.  We take the first 3 sentences from each document.  A sample of the first 3 documents in the corpus is below:
 
 ```
 ['This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea. We encountered several difficulties during physical therapy on the acute ward.', 
