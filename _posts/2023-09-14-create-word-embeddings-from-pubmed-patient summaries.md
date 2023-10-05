@@ -117,9 +117,6 @@ To do this, Keras (a neural network library) provides a handy **Tokenizer() API*
 ```python
 encod_corp = []
 
-#for i, v in enumerate(corp):
-#    print("Document", i+1, "words:", v)
-
 # fit tokenizer on docs
 t = Tokenizer()
 t.fit_on_texts(corp) 
