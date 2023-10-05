@@ -7,7 +7,7 @@ image: assets/images/2023-09/OIP_resize.jpg
 ---
 Building upon the previous [tutorial](https://slsu0424.github.io/encoding-pubmed-abstracts-for-nlp-tasks/) on one-hot encoding, this tutorial will review the concept of word embeddings and apply this to real-life data.  
 
-For our example, we will extract patient summaries (documents) from PubMed.  From these patient summaries, we will label those that had COVID-19, and those that did not.  Portions of text from each document will be selected to create word embeddings.  These embeddings will be "trained" as part a neural network model to perform a binary classification task (COVID-19 vs. non-COVID-19).  By training the word embeddings, the computer will learn if there are any meaningful relationships between the words in the text. 
+For our example, we will extract patient summaries (documents) from PubMed.  From these patient summaries, we will label those that had COVID-19, and those that did not.  Portions of text from each document will be selected to create word embeddings.  These embeddings will be "trained" as part a neural network model to perform a classification task.  By training the word embeddings, the computer will learn if there are any meaningful relationships between the words in the text. 
 
 ## A short intro to Word Embeddings
 
@@ -24,8 +24,6 @@ As a quick note, LLMs use word embeddings, but the technique used to build them 
 I selected a dataset of ~167K PubMed patient summaries via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  To demonstrate a low-code approach, SQL Server and Azure Data Studio will be used.
 
 The data is loaded into SQL Server on a Mac.  For further instructions on how to set this up, check out this [tutorial](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac).  
-
-*Note*: this requires Docker to be run on your desktop.  
 
 SQL Server is started via the terminal giving the username and password (Docker must be run on your machine):
 
@@ -68,8 +66,6 @@ FROM [test].[dbo].[PMC-Patients] WHERE patient LIKE '%covid-19%'
 ```
 
 We will execute the first query to get the top 100 records.  The results can be exported from Azure Data Studio as a .csv.
-
-
 
 *Note:* While this represents a bit of a longer approach to loading and manipulating the dataset, you may wish to explore other approaches:
 1. Load dataset into pandas dataframe.
@@ -130,7 +126,7 @@ As explored in the previous tutorial, categorical variables (text) must be conve
 
 A better approach would be to tag each word with a unique integer.  The nice thing about this approach is that the integer encoding for a specific word remains the same across all documents.  For example, ... 
 
-To do this, Keras (a neural network library) provides a handy **Tokenizer()API** that can handle multiple documents.  For a deeper understanding of how to implement these functions, see this [tutorial](https://machinelearningmastery.com/prepare-text-data-deep-learning-keras).
+To do this, Keras (a neural network library) provides a handy **Tokenizer() API** that can handle multiple documents.  For a deeper understanding of how to implement this, see this [tutorial](https://machinelearningmastery.com/prepare-text-data-deep-learning-keras).
 
 ```python
 encod_corp = []
@@ -195,19 +191,6 @@ The next thing that Keras requires is that all documents must be of the same len
 ## Limitations of one-hot encoding
 
 One challenge seen with the one-hot encoding approach is that there is no information about the words the vectors represent, or how the words relate to each other. That is, it tells us nothing about the similarities or differences between words.  If we were to graph each vector and calculate a similarity measure (e.g., cosine similarity) between them, we would see that there is 0 similiarity between any two vectors.  Refer to this [article](https://towardsdatascience.com/word-embeddings-intuition-behind-the-vector-representation-of-the-words-7e4eb2410bba) for a mathematical overview of the concept.
-
-
-A second challenge is sparse, highly dimensional data.  When each word in a document is replaced with a one-hot vector, we start to get a large feature space with a lot of zeroes.  In fact, when increase our vocabulary size (for example, double the vocabulary size N = 28 words), the feature space will morph into something like this:
-
-![encoding_sparse](/assets/images/2023-07/encoding2.png)
-
-
-This dataset is:
-- sparse (majority of the elements are zeroes)
-- highly-dimensional (a larger vocabulary creates a larger feature space, which requires more computational power and data)
-- hard-coded (machine does not learning anything from the data)
-  
-Given these limitations, this technique makes it difficult for a computer to detect any sort of meaningful patterns to make a prediction.
 
 
 ## Conclusion
