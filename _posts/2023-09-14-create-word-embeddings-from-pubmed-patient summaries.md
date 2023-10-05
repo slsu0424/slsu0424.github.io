@@ -119,7 +119,7 @@ Now that we have our labeled dataset, we will create a corpus of documents.  We'
 
 <span style="color: red;">This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea. We encountered several difficulties during physical therapy on the acute ward. First, any change of position or deep breathing triggered coughing attacks that induced oxygen desaturation and dyspnea.</span>
 
-
+<span style="color: red;">This text is red.</span>
 
 <span style='color: red;'>long</span>
 >Doc 1: 'This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea. We encountered several difficulties during physical therapy on the acute ward. First, any change of position or deep breathing triggered coughing attacks that induced oxygen desaturation and dyspnea.'  
