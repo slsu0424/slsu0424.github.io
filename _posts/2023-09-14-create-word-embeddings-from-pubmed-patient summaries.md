@@ -117,7 +117,11 @@ Output array:
 
 Now that we have our labeled dataset, we will create a corpus of documents.  We'll take the first 3 sentences from each document (100 PubMed articles).  A sampling of the resulting corpus is below:
 
+<span style='color: red;'>'This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea. We encountered several difficulties during physical therapy on the acute ward. First, any change of position or deep breathing triggered coughing attacks that induced oxygen desaturation and dyspnea.' </span>
 
+
+
+<span style='color: red;'>long</span>
 >Doc 1: 'This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea. We encountered several difficulties during physical therapy on the acute ward. First, any change of position or deep breathing triggered coughing attacks that induced oxygen desaturation and dyspnea.'  
 >
 >Doc 2: 'We describe the case of a 55-year-old male who presented to the emergency department via emergency medical services for the chief complaint of sudden onset shortness of breath that woke him from his sleep just prior to arrival. He reported three days of non-radiating lumbar back pain and two episodes of non-bloody emesis leading up to this event. His medical history included hypertension and type 2 diabetes mellitus.'   
