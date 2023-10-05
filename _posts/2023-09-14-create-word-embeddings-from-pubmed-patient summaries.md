@@ -173,7 +173,8 @@ in
 
 Vocab size = 1842 unique words
 
-``` The size of the vocabulary will be important as an input for the embedding layer.
+``` 
+The size of the vocabulary will be important as an input for the embedding layer.
 
 ## Pad the documents
 
