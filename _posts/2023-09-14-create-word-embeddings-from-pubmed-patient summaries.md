@@ -174,17 +174,12 @@ The size of the vocabulary will be important as an input for the embedding layer
 
 ## Pad the documents
 
-The next thing that Keras requires is that all documents must be of the same length.  As some of documents have more words than others, padding (zeroes) will be added to make the document lenghts even.
+The next thing that Keras requires is that all documents must be of the same length.  As some of documents have more words than others, padding (zeroes) will be added to make the document lengths even.
 
 
 ## Create an embedding 
 
 ## Visualize intial embeddings
-
-
-
-
-
 
 
 
