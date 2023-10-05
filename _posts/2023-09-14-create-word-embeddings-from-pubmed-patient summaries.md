@@ -13,17 +13,17 @@ For our example, we will extract patient summaries (documents) from PubMed.  Fro
 
 Word Embeddings were a bit of a complex concept to grasp, until I got into the weeds of building one.  I've come to learn they are an important concept in deep learning, for the very reason that semantic meaning of words can be approximated mathematically.
 
-To best understand the intuition behind word embeddings, I highly recommend Colah's blog post of this topic.  In summary There are a number of techniques available to build a word embedding.  As a quick note, LLMs use word embeddings, but the technique used to build them are proprietary.  
+To best understand the intuition behind word embeddings, I highly recommend Colah's blog post of this topic.  In summary 
 
-To start, I wanted to backtrack the origins of LLMs, which are a type of neural network.  A neural network is a type of machine learning approach that attempts to mimic the way the brain works (biological neural network).  This approach has been shown to perform better on NLP tasks than previous methods.  For a great overview of NLP, check out this [guide](https://www.deeplearning.ai/resources/natural-language-processing).
+There are a number of techniques available to build a word embedding... 
 
-The goal of NLP is to enable computers to "understand" natural language in order to perform some task, such as sentiment analysis.  In order to do so, natural language (text format) has to be converted (encode) into a numerical format.
+As a quick note, LLMs use word embeddings, but the technique used to build them are proprietary.  
 
 ## Let's get data
 
 I selected a dataset of ~167K PubMed patient summaries via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  To demonstrate a low-code approach, SQL Server and Azure Data Studio will be used.
 
-This dataset will be loaded into a SQL Server on a Mac.  For further instructions on how to set this up, check out this [tutorial](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac).  
+The data is loaded into SQL Server on a Mac.  For further instructions on how to set this up, check out this [tutorial](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac).  
 
 *Note*: this requires Docker to be run on your desktop.  
 
@@ -117,19 +117,25 @@ Output array:
 
 Now that we have our labeled dataset, we will create a corpus of documents.  We'll take the first 3 sentences from each document (100 PubMed articles).  A sampling of the resulting corpus is below:
 
+<span style="color: red;">This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea. We encountered several difficulties during physical therapy on the acute ward. First, any change of position or deep breathing triggered coughing attacks that induced oxygen desaturation and dyspnea.</span>
 
-<p>
- <span style=“color:red”>red</span>['This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea We encountered several difficulties during physical therapy on the acute ward First, any change of position or deep breathing triggered coughing attacks that induced oxygen desaturation and dyspnea', <span style=“color:green”>green</span>'We describe the case of a 55-year-old male who presented to the emergency department via emergency medical services for the chief complaint of sudden onset shortness of breath that woke him from his sleep just prior to arrival He reported three days of non-radiating lumbar back pain and two episodes of non-bloody emesis leading up to this event His medical history included hypertension and type 2 diabetes mellitus', <span style=“color:blue”>blue</span>'A 20-year-old Caucasian male (1.75 m tall and 76 kg (BMI 24.8)), was admitted to the medical department for persistent hyperpyrexia, severe sore throat, dyspnea, and impaired consciousness with stupor Persistent symptoms started at home 4 days before and he assumed clarithromycin as empiric antibiotic therapy The physical examination showed jaundice, dry mucous membranes, pharyngeal hyperemia in the tonsillar region and soft palate, and left laterocervical lymphadenopathy', ...]
-</p>
+<span style="color: red;">This text is red.</span>
 
+<span style='color: red;'>long</span>
+>Doc 1: 'This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea. We encountered several difficulties during physical therapy on the acute ward. First, any change of position or deep breathing triggered coughing attacks that induced oxygen desaturation and dyspnea.'  
+>
+>Doc 2: 'We describe the case of a 55-year-old male who presented to the emergency department via emergency medical services for the chief complaint of sudden onset shortness of breath that woke him from his sleep just prior to arrival. He reported three days of non-radiating lumbar back pain and two episodes of non-bloody emesis leading up to this event. His medical history included hypertension and type 2 diabetes mellitus.'   
+>
+>Doc 3: 'A 20-year-old Caucasian male (1.75 m tall and 76 kg (BMI 24.8)), was admitted to the medical department for persistent hyperpyrexia, severe sore throat, dyspnea, and impaired consciousness with stupor. Persistent symptoms started at home 4 days before and he assumed clarithromycin as empiric antibiotic therapy. The physical examination showed jaundice, dry mucous membranes, pharyngeal hyperemia in the tonsillar region and soft palate, and left laterocervical lymphadenopathy.'  
 
+For this example, there are a total of X words in the corpus.
 
 
 ## Convert text to integers
 
-As explored in the previous tutorial, categorical variables (text) have to be converted to numerical variables in order to be processed by a computer.  Hence, the document texts have to be converted into ther integer equivalents.  One approach would be to one-hot encode each word, but this would result in a bunch of one-hot vectors that would demonstrate no meaning between the words, and be computationally expensive.  
+As explored in the previous tutorial, categorical variables (text) has to be converted into numerical variables.  One approach would be to one-hot encode each word, but this would result in a bunch of one-hot vectors that would demonstrate no meaning between the words, and be computationally expensive.  
 
-A better approach would be to integer encode each word.  To do this, we will use Keras (a deep learning framework)
+A better approach would be to tag each word with a unique integer.  To do this, we will use Keras (a deep learning framework)
 
 
 
