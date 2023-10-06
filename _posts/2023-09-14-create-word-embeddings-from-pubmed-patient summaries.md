@@ -235,7 +235,7 @@ print(embedding_matrix)
 [[ 3.48836184e-03  4.73979823e-02]
  [ 1.17111579e-02 -4.21698801e-02]
  [ 2.09044702e-02 -4.68258746e-02]
- ...]
+ ...
 ```
 
 Let's look at the first document again.  We see that each embedding value is mapped to a word in that document:
