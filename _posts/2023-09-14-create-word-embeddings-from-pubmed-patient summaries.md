@@ -80,8 +80,6 @@ labels_arr = np.array(labels).astype(float)
 print(labels_arr)
 ```
 
-Output:
-
 ```
 [1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 1. 0.
  0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
@@ -129,8 +127,6 @@ print('Vocab size = %s unique words' % vocab_size)
 
 ```
 
-Output:
-
 ```
 vocab:
 a
@@ -162,6 +158,7 @@ pad_corp=pad_sequences(encod_corp,maxlen=maxlen,padding='post',value=0.0)
 
 print(pad_corp)
 ```
+
 ```
 [[  58  467    8    9   24    6  309   43    7  191  192   30  119  120
      5   55    4   33  105   59    2   78  138  767  310  311   91   63
@@ -174,9 +171,15 @@ print(pad_corp)
      0    0    0    0    0    0    0    0    0    0    0    0    0    0
      0    0    0    0    0    0    0    0    0    0    0    0    0    0
      0    0    0    0    0]
-   ...  
+   ... 
 ```
-In the output above
+
+This array represents the text of Document 1: 
+
+'This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea. We encountered several difficulties during physical therapy on the acute ward.'  
+
+Since this document has only 47 words, the rest of the document is padded with zeroes.
+
 
 ## Create an embedding 
 
