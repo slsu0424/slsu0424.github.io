@@ -109,7 +109,7 @@ encod_corp = []
 # fit tokenizer on docs
 t = Tokenizer()
 t.fit_on_texts(corp) 
-encod_corp = t.texts_to_sequences(corp) # convert docs to num sequence
+encod_corp = t.texts_to_sequences(corp) # integer encode docs
 
 # get unique words
 vocab = t.word_index
@@ -216,15 +216,6 @@ embedding_output = model.predict(pad_corp)
 
 The output of an embedding layer is a lookup table, which maps each word in the vocabulary to a set of random numbers in the dimension specified.  For example, since we set our output_dim = 2, we should expect to see each word mapped to 2 random numbers:
 
-```python
-# Extract embedding matrix (lookup table)
-
-embedding_layer = model.get_layer(index=0)
-
-embedding_matrix = embedding_layer.get_weights()[0]
-
-print(embedding_matrix)
-```
 ```
 [[ 3.48836184e-03  4.73979823e-02]
  [ 1.17111579e-02 -4.21698801e-02]
