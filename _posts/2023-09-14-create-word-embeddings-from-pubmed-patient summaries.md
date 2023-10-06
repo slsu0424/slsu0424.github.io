@@ -7,7 +7,7 @@ image: assets/images/2023-09/OIP_resize.jpg
 ---
 Building upon the previous [tutorial](https://slsu0424.github.io/encoding-pubmed-abstracts-for-nlp-tasks/) on one-hot encoding, this tutorial will review the concept of word embeddings and apply this to real-life data.  
 
-For our example, we will extract patient summaries from PubMed.  From these patient summaries, we will label those that had COVID-19, and those that did not.  Portions of text from each document will be selected to create word embeddings.  These embeddings will be trained as part a neural network model to perform a classification task.  By training the word embeddings, the computer will learn if there are any meaningful relationships between the words in the text. 
+For our example, we will extract patient summaries from PubMed.  From these patient summaries, we will label those that had COVID-19 and those that did not.  Selected sentences will be used to create word embeddings.  These embeddings will be trained as part a neural network model to perform a classification task.  By training the word embeddings, the computer will learn if there are any meaningful relationships between the words in the text. 
 
 ## A short intro to Word Embeddings
 
@@ -50,10 +50,6 @@ SELECT TOP (100) [patient_id]
   ,[relevant_articles]
 FROM [test].[dbo].[PMC-Patients]
 ```
-
-*Note:* While this represents a longer approach to loading and manipulating the dataset, you may wish to explore other approaches:
-1. Load dataset into pandas dataframe.
-2. Load dataset into a cloud database, such as Azure SQL Database.  Please keep in mind there are costs associated with running the database in the cloud, as well as querying costs.
 
 ## Define class labels
 
@@ -236,14 +232,14 @@ print(embedding_matrix)
  ...
 ```
 
-Let's look at the first document again.  We see that each embedding value is mapped to a word in that document:
+Revisiting the first document, we see that each embedding value is mapped to a word in that document:
 
 
 
 
 Let's see how this looks visually.  Since these embeddings are not trained, it would make sense that the words are fairly scattered:
 
-
+![](https://github.com/slsu0424/pmc-patients/blob/develop/output1.png)
 
 
 ## Visualize trained embeddings
