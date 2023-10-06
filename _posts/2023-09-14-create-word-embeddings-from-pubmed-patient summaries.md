@@ -29,7 +29,7 @@ The data is loaded into [SQL Server on a Mac](https://builtin.com/software-engin
 $ mssql -u <sql server username> -p <sql server password>
 ```
 
-Azure Data Studio is used to access and query the data.  To connect to a SQL Server using Azure Data Studio, review this [tutorial](https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/).  
+SQL Server is [connected](https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/) to Azure Data Studio, where we can access and query the data.
 
 Attached is a screenshot to modify the columns before importing the data:
 
