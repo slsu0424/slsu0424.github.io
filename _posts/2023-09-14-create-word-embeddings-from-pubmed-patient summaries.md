@@ -100,12 +100,12 @@ Now that we have our labeled dataset, the next step is to create a corpus.  We t
 'A 20-year-old Caucasian male (1.75 m tall and 76 kg (BMI 24.8)), was admitted to the medical department for persistent hyperpyrexia, severe sore throat, dyspnea, and impaired consciousness with stupor. Persistent symptoms started at home 4 days before and he assumed clarithromycin as empiric antibiotic therapy.', ...]
 ```
 
-For 100 documents, there are X total words in the corpus.
+For 100 documents, there are 6453 total words in the corpus.
 
 
 ## Convert text to integers
 
-One approach would be to one-hot encode each word, but there are limitations with this technique.  A better approach would be to tag each word with a unique integer.  The integer encoding for a specific word remains the same across all documents.  For example, ... 
+One approach would be to one-hot encode each word, but there are limitations with this technique.  A better approach would be to tag each word with a unique integer.  The integer encoding for a specific word remains the same across all documents, so this will help reduce the size of the corpus to unique words only (vocabulary). 
 
 To do this, Keras (neural network library) provides a handy **Tokenizer() API** that can handle multiple documents.  For a deeper understanding of how to implement this, see this [tutorial](https://machinelearningmastery.com/prepare-text-data-deep-learning-keras).
 
@@ -145,10 +145,10 @@ old
 in
 ...
 
-Vocab size = 1842 unique words
+Vocab size = 1843 unique words
 
 ``` 
-The size of the vocabulary (1842) will be important as an input for the embedding layer.
+Out of a total of 6453 words, 1843 unique words were found.
 
 ## Pad the documents
 
@@ -162,6 +162,21 @@ pad_corp=pad_sequences(encod_corp,maxlen=maxlen,padding='post',value=0.0)
 
 print(pad_corp)
 ```
+```
+[[  58  467    8    9   24    6  309   43    7  191  192   30  119  120
+     5   55    4   33  105   59    2   78  138  767  310  311   91   63
+    69   19    3  121  468   92  139  469    4  241   84  166  193  768
+   312  769   34  470  167  471    2   78    0    0    0    0    0    0
+     0    0    0    0    0    0    0    0    0    0    0    0    0    0
+     0    0    0    0    0    0    0    0    0    0    0    0    0    0
+     0    0    0    0    0    0    0    0    0    0    0    0    0    0
+     0    0    0    0    0    0    0    0    0    0    0    0    0    0
+     0    0    0    0    0    0    0    0    0    0    0    0    0    0
+     0    0    0    0    0    0    0    0    0    0    0    0    0    0
+     0    0    0    0    0]
+   ...  
+```
+In the output above
 
 ## Create an embedding 
 
