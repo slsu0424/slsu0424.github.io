@@ -144,7 +144,7 @@ in
 Vocab size = 1843 unique words
 
 ``` 
-Out of a total of 6453 words, 1843 unique words were found.
+Out of a total of 6453 words, 1843 unique words are found.
 
 ## Pad the documents
 
@@ -222,8 +222,25 @@ embedding_output = model.predict(pad_corp)
 
 The output of an embedding layer is a lookup table, which maps each word in the vocabulary to a set of random numbers in the dimension specified.  For example, since we set our output_dim = 2, we should expect to see each word mapped to 2 random numbers:
 
+```python
+# Extract embedding matrix (lookup table)
 
-Let's look at the first document.  We see that each embedding value is mapped to a word in that document:
+embedding_layer = model.get_layer(index=0)
+
+embedding_matrix = embedding_layer.get_weights()[0]
+
+print(embedding_matrix)
+```
+```
+[[ 3.48836184e-03  4.73979823e-02]
+ [ 1.17111579e-02 -4.21698801e-02]
+ [ 2.09044702e-02 -4.68258746e-02]
+ ...]
+```
+
+Let's look at the first document again.  We see that each embedding value is mapped to a word in that document:
+
+
 
 
 Let's see how this looks visually.  Since these embeddings are not trained, it would make sense that the words are fairly scattered:
