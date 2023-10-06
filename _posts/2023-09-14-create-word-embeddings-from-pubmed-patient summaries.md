@@ -75,7 +75,7 @@ labels_arr = np.array(labels).astype(float)
 
 print(labels_arr)
 ```
-Output:
+
 ```
 [1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 1. 0.
  0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
@@ -122,7 +122,7 @@ vocab_size = len(vocab) # input into embedding layer
 print('Vocab size = %s unique words' % vocab_size)
 
 ```
-Output:
+
 ```
 vocab:
 a
@@ -152,7 +152,7 @@ pad_corp=pad_sequences(encod_corp,maxlen=maxlen,padding='post',value=0.0)
 
 print(pad_corp)
 ```
-Output:
+
 ```
 [[  58  467    8    9   24    6  309   43    7  191  192   30  119  120
      5   55    4   33  105   59    2   78  138  767  310  311   91   63
