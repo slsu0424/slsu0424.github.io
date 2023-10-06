@@ -35,7 +35,7 @@ Attached is a screenshot to modify the columns before importing the data:
 
 ![AzureDataStudio](/assets/images/2023-09/azstudio_setup3.png)
 
-We run the below [query](https://github.com/slsu0424/pmc-patients/blob/develop/pmc-patients.sql) to extract the first 100 records.
+Run the below [query](https://github.com/slsu0424/pmc-patients/blob/develop/pmc-patients.sql) to return the first 100 records.
 
 ```
 SELECT TOP (100) [patient_id]
@@ -86,7 +86,7 @@ print(labels_arr)
 
 ## Create a corpus
 
-Now that we have our labeled dataset, the next step is to create a corpus.  We take the first 3 sentences from each record (document).  A sample of the first 3 documents in the corpus is below:
+Now that we have our labeled dataset, we can create a corpus.  We take the first 3 sentences from each record (document).  A sample of the first 3 documents in the corpus is below:
 
 ```
 ['This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea. We encountered several difficulties during physical therapy on the acute ward.', 
@@ -239,7 +239,7 @@ Revisiting the first document, we see that each embedding value is mapped to a w
 
 Let's see how this looks visually.  Since these embeddings are not trained, it would make sense that the words are fairly scattered:
 
-![](https://github.com/slsu0424/pmc-patients/blob/develop/output1.png)
+![](/assets/images/2023-09/output1.png)
 
 
 ## Visualize trained embeddings
