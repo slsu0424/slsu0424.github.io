@@ -123,7 +123,7 @@ Out of 2451 total words, 932 unique words are found.
 
 ## Pad the documents
 
-Keras requires that all documents must be the same length.  We find the maximum length of a document, which is 145 words.  Padding (zeroes) are then added to the shorter documents using the **pad_sequences** function.
+Keras requires that all documents must be the same length.  We find the maximum length of a document, which is 145 words.  Zeroes are then added to the shorter documents using the **pad_sequences** function.
 
 ```python
 # pad the docs with zeros
@@ -140,7 +140,14 @@ print(pad_corp)
    ... 
 ```
 
-This array represents the text of Document 1, and a mapping is shown below:
+This array represents the text of Document 1, and a mapping of the words is below:
+
+| Item | Price | Qty |
+|:----|:-----:|----:|
+| Computer | $1600 | 5 |
+| Phone | $12   | 12 |
+| Pipe  | $1    | 234|
+
 
 'This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea.'  
 
@@ -150,7 +157,7 @@ This array represents the text of Document 1, and a mapping is shown below:
 To create the embedding, we create a Keras Sequential model.  Sequential means that each layer in the network has exactly one input and one output.  To define the embedding, we need 3 inputs:
 
 - input_dim: size of vocabulary
-- output_dim: how many dimensions the word should be embedded into
+- output_dim: number of dimensions the word should be embedded into
 - input_length: maximum length of a document
 
 The output_dim is the size of the output vectors for each word.  For example, a output_dim = 2 means that every word is mapped to a vector with 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on, but also more computationally expensive.  
