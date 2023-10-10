@@ -138,7 +138,7 @@ Out of 6453 total words, 2025 unique words are found.
 
 ## Pad the documents
 
-Keras requires that all documents must be the same length.  All documents are integer encoded in the variable 'encoded_corp'.  We then find the maximum length of a document, which is 145 words.  Padding (zeroes) are then added to the shorter documents using the **pad_sequences** function.
+Keras requires that all documents must be the same length.  All documents are integer encoded in the variable 'encoded_corp'.  We find the maximum length of a document, which is 145 words.  Padding (zeroes) are then added to the shorter documents using the **pad_sequences** function.
 
 ```python
 # pad the docs with zeros
@@ -175,7 +175,7 @@ To create the embedding, we create a Keras Sequential model.  Sequential means t
 - output_dim: how many dimensions the word should be embedded into
 - input_length: maximum length of a document
 
-The output_dim is the size of the output vectors for each word.  For example, a output_dim = 2 means that every word is mapped to a vector with 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on (and may increase model accuracy), but more computationally expensive.  I played around with the output_dim in multiples of 2 (starting from 2 going up to 32), and did not see a difference in accuracy when training the embedding.
+The output_dim is the size of the output vectors for each word.  For example, a output_dim = 2 means that every word is mapped to a vector with 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on (and may increase model accuracy), but also more computationally expensive.  *Note:* I played around with the output_dim in multiples of 2 (going up to 32), and did not see a difference in accuracy when training the embedding.
 
 To better understand the logic behind creating an embedding, I found these [articles](https://stats.stackexchange.com/questions/270546/how-does-keras-embedding-layer-work?rq=1) particulary helpful.  
 
@@ -209,8 +209,7 @@ embedding_output = model.predict(pad_corp)
 The output of an embedding layer is a lookup table, which maps each word in the vocabulary to a set of random numbers in the dimension specified.  These numbers are initialized randomly before training the model.
 
 ```python
-# Extract embedding matrix (lookup table)
-
+# extract embedding matrix (lookup table)
 embedding_layer = model.get_layer(index=0)
 
 embedding_matrix = embedding_layer.get_weights()[0]
