@@ -98,7 +98,7 @@ For 100 documents, there are 6453 total words in the corpus.
 
 ## Convert text to integers
 
-Since we saw the limitations with one-hot encoding, a better approach would be to assign each word a unique integer.  The integer encoding for a specific word remains the same across all documents, so this will help reduce the size of the corpus to unique words only (vocabulary). 
+Since we saw the limitations with one-hot encoding, a better approach would be to assign each word a unique integer.  The integer encoding for a specific word remains the same across all documents, so this will help reduce the size of the corpus to unique words only. 
 
 To do this, Keras (neural network library) provides a handy **Tokenizer() API** that can handle multiple documents.  For a deeper understanding of how to implement this, see this [tutorial](https://machinelearningmastery.com/prepare-text-data-deep-learning-keras).
 
