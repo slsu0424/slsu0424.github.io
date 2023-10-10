@@ -84,16 +84,16 @@ print(labels_arr)
 
 ## Create a corpus
 
-Now that we have our labeled dataset, we can create a corpus.  We take the first 3 sentences from each record (document).  A sample of the first 3 documents in the corpus is below:
+Now that we have our labeled dataset, we can create a corpus.  We take the first 1 sentences from each record (document).  A sample of the first 3 documents in the corpus is below:
 
 ```
-['This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea. We encountered several difficulties during physical therapy on the acute ward.', 
+['This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea.', 
 'We describe the case of a 55-year-old male who presented to the emergency department via emergency medical services for the chief complaint of sudden onset shortness of breath that woke him from his sleep just prior to arrival.', 
-'A 20-year-old Caucasian male (1.75 m tall and 76 kg (BMI 24.8)), was admitted to the medical department for persistent hyperpyrexia, severe sore throat, dyspnea, and impaired consciousness with stupor. Persistent symptoms started at home 4 days before and he assumed clarithromycin as empiric antibiotic therapy.', 
+'A 20-year-old Caucasian male (1.75 m tall and 76 kg (BMI 24.8)), was admitted to the medical department for persistent hyperpyrexia, severe sore throat, dyspnea, and impaired consciousness with stupor., 
 ...]
 ```
 
-For 100 documents, there are 6453 total words in the corpus.
+For 100 documents, there are 2451 total words in the corpus.
 
 
 ## Convert text to integers
@@ -119,9 +119,9 @@ print('Vocab size = %s unique words' % vocab_size)
 ```
 
 ```
-Vocab size = 2025 unique words
+Vocab size = 932 unique words
 ``` 
-Out of 6453 total words, 2025 unique words are found.
+Out of 2451 total words, 932 unique words are found.
 
 ## Pad the documents
 
@@ -135,23 +135,16 @@ print(pad_corp)
 ```
 
 ```
-[[  46  735   21    6  284   37    7  174  218   26  147    5   53    4
-    34   91   60    2  219  122  736  285  286   79   54   92   16    3
-   105  737   93  123  419    4  420   74  175  287  738  421  739   29
-   740  148  422    2  219    0    0    0    0    0    0    0    0    0
-     0    0    0    0    0    0    0    0    0    0    0    0    0    0
-     0    0    0    0    0    0    0    0    0    0    0    0    0    0
-     0    0    0    0    0    0    0    0    0    0    0    0    0    0
-     0    0    0    0    0    0    0    0    0    0    0    0    0    0
-     0    0    0    0    0    0    0    0    0    0    0    0    0    0
-     0    0    0    0    0    0    0    0    0    0    0    0    0    0
-     0    0    0    0    0]
+[[ 31 281  10   7 160  44   6 282 283  28  54   3  84   2  29  45  36   4
+  161   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+    0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+    0]
    ... 
 ```
 
-This array represents the text of Document 1.  A sample of the mapping from the first sentence is shown:
+This array represents the text of Document 1:
 
-'This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea. We encountered several difficulties during physical therapy on the acute ward.'  
+'This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea.'  
 
 
 ## Create an embedding 
@@ -205,9 +198,9 @@ embedding_matrix = embedding_layer.get_weights()[0]
 For example, since we set our output_dim = 2, we should expect to see each word mapped to 2 random numbers:
 
 ```
-[[ 3.48836184e-03  4.73979823e-02]
- [ 1.17111579e-02 -4.21698801e-02]
- [ 2.09044702e-02 -4.68258746e-02]
+[[ 3.48836184e-03  4.73979823e-02] --> 'a'
+ [ 1.17111579e-02 -4.21698801e-02] --> 'and'
+ [ 2.09044702e-02 -4.68258746e-02] --> 'the'
  ...
 ```
 
