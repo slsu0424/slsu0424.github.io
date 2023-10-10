@@ -89,7 +89,8 @@ Now that we have our labeled dataset, we can create a corpus.  We take the first
 ```
 ['This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea. We encountered several difficulties during physical therapy on the acute ward.', 
 'We describe the case of a 55-year-old male who presented to the emergency department via emergency medical services for the chief complaint of sudden onset shortness of breath that woke him from his sleep just prior to arrival.', 
-'A 20-year-old Caucasian male (1.75 m tall and 76 kg (BMI 24.8)), was admitted to the medical department for persistent hyperpyrexia, severe sore throat, dyspnea, and impaired consciousness with stupor. Persistent symptoms started at home 4 days before and he assumed clarithromycin as empiric antibiotic therapy.', ...]
+'A 20-year-old Caucasian male (1.75 m tall and 76 kg (BMI 24.8)), was admitted to the medical department for persistent hyperpyrexia, severe sore throat, dyspnea, and impaired consciousness with stupor. Persistent symptoms started at home 4 days before and he assumed clarithromycin as empiric antibiotic therapy.', 
+...]
 ```
 
 For 100 documents, there are 6453 total words in the corpus.
@@ -97,9 +98,9 @@ For 100 documents, there are 6453 total words in the corpus.
 
 ## Convert text to integers
 
-One approach would be to one-hot encode each word, but there are limitations with this technique.  A better approach would be to tag each word with a unique integer.  The integer encoding for a specific word remains the same across all documents, so this will help reduce the size of the corpus to unique words only (vocabulary). 
+Since we saw the limitations with one-hot encoding, a better approach would be to assign each word a unique integer.  The integer encoding for a specific word remains the same across all documents, so this will help reduce the size of the corpus to unique words only (vocabulary). 
 
-To do this, Keras (neural network library) provides a handy [**Tokenizer() API**](https://keras.io/api/keras_nlp/tokenizers/tokenizer/) that can handle multiple documents.  For a deeper understanding of how to implement this, see this [tutorial](https://machinelearningmastery.com/prepare-text-data-deep-learning-keras).
+To do this, Keras (neural network library) provides a handy **Tokenizer() API** that can handle multiple documents.  For a deeper understanding of how to implement this, see this [tutorial](https://machinelearningmastery.com/prepare-text-data-deep-learning-keras).
 
 ```python
 encod_corp = []
@@ -133,11 +134,11 @@ with
 Vocab size = 2025 unique words
 
 ``` 
-Out of a total of 6453 words, 2025 unique words are found.
+Out of 6453 total words, 2025 unique words are found.
 
 ## Pad the documents
 
-Keras requires that all documents must be the same length.  We first find the maximum length of a document, which is 145 words.  Padding (zeroes) are then added to the shorter documents using the **pad_sequences** function:
+Keras requires that all documents must be the same length.  All documents are integer encoded in the variable 'encoded_corp'.  We then find the maximum length of a document, which is 145 words.  Padding (zeroes) are then added to the shorter documents using the **pad_sequences** function.
 
 ```python
 # pad the docs with zeros
@@ -165,18 +166,16 @@ This array represents the text of Document 1.  A sample of the mapping from the 
 
 'This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea. We encountered several difficulties during physical therapy on the acute ward.'  
 
-Since this document has only 47 words, the rest of the document is padded with zeroes.
-
 
 ## Create an embedding 
 
-To create the embedding, we create a Keras Sequential model.  By sequential, this means that each layer in the network has exactly one input and one output.  To define the embedding, we need 3 inputs:
+To create the embedding, we create a Keras Sequential model.  Sequential means that each layer in the network has exactly one input and one output.  To define the embedding, we need 3 inputs:
 
 - input_dim: size of vocabulary
 - output_dim: how many dimensions the word should be embedded into
 - input_length: maximum length of a document
 
-The output_dim is the size of the output vectors for each word.  For example, a output_dim = 2 means that every word is mapped to a vector with 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on (and may increase model accuracy), but be more computationally expensive.  I played around with the output_dim in multiples of 2 (starting from 2 going up to 32), and did not see a difference in accuracy when training the embedding.
+The output_dim is the size of the output vectors for each word.  For example, a output_dim = 2 means that every word is mapped to a vector with 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on (and may increase model accuracy), but more computationally expensive.  I played around with the output_dim in multiples of 2 (starting from 2 going up to 32), and did not see a difference in accuracy when training the embedding.
 
 To better understand the logic behind creating an embedding, I found these [articles](https://stats.stackexchange.com/questions/270546/how-does-keras-embedding-layer-work?rq=1) particulary helpful.  
 
@@ -210,11 +209,11 @@ embedding_output = model.predict(pad_corp)
 The output of an embedding layer is a lookup table, which maps each word in the vocabulary to a set of random numbers in the dimension specified.  These numbers are initialized randomly before training the model.
 
 ```python
+# Extract embedding matrix (lookup table)
+
 embedding_layer = model.get_layer(index=0)
 
 embedding_matrix = embedding_layer.get_weights()[0]
-
-print(embedding_matrix)
 ```
 
 For example, since we set our output_dim = 2, we should expect to see each word mapped to 2 random numbers:
