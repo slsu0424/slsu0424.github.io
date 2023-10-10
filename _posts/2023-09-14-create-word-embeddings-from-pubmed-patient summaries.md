@@ -176,7 +176,7 @@ To create the embedding, we create a Keras Sequential model.  By sequential, thi
 - output_dim: how many dimensions the word should be embedded into
 - input_length: maximum length of a document
 
-The output_dim is the size of the output vectors for each word.  For example, a output_dim = 2 means that every word is mapped to a vector with 2 elements, or features.  These numbers can be chosen arbitrarily; a larger output_dim will have more features to train on (and may increase model accuracy), but be more computationally expensive.  I played around setting the output_dim in multiples of 2 (starting from 2 and going up to 32), and did not see a difference in accuracy when training the embedding.
+The output_dim is the size of the output vectors for each word.  For example, a output_dim = 2 means that every word is mapped to a vector with 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on (and may increase model accuracy), but be more computationally expensive.  I played around with the output_dim in multiples of 2 (starting from 2 going up to 32), and did not see a difference in accuracy when training the embedding.
 
 To better understand the logic behind creating an embedding, I found these [articles](https://stats.stackexchange.com/questions/270546/how-does-keras-embedding-layer-work?rq=1) particulary helpful.  
 
