@@ -84,7 +84,7 @@ print(labels_arr)
 
 ## Create a corpus
 
-Now that we have our labeled dataset, we can create a corpus.  We take the first 1 sentences from each record (document).  A sample of the first 3 documents in the corpus is below:
+Now that we have our labeled dataset, we can create a corpus.  We take the 1st sentence from each document.  A sample of the first 3 documents in the corpus is below:
 
 ```
 ['This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea.', 
@@ -115,9 +115,7 @@ vocab = t.word_index
 
 vocab_size = len(vocab) # input into embedding layer
 print('Vocab size = %s unique words' % vocab_size)
-
 ```
-
 ```
 Vocab size = 932 unique words
 ``` 
@@ -142,7 +140,7 @@ print(pad_corp)
    ... 
 ```
 
-This array represents the text of Document 1:
+This array represents the text of Document 1, and a mapping is shown below:
 
 'This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea.'  
 
@@ -155,9 +153,10 @@ To create the embedding, we create a Keras Sequential model.  Sequential means t
 - output_dim: how many dimensions the word should be embedded into
 - input_length: maximum length of a document
 
-The output_dim is the size of the output vectors for each word.  For example, a output_dim = 2 means that every word is mapped to a vector with 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on, but also more computationally expensive.  I played around with the output_dim in multiples of 2 (2 to 32), and did not see a difference in accuracy when training the embedding.
+The output_dim is the size of the output vectors for each word.  For example, a output_dim = 2 means that every word is mapped to a vector with 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on, but also more computationally expensive.  
 
-To better understand the logic behind creating an embedding, I found these [articles](https://stats.stackexchange.com/questions/270546/how-does-keras-embedding-layer-work?rq=1) particulary helpful.  
+*Note:* I played around with the output_dim in multiples of 2 (2 to 32), and did not see a difference in accuracy when training the embedding.
+
 
 ```python
 # create keras model
