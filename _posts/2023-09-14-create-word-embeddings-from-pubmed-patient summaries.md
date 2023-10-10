@@ -149,7 +149,7 @@ This array represents the text of Document 1, and a mapping of the words is belo
 | Pipe  | $1    | 234|
 
 | This | 60-year-old | male | was | hospitalized | due | to | moderate | ARDS | from | COVID-19 | ...
-|:----|:----:|----:|:----|:----|:----|:----:|----:|:----|:----|:----:|----:|:----|:----
+|:----|:----:|----:|:----|:----|:----|:----:|----:|:----|:----|:----:|----:|
 | 31 | 281 | 10 | 7 | 160 | 44 | 6 |282 | 283 | 28 | 54 |...|
 
 | This | 60 | year | old | male | was | hospitalized | due | to | moderate | ARDS | from | COVID-19 | with | symptoms | of | fever | dry | cough | and | dyspnea |
