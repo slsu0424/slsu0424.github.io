@@ -199,7 +199,7 @@ embedding_output = model.predict(pad_corp)
 The embedding layer is a lookup table, which represents each word as floating point values (weights) in the dimension specified.  These weights are initialized randomly before training the model.  The weights can be obtained as follows:
 
 ```python
-# embedding matrix (lookup table)
+# embedding lookup
 embedding_layer = model.get_layer(index=0)
 
 embedding_matrix = embedding_layer.get_weights()[0]
@@ -276,7 +276,7 @@ print('Accuracy: %f' % (accuracy*100))
 Accuracy: 88.999999
 ```
 
-Let's see how this looks visually.  Since these embeddings are now trained, we can see more defined clusters with ~89% accuracy in the classification prediction task.
+Let's see how this looks visually.  Since these embeddings are now trained, we can see more defined clusters with ~89% accuracy in the prediction task.
 
 
 ![](/assets/images/2023-09/output2.png)
