@@ -276,7 +276,7 @@ print('Accuracy: %f' % (accuracy*100))
 Accuracy: 88.999999
 ```
 
-Let's see how this looks visually.  Since these embeddings are now trained, we can see more defined clusters with ~89% accuracy in the prediction task.
+Since these embeddings are now trained, we can visualize more defined clusters with ~89% accuracy in the prediction task.
 
 
 ![](/assets/images/2023-09/output2.png)
