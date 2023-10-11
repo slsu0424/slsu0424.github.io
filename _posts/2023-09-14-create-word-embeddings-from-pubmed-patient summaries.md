@@ -208,6 +208,9 @@ embedding_matrix = embedding_layer.get_weights()[0]
 
 For example, since we set our output_dim = 2, we should expect to see each word mapped to 2 random numbers:
 
+
+<div style="background-color: #FFFF00">Highlighted text</div>
+
 ```
 [[ 4.24065441e-03  6.88085705e-03] (index 0)
  [ 1.85191296e-02  4.87870015e-02] --> 'a'
