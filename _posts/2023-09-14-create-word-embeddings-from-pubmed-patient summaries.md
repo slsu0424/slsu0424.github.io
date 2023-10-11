@@ -268,7 +268,22 @@ _________________________________________________________________
 ```
 The 55×2 matrix is squashed to a 110-element vector by the Flatten layer.
 
-Let's see how this looks visually.  Since these embeddings are not trained, it would make sense that the words are fairly scattered:
+Finally, we can fit the classification model and evaluate its performance.
+
+```python
+# fit the model
+model.fit(pad_corp, labels_arr, epochs=50, verbose=1)
+
+# evaluate the model
+loss, accuracy = model.evaluate(pad_corp, labels_arr, verbose=1)
+print('Accuracy: %f' % (accuracy*100))
+```
+```
+4/4 [==============================] - 0s 2ms/step - loss: 0.0000e+00 - accuracy: 0.8900
+Accuracy: 88.999999
+```
+
+Let's see how this looks visually.  Since these embeddings are now trained, we can see more defined clusters with ~89% accuracy in the classification prediction task.
 
 
 ![](/assets/images/2023-09/output2.png)
