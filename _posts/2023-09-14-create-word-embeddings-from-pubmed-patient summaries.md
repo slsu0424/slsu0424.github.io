@@ -134,7 +134,7 @@ Out of 2451 total words, 931 unique words are found.
 
 ## Pad the documents
 
-Keras requires that all documents must be the same length.  We find the maximum length of a document, which is 55 words.  Zeroes are then added to the shorter documents using the **pad_sequences** function.
+Keras requires that all documents must be the same length.  We find the maximum length of a document, which is 55 words.  Zeroes are then added to the shorter documents using the **pad_sequences** function:
 
 ```python
 # pad the docs with zeros
@@ -229,10 +229,10 @@ The embedding output is the result of the embedding layer for a given input sequ
 [[[-4.98422384e-02  5.66009432e-03] --> 'This'
   [-3.95929925e-02  4.86173891e-02] --> '60-year-old'
   [ 4.61821593e-02  2.83356756e-03] --> 'male'
-  [ 4.73875515e-02  3.56208794e-02] --> 'was'
+  <div style="background-color: #FFFF00">[ 4.73875515e-02  3.56208794e-02] --> 'was'</div>
   [ 5.46847656e-03  1.08509660e-02] --> 'hospitalized'
   [-3.20219025e-02 -1.05163939e-02] --> 'due'
-  [ 2.96857245e-02  3.94343249e-02] --> 'to'
+   <div style="background-color: #FFFF00">[ 2.96857245e-02  3.94343249e-02] --> 'to'</div>
 ...]]]
 ```
 
