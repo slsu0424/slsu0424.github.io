@@ -228,7 +228,9 @@ Let's see how this looks visually.  Since these embeddings are not trained, it w
 
 ## Visualize trained embeddings
 
-After adding the embedding layer, we have a 55 x 2 (doc length x embedding dimension) matrix.  We need to compress this into a 1D vector to send to the dense layer.  The dense layer is the final output layer, which makes the final prediction for the classification task. 
+After adding the embedding layer, we have a 55 x 2 (doc length x embedding dimension) matrix.  We need to compress (flatten) this to a 1D vector, to send to the next hidden (dense)* layer.  In our case, the dense layer is the output layer, which makes the final prediction for the network. 
+
+*The dense layer requires a 1D input, but Keras does not automatically flatten the input.
 
 As shown above, we add the Flatten and Dense layers to the model.
 
@@ -284,3 +286,4 @@ Data/SQL Server:
 + <https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main>
 + <https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac>
 + <https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/>
++ <https://towardsdatascience.com/a-guide-to-four-deep-learning-layers-225c93646e61>
