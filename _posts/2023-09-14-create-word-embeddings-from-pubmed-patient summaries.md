@@ -167,8 +167,6 @@ To create the embedding, we create a Keras Sequential model.  Sequential means t
 
 The output_dim is the size of the output vectors for each word.  For example, a output_dim = 2 means that every word is mapped to a vector with 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on, but will also be more computationally expensive.  
 
-*Note:* I played around with the output_dim in multiples of 2 (2 to 32), and did not see a difference in accuracy when training the embedding.
-
 ```python
 # create keras model
 model = Sequential()
@@ -233,7 +231,7 @@ Let's see how this looks visually.  Since these embeddings are not trained, it w
 
 ## Visualize trained embeddings
 
-After adding the embedding layer, we have a 55 x 2 (doc length x embedding dimension) matrix.  We need to compress this into a 1D vector to send to the output layer.  In our case, this output layer is the dense layer, which makes the final prediction for the classification task. 
+After adding the embedding layer, we have a 55 x 2 (doc length x embedding dimension) matrix.  We need to compress this into a 1D vector to send to the dense layer.  The dense layer is the final output layer, which makes the final prediction for the classification task. 
 
 As shown above, we add the Flatten and Dense layers to the model:
 
