@@ -7,7 +7,7 @@ image: assets/images/2023-09/OIP_resize.jpg
 ---
 Building upon the previous [tutorial](https://slsu0424.github.io/encoding-pubmed-abstracts-for-nlp-tasks/) on one-hot encoding, this tutorial will review the concept of word embeddings and apply this to real-life data.  
 
-For our example, we extract patient summaries from PubMed and label those that had COVID-19 and those that did not.  Selected sentences are used to create word embeddings.  These embeddings are trained as part a neural network to perform a classification task.  By training the word embeddings, the computer will learn if there are any meaningful relationships between the words in the text.
+For our example, we extract patient summaries from PubMed and label those that had COVID-19 vs. not COVID-19.  Selected sentences are used to create word embeddings, and the embeddings are trained as part of a neural network to perform a classification task.  By training the word embeddings, the computer will learn if there are any meaningful relationships between the words in the text.
 
 All tutorial resources can be found [here](https://github.com/slsu0424/pmc-patients).
 
@@ -163,7 +163,7 @@ To create the embedding, we create a Keras Sequential model.  Sequential means t
 - output_dim: embedding dimension
 - input_length: maximum length of a document
 
-A output_dim = 2 means that every word is mapped to a vector that can hold 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on, but will also be more computationally expensive. 
+A output_dim = 2 means that every word is represented by a vector that contains 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on, but will also be more computationally expensive. 
 
 Once the embedding layer is added to the network, the learning process is [configured](https://keras.io/api/models/model_training_apis/), and we run model.predict() to generate the predicted outputs.
 
@@ -199,7 +199,7 @@ embedding_output = model.predict(pad_corp)
 The embedding layer is a lookup table, which represents each word as floating point values (weights) in the dimension specified.  These weights are initialized randomly before training the model.  The weights can be obtained as follows:
 
 ```python
-# embedding matrix (lookup table)
+# embedding lookup
 embedding_layer = model.get_layer(index=0)
 
 embedding_matrix = embedding_layer.get_weights()[0]
@@ -276,7 +276,7 @@ print('Accuracy: %f' % (accuracy*100))
 Accuracy: 88.999999
 ```
 
-Let's see how this looks visually.  Since these embeddings are now trained, we can see more defined clusters with ~89% accuracy in the classification prediction task.
+Let's see how this looks visually.  Since these embeddings are now trained, we can see more defined clusters with ~89% accuracy in the prediction task.
 
 
 ![](/assets/images/2023-09/output2.png)
