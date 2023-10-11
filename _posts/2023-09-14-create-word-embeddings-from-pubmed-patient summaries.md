@@ -165,10 +165,9 @@ To create the embedding, we create a Keras Sequential model.  Sequential means t
 - output_dim: number of dimensions the word should be embedded into
 - input_length: maximum length of a document
 
-The output_dim is the size of the output vectors for each word.  For example, a output_dim = 2 means that every word is mapped to a vector with 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on, but also more computationally expensive.  
+The output_dim is the size of the output vectors for each word.  For example, a output_dim = 2 means that every word is mapped to a vector with 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on, but will also be more computationally expensive.  
 
 *Note:* I played around with the output_dim in multiples of 2 (2 to 32), and did not see a difference in accuracy when training the embedding.
-
 
 ```python
 # create keras model
@@ -220,7 +219,7 @@ For example, since we set our output_dim = 2, we should expect to see each word 
 ...]]
 ```
 
-The embedding output is the result of the embedding layer for a given input sequence.  Revisiting document 1, we see that each value from the embedding layer is mapped to a word in that document.  Note that the words 'was' and 'to' are mapped from the embedding matrix:
+The embedding output is the result of the embedding layer for a given input sequence.  Revisiting document 1, we see that each value from the embedding layer is mapped to a word in that document.  The words 'was' and 'to' are mapped from the embedding matrix:
 
 
 ```
@@ -241,7 +240,35 @@ Let's see how this looks visually.  Since these embeddings are not trained, it w
 
 ## Visualize trained embeddings
 
-After adding the embedding layer, we have a 3D tensor (100 docs x 55 word length x 2 embedding dimension).  We need to compress that into a 2D vector.  
+After adding the embedding layer, we have a 55 x 2 (doc length x embedding dimension) matrix.  We need to compress this into a 1D vector to send to output layer.  In our case, this output layer is the dense layer, which makes the final prediction for the neural network. 
+
+As shown above, we add the following layers to the model:
+
+```python
+model.add(Flatten()) # layer 1
+model.add(Dense(1, activation='sigmoid'))  # layer 2
+```
+
+Summary of layers:
+```
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ embedding_28 (Embedding)    (None, 55, 2)             1864      
+                                                                 
+ flatten_17 (Flatten)        (None, 110)               0         
+                                                                 
+ dense_17 (Dense)            (None, 1)                 111       
+                                                                 
+=================================================================
+Total params: 1975 (7.71 KB)
+Trainable params: 1975 (7.71 KB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+```
+The 55×2 matrix is squashed to a 110-element vector by the Flatten layer.
+
+Let's see how this looks visually.  Since these embeddings are not trained, it would make sense that the words are fairly scattered:
 
 
 ![](/assets/images/2023-09/output2.png)
