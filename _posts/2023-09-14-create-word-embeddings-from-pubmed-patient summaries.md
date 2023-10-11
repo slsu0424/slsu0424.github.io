@@ -163,7 +163,7 @@ To create the embedding, we create a Keras Sequential model.  Sequential means t
 
 Am output_dim = 2 means that every word is mapped to a vector with 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on, but will also be more computationally expensive. 
 
-Once the embedding layer is added to the network, the learning process is [configured](https://machinelearningmastery.com/tutorial-first-neural-network-python-keras/), and we run model.predict() to generate the predicted outputs.
+Once the embedding layer is added to the network, the learning process is [configured](https://keras.io/api/models/model_training_apis/), and we run model.predict() to generate the predicted outputs.
 
 We can also add other hidden layers (Flatten, Dense) to discover more complex patterns in the data.  These will be discussed once we train the embeddings.
 
