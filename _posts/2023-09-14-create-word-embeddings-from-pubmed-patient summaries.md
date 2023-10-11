@@ -155,15 +155,15 @@ The above array represents the text of Document 1.
 
 ## Create an embedding 
 
-To create the embedding, we create a Keras Sequential model.  Sequential means that each layer in the network has exactly one input and one output.  To define the embedding (embedding_layer), we need 3 inputs:
+To create the embedding, we create a Keras Sequential model.  Sequential means that each layer in the network has exactly one input and one output.  To define the embedding, we need 3 inputs:
 
 - input_dim: size of vocabulary
-- output_dim: embedding dimension
+- output_dim: embedding dimension (size of the output vectors for each word)
 - input_length: maximum length of a document
 
-The output_dim is the size of the output vectors for each word.  For example, a output_dim = 2 means that every word is mapped to a vector with 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on, but will also be more computationally expensive. 
+Am output_dim = 2 means that every word is mapped to a vector with 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on, but will also be more computationally expensive. 
 
-Once the embedding layer is added to the network, the learning process is configured (link:), and we run model.predict() to generate the predicted outputs.
+Once the embedding layer is added to the network, the learning process is [configured](https://machinelearningmastery.com/tutorial-first-neural-network-python-keras/), and we run model.predict() to generate the predicted outputs.
 
 We can also add other hidden layers (Flatten, Dense) to discover more complex patterns in the data.  These will be discussed once we train the embeddings.
 
@@ -216,7 +216,7 @@ For example, since we set our output_dim = 2, each word is represented by 2 weig
 ...]]
 ```
 
-The embedding_output is the result of the embedding layer for a given input sequence.  Revisiting document 1, we see that each value from the embedding layer is mapped to a word in that document:  
+The embedding_output is the result of the embedding layer for a given input sequence.  For Document 1, we see that each value from the embedding layer is mapped to a word in that document:  
 
 ```
 [[[-4.98422384e-02  5.66009432e-03] --> 'This'
