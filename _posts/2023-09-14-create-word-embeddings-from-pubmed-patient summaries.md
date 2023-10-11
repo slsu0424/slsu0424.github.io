@@ -223,18 +223,19 @@ For example, since we set our output_dim = 2, we should expect to see each word 
 ...]]
 ```
 
-The embedding output is the result of the embedding layer for a given input sequence.  Revisiting document 1, we see that each value from the embedding layer is mapped to a word in that document:
+The embedding output is the result of the embedding layer for a given input sequence.  Revisiting document 1, we see that each value from the embedding layer is mapped to a word in that document.  Note that the words 'was' and 'to' are mapped from the  :
 
 
+```
 [[[-4.98422384e-02  5.66009432e-03] --> 'This'
   [-3.95929925e-02  4.86173891e-02] --> '60-year-old'
   [ 4.61821593e-02  2.83356756e-03] --> 'male'
-  <div style="background-color: #FFFF00">[ 4.73875515e-02  3.56208794e-02] --> 'was'</div>
+  [ 4.73875515e-02  3.56208794e-02] --> 'was'
   [ 5.46847656e-03  1.08509660e-02] --> 'hospitalized'
   [-3.20219025e-02 -1.05163939e-02] --> 'due'
-   <div style="background-color: #FFFF00">[ 2.96857245e-02  3.94343249e-02] --> 'to'</div>
+  [ 2.96857245e-02  3.94343249e-02] --> 'to'
 ...]]]
-
+```
 
 Let's see how this looks visually.  Since these embeddings are not trained, it would make sense that the words are fairly scattered:
 
@@ -243,7 +244,7 @@ Let's see how this looks visually.  Since these embeddings are not trained, it w
 
 ## Visualize trained embeddings
 
-After adding the embedding layer, we have a N dimension.  We need to compress that into a 2D vector.  
+After adding the embedding layer, we have a 3D tensor (100 docs x 55 word length x 2 embedding dimension).  We need to compress that into a 2D vector.  
 
 
 ![](/assets/images/2023-09/output2.png)
