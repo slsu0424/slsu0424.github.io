@@ -228,9 +228,9 @@ Let's see how this looks visually.  Since these embeddings are not trained, it w
 
 ## Visualize trained embeddings
 
-After adding the embedding layer, we have a 55 x 2 (doc length x embedding dimension) matrix.  We need to compress (flatten) this to a 1D vector, to send to the next hidden (dense)* layer.  In our case, the dense layer is the output layer, which makes the final prediction for the network. 
+After adding the embedding layer, we have a 55 x 2 (doc length x embedding dimension) matrix.  We need to compress (flatten) this to a 1D vector, to send to the next hidden (dense)* layer.  The dense layer requires a 1D input, but Keras does not automatically flatten the input.  
 
-*The dense layer requires a 1D input, but Keras does not automatically flatten the input.
+In our case, the dense layer is the output layer, which makes the final prediction for the network. 
 
 As shown above, we add the Flatten and Dense layers to the model.
 
@@ -253,7 +253,7 @@ _________________________________________________________________
 ```
 The 55×2 matrix is now reduced to a 110-element vector by the Flatten layer.
 
-Finally, we can fit the model on the classification task and evaluate its performance.
+Finally, we train the model on the classification task and evaluate its performance.
 
 ```python
 # fit the model
