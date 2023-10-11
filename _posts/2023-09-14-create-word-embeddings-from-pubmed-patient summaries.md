@@ -7,7 +7,7 @@ image: assets/images/2023-09/OIP_resize.jpg
 ---
 Building upon the previous [tutorial](https://slsu0424.github.io/encoding-pubmed-abstracts-for-nlp-tasks/) on one-hot encoding, this tutorial will review the concept of word embeddings and apply this to real-life data.  
 
-For our example, we will extract patient summaries from PubMed.  From these patient summaries, we will label those that had COVID-19 and those that did not.  Selected sentences are used to create word embeddings.  These embeddings are trained as part a neural network model to perform a classification task.  By training the word embeddings, the computer will learn if there are any meaningful relationships between the words in the text.
+For our example, we extract patient summaries from PubMed and label those that had COVID-19 and those that did not.  Selected sentences are used to create word embeddings.  These embeddings are trained as part a neural network to perform a classification task.  By training the word embeddings, the computer will learn if there are any meaningful relationships between the words in the text.
 
 All tutorial resources can be found [here](https://github.com/slsu0424/pmc-patients).
 
@@ -283,7 +283,7 @@ Let's see how this looks visually.  Since these embeddings are now trained, we c
 
 ## Conclusion
 
-In this tutorial, we explored how to create word embeddings from scratch, using a neural network to perform a classification task.  By taking sample text from PubMed patient summaries, we were able to train a neural network to classify patients who had COVID-19 and those that did not.  In doing so, we were also able to train the embeddings, such that words that were semantically similar to each other were visually placed closer together.  
+In this tutorial, we explored how to create word embeddings from scratch, using a neural network to perform a classification task.  By taking sample text from PubMed patient summaries, we were able to train a neural network to classify patients who had COVID-19 and those that did not.  In doing so, we were also able to train the embeddings, such that words with similar meanings were visually placed closer together.  
 
 We can boost the performance of the training accuracy by adding in a different layer, such as a convolution layer.  I will explore these in future posts.
 
