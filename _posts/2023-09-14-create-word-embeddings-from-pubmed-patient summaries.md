@@ -100,9 +100,9 @@ For 100 documents, there are 2451 total words in the corpus.
 
 ## Convert text to integers
 
-Since we saw the limitations with one-hot encoding, a better approach would be to assign each word a unique integer.  The integer encoding for a specific word remains the same across all documents, so this will help reduce the size of the corpus to unique words only. 
+Since we saw the limitations with one-hot encoding, a better approach would be to assign each word a unique integer.  The integer encoding for a specific word remains the same across all documents, so this will help reduce the size of the corpus to unique words (vocabulary). 
 
-To do this, Keras (neural network library) provides a handy **Tokenizer() API** that can handle multiple documents.  For a deeper understanding of how to implement this, see this [tutorial](https://machinelearningmastery.com/prepare-text-data-deep-learning-keras).
+To do this, Keras (neural network library) provides a handy **Tokenizer() API** that can handle multiple documents.  For a deeper understanding of its implementation, see this [tutorial](https://machinelearningmastery.com/prepare-text-data-deep-learning-keras).
 
 ```python
 encod_corp = []
@@ -160,10 +160,10 @@ The above array represents the text of Document 1.
 To create the embedding, we create a Keras Sequential model.  Sequential means that each layer in the network has exactly one input and one output.  To define the embedding, we need 3 inputs:
 
 - input_dim: size of vocabulary
-- output_dim: embedding dimension (size of the output vectors for each word)
+- output_dim: embedding dimension
 - input_length: maximum length of a document
 
-Am output_dim = 2 means that every word is mapped to a vector with 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on, but will also be more computationally expensive. 
+A output_dim = 2 means that every word is mapped to a vector that can hold 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on, but will also be more computationally expensive. 
 
 Once the embedding layer is added to the network, the learning process is [configured](https://keras.io/api/models/model_training_apis/), and we run model.predict() to generate the predicted outputs.
 
@@ -289,12 +289,10 @@ We can boost the performance of the training accuracy by adding in a different l
 
 
 ## References
-
-Data/SQL Server:
 + <https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main>
 + <https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac>
 + <https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/>
 + <https://towardsdatascience.com/a-guide-to-four-deep-learning-layers-225c93646e61>
 + <https://cs229.stanford.edu/summer2020/cs229-notes-deep_learning.pdf>
-+ <https://www.tensorflow.org/text/guide/word_embeddings#:~:text=An%20embedding%20is%20a%20dense%20vector%20of%20floating,a%20model%20learns%20weights%20for%20a%20dense%20layer%29.>
++ <https://www.tensorflow.org/text/guide/word_embeddings#word_embeddings_2>
 + <https://www.elastic.co/what-is/vector-embedding>
