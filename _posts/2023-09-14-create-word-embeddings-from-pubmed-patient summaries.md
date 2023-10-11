@@ -159,13 +159,15 @@ The above array represents the text of Document 1.  A sample mapping of the arra
 
 ## Create an embedding 
 
-To create the embedding, we create a Keras Sequential model.  Sequential means that each layer in the network has exactly one input (tensor) and one output (tensor).  To define the embedding, we need 3 inputs:
+To create the embedding, we create a Keras Sequential model.  Sequential means that each layer in the network has exactly one input and one output.  To define the embedding, we need 3 inputs:
 
 - input_dim: size of vocabulary
 - output_dim: number of dimensions the word should be embedded into
 - input_length: maximum length of a document
 
-The output_dim is the size of the output vectors for each word.  For example, a output_dim = 2 means that every word is mapped to a vector with 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on, but will also be more computationally expensive.  
+The output_dim is the size of the output vectors for each word.  For example, a output_dim = 2 means that every word is mapped to a vector with 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on, but will also be more computationally expensive. 
+
+We can also add layers to the network to change the dimensions of the inputs for the next layer.  These will be explored once we train the embeddings.
 
 ```python
 # create keras model
@@ -233,7 +235,7 @@ Let's see how this looks visually.  Since these embeddings are not trained, it w
 
 After adding the embedding layer, we have a 55 x 2 (doc length x embedding dimension) matrix.  We need to compress this into a 1D vector to send to the dense layer.  The dense layer is the final output layer, which makes the final prediction for the classification task. 
 
-As shown above, we add the Flatten and Dense layers to the model:
+As shown above, we add the Flatten and Dense layers to the model.
 
 Summary of layers:
 ```
@@ -252,7 +254,7 @@ Trainable params: 1975 (7.71 KB)
 Non-trainable params: 0 (0.00 Byte)
 _________________________________________________________________
 ```
-The 55×2 matrix is reduced to a 110-element vector by the Flatten layer.
+The 55×2 matrix is now reduced to a 110-element vector by the Flatten layer.
 
 Finally, we can fit the classification model and evaluate its performance.
 
