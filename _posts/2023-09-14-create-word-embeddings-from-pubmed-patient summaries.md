@@ -236,7 +236,7 @@ Let's see how this looks visually.  Since these embeddings are not trained, it w
 
 ## Visualize trained embeddings
 
-After adding the embedding layer, we have a 55 x 2 (doc length x embedding dimension) matrix.  We need to compress (flatten) this into a 1D vector, to send to the next hidden (dense) layer.  The dense layer requires a 1D input, but Keras does not automatically flatten the input.  
+After adding the embedding layer, we have a 55 x 2 (doc length x embedding dimension) matrix.  We need to compress (flatten) this into a 1D vector, to send to the next hidden (dense) layer.
 
 As shown above, we add the Flatten and Dense layers to the model.
 
@@ -281,9 +281,9 @@ Let's see how this looks visually.  Since these embeddings are now trained, we c
 
 ## Conclusion
 
-In this tutorial, we explored how to create and train word embeddings from scratch, using a neural network to perform a classification task.  By taking a subset of PubMed abstracts, we were able to see how this approach becomes highly inefficient with larger vocabularies.  Some of these inefficiencies are due to a lack of understanding relationships between words, as well as a sparse and highly-dimensional feature space.
+In this tutorial, we explored how to create word embeddings from scratch, using a neural network to perform a classification task.  By taking sample text from PubMed patient summaries, we were able to train a neural network to classify patients who had COVID-19 and those that did not.  In doing so, we were also able to train the embeddings, such that words that were semantically similar to each other were visually placed closer together.  
 
-We can boost the performance of the training accuracy by adding in another layer, such as a convolution layer.  I will explore these in future posts.
+We can boost the performance of the training accuracy by adding in a different layer, such as a convolution layer.  I will explore these in future posts.
 
 
 ## References
