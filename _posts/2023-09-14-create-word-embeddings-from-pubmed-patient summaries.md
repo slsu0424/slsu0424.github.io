@@ -134,7 +134,7 @@ Out of 2451 total words, 932 unique words are found.
 
 ## Pad the documents
 
-Keras requires that all documents must be the same length.  We find the maximum length of a document, which is 145 words.  Zeroes are then added to the shorter documents using the **pad_sequences** function.
+Keras requires that all documents must be the same length.  We find the maximum length of a document, which is 55 words.  Zeroes are then added to the shorter documents using the **pad_sequences** function.
 
 ```python
 # pad the docs with zeros
@@ -200,7 +200,7 @@ embedding_output = model.predict(pad_corp)
 The output of an embedding layer is a lookup table, which maps each word in the vocabulary to a set of random numbers in the dimension specified.  These numbers are initialized randomly before training the model.
 
 ```python
-# extract embedding matrix (lookup table)
+# extract embedding
 embedding_layer = model.get_layer(index=0)
 
 embedding_matrix = embedding_layer.get_weights()[0]
@@ -209,15 +209,78 @@ embedding_matrix = embedding_layer.get_weights()[0]
 For example, since we set our output_dim = 2, we should expect to see each word mapped to 2 random numbers:
 
 ```
-[[ 3.48836184e-03  4.73979823e-02] --> 'a'
- [ 1.17111579e-02 -4.21698801e-02] --> 'and'
- [ 2.09044702e-02 -4.68258746e-02] --> 'the'
+[[ 3.51696648e-02 -4.76405397e-02] --> 'a'
+ [-1.02797039e-02  1.60155557e-02] --> 'of'
+ [ 3.44626047e-02 -2.51591206e-02] --> 'with'
+ [ 2.46063583e-02  2.83009149e-02] --> 'and'
+ [ 4.52322103e-02  2.24443115e-02] --> 'the'
+ [ 2.98631825e-02  3.14567201e-02] --> 'to'
  ...
 ```
 
-Revisiting the first document, we see that each embedding value is mapped to a word in that document:
+Revisiting the first document, we see that each value from the embedding layer is mapped to a word in that document:
+
+```
+| This | 60-year-old | male | was | hospitalized | due | to | moderate | ARDS | from | COVID-19 
 
 
+[[[ 6.34747744e-03  1.50704272e-02] --> 'This'
+  [-1.62608549e-03  3.41557600e-02]
+  [ 2.57278569e-02 -2.51035690e-02]
+  [ 1.29629485e-02  3.39476801e-02]
+  [-4.31921594e-02 -2.97903772e-02]
+  [ 1.54621489e-02 -4.22002673e-02]
+  [-1.35600083e-02  4.81962077e-02] --> 'to'
+  [ 3.45612504e-02 -2.81577595e-02]
+  [ 1.68705098e-02 -1.58230215e-03]
+  [ 2.84120701e-02 -4.12044898e-02]
+  [ 2.10472234e-02  3.22710983e-02]
+  [ 2.46063583e-02  2.83009149e-02]
+  [-4.78946567e-02 -2.18540188e-02]
+  [ 3.44626047e-02 -2.51591206e-02]
+  [-2.79271491e-02 -3.28389555e-02]
+  [ 4.69936766e-02  1.71788000e-02]
+  [-1.44309923e-03  4.02818359e-02]
+  [ 4.52322103e-02  2.24443115e-02]
+  [-3.90867107e-02 -3.23803648e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]
+  [ 3.51696648e-02 -4.76405397e-02]]
+
+```
 
 
 Let's see how this looks visually.  Since these embeddings are not trained, it would make sense that the words are fairly scattered:
