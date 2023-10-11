@@ -155,7 +155,7 @@ The above array represents the text of Document 1.
 
 ## Create an embedding 
 
-To create the embedding, we create a Keras Sequential model.  Sequential means that each layer in the network has exactly one input and one output.  To define the embedding, we need 3 inputs:
+To create the embedding, we create a Keras Sequential model.  Sequential means that each layer in the network has exactly one input and one output.  To define the embedding (embedding_layer), we need 3 inputs:
 
 - input_dim: size of vocabulary
 - output_dim: embedding dimension
@@ -163,7 +163,9 @@ To create the embedding, we create a Keras Sequential model.  Sequential means t
 
 The output_dim is the size of the output vectors for each word.  For example, a output_dim = 2 means that every word is mapped to a vector with 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on, but will also be more computationally expensive. 
 
-We can also add layers to the network to change the dimensions of the inputs for the next layer.  These will be explored once we train the embeddings.
+Once the embedding layer is added to the network, the learning process is configured (link:), and we run model.predict() to return the predicted outputs.
+
+We can also add other hidden layers (Flatten, Dense) to discover more complex patterns in the data.  These will be discussed once we train the embeddings.
 
 ```python
 # create keras model
@@ -192,8 +194,14 @@ embedding_output = model.predict(pad_corp)
 
 ## Visualize intial embeddings
 
-The embedding layer is a matrix, or lookup table, which maps each word in the vocabulary to a set of numbers in the dimension specified.  These numbers are initialized randomly before training the model.
+The embedding layer is a matrix, or lookup table, which maps each word in the vocabulary to a set of numbers (weights) in the dimension specified.  These weights are initialized randomly before training the model.  The weights can be obtained from the model's layers as follows:
 
+```python
+# embedding matrix (lookup table)
+embedding_layer = model.get_layer(index=0)
+
+embedding_matrix = embedding_layer.get_weights()[0]
+```
 For example, since we set our output_dim = 2, each word is mapped to 2 random elements:
 
 ```
@@ -228,7 +236,7 @@ Let's see how this looks visually.  Since these embeddings are not trained, it w
 
 ## Visualize trained embeddings
 
-After adding the embedding layer, we have a 55 x 2 (doc length x embedding dimension) matrix.  We need to compress this into a 1D vector to send to the dense layer.  The dense layer is the final output layer, which makes the final prediction for the classification task. 
+After adding the embedding layer, we have a 55 x 2 (doc length x embedding dimension) matrix.  We need to compress (flatten) this into a 1D vector, to send to the next hidden (dense) layer.  The dense layer requires a 1D input, but Keras does not automatically flatten the input.  
 
 As shown above, we add the Flatten and Dense layers to the model.
 
@@ -251,7 +259,7 @@ _________________________________________________________________
 ```
 The 55×2 matrix is now reduced to a 110-element vector by the Flatten layer.
 
-Finally, we can fit the classification model and evaluate its performance.
+Finally, we train the model on the classification task and evaluate its performance.
 
 ```python
 # fit the model
@@ -284,3 +292,4 @@ Data/SQL Server:
 + <https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main>
 + <https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac>
 + <https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/>
++ <https://towardsdatascience.com/a-guide-to-four-deep-learning-layers-225c93646e61>
