@@ -151,11 +151,7 @@ print(pad_corp)
    ... 
 ```
 
-The above array represents the text of Document 1.  A sample mapping of the array to words is below:
-
-| This | 60-year-old | male | was | hospitalized | due | to | moderate | ARDS | from | COVID-19 | ...
-|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
-| 31 | 281 | 10 | 7 | 160 | 44 | 6 |282 | 283 | 28 | 54 |...|
+The above array represents the text of Document 1.
 
 ## Create an embedding 
 
