@@ -113,10 +113,21 @@ encod_corp = t.texts_to_sequences(corp) # integer encode docs
 # get unique words
 vocab = t.word_index
 
+print("vocab:")
+for i,v in enumerate(vocab, 1):
+   print(i,v)
+
 vocab_size = len(vocab) # input into embedding layer
 print('Vocab size = %s unique words' % vocab_size)
 ```
 ```
+vocab:
+1 a
+2 of
+3 with
+4 and
+5 the
+
 Vocab size = 932 unique words
 ``` 
 Out of 2451 total words, 932 unique words are found.
