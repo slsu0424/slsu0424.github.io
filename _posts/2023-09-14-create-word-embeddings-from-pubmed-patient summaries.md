@@ -197,7 +197,7 @@ embedding_output = model.predict(pad_corp)
 
 ## Visualize intial embeddings
 
-The embedding layer is a lookup table, which maps each word in the vocabulary to a set of random numbers in the dimension specified.  These numbers are initialized randomly before training the model.
+The embedding layer is a matrix, or lookup table, which maps each word in the vocabulary to a set of random numbers in the dimension specified.  These numbers are initialized randomly before training the model.
 
 ```python
 # extract embedding
@@ -207,9 +207,6 @@ embedding_matrix = embedding_layer.get_weights()[0]
 ```
 
 For example, since we set our output_dim = 2, we should expect to see each word mapped to 2 random numbers:
-
-
-<div style="background-color: #FFFF00">Highlighted text</div>
 
 ```
 [[ 4.24065441e-03  6.88085705e-03] (index 0)
@@ -223,7 +220,7 @@ For example, since we set our output_dim = 2, we should expect to see each word 
 ...]]
 ```
 
-The embedding output is the result of the embedding layer for a given input sequence.  Revisiting document 1, we see that each value from the embedding layer is mapped to a word in that document.  Note that the words 'was' and 'to' are mapped from the  :
+The embedding output is the result of the embedding layer for a given input sequence.  Revisiting document 1, we see that each value from the embedding layer is mapped to a word in that document.  Note that the words 'was' and 'to' are mapped from the embedding matrix:
 
 
 ```
