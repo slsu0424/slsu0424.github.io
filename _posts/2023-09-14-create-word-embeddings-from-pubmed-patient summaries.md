@@ -155,7 +155,7 @@ The above array represents the text of Document 1.
 
 ## Create an embedding 
 
-To create the embedding, we create a Keras Sequential model.  Sequential means that each layer in the network has exactly one input and one output.  To define the embedding, we need 3 inputs:
+To create the embedding, we create a Keras Sequential model.  Sequential means that each layer in the network has exactly one input and one output.  To define the embedding (embedding_layer), we need 3 inputs:
 
 - input_dim: size of vocabulary
 - output_dim: embedding dimension
@@ -163,7 +163,9 @@ To create the embedding, we create a Keras Sequential model.  Sequential means t
 
 The output_dim is the size of the output vectors for each word.  For example, a output_dim = 2 means that every word is mapped to a vector with 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on, but will also be more computationally expensive. 
 
-We can also add layers to the network to change the dimensions of the inputs for the next layer.  These will be explored once we train the embeddings.
+The embedding layer is added to the network, and we configure the learning process (details for tuning can be found here: ), and run model.predict() on the input data to return the predicted outputs.
+
+We can also add other layers (Flatten, Dense) to change the dimensions of the inputs for the next layer.  These will be discussed once we train the embeddings.
 
 ```python
 # create keras model
@@ -228,9 +230,9 @@ Let's see how this looks visually.  Since these embeddings are not trained, it w
 
 ## Visualize trained embeddings
 
-After adding the embedding layer, we have a 55 x 2 (doc length x embedding dimension) matrix.  We need to compress (flatten) this to a 1D vector, to send to the next hidden (dense)* layer.  The dense layer requires a 1D input, but Keras does not automatically flatten the input.  
+After adding the embedding layer, we have a 55 x 2 (doc length x embedding dimension) matrix.  We need to compress (flatten) this to a 1D vector, to send to the next dense layer.  The dense layer requires a 1D input, but Keras does not automatically flatten the input.  
 
-In our case, the dense layer is the output layer, which makes the final prediction for the network. 
+The output layer makes the final prediction for the network. 
 
 As shown above, we add the Flatten and Dense layers to the model.
 
