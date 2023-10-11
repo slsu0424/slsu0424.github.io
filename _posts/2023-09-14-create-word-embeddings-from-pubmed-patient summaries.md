@@ -163,7 +163,7 @@ To create the embedding, we create a Keras Sequential model.  Sequential means t
 
 The output_dim is the size of the output vectors for each word.  For example, a output_dim = 2 means that every word is mapped to a vector with 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on, but will also be more computationally expensive. 
 
-Once the embedding layer is added to the network, the learning process is configured (link:), and we run model.predict() to return the predicted outputs.
+Once the embedding layer is added to the network, the learning process is configured (link:), and we run model.predict() to generate the predicted outputs.
 
 We can also add other hidden layers (Flatten, Dense) to discover more complex patterns in the data.  These will be discussed once we train the embeddings.
 
@@ -194,7 +194,7 @@ embedding_output = model.predict(pad_corp)
 
 ## Visualize intial embeddings
 
-The embedding layer is a matrix, or lookup table, which maps each word in the vocabulary to a set of numbers (weights) in the dimension specified.  These weights are initialized randomly before training the model.  The weights can be obtained from the model's layers as follows:
+The embedding layer is a matrix, or lookup table, which represents each word in the vocabulary as embedding vectors (weights) in the dimension specified.  These weights are initialized randomly before training the model.  The weights can be obtained from the model's layers as follows:
 
 ```python
 # embedding matrix (lookup table)
@@ -202,7 +202,7 @@ embedding_layer = model.get_layer(index=0)
 
 embedding_matrix = embedding_layer.get_weights()[0]
 ```
-For example, since we set our output_dim = 2, each word is mapped to 2 random elements:
+For example, since we set our output_dim = 2, each word is represented by 2 elements, or weights:
 
 ```
 [[ 4.24065441e-03  6.88085705e-03] (index 0)
@@ -216,7 +216,7 @@ For example, since we set our output_dim = 2, each word is mapped to 2 random el
 ...]]
 ```
 
-The embedding output is the result of the embedding layer for a given input sequence.  Revisiting document 1, we see that each value from the embedding layer is mapped to a word in that document.  
+The embedding_output is the result of the embedding layer for a given input sequence.  Revisiting document 1, we see that each value from the embedding layer is mapped to a word in that document:  
 
 ```
 [[[-4.98422384e-02  5.66009432e-03] --> 'This'
@@ -293,3 +293,4 @@ Data/SQL Server:
 + <https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac>
 + <https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/>
 + <https://towardsdatascience.com/a-guide-to-four-deep-learning-layers-225c93646e61>
++ <https://cs229.stanford.edu/summer2020/cs229-notes-deep_learning.pdf>
