@@ -251,7 +251,7 @@ _________________________________________________________________
 ```
 The 55×2 matrix is now reduced to a 110-element vector by the Flatten layer.
 
-Finally, we can fit the classification model and evaluate its performance.
+Finally, we can fit the model on the classification task and evaluate its performance.
 
 ```python
 # fit the model
