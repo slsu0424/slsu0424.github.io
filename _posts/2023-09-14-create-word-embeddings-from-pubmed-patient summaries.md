@@ -140,13 +140,7 @@ print(pad_corp)
    ... 
 ```
 
-This array represents the text of Document 1, and a sample mapping of the words is below:
-
-| Item | Price | Qty |
-|:----|:-----:|----:|
-| Computer | $1600 | 5 |
-| Phone | $12   | 12 |
-| Pipe  | $1    | 234|
+The above array represents the text of Document 1.  A sample mapping of the array to words is below:
 
 | This | 60-year-old | male | was | hospitalized | due | to | moderate | ARDS | from | COVID-19 | ...
 |:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
