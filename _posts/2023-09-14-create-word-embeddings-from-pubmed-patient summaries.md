@@ -198,14 +198,7 @@ embedding_output = model.predict(pad_corp)
 
 The embedding layer is a matrix, or lookup table, which maps each word in the vocabulary to a set of random numbers in the dimension specified.  These numbers are initialized randomly before training the model.
 
-```python
-# extract embedding
-embedding_layer = model.get_layer(index=0)
-
-embedding_matrix = embedding_layer.get_weights()[0]
-```
-
-For example, since we set our output_dim = 2, we should expect to see each word mapped to 2 random numbers:
+For example, since we set our output_dim = 2, we should expect to see each word mapped to 2 elements containing random numbers:
 
 ```
 [[ 4.24065441e-03  6.88085705e-03] (index 0)
@@ -240,14 +233,9 @@ Let's see how this looks visually.  Since these embeddings are not trained, it w
 
 ## Visualize trained embeddings
 
-After adding the embedding layer, we have a 55 x 2 (doc length x embedding dimension) matrix.  We need to compress this into a 1D vector to send to output layer.  In our case, this output layer is the dense layer, which makes the final prediction for the neural network. 
+After adding the embedding layer, we have a 55 x 2 (doc length x embedding dimension) matrix.  We need to compress this into a 1D vector to send to the output layer.  In our case, this output layer is the dense layer, which makes the final prediction for the classification task. 
 
-As shown above, we add the following layers to the model:
-
-```python
-model.add(Flatten()) # layer 1
-model.add(Dense(1, activation='sigmoid'))  # layer 2
-```
+As shown above, we add the Flatten and Dense layers to the model:
 
 Summary of layers:
 ```
@@ -266,7 +254,7 @@ Trainable params: 1975 (7.71 KB)
 Non-trainable params: 0 (0.00 Byte)
 _________________________________________________________________
 ```
-The 55×2 matrix is squashed to a 110-element vector by the Flatten layer.
+The 55×2 matrix is reduced to a 110-element vector by the Flatten layer.
 
 Finally, we can fit the classification model and evaluate its performance.
 
@@ -290,7 +278,7 @@ Let's see how this looks visually.  Since these embeddings are now trained, we c
 
 ## Conclusion
 
-In this tutorial, we explored one-hot encoding, a very simple way to convert categorical variables for natural language processing tasks.  By taking a subset of PubMed abstracts, we were able to see how this approach becomes highly inefficient with larger vocabularies.  Some of these inefficiencies are due to a lack of understanding relationships between words, as well as a sparse and highly-dimensional feature space.
+In this tutorial, we explored how to create and train word embeddings from scratch, using a neural network to perform a classification task.  By taking a subset of PubMed abstracts, we were able to see how this approach becomes highly inefficient with larger vocabularies.  Some of these inefficiencies are due to a lack of understanding relationships between words, as well as a sparse and highly-dimensional feature space.
 
 We can boost the performance of the training accuracy by adding in another layer, such as a convolution layer.  I will explore these in future posts.
 
