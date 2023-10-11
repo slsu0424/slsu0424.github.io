@@ -84,7 +84,7 @@ print(labels_arr)
 
 ## Create a corpus
 
-Now that we have our labeled dataset, we can create a corpus.  We take the first 1 sentences from each record (document).  A sample of the first 3 documents in the corpus is below:
+Now that we have our labeled dataset, we can create a corpus.  We take the 1st sentence from each document.  A sample of the first 3 documents in the corpus is below:
 
 ```
 ['This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea.', 
@@ -113,19 +113,28 @@ encod_corp = t.texts_to_sequences(corp) # integer encode docs
 # get unique words
 vocab = t.word_index
 
+print("vocab:")
+for i,v in enumerate(vocab, 1):
+   print(i,v)
+
 vocab_size = len(vocab) # input into embedding layer
 print('Vocab size = %s unique words' % vocab_size)
-
 ```
-
 ```
-Vocab size = 932 unique words
+vocab:
+1 a
+2 of
+3 with
+4 and
+5 the
+
+Vocab size = 931 unique words
 ``` 
-Out of 2451 total words, 932 unique words are found.
+Out of 2451 total words, 931 unique words are found.
 
 ## Pad the documents
 
-Keras requires that all documents must be the same length.  We find the maximum length of a document, which is 145 words.  Padding (zeroes) are then added to the shorter documents using the **pad_sequences** function.
+Keras requires that all documents must be the same length.  We find the maximum length of a document, which is 55 words.  Zeroes are then added to the shorter documents using the **pad_sequences** function.
 
 ```python
 # pad the docs with zeros
@@ -142,22 +151,24 @@ print(pad_corp)
    ... 
 ```
 
-This array represents the text of Document 1:
+The above array represents the text of Document 1.  A sample mapping of the array to words is below:
 
-'This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea.'  
-
+| This | 60-year-old | male | was | hospitalized | due | to | moderate | ARDS | from | COVID-19 | ...
+|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+| 31 | 281 | 10 | 7 | 160 | 44 | 6 |282 | 283 | 28 | 54 |...|
 
 ## Create an embedding 
 
 To create the embedding, we create a Keras Sequential model.  Sequential means that each layer in the network has exactly one input and one output.  To define the embedding, we need 3 inputs:
 
 - input_dim: size of vocabulary
-- output_dim: how many dimensions the word should be embedded into
+- output_dim: number of dimensions the word should be embedded into
 - input_length: maximum length of a document
 
-The output_dim is the size of the output vectors for each word.  For example, a output_dim = 2 means that every word is mapped to a vector with 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on, but also more computationally expensive.  I played around with the output_dim in multiples of 2 (2 to 32), and did not see a difference in accuracy when training the embedding.
+The output_dim is the size of the output vectors for each word.  For example, a output_dim = 2 means that every word is mapped to a vector with 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on, but also more computationally expensive.  
 
-To better understand the logic behind creating an embedding, I found these [articles](https://stats.stackexchange.com/questions/270546/how-does-keras-embedding-layer-work?rq=1) particulary helpful.  
+*Note:* I played around with the output_dim in multiples of 2 (2 to 32), and did not see a difference in accuracy when training the embedding.
+
 
 ```python
 # create keras model
@@ -186,10 +197,10 @@ embedding_output = model.predict(pad_corp)
 
 ## Visualize intial embeddings
 
-The output of an embedding layer is a lookup table, which maps each word in the vocabulary to a set of random numbers in the dimension specified.  These numbers are initialized randomly before training the model.
+The embedding layer is a lookup table, which maps each word in the vocabulary to a set of random numbers in the dimension specified.  These numbers are initialized randomly before training the model.
 
 ```python
-# extract embedding matrix (lookup table)
+# extract embedding
 embedding_layer = model.get_layer(index=0)
 
 embedding_matrix = embedding_layer.get_weights()[0]
@@ -197,17 +208,33 @@ embedding_matrix = embedding_layer.get_weights()[0]
 
 For example, since we set our output_dim = 2, we should expect to see each word mapped to 2 random numbers:
 
+
+<div style="background-color: #FFFF00">Highlighted text</div>
+
 ```
-[[ 3.48836184e-03  4.73979823e-02] --> 'a'
- [ 1.17111579e-02 -4.21698801e-02] --> 'and'
- [ 2.09044702e-02 -4.68258746e-02] --> 'the'
- ...
+[[ 4.24065441e-03  6.88085705e-03] (index 0)
+ [ 1.85191296e-02  4.87870015e-02] --> 'a'
+ [ 3.83142494e-02  1.63575523e-02] --> 'of'
+ [-4.21669260e-02  3.95769961e-02] --> 'with'
+ [-9.30057839e-03 -5.12727350e-03] --> 'and'
+ [ 1.16716996e-02 -3.56635563e-02] --> 'the'
+ [ 2.96857245e-02  3.94343249e-02] --> 'to'
+ [ 4.73875515e-02  3.56208794e-02] --> 'was'
+...]]
 ```
 
-Revisiting the first document, we see that each embedding value is mapped to a word in that document:
+The embedding output is the result of the embedding layer for a given input sequence.  Revisiting document 1, we see that each value from the embedding layer is mapped to a word in that document:
 
-
-
+```
+[[[-4.98422384e-02  5.66009432e-03] --> 'This'
+  [-3.95929925e-02  4.86173891e-02] --> '60-year-old'
+  [ 4.61821593e-02  2.83356756e-03] --> 'male'
+  [ 4.73875515e-02  3.56208794e-02] --> 'was'
+  [ 5.46847656e-03  1.08509660e-02] --> 'hospitalized'
+  [-3.20219025e-02 -1.05163939e-02] --> 'due'
+  [ 2.96857245e-02  3.94343249e-02] --> 'to'
+...]]]
+```
 
 Let's see how this looks visually.  Since these embeddings are not trained, it would make sense that the words are fairly scattered:
 
