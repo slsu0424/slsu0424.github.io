@@ -29,7 +29,7 @@ The data is loaded into [SQL Server on a Mac](https://builtin.com/software-engin
 $ mssql -u <sql server username> -p <sql server password>
 ```
 
-We then [connect](https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/) SQL Server to Azure Data Studio, where we can access and query the data.
+We [connect](https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/) SQL Server to Azure Data Studio, where we access and query the data.
 
 Attached is a screenshot to modify the columns before importing the data:
 
@@ -100,7 +100,7 @@ For 100 documents, there are 2451 total words in the corpus.
 
 ## Convert text to integers
 
-Since we saw the limitations with one-hot encoding, a better approach would be to assign each word a unique integer.  The integer encoding for a specific word remains the same across all documents, so this will help reduce the size of the corpus to unique words (vocabulary). 
+Since we saw the limitations with one-hot encoding, a better approach would be to assign each word a unique integer.  The integer encoding for a specific word remains the same across all documents, so this will reduce the size of the corpus to unique words. 
 
 To do this, Keras (neural network library) provides a handy **Tokenizer() API** that can handle multiple documents.  For a deeper understanding of its implementation, see this [tutorial](https://machinelearningmastery.com/prepare-text-data-deep-learning-keras).
 
@@ -276,7 +276,7 @@ print('Accuracy: %f' % (accuracy*100))
 Accuracy: 88.999999
 ```
 
-Let's see how this looks visually.  Since these embeddings are now trained, we can see more defined clusters with ~89% accuracy in the prediction task.
+Since these embeddings are now trained, we can visualize more defined clusters with ~89% accuracy in the prediction task.
 
 
 ![](/assets/images/2023-09/output2.png)
