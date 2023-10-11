@@ -194,7 +194,7 @@ embedding_output = model.predict(pad_corp)
 
 ## Visualize intial embeddings
 
-The embedding layer is a matrix, or lookup table, which represents each word in the vocabulary as embedding vectors (weights) in the dimension specified.  These weights are initialized randomly before training the model.  The weights can be obtained from the model's layers as follows:
+The embedding layer is a lookup table, which represents each word as floating point values (weights) in the dimension specified.  These weights are initialized randomly before training the model.  The weights can be obtained as follows:
 
 ```python
 # embedding matrix (lookup table)
@@ -202,7 +202,7 @@ embedding_layer = model.get_layer(index=0)
 
 embedding_matrix = embedding_layer.get_weights()[0]
 ```
-For example, since we set our output_dim = 2, each word is represented by 2 elements, or weights:
+For example, since we set our output_dim = 2, each word is represented by 2 weights:
 
 ```
 [[ 4.24065441e-03  6.88085705e-03] (index 0)
@@ -294,3 +294,5 @@ Data/SQL Server:
 + <https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/>
 + <https://towardsdatascience.com/a-guide-to-four-deep-learning-layers-225c93646e61>
 + <https://cs229.stanford.edu/summer2020/cs229-notes-deep_learning.pdf>
++ <https://www.tensorflow.org/text/guide/word_embeddings#:~:text=An%20embedding%20is%20a%20dense%20vector%20of%20floating,a%20model%20learns%20weights%20for%20a%20dense%20layer%29.>
++ <https://www.elastic.co/what-is/vector-embedding>
