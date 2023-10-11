@@ -225,7 +225,7 @@ For example, since we set our output_dim = 2, we should expect to see each word 
 
 The embedding output is the result of the embedding layer for a given input sequence.  Revisiting document 1, we see that each value from the embedding layer is mapped to a word in that document:
 
-```
+
 [[[-4.98422384e-02  5.66009432e-03] --> 'This'
   [-3.95929925e-02  4.86173891e-02] --> '60-year-old'
   [ 4.61821593e-02  2.83356756e-03] --> 'male'
@@ -234,7 +234,7 @@ The embedding output is the result of the embedding layer for a given input sequ
   [-3.20219025e-02 -1.05163939e-02] --> 'due'
    <div style="background-color: #FFFF00">[ 2.96857245e-02  3.94343249e-02] --> 'to'</div>
 ...]]]
-```
+
 
 Let's see how this looks visually.  Since these embeddings are not trained, it would make sense that the words are fairly scattered:
 
