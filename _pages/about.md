@@ -14,65 +14,9 @@ comments: true
 
 <p>My background spans nearly two decades in the healthcare/life sciences industry at Johnson & Johnson, IBM Watson Health, Cloudera, and Microsoft.  I studied management science & information systems, and obtained my master's in clinical informatics management.</p> 
 
-<p>I grew to love technology over the years, and my most memorable experiences have been creating magic.  I've surprised myself and others with the power of computers and programming - and there's always something new to learn.</p>
+<p>I grew to love technology over the years, and my most memorable experiences have been creating solutions that delight and surprise.  I've been amazed at the power of computers and programming - and only expect that this will continue to grow.</p>
 
-<p>I dream of a future where my passion for technology, health, and well-being can make the US healthcare system better.</p>
-
-
-<br />
-
-<div class="container">
-    <ul class="list-inline text-center">
-
-      <li class="list-inline-item">
-        <a href="mailto:s.vinouze@gmail.com">
-          <span class="fa-stack fa-lg">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-
-      <li class="list-inline-item">
-        <a href="https://twitter.com/stephenvinouze">
-          <span class="fa-stack fa-lg">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-
-      <li class="list-inline-item">
-        <a href="https://www.linkedin.com/in/stephenvinouze/">
-          <span class="fa-stack fa-lg">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-
-      <li class="list-inline-item">
-        <a href="https://medium.com/@s.vinouze">
-          <span class="fa-stack fa-lg">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fab fa-medium fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-
-      <li class="list-inline-item">
-        <a href="https://github.com/StephenVinouze">
-          <span class="fa-stack fa-lg">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-
-    </ul>
-  </div>
-
-
+<p>I believe the intersection of technology, health, and policy can make the system better for patients, payers, and providers.</p>
 
 
 <h4>Questions or bug reports?</h4>
