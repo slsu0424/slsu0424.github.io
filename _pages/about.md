@@ -9,15 +9,15 @@ comments: true
 <div class="col-md-8 pr-5">
 
 <p>Hi, I'm Sandy.
-<br>
+  
 I am a cloud architect, data science and AI practitioner, and healthcare informatics enthusiast.  This site is a creative outlet to share my thoughts on the evolving landscape of technology in healthcare.
-<br>
-My background spans nearly two decades in the healthcare/life sciences industry at Johnson & Johnson, IBM Watson Health, Cloudera, and Microsoft.  Two decades ago, AI didn't even exist as a major, so I studied management science & information systems.  I later obtained my master's in clinical informatics management. 
-<br> 
+  
+My background spans nearly two decades in the healthcare/life sciences industry at Johnson & Johnson, IBM Watson Health, Cloudera, and Microsoft.  I studied management science & information systems, and obtained my master's in clinical informatics management. 
+   
 I grew to love technology over the years, and my most memorable experiences have been creating magic.  I've surprised myself and others with the power of computers and programming - and I hope to keep learning it for years to come.
-<br>
+  
 I dream of a future where my passion for technology, health, and well-being can make the US healthcare system better.
-<br>
+  
 Thanks for stopping by.
 </p>
 
