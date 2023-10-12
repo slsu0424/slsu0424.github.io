@@ -2,12 +2,6 @@
 name: "Health Tech Bytes"
 title: "Health Tech Bytes"
 description: "Where health and technology meet, one byte at a time."
-email: sandylsu@gmail.com
-medium: https://medium.com/@sandylsu
-twitter: https://twitter.com/sandylsu
-linkedin: https://www.linkedin.com/in/sandylsu/
-github: https://github.com/sandylsu
-
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
 baseurl: ''
