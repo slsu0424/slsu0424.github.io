@@ -18,11 +18,6 @@ comments: true
 
 <p>I believe the intersection of technology, health, and policy can make the system better for patients, payers, and providers.</p>
 
-
-<h4>Questions or bug reports?</h4>
-
-<p>Head over to our <a href="https://github.com/wowthemesnet/mediumish-theme-jekyll">Github repository</a>!</p>
-
 </div>
 
 <div class="col-md-4">
