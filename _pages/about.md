@@ -19,62 +19,6 @@ comments: true
 <p>I dream of a future where my passion for technology, health, and well-being can make the US healthcare system better.</p>
 
 
-<br />
-
-<div class="container">
-    <ul class="list-inline text-center">
-
-      <li class="list-inline-item">
-        <a href="mailto:s.vinouze@gmail.com">
-          <span class="fa-stack fa-lg">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-
-      <li class="list-inline-item">
-        <a href="https://twitter.com/stephenvinouze">
-          <span class="fa-stack fa-lg">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-
-      <li class="list-inline-item">
-        <a href="https://www.linkedin.com/in/stephenvinouze/">
-          <span class="fa-stack fa-lg">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-
-      <li class="list-inline-item">
-        <a href="https://medium.com/@s.vinouze">
-          <span class="fa-stack fa-lg">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fab fa-medium fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-
-      <li class="list-inline-item">
-        <a href="https://github.com/StephenVinouze">
-          <span class="fa-stack fa-lg">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-
-    </ul>
-  </div>
-
-
-
-
 <h4>Questions or bug reports?</h4>
 
 <p>Head over to our <a href="https://github.com/wowthemesnet/mediumish-theme-jekyll">Github repository</a>!</p>
