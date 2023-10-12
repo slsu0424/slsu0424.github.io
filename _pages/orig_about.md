@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Intro
-permalink: /about
+permalink: /none
 comments: true
 ---
 
