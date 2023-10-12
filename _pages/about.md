@@ -14,9 +14,9 @@ comments: true
 
 <p>My background spans nearly two decades in the healthcare/life sciences industry at Johnson & Johnson, IBM Watson Health, Cloudera, and Microsoft.  I studied management science & information systems, and obtained my master's in clinical informatics management.</p> 
 
-<p>I grew to love technology over the years, and my most memorable experiences have been creating magic.  I've surprised myself and others with the power of computers and programming - and there's always something new to learn.</p>
+<p>I grew to love technology over the years, and my most memorable experiences have been creating solutions that delight and surprise.  I've been amazed at the power of computers and programming - and only expect that this will continue to grow.</p>
 
-<p>I dream of a future where my passion for technology, health, and well-being can make the US healthcare system better.</p>
+<p>I believe the intersection of technology, health, and policy can make the system better for patients, payers, and providers.</p>
 
 
 <h4>Questions or bug reports?</h4>
