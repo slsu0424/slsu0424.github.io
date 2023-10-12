@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Mediumish Template for Jekyll
+title: Intro
 permalink: /about
 comments: true
 ---
@@ -8,7 +8,18 @@ comments: true
 <div class="row justify-content-between">
 <div class="col-md-8 pr-5">
 
-<p>This website is built with Jekyll and Mediumish template for Jekyll. It's for demonstration purposes, no real content can be found. Mediumish template for Jekyll is compatible with Github pages, in fact even this demo is created with Github Pages and hosted with Github.</p>
+<p>Hi, I'm Sandy.
+
+I am a cloud architect, data science and AI practitioner, and healthcare informatics enthusiast.  This site is a creative outlet to share my thoughts on the evolving landscape of technology in healthcare.
+
+My background spans nearly two decades in the healthcare/life sciences industry at Johnson & Johnson, IBM Watson Health, Cloudera, and Microsoft.  Two decades ago, AI didn't even exist as a major, so I studied management science & information systems.  I later obtained my master's in clinical informatics management.  Find out more about me here: 
+ 
+I grew to love technology over the years, and my most memorable experiences have been creating magic.  I've surprised myself and others with the power of computers and programming - its also fun!
+
+I dream of a future where technology can make the US healthcare system better.
+
+Thanks for stopping by.
+</p>
 
 <p class="mb-5"><img class="shadow-lg" src="{{site.baseurl}}/assets/images/mediumish-jekyll-template.png" alt="jekyll template mediumish" /></p>
 <h4>Documentation</h4>
