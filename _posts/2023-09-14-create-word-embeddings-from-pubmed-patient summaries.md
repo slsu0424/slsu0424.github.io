@@ -5,7 +5,7 @@ author: sandy
 categories: [ PubMed, NLP, tutorial, SQL, Azure ]
 image: assets/images/2023-09/OIP_resize.jpg
 ---
-Building upon the previous [tutorial](https://slsu0424.github.io/encoding-pubmed-abstracts-for-nlp-tasks/) on one-hot encoding, this tutorial will review the concept of word embeddings and apply this to real-life data.  
+Building upon the previous [tutorial](https://slsu0424.github.io/encoding-pubmed-abstracts-for-nlp-tasks/) on one-hot encoding, this tutorial will explore the concept of word embeddings and implement this with real-life data.  
 
 For our example, we extract patient summaries from PubMed and label those that had COVID-19 vs. not COVID-19.  Sentences are used to create word embeddings, and the embeddings are trained as part of a neural network to perform a classification task.  By training the embeddings, the computer will learn if there are any meaningful relationships between the words in the text.
 
@@ -165,7 +165,7 @@ To create the embedding, we create a Keras Sequential model.  Sequential means t
 
 A output_dim = 2 means that every word is represented by a vector that contains 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on, but will also be more computationally expensive. 
 
-Once the embedding layer is added to the network, the learning process is [configured](https://keras.io/api/models/model_training_apis/), and we run model.predict() to generate the predicted outputs.
+Once the embedding layer is added to the network, the learning process is configured, and we run model.predict() to generate the predicted outputs.
 
 We can also add other hidden layers (Flatten, Dense) to discover more complex patterns in the data.  These will be discussed once we train the embeddings.
 
@@ -289,10 +289,12 @@ We can boost the performance of the training accuracy by adding in a different l
 
 
 ## References
++ <http://colah.github.io/posts/2014-07-NLP-RNNs-Representations>
 + <https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main>
 + <https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac>
 + <https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/>
-+ <https://towardsdatascience.com/a-guide-to-four-deep-learning-layers-225c93646e61>
++ <https://machinelearningmastery.com/prepare-text-data-deep-learning-keras>
++ <https://machinelearningmastery.com/use-word-embedding-layers-deep-learning-keras>
 + <https://cs229.stanford.edu/summer2020/cs229-notes-deep_learning.pdf>
 + <https://www.tensorflow.org/text/guide/word_embeddings#word_embeddings_2>
-+ <https://www.elastic.co/what-is/vector-embedding>
++ <https://github.com/keras-team/keras/issues/3110>
