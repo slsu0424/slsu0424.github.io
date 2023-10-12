@@ -18,6 +18,10 @@ comments: true
 
 <p>I believe the intersection of technology, health, and policy can make the system better for patients, payers, and providers.</p>
 
+<br />
+
+{% include contact.html %}
+
 </div>
 
 <div class="col-md-4">
