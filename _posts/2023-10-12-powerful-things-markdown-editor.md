@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Switchover disruptions: Considerations for healthcare innovation in the era of GenAI"
+title:  "Switchover disruptions: Healthcare innovation in the era of GenAI"
 author: sandy
 categories: [ healthcare, AI, economics ]
 image: assets/images/16.jpg

@@ -7,8 +7,7 @@ image: assets/images/2023-07/binary2.png
 featured: true
 ---
 
-Last month, I gave a [talk](https://www.meetup.com/new-jersey-sql-data-platform-user-group/events/294231326/) at a local meetup group 
-on LLMs, LangChain & SQL.  Since then, I've wanted to dig a little deeper into the technical foundations of LLMs, particularly neural networks.
+Last month, I gave a [talk](https://www.meetup.com/new-jersey-sql-data-platform-user-group/events/294231326/) at a local meetup on LLMs, LangChain & SQL.  Since then, I've wanted to dig a little deeper into the technical foundations of LLMs, particularly neural networks.
 
 This article will begin a series of technical tutorials that are geared towards healthcare care use cases.  While there is no shortage of resources to learn about LLMs, neural networks, or the latest ML algorithms, my focus will be to reinforce technical concepts related to deep learning.
 
