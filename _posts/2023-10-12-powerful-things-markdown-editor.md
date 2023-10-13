@@ -1,100 +1,28 @@
 ---
 layout: post
-title:  "Switchover disruptions: The true cost of a medical scribe"
+title:  "Switchover disruptions: The hidden cost of a medical scribe"
 author: sandy
 categories: [ healthcare, AI, economics ]
 image: assets/images/16.jpg
 ---
-"Switchover disruptions" was an economic term highlighted in HBR's recent [article](https://hbr.org/2023/09/ai-adoption-in-u-s-health-care-wont-be-easy) on the challenges of AI adoption in healthcare.  It describes the costs of integrating new technologies that can dampen an organization's profits.  
+"Switchover disruptions" was highlighted in HBR's recent [article](https://hbr.org/2023/09/ai-adoption-in-u-s-health-care-wont-be-easy) on the challenges of AI adoption in healthcare.  According to the [American Economic Journal: Microeconomics](https://www.aeaweb.org/articles?id=10.1257/mic.4.3.1), it describes the costs of integrating new technologies that can dampen an organization's profits.
 
 It made me examine the ways in which AI *can* minimize such disruptions, and *if* the type of AI is worth the tradeoff.  
+
+## The sad case of high switchover disruption: EHRs
+
 
 
 ## The most plausible genAI use case: Medical Scribe
 
-The arrival of chatGPT has created a dizzying buzz in the industry, reviving
-
+The arrival of chatGPT has created a dizzying revival for using AI in healthcare, with the promise of automated diagnosis and treatments (sounds scary already).  
 
 ## The true cost of running LLMs
 
 There are two types of code elements which can be inserted in Markdown, the first is inline, and the other is block. Inline code is formatted by wrapping any word or words in back-ticks, `like this`. Larger snippets of code can be displayed across multiple lines using triple back ticks:
-
-```
-.my-link {
-    text-decoration: underline;
-}
-```
-
-#### HTML
-
-```html
-<li class="ml-1 mr-1">
-    <a target="_blank" href="#">
-    <i class="fab fa-twitter"></i>
-    </a>
-</li>
-```
-
-#### CSS
-
-```css
-.highlight .c {
-    color: #999988;
-    font-style: italic; 
-}
-.highlight .err {
-    color: #a61717;
-    background-color: #e3d2d2; 
-}
-```
-
-#### JS
-
-```js
-// alertbar later
-$(document).scroll(function () {
-    var y = $(this).scrollTop();
-    if (y > 280) {
-        $('.alertbar').fadeIn();
-    } else {
-        $('.alertbar').fadeOut();
-    }
-});
-```
-
-#### Python
-
-```python
-print("Hello World")
-```
-
-#### Ruby
-
-```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-```
-
-#### C
-
-```c
-printf("Hello World");
-```
-
-
-
-
-![walking]({{ site.baseurl }}/assets/images/8.jpg)
 
 ## Reference lists
 
 The quick brown jumped over the lazy.
 
 Another way to insert links in markdown is using reference lists. You might want to use this style of linking to cite reference material in a Wikipedia-style. All of the links are listed at the end of the document, so you can maintain full separation between content and its source or reference.
-
-## Full HTML
-
-Perhaps the best part of Markdown is that you're never limited to just Markdown. You can write HTML directly in the Markdown editor and it will just work as HTML usually does. No limits! Here's a standard YouTube embed code as an example:
-
-<p><iframe style="width:100%;" height="315" src="https://www.youtube.com/embed/Cniqsc9QfDo?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></p>
