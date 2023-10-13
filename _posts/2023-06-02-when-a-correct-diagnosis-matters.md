@@ -4,13 +4,13 @@ title:  "When a correct diagnosis matters"
 author: sandy
 categories: [ healthcare, ChatGPT ]
 tags: [red, yellow]
-image: assets/images/2023-06/shutterstock_heart.jpg
+image: assets/images/2023-06/shutterstock_steth2.jpg
 description: "When a correct diagnosis matters"
 featured: true
 hidden: false
 ---
 
-When does a correct diagnosis matter?  And does it matter if a human or computer makes the decision?  I reflect on a recent article by the Mayo Clinic on a diagnosis concluded by ChatGPT vs. cardiologist, and its implications for patient care.
+When does a correct diagnosis matter?  Does it matter if a human or computer makes the decision?  I reflect on a recent article by the Mayo Clinic on a diagnosis concluded by ChatGPT vs. cardiologist, and its implications for patient care.
 
 Over the last few months, I have been following the tech news closely as new AI technologies, particularly [Large Language Models](https://en.wikipedia.org/wiki/Large_language_model) (LLMs) and [ChatGPT](https://en.wikipedia.org/wiki/ChatGPT) (a type of LLM), have exploded on to the scene.  Of course, being a bit skeptical, I was curious to see how this next iteration of AI would fare in healthcare.
 
