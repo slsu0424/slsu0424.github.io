@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Should AI replace the humble fax machine?"
+title:  "Should AI replace the doctor's fax machine?"
 author: sandy
 categories: [ AI, healthcare ]
 image: assets/images/2023-08/shutterstock_fax.jpg
