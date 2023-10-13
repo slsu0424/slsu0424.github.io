@@ -16,7 +16,7 @@ comments: true
 
 <p>Technology</p>
 
-<p>Have any resources you would recommend?  Feel free to comment below.</p>
+<p>If you have any resources you would like to recommend, feel free to comment below.</p>
 
 </div>
 
