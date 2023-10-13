@@ -3,7 +3,7 @@ layout: post
 title:  "Switchover disruptions: The true cost of a medical scribe"
 author: sandy
 categories: [ healthcare, AI, economics ]
-image: assets/images/2023-10/shutterstock_1841040424_license_resize.jpg
+image: assets/images/2023-10/shutterstock_1841040424_license_resize.png
 ---
 "Switchover disruptions" was highlighted in Harvard Business Review's recent [article](https://hbr.org/2023/09/ai-adoption-in-u-s-health-care-wont-be-easy) on the challenges of AI adoption in healthcare.  [Economists](https://www.aeaweb.org/articles?id=10.1257/mic.4.3.1) define it as the cost of integrating new technologies that can dampen an organization's profits.
 
