@@ -5,7 +5,7 @@ author: sandy
 categories: [ PubMed, NLP, tutorial, SQL, Azure ]
 image: assets/images/2023-09/StockSnap_PWY3RMG3LR_resize.png
 ---
-Building upon the previous [tutorial](https://slsu0424.github.io/encoding-pubmed-abstracts-for-nlp-tasks/) on one-hot encoding, this tutorial will explore the concept of word embeddings and implement this with real-life data.  
+Building upon the previous [tutorial](https://slsu0424.github.io/encoding-pubmed-abstracts-for-nlp-tasks/) on one-hot encoding, this tutorial will explore the concept of word embeddings and implement this with real-world data.  
 
 For our example, we extract patient summaries from PubMed and label those that had COVID-19 vs. not COVID-19.  Sentences are used to create word embeddings, and the embeddings are trained as part of a neural network to perform a classification task.  By training the embeddings, the computer will learn if there are any meaningful relationships between the words in the text.
 
