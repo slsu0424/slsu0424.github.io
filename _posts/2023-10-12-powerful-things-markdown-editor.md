@@ -5,7 +5,7 @@ author: sandy
 categories: [ healthcare, AI, economics ]
 image: assets/images/16.jpg
 ---
-"Switchover disruptions" was highlighted in HBR's recent [article](https://hbr.org/2023/09/ai-adoption-in-u-s-health-care-wont-be-easy) on the challenges of AI adoption in healthcare.  According to the [American Economic Journal: Microeconomics](https://www.aeaweb.org/articles?id=10.1257/mic.4.3.1), it describes the costs of integrating new technologies that can dampen an organization's profits.
+"Switchover disruptions" was highlighted in HBR's recent [article](https://hbr.org/2023/09/ai-adoption-in-u-s-health-care-wont-be-easy) on the challenges of AI adoption in healthcare.  According to [economists](https://www.aeaweb.org/articles?id=10.1257/mic.4.3.1), it describes the costs of integrating new technologies that can dampen an organization's profits.
 
 It made me examine the ways in which this new wave of AI *can* minimize such disruptions, and *if* this type of AI is worth the tradeoff.  
 
@@ -17,9 +17,7 @@ The key?  Hospitals and surgeons were already in the business of removing gallbl
 
 When I think about EHRs, this should have been an easy "win".  Why wouldn't a patient want to see all their medical information stored in one place?  Why wouldn't a physician want to see a more complete view of their patient's health?  In all other industries where digitization has led to improved efficiency, perhaps we were not for the common goal of improved healthcare outcomes after all.
 
-In my opinion, the issue came down to control, and its a sad case when a new technology is not seen as profitable.  
-
-Will the same fate await this next wave of AI?
+I agree with the authors that the issue came down to control.  Will the same fate await this next wave of AI?
 
 ## The most plausible genAI use case: Medical Scribe
 
