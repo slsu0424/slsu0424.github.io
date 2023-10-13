@@ -5,7 +5,7 @@ author: sandy
 categories: [ healthcare, AI, economics ]
 image: assets/images/2023-10/shutterstock_disrupt.jpg
 ---
-"Switchover disruptions" was highlighted in HBR's recent [article](https://hbr.org/2023/09/ai-adoption-in-u-s-health-care-wont-be-easy) on the challenges of AI adoption in healthcare.  According to [economists](https://www.aeaweb.org/articles?id=10.1257/mic.4.3.1), it describes the cost of integrating new technologies that can dampen an organization's profits.
+"Switchover disruptions" was highlighted in Harvard Business Review's recent [article](https://hbr.org/2023/09/ai-adoption-in-u-s-health-care-wont-be-easy) on the challenges of AI adoption in healthcare.  According to [economists](https://www.aeaweb.org/articles?id=10.1257/mic.4.3.1), it describes the cost of integrating new technologies that can dampen an organization's profits.
 
 It made me examine the ways in which this new wave of AI *can* minimize such disruptions, and *if* this type of AI is worth the tradeoff.  
 
