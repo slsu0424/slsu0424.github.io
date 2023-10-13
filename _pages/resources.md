@@ -11,7 +11,7 @@ comments: true
 <p>This is a running collection of resources I have come across:</p>
   
 
-Have any resources you would recommend?  Feel free to comment below.</p>
+<p>Have any resources you would recommend?  Feel free to comment below.</p>
 
 </div>
 
