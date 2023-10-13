@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Switchover disruptions: The true cost of a medical scribe1"
+title:  "Switchover disruptions: The true cost of a medical scribe"
 author: sandy
 categories: [ healthcare, AI, economics ]
 image: assets/images/2023-10/shutterstock_disrupt.jpg
