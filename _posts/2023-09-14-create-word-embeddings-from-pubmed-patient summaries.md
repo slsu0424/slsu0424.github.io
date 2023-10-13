@@ -33,7 +33,7 @@ We [connect](https://www.sqlshack.com/sql-server-data-import-using-azure-data-st
 
 Attached is a screenshot to modify the columns before importing the data:
 
-![AzureDataStudio](/assets/images/2023-09/azstudio_setup3.png)
+![](/assets/images/2023-09/azstudio_setup.png)
 
 Run the below query to return the first 100 records.
 
