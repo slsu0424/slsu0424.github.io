@@ -14,7 +14,7 @@ comments: true
 <b>Healthcare</b>
 <ul>
 <li><a href="https://erictopol.substack.com/">Ground Truths</a></li>
-<li><a href="https://ai.nejm.org/">NEJM AI</a></li>
+<li><a href="https://www.modernhealthcare.com/">Modern Healthcare</a></li>
 <li>Milk</li>
 </ul>
 </p>
@@ -23,7 +23,7 @@ comments: true
 <p>
 <b>Technology</b>
 <ul>
-<li><a href="https://erictopol.substack.com/">Ground Truths</a></li>
+<li><a href="https://ai.nejm.org/">NEJM AI</a></li>
 <li>Tea</li>
 <li>Milk</li>
 </ul>
