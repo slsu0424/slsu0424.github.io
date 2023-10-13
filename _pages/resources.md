@@ -11,10 +11,7 @@ comments: true
 <p>This is a running collection of resources I have come across:</p>
   
 
-
-<br />
-
-{% include contact.html %}
+Have any resources you would recommend?  Feel free to comment below.
 
 </div>
 
