@@ -1,26 +1,21 @@
 ---
 layout: post
-title:  "Switchover disruptions: Healthcare innovation in the era of GenAI"
+title:  "Switchover disruptions: The true cost of a medical scribe"
 author: sandy
 categories: [ healthcare, AI, economics ]
 image: assets/images/16.jpg
 ---
-"Switchover disruptions" was a term highlight in HBR's recent article  on AI adoption in healthcare.  It piqued my interest since I wanted 
+"Switchover disruptions" was an economic term highlighted in HBR's recent [article](https://hbr.org/2023/09/ai-adoption-in-u-s-health-care-wont-be-easy) on the challenges of AI adoption in healthcare.  It describes the costs of integrating new technologies that can dampen an organization's profits.  
+
+It made me examine the ways in which AI *can* minimize such disruptions, and *if* the type of AI is worth the tradeoff.  
 
 
-As with the last post about the editor, you'll want to be actually editing this post as you read it so that you can see all the Markdown code we're using.
+## The most plausible genAI use case: Medical Scribe
+
+The arrival of chatGPT has created a dizzying buzz in the industry, reviving
 
 
-## Special formatting
-
-As well as bold and italics, you can also use some other special formatting in Markdown when the need arises, for example:
-
-+ ~~strike through~~
-+ ==highlight==
-+ \*escaped characters\*
-
-
-## Writing code blocks
+## The true cost of running LLMs
 
 There are two types of code elements which can be inserted in Markdown, the first is inline, and the other is block. Inline code is formatted by wrapping any word or words in back-ticks, `like this`. Larger snippets of code can be displayed across multiple lines using triple back ticks:
 
