@@ -3,11 +3,11 @@ layout: post
 title:  "Switchover disruptions: The true cost of a medical scribe"
 author: sandy
 categories: [ healthcare, AI, economics ]
-image: assets/images/2023-10/shutterstock_disrupt.jpg
+image: assets/images/2023-10/shutterstock_1841040424_license_resize.jpg
 ---
 "Switchover disruptions" was highlighted in Harvard Business Review's recent [article](https://hbr.org/2023/09/ai-adoption-in-u-s-health-care-wont-be-easy) on the challenges of AI adoption in healthcare.  [Economists](https://www.aeaweb.org/articles?id=10.1257/mic.4.3.1) define it as the cost of integrating new technologies that can dampen an organization's profits.
 
-This prompted me to examine the ways in which this new wave of AI (generative AI) can minimize such disruptions, and if this type of AI is worth the tradeoff.  
+This prompted me to examine the ways in which this new wave of AI can minimize such disruptions, and if this type of AI is worth the tradeoff.  
 
 ## The unsettling case of high switchover disruption: EHRs
 
@@ -15,7 +15,7 @@ I was fascinated by the article's comparison of 2 new technologies that arrived 
 
 The key?  Hospitals and surgeons were *already in the business* of removing gallbladders.
 
-When I think about EHRs, this should have been an easy "win".  Why wouldn't a patient want to see all their medical information stored in one place?  Why wouldn't a physician want to see a more complete view of their patient's health?  In all other industries where digitization has led to improved efficiency, the complete opposite happened with EHRs.  Perhaps we were not aligned on improving healthcare outcomes after all.
+EHRs should have been an easy win.  Why wouldn't a patient want to see all their medical information stored in one place?  Why wouldn't a physician want to see a more complete view of their patient's health?  In all other industries where digitization has led to improved efficiency, the complete opposite happened with EHRs.  Perhaps we were not aligned on improving healthcare outcomes after all.
 
 I agree that the issue came down to control.  It is quite unsettling to know that...
 Will the same fate await this next wave of AI?
