@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Intro
+title: About
 permalink: /about
 comments: true
 ---
@@ -14,7 +14,7 @@ comments: true
 
 <p>My background spans nearly two decades in the healthcare/life sciences industry at Johnson & Johnson, IBM Watson Health, Cloudera, and Microsoft.  I grew to love technology over the years, and my most memorable experiences have been creating solutions that delight and surprise.</p> 
 
-<p>I've been amazed by the recent advances in computing, and I dream of the future where these technologies can improve healthcare innovation and patient outcomes.</p> 
+<p>I have been amazed by the recent advances in computing, and I dream of a future where these technologies can improve healthcare innovation and patient outcomes.</p> 
 
 <p>All views represented here are my own.</p>
 
