@@ -8,18 +8,26 @@ comments: true
 <div class="row justify-content-between">
 <div class="col-md-8 pr-5">
 
-<p>This is a running collection of resources I have come across in my research and writings.  I plan to categorize these as references from various experts and thought leaders in the field.</p>
+<p>This is a running collection of resources I have come across in my research and writings.  These will be references from various experts and thought leaders in the field.</p>
 
 <p>
-<b>**Healthcare**</b>
+<b>Healthcare</b>
 <ul>
-<li>https://erictopol.substack.com/</li>
+<li><a href="https://erictopol.substack.com/">Ground Truths</a></li>
+<li><a href="https://www.modernhealthcare.com/">Modern Healthcare</a></li>
+<<li><a href="https://www.statnews.com//">STAT</a></li>
+</ul>
+</p>
+
+https://www.statnews.com/
+<p>
+<b>Technology</b>
+<ul>
+<li><a href="https://ai.nejm.org/">NEJM AI</a></li>
 <li>Tea</li>
 <li>Milk</li>
 </ul>
 </p>
-
-<b>Technology</b>
 
 <p>If you have any resources you would like to recommend, feel free to comment below.</p>
 
