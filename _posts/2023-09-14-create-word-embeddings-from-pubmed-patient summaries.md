@@ -296,5 +296,4 @@ We can boost the performance of the training accuracy by adding in a different l
 + <https://machinelearningmastery.com/prepare-text-data-deep-learning-keras>
 + <https://machinelearningmastery.com/use-word-embedding-layers-deep-learning-keras>
 + <https://cs229.stanford.edu/summer2020/cs229-notes-deep_learning.pdf>
-+ <https://www.tensorflow.org/text/guide/word_embeddings#word_embeddings_2>
 + <https://github.com/keras-team/keras/issues/3110>
