@@ -15,11 +15,10 @@ comments: true
 <ul>
 <li><a href="https://erictopol.substack.com/">Ground Truths</a></li>
 <li><a href="https://www.modernhealthcare.com/">Modern Healthcare</a></li>
-<<li><a href="https://www.statnews.com//">Stat News</a></li>
+<li><a href="https://www.statnews.com//">Stat News</a></li>
 </ul>
 </p>
 
-https://www.statnews.com/
 <p>
 <b>Technology</b>
 <ul>
