@@ -4,7 +4,7 @@ title:  "When a correct diagnosis matters"
 author: sandy
 categories: [ healthcare, ChatGPT ]
 tags: [red, yellow]
-image: assets/images/2023-06/shutterstock_heart2.jpg
+image: assets/images/2023-06/shutterstock_heart.jpg
 description: "When a correct diagnosis matters"
 featured: true
 hidden: false
