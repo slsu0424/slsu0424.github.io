@@ -8,22 +8,24 @@ comments: true
 <div class="row justify-content-between">
 <div class="col-md-8 pr-5">
 
-<p>This is a running collection of resources I have come across in my research and writings.</p>
+<p>This is a running collection from field experts and thought leaders I have come across in my research and writings.</p>
 
 <p>
 <b>Healthcare</b>
 <ul>
 <li><a href="https://erictopol.substack.com/">Ground Truths</a></li>
 <li><a href="https://www.modernhealthcare.com/">Modern Healthcare</a></li>
-<li><a href="https://www.statnews.com//">Stat News</a></li>
+<li><a href="https://www.statnews.com/">Stat News</a></li>
+<li><a href="https://www.youtube.com/c/stanfordaimi">Stanford Center for Artificial Intelligence in Medicine and Imaging (AIMI)</a></li>
 </ul>
 </p>
 
 <p>
 <b>Technology</b>
 <ul>
-<li><a href="https://ai.nejm.org/">NEJM AI</a></li>
-<li>Tea</li>
+<li><a href="https://machinelearningmastery.com/">Machine Learning Mastery</a></li>
+<li><a href="https://huggingface.co/hf4h">Hugging Face for Health</a></li>
+<li><a href="https://www.tensorflow.org/">TensorFlow</a></li>
 <li>Milk</li>
 </ul>
 </p>
