@@ -10,11 +10,16 @@ comments: true
 
 <p>This is a running collection of resources I have come across in my research and writings.  I plan to categorize these as references from various experts and thought leaders in the field.</p>
 
-<p>**Healthcare**</p>
-+ <https://erictopol.substack.com/>
+<p>
+<b>**Healthcare**</b>
+<ul>
+<li>https://erictopol.substack.com/</li>
+<li>Tea</li>
+<li>Milk</li>
+</ul>
+</p>
 
-
-<p>Technology</p>
+<b>Technology</b>
 
 <p>If you have any resources you would like to recommend, feel free to comment below.</p>
 
