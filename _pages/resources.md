@@ -8,7 +8,7 @@ comments: true
 <div class="row justify-content-between">
 <div class="col-md-8 pr-5">
 
-<p>This is a running collection from field experts and thought leaders I have come across in my research and writings.</p>
+<p>This is a running collection of learning materials from field experts and thought leaders across healthcare and technology.</p>
 
 <p>
 <b>Healthcare</b>
