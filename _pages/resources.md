@@ -34,7 +34,7 @@ comments: true
 </ul>
 </p>
 
-<p>Have a resource you would like to recommend? Please comment below.</p>
+<p>Have a resource you would like to recommend? Feel free to leave a comment below.</p>
 
 </div>
 
