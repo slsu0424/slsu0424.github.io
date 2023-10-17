@@ -3,7 +3,7 @@ layout: post
 title:  "When a correct diagnosis matters"
 author: sandy
 categories: [ healthcare, AI ]
-tags: [red, yellow]
+## tags: [red, yellow]
 image: assets/images/2023-06/shutterstock_1763256557_license_resize.png
 description: "When a correct diagnosis matters"
 featured: true
