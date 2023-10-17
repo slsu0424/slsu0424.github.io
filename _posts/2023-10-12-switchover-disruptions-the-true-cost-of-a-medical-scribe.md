@@ -11,7 +11,7 @@ This prompted me to examine the ways in which this new wave of AI (Large Languag
 
 ## The unsettling case of high switchover disruption: EHRs
 
-I was fascinated by the article's comparison of 2 new technologies that arrived in healthcare: EHRs (2009) vs. a new surgical technique to remove the gallbladder (1988).  EHRs faced strong resistance, until the Obama administration stepped in to [incentivize](https://www.hipaajournal.com/what-is-the-hitech-act/#:~:text=The%20HITECH%20Act%20was%20created%20to%20promote%20and,%28HIPAA%29%20by%20tightening%20up%20the%20language%20of%20HIPAA.) organizations to go digital.  In contrast, the new (minimally invasive) surgical technique faced low switchover disruption - physician adoption was easier.  
+I was fascinated by the article's comparison of 2 new technologies that arrived in healthcare: EHRs (2009) vs. a new surgical technique to remove the gallbladder (1988).  EHRs faced strong resistance, until the Obama administration stepped in to [incentivize](https://www.hipaajournal.com/what-is-the-hitech-act/#:~:text=The%20HITECH%20Act%20was%20created%20to%20promote%20and,%28HIPAA%29%20by%20tightening%20up%20the%20language%20of%20HIPAA.) organizations to go digital.  In contrast, the new (minimally invasive) surgical technique faced low switchover disruption - physician adoption was easier and limited to surgeons.  
 
 The key?  Hospitals and surgeons were *already in the business* of doing the procedure.
 
@@ -41,4 +41,4 @@ What's the right ROI then?  Would it behoove healthcare organizations to use sma
 
 ## Conclusion
 
-This article provided useful insights and recommendations to overcome the challenges of AI adoption in healthcare.  The challenges were no different a decade ago with EHR adoption, and it was very interesting to understand the power dynamics that made adoption difficult.  These next-gen AI technologies have seen a bit more acceptance by the healthcare community, and if it can align with the way hospitals and physicians already do business, adoption could really take off.  However, I think it remains to be seen how sophisticated AI use cases should be, with a medical scribe feeling like a safe bet.
+This article provided useful insights and recommendations to overcome the challenges of AI adoption in healthcare.  The challenges were no different a decade ago with EHR adoption, and it was very interesting to understand the power dynamics that made adoption difficult.  While there are no clear answers yet, these next-gen AI technologies have seen a bit more acceptance by the healthcare community.  However, I think it remains to be seen how sophisticated AI use cases should be, with a medical scribe feeling like a safe bet.
