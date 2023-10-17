@@ -8,7 +8,7 @@ comments: false
 <div class="row justify-content-between">
 <div class="col-md-8 pr-5">
 
-<p>This is a running collection of favorite sites from field experts and thought leaders.</p>
+<p>This is a curated list of sites by experts across the healthcare and technology fields.  Will be updated periodically.</p>
 
 <p>
 <b>Healthcare</b>
