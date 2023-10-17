@@ -31,6 +31,7 @@ comments: false
 <li><a href="https://developers.google.com/machine-learning">Google Machine Learning Education</a></li>
 <li><a href="https://machinelearningmastery.com/">Machine Learning Mastery</a></li>
 <li><a href="https://www.tensorflow.org/">TensorFlow</a></li>
+<li><a href="https://towardsdatascience.com/">Towards Data Science</a></li>
 </ul>
 </p>
 
