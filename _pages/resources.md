@@ -8,7 +8,7 @@ comments: false
 <div class="row justify-content-between">
 <div class="col-md-8 pr-5">
 
-<p>This is a curated list of sites from experts across the healthcare and technology fields.</p>
+<p>This is a curated list of sites from experts across the healthcare, data science/AI, and technology fields.</p>
 
 <p>
 <b>Healthcare</b>
@@ -16,24 +16,34 @@ comments: false
 <li><a href="https://www.beckershospitalreview.com/">Becker's Hospital Review</a></li>
 <li><a href="https://erictopol.substack.com/">Ground Truths</a></li>
 <li><a href="https://www.healthcareitnews.com/">Healthcare IT News</a></li>
-<li><a href="https://www.mddionline.com/">Medical Device + Diagnostic Industry (MD+DI)</a></li>
+<li><a href="https://huggingface.co/hf4h">Hugging Face for Health</a></li>
+<li><a href="https://www.mddionline.com/">Medical Device + Diagnostic Industry\</a></li>
 <li><a href="https://www.modernhealthcare.com/">Modern Healthcare</a></li>
 <li><a href="https://ai.nejm.org/">New England Journal of Medicine AI</a></li>
-<li><a href="https://www.youtube.com/c/stanfordaimi">Stanford Center for Artificial Intelligence in Medicine and Imaging (AIMI)</a></li>
+<li><a href="https://www.youtube.com/c/stanfordaimi">Stanford Center for Artificial Intelligence in Medicine and Imaging</a></li>
 <li><a href="https://www.statnews.com/">Stat News</a></li>
+</ul>
+</p>
 
+
+<p>
+<b>Data Science & AI</b>
+<ul>
+<li><a href="https://developers.google.com/machine-learning">Google Machine Learning Education</a></li>
+<li><a href="https://huggingface.co/hf4h">Hugging Face for Health</a></li>
+<li><a href="https://www.kaggle.com/search?q=healthcare">Kaggle</a></li>
+<li><a href="https://machinelearningmastery.com/">Machine Learning Mastery</a></li>
+<li><a href="https://paperswithcode.com/search?q_meta=&q_type=&q=healthcare">Papers With Code</a></li>
+<li><a href="https://www.tensorflow.org/">TensorFlow</a></li>
+<li><a href="https://towardsdatascience.com/">Towards Data Science</a></li>
 </ul>
 </p>
 
 <p>
 <b>Technology</b>
 <ul>
+<li><a href="https://arstechnica.com/information-technology/">Ars Technica</a></li>
 <li><a href="https://www.forbes.com/sites/forbestechcouncil">Forbes Technology Council</a></li>
-<li><a href="https://huggingface.co/hf4h">Hugging Face for Health</a></li>
-<li><a href="https://developers.google.com/machine-learning">Google Machine Learning Education</a></li>
-<li><a href="https://machinelearningmastery.com/">Machine Learning Mastery</a></li>
-<li><a href="https://www.tensorflow.org/">TensorFlow</a></li>
-<li><a href="https://towardsdatascience.com/">Towards Data Science</a></li>
 </ul>
 </p>
 
