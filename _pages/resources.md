@@ -8,7 +8,7 @@ comments: false
 <div class="row justify-content-between">
 <div class="col-md-8 pr-5">
 
-<p>This is a curated list of sites by experts across the healthcare and technology fields.  Will be updated periodically.</p>
+<p>This is a curated list of sites by experts across the healthcare and technology fields.</p>
 
 <p>
 <b>Healthcare</b>
