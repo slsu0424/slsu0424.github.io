@@ -2,7 +2,7 @@
 layout: post
 title:  "When a correct diagnosis matters"
 author: sandy
-categories: [ healthcare, ChatGPT ]
+categories: [ healthcare, AI ]
 tags: [red, yellow]
 image: assets/images/2023-06/shutterstock_steth3.jpg
 description: "When a correct diagnosis matters"
