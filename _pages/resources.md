@@ -2,13 +2,13 @@
 layout: page
 title: Resources
 permalink: /resources
-comments: true
+comments: false
 ---
 
 <div class="row justify-content-between">
 <div class="col-md-8 pr-5">
 
-<p>This is a running collection of links from experts and thought leaders across healthcare and technology.</p>
+<p>This is a running collection of favorite sites across the healthcare and technology industries.</p>
 
 <p>
 <b>Healthcare</b>
@@ -34,7 +34,9 @@ comments: true
 </ul>
 </p>
 
+<!--
 <p>Have a resource you would like to recommend? Feel free to leave a comment below.</p>
+-->
 
 </div>
 
