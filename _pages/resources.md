@@ -13,11 +13,13 @@ comments: false
 <p>
 <b>Healthcare</b>
 <ul>
+<li><a href="https://aiforhealthcare.substack.com/">AI for Healthcare</a></li>
 <li><a href="https://www.beckershospitalreview.com/">Becker's Hospital Review</a></li>
 <li><a href="https://erictopol.substack.com/">Ground Truths</a></li>
 <li><a href="https://www.healthcareitnews.com/">Healthcare IT News</a></li>
+<li><a href="https://www.mddionline.com/">Medical Device + Diagnostic Industry (MD+DI)</a></li>
 <li><a href="https://www.modernhealthcare.com/">Modern Healthcare</a></li>
-<li><a href="https://ai.nejm.org/">NEJM AI</a></li>
+<li><a href="https://ai.nejm.org/">New England Journal of Medicine AI</a></li>
 <li><a href="https://www.youtube.com/c/stanfordaimi">Stanford Center for Artificial Intelligence in Medicine and Imaging (AIMI)</a></li>
 <li><a href="https://www.statnews.com/">Stat News</a></li>
 
@@ -26,7 +28,7 @@ comments: false
 
 <p>
 <b>Technology</b>
-<ul>
+<li><a href="https://www.forbes.com/sites/forbestechcouncil">Forbes Technology Council</a></li>
 <li><a href="https://huggingface.co/hf4h">Hugging Face for Health</a></li>
 <li><a href="https://developers.google.com/machine-learning">Google Machine Learning Education</a></li>
 <li><a href="https://machinelearningmastery.com/">Machine Learning Mastery</a></li>
