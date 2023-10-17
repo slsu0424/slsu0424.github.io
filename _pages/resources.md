@@ -43,6 +43,7 @@ comments: false
 <ul>
 <li><a href="https://arstechnica.com/information-technology/">Ars Technica</a></li>
 <li><a href="https://www.forbes.com/sites/forbestechcouncil">Forbes Technology Council</a></li>
+<li><a href="https://www.techopedia.com/">Technopedia</a></li>
 </ul>
 </p>
 
