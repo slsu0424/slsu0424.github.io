@@ -8,7 +8,7 @@ comments: true
 <div class="row justify-content-between">
 <div class="col-md-8 pr-5">
 
-<p>This is a running collection of links from field experts and thought leaders across healthcare and technology.</p>
+<p>This is a running collection of links from experts and thought leaders across healthcare and technology.</p>
 
 <p>
 <b>Healthcare</b>
@@ -34,7 +34,7 @@ comments: true
 </ul>
 </p>
 
-<p>Have a resource you would like to recommend? Please comment below.</p>
+<p>Have a resource you would like to recommend? Feel free to leave a comment below.</p>
 
 </div>
 
