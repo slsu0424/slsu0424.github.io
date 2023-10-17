@@ -25,7 +25,6 @@ comments: false
 </ul>
 </p>
 
-
 <p>
 <b>Data Science & AI</b>
 <ul>
