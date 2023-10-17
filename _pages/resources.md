@@ -28,7 +28,6 @@ comments: false
 <p>
 <b>Technology</b>
 <ul>
-<li><a href="https://aiforhealthcare.substack.com/">AI for Healthcare</a></li>
 <li><a href="https://www.forbes.com/sites/forbestechcouncil">Forbes Technology Council</a></li>
 <li><a href="https://huggingface.co/hf4h">Hugging Face for Health</a></li>
 <li><a href="https://developers.google.com/machine-learning">Google Machine Learning Education</a></li>
