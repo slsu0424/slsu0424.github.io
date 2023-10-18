@@ -29,7 +29,7 @@ The arrival of ChatGPT has created a dizzying revival for using AI in healthcare
 
 I believe AI systems can do something useful - work as a medical scribe.  Although this is less glamorous than diagnosing and treating patients, this is probably the best use case for AI today.  Case in point: One of the ill by-products of digitization has been increased [administrative burden](https://www.medicaleconomics.com/view/top-challenges-2021-1-administrative-burdens-and-paperwork) placed upon healthcare providers.  If technology can reduce this burden by summarizing patient information or answering patients efficiently, providers will have more face-to-face time with patients, and increase productivity.  For example, [JAMA](https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2804309) reported that ChatGPT provided comparable quality and empathetic responses to patient questions found in an online forum (vs. physicians).  
 
-I think more physicians and health system leaders will be on board with this AI technology, as [efficiency](https://www.ncbi.nlm.nih.gov/books/NBK436891/) is one key to improving organizational performance (i.e., reduced costs, better patient outcomes). 
+I think more physicians and health system leaders will be on board with these AI technologies, as [efficiency](https://www.ncbi.nlm.nih.gov/books/NBK436891/) is one key to improving organizational performance (i.e., reduced costs, better patient outcomes) and potential profits. 
 
 ## The true cost of running LLMs
 
@@ -42,4 +42,4 @@ What's the right ROI then?  Would it behoove healthcare organizations to use sma
 
 ## Conclusion
 
-This article provided useful insights and recommendations to overcome the challenges of AI adoption in healthcare.  The challenges were no different a decade ago with EHR adoption, and it was very interesting to understand the power dynamics that made adoption difficult.  While there are no clear answers yet, these next-gen AI technologies have seen a bit more acceptance by the healthcare community.  However, I think it remains to be seen how sophisticated AI use cases should be, with a medical scribe feeling like a safe bet.
+This article provided useful insights and recommendations to overcome the challenges of AI adoption in healthcare.  The challenges were no different a decade ago with EHR adoption, and it was very interesting to understand the power dynamics that made adoption difficult.  While there are no clear answers yet, these next-gen AI technologies have seen a bit more acceptance by the healthcare community.  However, I think it remains to be seen how far-reaching this technology will be, with a medical scribe sounding like a safe bet.
