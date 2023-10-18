@@ -29,7 +29,7 @@ The arrival of ChatGPT has created a dizzying revival for using AI in healthcare
 
 I believe today's AI systems can do something useful - work as a medical scribe.  Although less glamorous than diagnosing and treating patients, I think this is probably the best use case for AI.  Case in point: One of the ill by-products of digitization has been increased [administrative burden](https://www.medicaleconomics.com/view/top-challenges-2021-1-administrative-burdens-and-paperwork) placed upon healthcare providers.  If technology can reduce this burden by summarizing patient information or answering patient questions efficiently, providers will have more face-to-face time with patients, and increase productivity.  For example, [JAMA](https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2804309) reported that an ChatGPT provided quality and empathetic responses to patient questions found in an online forum.  
 
-I think more physicians will be on board with these technologies, as efficiency is one key to make a practice/health system more profitable.  It perhaps is also the only place where AI can properly function, without jeopardizing the existing power dynamics as discussed above.  
+I think more physicians and health system leaders will be on board with these technologies, as [efficiency](https://www.ncbi.nlm.nih.gov/books/NBK436891/) is one key to organizational profitability.  It perhaps is also the only place where AI can properly function, without jeopardizing the existing power dynamics as discussed above.  
 
 
 ## The true cost of running LLMs
