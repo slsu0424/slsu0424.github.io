@@ -15,6 +15,7 @@ comments: false
 <ul>
 <li><a href="https://www.beckershospitalreview.com/">Becker's Hospital Review</a></li>
 <li><a href="https://erictopol.substack.com/">Ground Truths</a></li>
+<li><a href="https://www.hcinnovationgroup.com/">Healthcare Innovation</a></li>
 <li><a href="https://www.healthcareitnews.com/">Healthcare IT News</a></li>
 <li><a href="https://www.mddionline.com/">Medical Device + Diagnostic Industry</a></li>
 <li><a href="https://www.modernhealthcare.com/">Modern Healthcare</a></li>
