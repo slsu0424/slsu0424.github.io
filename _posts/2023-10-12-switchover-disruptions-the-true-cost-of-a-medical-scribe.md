@@ -2,12 +2,12 @@
 layout: post
 title:  "Switchover disruptions: The true cost of a medical scribe"
 author: sandy
-categories: [ healthcare, AI, economics ]
+categories: [ healthcare, AI, NLP, economics ]
 image: assets/images/2023-10/shutterstock_1841040424_license_resize.png
 ---
 "Switchover disruptions" were highlighted in Harvard Business Review's recent [article](https://hbr.org/2023/09/ai-adoption-in-u-s-health-care-wont-be-easy) on the challenges of AI adoption in healthcare.  [Economists](https://www.aeaweb.org/articles?id=10.1257/mic.4.3.1) define it as the cost of integrating new technologies that can dampen an organization's profits.
 
-This prompted me to examine the ways in which this new wave of AI (Large Language Models/LLMs) can minimize such disruptions, and if this type of AI is worth the tradeoff.  
+This prompted me to examine the ways in which this next wave of AI (Large Language Models/LLMs) can minimize such disruptions, and if this type of AI is worth the tradeoff.  
 
 ## The unsettling case of high switchover disruption: EHRs
 
@@ -27,14 +27,14 @@ The arrival of ChatGPT has created a dizzying revival for using AI in healthcare
 
 >"Prove to me that it will actually do something useful—that it will make my life better, and my patients' lives better." 
 
-I believe today's AI systems can do something useful - work as a medical scribe.  Although less glamorous than diagnosing and treating patients, I think this is probably the best use case for AI.  Case in point: One of the ill by-products of digitization has been increased [administrative burden](https://www.medicaleconomics.com/view/top-challenges-2021-1-administrative-burdens-and-paperwork) placed upon healthcare providers.  If technology can reduce this burden by summarizing patient information or answering patient questions efficiently, providers will have more face-to-face time with patients, and increase productivity.  For example, [JAMA](https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2804309) reported that an ChatGPT provided quality and empathetic responses to patient questions found in an online forum.  
+I believe AI systems can do something useful - work as a medical scribe.  Although this is less glamorous than diagnosing and treating patients, this is probably the best use case for AI today.  Case in point: One of the ill by-products of digitization has been increased [administrative burden](https://www.medicaleconomics.com/view/top-challenges-2021-1-administrative-burdens-and-paperwork) placed upon healthcare providers.  If technology can reduce this burden by summarizing patient information or answering patients efficiently, providers will have more face-to-face time with patients, and increase productivity.  For example, [JAMA](https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2804309) reported that ChatGPT provided quality and empathetic responses to patient questions found in an online forum.  
 
 I think more physicians and health system leaders will be on board with these technologies, as [efficiency](https://www.ncbi.nlm.nih.gov/books/NBK436891/) is one key to organizational profitability.  It perhaps is also the only place where AI can properly function, without jeopardizing the existing power dynamics as discussed above.  
 
 
 ## The true cost of running LLMs
 
-While these next-gen AI models (LLMs) have demonstrated remarkable performance in terms of human comprehension, one must also consider the cost to run them.  They are not cheap, due to the amount of data they can process and the compute power required.  The Wall Street Journal ran a [piece](https://www.wsj.com/tech/ai/ais-costly-buildup-could-make-early-products-a-hard-sell-bdd29b9f) earlier this month on the struggles for tech giants to monetize these technologies.  According to the article, Microsoft is using OpenAI’s latest version (GPT-4) software for its AI features.  However, that version is the largest and most expensive model available.  
+LLMs have demonstrated remarkable performance in terms of human comprehension, one must also consider the cost to run them.  They are not cheap, due to the amount of data they can ingest and the compute power required for processing.  The Wall Street Journal ran a [piece](https://www.wsj.com/tech/ai/ais-costly-buildup-could-make-early-products-a-hard-sell-bdd29b9f) earlier this month on the struggles for tech giants to monetize these technologies.  According to the article, Microsoft is using OpenAI’s latest version (GPT-4) software for its AI features.  However, that version is the largest and most expensive model available.  
 
 Equally important is understanding the technology's impact on the environment.  According to this [op-ed](https://arstechnica.com/gadgets/2023/04/generative-ai-is-cool-but-lets-not-forget-its-human-and-environmental-costs/) from Ars Technia, the most expensive and proprietary ("black box") models are reserved for very deep pocketed organizations.  As such,  building and deploying these models "requires a lot of planetary resources: rare metals for manufacturing GPUs, water to cool huge data centers, energy to keep those data centers running 24/7 on a planetary scale… all of these are often overlooked in favor of focusing on the future potential of the resulting models."
 
