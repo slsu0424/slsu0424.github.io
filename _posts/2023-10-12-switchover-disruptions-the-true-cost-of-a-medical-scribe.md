@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Switchover disruptions: The true cost of a medical scribe"
+title:  "Switchover disruptions: The true cost of an AI medical scribe"
 author: sandy
 categories: [ healthcare, AI, NLP, economics ]
 image: assets/images/2023-10/shutterstock_1841040424_license_resize.png
