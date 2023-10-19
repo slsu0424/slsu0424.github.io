@@ -21,7 +21,7 @@ I agree that the issue came down to control.  Not surprisingly (in a capitalist 
 
 Will the same fate await this next wave of AI?
 
-## A plausible AI use case: Medical Scribe
+## A plausible use case: AI Medical Scribe
 
 The arrival of ChatGPT has created a dizzying revival for using AI in healthcare, with the promise of automated diagnosis and treatments.  This, by the way, were the same statements touted by [IBM Watson](https://spectrum.ieee.org/how-ibm-watson-overpromised-and-underdelivered-on-ai-health-care) a decade ago.  Granted, today's AI technology has improved over its predecessors, it doesn't matter unless it can prove its business value.  Martin Kohn, the former IBM Research chief medical scientist, stated:
 
