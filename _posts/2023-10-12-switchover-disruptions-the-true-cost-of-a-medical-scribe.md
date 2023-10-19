@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Switchover disruptions: The true cost of an AI medical scribe"
+title:  "Switchover disruptions: The true cost of an AI scribe"
 author: sandy
 categories: [ healthcare, AI, NLP, economics ]
 image: assets/images/2023-10/shutterstock_1841040424_license_resize.png
@@ -27,7 +27,7 @@ The arrival of ChatGPT has created a dizzying revival for using AI in healthcare
 
 >"Prove to me that it will actually do something useful—that it will make my life better, and my patients' lives better." 
 
-I believe AI systems can do something useful - work as a medical scribe.  Although this is less glamorous than diagnosing and treating patients, this is probably the best use case for AI today.  Case in point: One of the ill by-products of digitization has been increased [administrative burden](https://www.medicaleconomics.com/view/top-challenges-2021-1-administrative-burdens-and-paperwork) placed upon healthcare providers.  If technology can reduce this burden by summarizing patient information or answering patients efficiently, providers will have more face-to-face time with patients, and increase productivity.  For example, [JAMA](https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2804309) reported that ChatGPT provided comparable quality and empathetic responses to patient questions found in an online forum (vs. physicians).  
+I believe AI systems can do something useful - work as an AI medical scribe.  Although this is less glamorous than diagnosing and treating patients, this is probably the best use case for AI today.  Case in point: One of the ill by-products of digitization has been increased [administrative burden](https://www.medicaleconomics.com/view/top-challenges-2021-1-administrative-burdens-and-paperwork) placed upon healthcare providers.  If technology can reduce this burden by summarizing patient information or answering patients efficiently, providers will have more face-to-face time with patients, and increase productivity.  For example, [JAMA](https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2804309) reported that ChatGPT provided comparable quality and empathetic responses to patient questions found in an online forum (vs. physicians).  
 
 I think more physicians and health system leaders will be on board with these AI technologies, as [efficiency](https://www.ncbi.nlm.nih.gov/books/NBK436891/) is one key to improving organizational performance (i.e., reduced costs, better patient outcomes) and potential profits. 
 
