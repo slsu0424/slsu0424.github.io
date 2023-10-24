@@ -105,10 +105,12 @@ Since we saw the limitations with one-hot encoding, a better approach would be t
 To do this, Keras (neural network library) provides a handy **Tokenizer() API** that can handle multiple documents.  For a deeper understanding of its implementation, see this [tutorial](https://machinelearningmastery.com/prepare-text-data-deep-learning-keras).
 
 ```python
+# integer encode words per document 
+
 encod_corp = []
 
 # fit tokenizer on docs
-t = Tokenizer()
+t = Tokenizer(filters='!"#$%&()*+,/:;<=>?@[\\]^_`{|}~\t\n') # does not include '-'
 t.fit_on_texts(corp) 
 encod_corp = t.texts_to_sequences(corp) # integer encode docs
 
@@ -119,7 +121,7 @@ print("vocab:")
 for i,v in enumerate(vocab, 1):
    print(i,v)
 
-vocab_size = len(vocab) # input into embedding layer
+vocab_size = len(vocab) 
 print('Vocab size = %s unique words' % vocab_size)
 ```
 ```
