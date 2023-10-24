@@ -275,7 +275,7 @@ model.fit(pad_corp, labels_arr, epochs=50, verbose=1)
 
 # evaluate the model
 
-loss, accuracy = model.evaluate(pad_corp, labels_arr, verbose=1)
+oss, accuracy = model.evaluate(pad_corp, labels_arr, verbose=1)
 print('Accuracy: %f' % (accuracy*100))
 ```
 ```
