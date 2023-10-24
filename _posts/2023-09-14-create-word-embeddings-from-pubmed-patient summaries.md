@@ -110,7 +110,7 @@ To do this, Keras (neural network library) provides a handy **Tokenizer() API** 
 encod_corp = []
 
 # fit tokenizer on docs
-t = Tokenizer(filters='!"#$%&()*+,/:;<=>?@[\\]^_`{|}~\t\n') # does not include '-'
+t = Tokenizer(filters='!"#$%&()*+,/:;<=>?@[\\]^_`{|}~\t\n')
 t.fit_on_texts(corp) 
 encod_corp = t.texts_to_sequences(corp)
 
@@ -184,9 +184,9 @@ embedding_layer = Embedding(
                         input_length=maxlen)
 
 # add layers
-model.add(embedding_layer) # layer 0
-model.add(Flatten()) # layer 1
-model.add(Dense(1, activation='sigmoid'))  # layer 2
+model.add(embedding_layer)
+model.add(Flatten()) 
+model.add(Dense(1, activation='sigmoid'))
 
 # configure the learning process
 model.compile(
