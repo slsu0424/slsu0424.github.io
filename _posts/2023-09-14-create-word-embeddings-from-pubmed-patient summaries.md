@@ -21,7 +21,7 @@ There are a number of techniques available to build a word embedding, including 
 
 ## Let's get data
 
-I selected a dataset of ~167K PubMed patient summaries via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  To demonstrate a low-code approach, SQL Server and Azure Data Studio will be used.
+We select a dataset of ~167K PubMed patient summaries via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  To demonstrate a low-code approach, SQL Server and Azure Data Studio will be used.
 
 The data is loaded into [SQL Server on a Mac](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac).  Start SQL Server via the terminal, giving the username and password:
 
