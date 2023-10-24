@@ -142,6 +142,7 @@ Keras requires that all documents must be the same length.  We find the maximum 
 
 ```python
 # pad the docs with zeros
+
 pad_corp=pad_sequences(encod_corp,maxlen=maxlen,padding='post',value=0.0)
 
 print(pad_corp)
@@ -203,6 +204,7 @@ The embedding layer is a lookup table, which represents each word as floating po
 
 ```python
 # embedding lookup
+
 embedding_layer = model.get_layer(index=0)
 
 embedding_matrix = embedding_layer.get_weights()[0]
