@@ -173,6 +173,7 @@ We can also add other hidden layers (Flatten, Dense) to discover more complex pa
 
 ```python
 # create keras model
+
 model = Sequential()
 
 # define embedding
