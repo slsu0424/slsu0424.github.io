@@ -184,9 +184,9 @@ embedding_layer = Embedding(
                         input_length=maxlen)
 
 # add layers
-model.add(embedding_layer) # layer 0
-model.add(Flatten()) # layer 1
-model.add(Dense(1, activation='sigmoid'))  # layer 2
+model.add(embedding_layer)
+model.add(Flatten()) 
+model.add(Dense(1, activation='sigmoid'))
 
 # configure the learning process
 model.compile(
