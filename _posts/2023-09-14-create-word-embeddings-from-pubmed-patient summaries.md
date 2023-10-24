@@ -110,7 +110,7 @@ To do this, Keras (neural network library) provides a handy **Tokenizer() API** 
 encod_corp = []
 
 # fit tokenizer on docs
-t = Tokenizer(filters='!"#$%&()*+,/:;<=>?@[\\]^_`{|}~\t\n')
+t = Tokenizer(filters='!"#$%&()*+,/:;<=>?@[\\]^_`{|}~\t\n') # does not include '-'
 t.fit_on_texts(corp) 
 encod_corp = t.texts_to_sequences(corp)
 
