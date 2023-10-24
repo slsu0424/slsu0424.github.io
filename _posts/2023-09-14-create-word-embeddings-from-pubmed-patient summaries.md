@@ -70,7 +70,6 @@ for index, row in df.iterrows():
 
     labels.append(row['label'])
 
-# convert list to array
 labels_arr = np.array(labels).astype(float)
 
 print(labels_arr)
