@@ -35,7 +35,7 @@ Attached is a screenshot to modify the columns before importing the data:
 
 ![](/assets/images/2023-09/azstudio_setup.png)
 
-Run the below query to return the first 100 records.
+Run the below query to return the first 100 records and save as csv.
 
 ```
 SELECT TOP (100) [patient_id]
