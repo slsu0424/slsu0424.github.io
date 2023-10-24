@@ -268,9 +268,11 @@ Finally, we train the model on the classification task and evaluate its performa
 
 ```python
 # fit the model
+
 model.fit(pad_corp, labels_arr, epochs=50, verbose=1)
 
 # evaluate the model
+
 loss, accuracy = model.evaluate(pad_corp, labels_arr, verbose=1)
 print('Accuracy: %f' % (accuracy*100))
 ```
