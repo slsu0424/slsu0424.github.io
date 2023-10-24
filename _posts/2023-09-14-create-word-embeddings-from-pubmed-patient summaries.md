@@ -70,7 +70,6 @@ for index, row in df.iterrows():
 
     labels.append(row['label'])
 
-# convert list to array
 labels_arr = np.array(labels).astype(float)
 
 print(labels_arr)
@@ -141,7 +140,7 @@ Out of 2451 total words, 931 unique words are found.
 Keras requires that all documents must be the same length.  We find the maximum length of a document, which is 55 words.  Zeroes are then added to the shorter documents using the **pad_sequences** function:
 
 ```python
-# pad the docs with zeros
+# pad the documents with zeros
 
 pad_corp=pad_sequences(encod_corp,maxlen=maxlen,padding='post',value=0.0)
 
@@ -272,7 +271,8 @@ Finally, we train the model on the classification task and evaluate its performa
 # fit the model
 
 model.fit(pad_corp, labels_arr, epochs=50, verbose=1)
-
+```
+```python
 # evaluate the model
 
 loss, accuracy = model.evaluate(pad_corp, labels_arr, verbose=1)
