@@ -112,7 +112,7 @@ encod_corp = []
 # fit tokenizer on docs
 t = Tokenizer(filters='!"#$%&()*+,/:;<=>?@[\\]^_`{|}~\t\n') # does not include '-'
 t.fit_on_texts(corp) 
-encod_corp = t.texts_to_sequences(corp) # integer encode docs
+encod_corp = t.texts_to_sequences(corp)
 
 # get unique words
 vocab = t.word_index
