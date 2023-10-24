@@ -262,7 +262,7 @@ Trainable params: 1975 (7.71 KB)
 Non-trainable params: 0 (0.00 Byte)
 _________________________________________________________________
 ```
-The 55×2 matrix is now reduced to a 110-element vector by the Flatten layer.
+he 55×2 matrix is now reduced to a 110-element vector by the Flatten layer.
 
 Finally, we train the model on the classification task and evaluate its performance.
 
