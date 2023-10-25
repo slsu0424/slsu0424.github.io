@@ -200,7 +200,7 @@ embedding_output = model.predict(pad_corp)
 
 ## Visualize intial embeddings
 
-The embedding layer is a lookup table, which represents each word as floating point values (weights) in the dimension specified.  These weights are initialized randomly before training the model.  The weights can be obtained as follows:
+The embedding layer is a lookup table, which represents each vocabulary word as floating point values (weights) in the dimension specified.  These weights are initialized randomly before training the model.  The weights can be obtained as follows:
 
 ```python
 # embedding lookup
@@ -209,7 +209,7 @@ embedding_layer = model.get_layer(index=0)
 
 embedding_matrix = embedding_layer.get_weights()[0]
 ```
-Since output_dim = 2, the [embedding layer](https://github.com/slsu0424/word-embed-public/embedding-layer.txt) consists of each word represented by 2 weights:
+Since the output_dim = 2, the [embedding_layer](https://github.com/slsu0424/word-embed-public/embedding-layer.txt) consists of each word represented by 2 weights:
 
 ```
 [[-1.44563206e-02  4.80025075e-02] (index 0)
@@ -234,8 +234,6 @@ The [embedding_output](https://github.com/slsu0424/word-embed-public/embedding-o
   [ 3.89778726e-02 -2.80238874e-02] --> 'due'
   [-2.98165921e-02 -2.53677499e-02] --> 'to'
 ...]]]
-
-
 ```
 
 Let's see how this looks visually.  Since these embeddings are not trained, it would make sense that the words are fairly scattered:
