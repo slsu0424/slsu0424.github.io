@@ -166,7 +166,7 @@ To create the embedding, we create a Keras Sequential model.  Sequential means t
 - output_dim: embedding dimension
 - input_length: maximum length of a document
 
-A output_dim = 2 means that every word is represented by a vector that contains 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on, but will also be more computationally expensive. 
+A output_dim = 2 means that every vocabulary word is represented by a vector that contains 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on, but will also be more computationally expensive. 
 
 Once the embedding layer is added to the network, the learning process is configured, and we run model.predict() to generate the predicted outputs.
 
@@ -200,7 +200,7 @@ embedding_output = model.predict(pad_corp)
 
 ## Visualize intial embeddings
 
-The embedding layer is a lookup table, which represents each vocabulary word as floating point values (weights) in the dimension specified.  These weights are initialized randomly before training the model.  The weights can be obtained as follows:
+The embedding layer is a lookup table, which represents each word as floating point values (weights) in the dimension specified.  These weights are initialized randomly before training the model.  The weights can be obtained as follows:
 
 ```python
 # embedding lookup
