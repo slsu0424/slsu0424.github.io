@@ -238,7 +238,7 @@ The [embedding_output](https://github.com/slsu0424/word-embed-public/embedding-o
 
 Let's see how this looks visually.  Since these embeddings are not trained, it would make sense that the words are fairly scattered:
 
-![](/assets/images/2023-09/output1.png)
+![](https://github.com/slsu0424/word-embed-private/blob/main/output1.png?raw=true)
 
 
 ## Visualize trained embeddings
