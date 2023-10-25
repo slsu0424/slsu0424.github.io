@@ -94,7 +94,7 @@ Now that we have our labeled dataset, we can create a corpus.  We take the 1st s
 ...]
 ```
 
-For 100 documents, there are 2451 total words in the corpus.
+For 100 documents, there are 2541 total words in the corpus.
 
 
 ## Convert text to integers
@@ -116,6 +116,7 @@ encod_corp = t.texts_to_sequences(corp)
 # get unique words
 vocab = t.word_index
 
+# print vocab list
 print("vocab:")
 for i,v in enumerate(vocab, 1):
    print(i,v)
@@ -133,7 +134,7 @@ vocab:
 
 Vocab size = 931 unique words
 ``` 
-Out of 2451 total words, 931 unique words are found.
+Out of 2541 total words, 931 unique words are found.
 
 ## Pad the documents
 
@@ -208,31 +209,33 @@ embedding_layer = model.get_layer(index=0)
 
 embedding_matrix = embedding_layer.get_weights()[0]
 ```
-For example, since we set our output_dim = 2, each word is represented by 2 weights:
+Since output_dim = 2, the [embedding layer]() consists of each word represented by 2 weights:
 
 ```
-[[ 4.24065441e-03  6.88085705e-03] (index 0)
- [ 1.85191296e-02  4.87870015e-02] --> 'a'
- [ 3.83142494e-02  1.63575523e-02] --> 'of'
- [-4.21669260e-02  3.95769961e-02] --> 'with'
- [-9.30057839e-03 -5.12727350e-03] --> 'and'
- [ 1.16716996e-02 -3.56635563e-02] --> 'the'
- [ 2.96857245e-02  3.94343249e-02] --> 'to'
- [ 4.73875515e-02  3.56208794e-02] --> 'was'
+[[-1.44563206e-02  4.80025075e-02] (index 0)
+ [-1.59640796e-02 -4.51272503e-02] --> 'a'
+ [ 2.10542418e-02 -8.66242498e-03] --> 'of'
+ [-1.84452906e-02  3.47980298e-02] --> 'with'
+ [ 2.58684158e-04  1.32058598e-02] --> 'and'
+ [ 1.89073570e-02  1.84913613e-02] --> 'the'
+ [-2.98165921e-02 -2.53677499e-02] --> 'to'
+ [-9.29275900e-03  3.30190696e-02] --> 'was'
 ...]]
 ```
 
-The embedding_output is the result of the embedding layer for a given input sequence.  For Document 1, we see that each value from the embedding layer is mapped to a word in that document:  
+The [embedding_output]() is the result of the embedding layer for a given input sequence.  For Document 1, we see that each value from the embedding layer is mapped to a word in that document:  
 
 ```
-[[[-4.98422384e-02  5.66009432e-03] --> 'This'
-  [-3.95929925e-02  4.86173891e-02] --> '60-year-old'
-  [ 4.61821593e-02  2.83356756e-03] --> 'male'
-  [ 4.73875515e-02  3.56208794e-02] --> 'was'
-  [ 5.46847656e-03  1.08509660e-02] --> 'hospitalized'
-  [-3.20219025e-02 -1.05163939e-02] --> 'due'
-  [ 2.96857245e-02  3.94343249e-02] --> 'to'
+[[[ 1.16442069e-02 -4.48367856e-02] --> 'This'
+  [ 4.07602638e-03 -3.78856547e-02] --> '60-year-old'
+  [ 4.98298556e-03 -3.84058841e-02] --> 'male'
+  [-9.29275900e-03  3.30190696e-02] --> 'was'
+  [ 2.67849118e-03 -1.87032111e-02] --> 'hospitalized'
+  [ 3.89778726e-02 -2.80238874e-02] --> 'due'
+  [-2.98165921e-02 -2.53677499e-02] --> 'to'
 ...]]]
+
+
 ```
 
 Let's see how this looks visually.  Since these embeddings are not trained, it would make sense that the words are fairly scattered:
@@ -292,7 +295,7 @@ Since these embeddings are now trained, we can visualize more defined clusters w
 
 In this tutorial, we explored how to create word embeddings from scratch, using a neural network to perform a classification task.  By taking sample text from PubMed patient summaries, we were able to train a neural network to classify patients who had COVID-19 and those that did not.  In doing so, we were also able to train the embeddings, such that words with similar meanings were visually placed closer together.  
 
-We can boost the performance of the training accuracy by adding in a different layer, such as a convolution layer.  I will explore these in future posts.
+We can boost the performance of the training accuracy by adding in a different layer, such as a convolution layer.  I will explore this in a future post.
 
 
 ## References
