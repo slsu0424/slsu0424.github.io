@@ -9,7 +9,7 @@ Building upon the previous [tutorial](https://slsu0424.github.io/encoding-pubmed
 
 For our example, we extract patient summaries from PubMed and label those that had COVID-19 vs. not COVID-19.  Sentences are used to create word embeddings, and the embeddings are trained as part of a neural network to perform a classification task.  By training the embeddings, the computer will learn if there are any meaningful relationships between the words in the text.
 
-All resources can be found [here](https://github.com/slsu0424/pmc-patients).
+All resources can be found [here](https://github.com/slsu0424/word-embed-public).
 
 ## A short intro to Word Embeddings
 
@@ -209,7 +209,7 @@ embedding_layer = model.get_layer(index=0)
 
 embedding_matrix = embedding_layer.get_weights()[0]
 ```
-Since output_dim = 2, the [embedding layer]() consists of each word represented by 2 weights:
+Since output_dim = 2, the [embedding layer](https://github.com/slsu0424/word-embed-public/embedding-layer.txt) consists of each word represented by 2 weights:
 
 ```
 [[-1.44563206e-02  4.80025075e-02] (index 0)
@@ -223,7 +223,7 @@ Since output_dim = 2, the [embedding layer]() consists of each word represented 
 ...]]
 ```
 
-The [embedding_output]() is the result of the embedding layer for a given input sequence.  For Document 1, we see that each value from the embedding layer is mapped to a word in that document:  
+The [embedding_output](https://github.com/slsu0424/word-embed-public/embedding-output.txt) is the result of the embedding layer for a given input sequence.  For Document 1, we see that each value from the embedding layer is mapped to a word in that document:  
 
 ```
 [[[ 1.16442069e-02 -4.48367856e-02] --> 'This'
