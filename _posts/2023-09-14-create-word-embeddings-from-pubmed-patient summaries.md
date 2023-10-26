@@ -85,7 +85,7 @@ print(labels_arr)
 
 ## Create a corpus
 
-Now that we have our labeled dataset, we can create a corpus.  We take the 1st sentence from each document.  A sample of the first 3 documents in the corpus is below:
+Now that we have our labeled dataset, we create a corpus.  We take the 1st sentence from each document.  A sample of the first 3 documents is below:
 
 ```
 ['This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea.', 
