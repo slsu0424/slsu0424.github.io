@@ -211,7 +211,7 @@ embedding_layer_weights = embedding_layer.get_weights()[0]
 
 print(embedding_layer_weights)
 ```
-Since the output_dim = 2, the [embedding_layer](https://github.com/slsu0424/word-embed-public/embedding-layer-weights.txt) consists of each word represented by 2 weights:
+Since the output_dim = 2, the [embedding_layer_weights](https://github.com/slsu0424/word-embed-public/embedding-layer-weights.txt) consists of each word represented by 2 weights:
 
 ```
 [[ 7.04301521e-03  3.39607336e-02] (index 0)
