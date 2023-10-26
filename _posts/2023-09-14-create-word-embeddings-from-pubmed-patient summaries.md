@@ -241,7 +241,7 @@ Let's see how this looks visually.  Since these embeddings are not trained, it w
 ![output1.png](https://github.com/slsu0424/word-embed-private/blob/main/output1.png?raw=true)
 
 
-## isualize trained embeddings
+## Bisualize trained embeddings
 
 After adding the embedding layer, we have a 55 x 2 (doc length x embedding dimension) matrix.  We need to compress (flatten) this into a 1D vector, to send to the next hidden (dense) layer.
 
