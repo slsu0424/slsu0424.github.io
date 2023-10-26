@@ -289,7 +289,7 @@ Since these embeddings are now trained, we can visualize more defined clusters w
 
 ![output2.png](https://github.com/slsu0424/word-embed-private/blob/main/output2.png)
 
-## Conclusionå
+## Conclusion
 
 In this tutorial, we explored how to create word embeddings from scratch, using a neural network to perform a classification task.  By taking sample text from PubMed patient summaries, we were able to train a neural network to classify patients who had COVID-19 and those that did not.  In doing so, we were also able to train the embeddings, such that words with similar meanings were visually placed closer together.  
 
