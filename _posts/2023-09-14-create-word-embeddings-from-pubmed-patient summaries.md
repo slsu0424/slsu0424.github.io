@@ -287,7 +287,7 @@ Accuracy: 88.999999
 Since these embeddings are now trained, we can visualize more defined clusters with ~89% accuracy for the prediction task.
 
 
-![output2.png](https://github.com/slsu0424/word-embed-private/blob/main/output1.png)
+![output2.png](https://github.com/slsu0424/word-embed-private/blob/main/output2.png)
 
 ## Conclusion
 
