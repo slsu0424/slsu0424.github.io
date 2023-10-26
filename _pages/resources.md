@@ -17,6 +17,7 @@ comments: false
 <li><a href="https://www.forbes.com/healthcare">Forbes Healthcare</a></li>
 <li><a href="https://erictopol.substack.com/">Ground Truths</a></li>
 <li><a href="https://www.hcinnovationgroup.com/">Healthcare Innovation</a></li>
+<li><a href="https://healthitanalytics.com/">Healthcare IT Analytics</a></li>
 <li><a href="https://www.healthcareitnews.com/">Healthcare IT News</a></li>
 <li><a href="https://www.mddionline.com/">Medical Device + Diagnostic Industry</a></li>
 <li><a href="https://www.modernhealthcare.com/">Modern Healthcare</a></li>
