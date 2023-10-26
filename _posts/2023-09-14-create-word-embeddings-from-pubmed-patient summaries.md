@@ -238,10 +238,10 @@ The [embedding_output](https://github.com/slsu0424/word-embed-public/embedding-o
 
 Let's see how this looks visually.  Since these embeddings are not trained, it would make sense that the words are fairly scattered:
 
-![output1.png](https://github.com/slsu0424/word-embed-private/blob/main/output1.png?raw=true)
+![output1.png](https://github.com/slsu0424/word-embed-private/blob/main/output1.png)
 
 
-## Bisualize trained embeddings
+## Visualize trained embeddings
 
 After adding the embedding layer, we have a 55 x 2 (doc length x embedding dimension) matrix.  We need to compress (flatten) this into a 1D vector, to send to the next hidden (dense) layer.
 
@@ -287,7 +287,7 @@ Accuracy: 88.999999
 Since these embeddings are now trained, we can visualize more defined clusters with ~89% accuracy for the prediction task.
 
 
-![output2.png](https://github.com/slsu0424/word-embed-private/blob/main/output2.png?raw=true)
+![output2.png](https://github.com/slsu0424/word-embed-private/blob/main/output2.png)
 
 ## Conclusion
 
