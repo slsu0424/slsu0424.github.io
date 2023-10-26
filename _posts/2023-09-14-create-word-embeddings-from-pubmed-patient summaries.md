@@ -203,42 +203,45 @@ embedding_output = model.predict(pad_corp)
 The embedding layer is a lookup table, which represents each word as floating point values (weights) in the dimension specified.  These weights are initialized randomly before training the model.  The weights can be obtained as follows:
 
 ```python
-# embedding lookup
+# embedding layer
 
 embedding_layer = model.get_layer(index=0)
 
-embedding_matrix = embedding_layer.get_weights()[0]
+embedding_layer_weights = embedding_layer.get_weights()[0]
+
+print(embedding_layer_weights)
 ```
-Since the output_dim = 2, the [embedding_layer](https://github.com/slsu0424/word-embed-public/embedding-layer.txt) consists of each word represented by 2 weights:
+Since the output_dim = 2, the [embedding_layer](https://github.com/slsu0424/word-embed-public/embedding-layer-weights.txt) consists of each word represented by 2 weights:
 
 ```
-[[-1.44563206e-02  4.80025075e-02] (index 0)
- [-1.59640796e-02 -4.51272503e-02] --> 'a'
- [ 2.10542418e-02 -8.66242498e-03] --> 'of'
- [-1.84452906e-02  3.47980298e-02] --> 'with'
- [ 2.58684158e-04  1.32058598e-02] --> 'and'
- [ 1.89073570e-02  1.84913613e-02] --> 'the'
- [-2.98165921e-02 -2.53677499e-02] --> 'to'
- [-9.29275900e-03  3.30190696e-02] --> 'was'
+[[ 7.04301521e-03  3.39607336e-02] (index 0)
+ [ 4.43325080e-02 -4.35174219e-02] --> 'a'
+ [-1.84080116e-02 -4.48269024e-02] --> 'of'
+ [-4.74609025e-02  4.29279730e-03] --> 'with'
+ [ 1.24161355e-02  4.76875566e-02] --> 'and'
+ [-1.89721715e-02 -2.00293791e-02] --> 'the'
+ [-2.18192935e-02 -4.75601330e-02] --> 'to'
+ [-2.51929164e-02 -9.96438414e-03] --> 'was'
 ...]]
+
 ```
 
 The [embedding_output](https://github.com/slsu0424/word-embed-public/embedding-output.txt) is the result of the embedding layer for a given input sequence.  For Document 1, we see that each value from the embedding layer is mapped to a word in that document:  
 
 ```
-[[[ 1.16442069e-02 -4.48367856e-02] --> 'This'
-  [ 4.07602638e-03 -3.78856547e-02] --> '60-year-old'
-  [ 4.98298556e-03 -3.84058841e-02] --> 'male'
-  [-9.29275900e-03  3.30190696e-02] --> 'was'
-  [ 2.67849118e-03 -1.87032111e-02] --> 'hospitalized'
-  [ 3.89778726e-02 -2.80238874e-02] --> 'due'
-  [-2.98165921e-02 -2.53677499e-02] --> 'to'
-...]]]
+[[[ 2.08440907e-02  3.52325179e-02] --> 'This'
+  [-1.70833841e-02 -4.37318459e-02] --> '60-year-old'
+  [-4.54872735e-02  1.42193772e-02] --> 'male'
+  [-2.51929164e-02 -9.96438414e-03] --> 'was'
+  [-4.34226505e-02 -2.67695189e-02] --> 'hospitalized'
+  [-3.18809636e-02  3.46260779e-02] --> 'due'
+  [-2.18192935e-02 -4.75601330e-02] --> 'to'
+  ...]]]
 ```
 
 Let's see how this looks visually.  Since these embeddings are not trained, it would make sense that the words are fairly scattered:
 
-![output1.png](https://github.com/slsu0424/word-embed-private/blob/main/output1.png?raw=true)
+![output1.png](https://github.com/slsu0424/word-embed-public/blob/main/output1.png?raw=true)
 
 
 ## Visualize trained embeddings
@@ -287,7 +290,7 @@ Accuracy: 88.999999
 Since these embeddings are now trained, we can visualize more defined clusters with ~89% accuracy for the prediction task.
 
 
-![output2.png](https://github.com/slsu0424/word-embed-private/blob/main/output2.png?raw=true)
+![output2.png](https://github.com/slsu0424/word-embed-public/blob/main/output2.png?raw=true)
 
 ## Conclusion
 
