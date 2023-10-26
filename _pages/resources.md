@@ -27,7 +27,6 @@ comments: false
 <p>
 <b>Data Science & AI</b>
 <ul>
-<li><a href="https://coalitionforhealthai.org/">Coalition for Health AI</a></li>
 <li><a href="https://developers.google.com/machine-learning">Google Machine Learning Education</a></li>
 <li><a href="https://huggingface.co/hf4h">Hugging Face for Health</a></li>
 <li><a href="https://www.kaggle.com/search?q=healthcare">Kaggle</a></li>
