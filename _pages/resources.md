@@ -34,8 +34,10 @@ comments: false
 <li><a href="https://machinelearningmastery.com/">Machine Learning Mastery</a></li>
 <li><a href="https://ai.nejm.org/">New England Journal of Medicine AI</a></li>
 <li><a href="https://paperswithcode.com/search?q_meta=&q_type=&q=healthcare">Papers With Code</a></li>
+<li><a href="https://web.stanford.edu/~jurafsky/slp3/">Speech and Language Processing (3rd ed. draft)</a></li>
 <li><a href="https://www.youtube.com/c/stanfordaimi">Stanford Center for Artificial Intelligence in Medicine and Imaging</a></li>
 <li><a href="https://www.tensorflow.org/">TensorFlow</a></li>
+<li><a href="https://towardsdatascience.com/">Towards Data Science</a></li>
 <li><a href="https://towardsdatascience.com/">Towards Data Science</a></li>
 </ul>
 </p>
