@@ -101,7 +101,7 @@ For 100 documents, there are 2541 total words in the corpus.
 
 Since we saw the limitations with one-hot encoding, a better approach would be to assign each word a unique integer.  The integer encoding for a specific word remains the same across all documents, so this will reduce the size of the corpus to unique words. 
 
-To do this, Keras (neural network library) provides a handy **Tokenizer() API** that can handle multiple documents.  For a deeper understanding of its implementation, see this [tutorial](https://machinelearningmastery.com/prepare-text-data-deep-learning-keras).
+To do this, [Keras](https://keras.io/) provides a handy **Tokenizer() API** that can handle multiple documents.  For a deeper understanding of its implementation, see this [tutorial](https://machinelearningmastery.com/prepare-text-data-deep-learning-keras).
 
 ```python
 # integer encode words per document 
@@ -304,6 +304,7 @@ We can boost the performance of the training accuracy by adding in a different l
 + <https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main>
 + <https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac>
 + <https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/>
++ <https://keras.io/>
 + <https://machinelearningmastery.com/prepare-text-data-deep-learning-keras>
 + <https://machinelearningmastery.com/use-word-embedding-layers-deep-learning-keras>
 + <https://cs229.stanford.edu/summer2020/cs229-notes-deep_learning.pdf>
