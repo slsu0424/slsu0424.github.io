@@ -9,6 +9,11 @@ Building upon the previous [tutorial](https://slsu0424.github.io/encoding-pubmed
 
 For our example, we extract patient summaries from PubMed and label those that had COVID-19 vs. not COVID-19.  Sentences are used to create word embeddings, and the embeddings are trained as part of a neural network to perform a classification task.  By training the embeddings, the computer will learn if there are any meaningful relationships between the words in the text.
 
+Pre-requisites:
+1. Familiarity with Azure services
+2. Python
+3. Basic knowledge of NLP
+
 All resources can be found [here](https://github.com/slsu0424/word-embed-public).
 
 ## A short intro to Word Embeddings
@@ -21,15 +26,15 @@ There are a number of techniques available to build a word embedding, including 
 
 ## Let's get data
 
-I selected a dataset of ~167K PubMed patient summaries via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  To demonstrate a low-code approach, SQL Server and Azure Data Studio will be used.
+I selected a dataset of ~167K PubMed patient summaries via [HuggingFace](https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main).  The data is loaded into [SQL Server on a Mac](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac).  
 
-The data is loaded into [SQL Server on a Mac](https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac).  Start SQL Server via the terminal, giving the username and password:
+Start SQL Server via the terminal, giving the username and password:
 
 ```
 $ mssql -u <sql server username> -p <sql server password>
 ```
 
-We [connect](https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/) SQL Server to Azure Data Studio, where we query the data.
+[Connect](https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/) SQL Server to Azure Data Studio to query the data.
 
 Attached is a screenshot to modify the columns before importing the data:
 
