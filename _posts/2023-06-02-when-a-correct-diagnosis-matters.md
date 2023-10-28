@@ -21,9 +21,9 @@ In their article [When Physicians Go Head-to-Head with Large Language Models](ht
 
 > "Mr. Jones, 59 years old, with a history of hypertension, stroke, and elevated lipid levels, arrives in the ED complaining of sudden-onset intense substernal chest pain that radiates to his left leg but does not affect his left arm or jaw. He also has an elevated troponin I level. What is the correct diagnosis?" 
 
-> ChatGPT replied: "Based on the symptoms and medical history provided, Mr. Jones is presenting with a potential myocardial infarction (MI), also known as a heart attack. The sudden onset of intense substernal chest pain that radiates to his left leg is a common symptom of a heart attack. The fact that the pain does not affect his left arm or jaw is not unusual, as some heart attacks can present with atypical symptoms.
+ChatGPT replied: 
 
-> “The elevated troponin I level is also a significant finding, as it indicates damage to the heart muscle. Troponin is a protein released into the bloodstream when heart muscle cells are damaged or die, which is a hallmark of a heart attack.
+> "Based on the symptoms and medical history provided, Mr. Jones is presenting with a potential myocardial infarction (MI), also known as a heart attack. The sudden onset of intense substernal chest pain that radiates to his left leg is a common symptom of a heart attack. The fact that the pain does not affect his left arm or jaw is not unusual, as some heart attacks can present with atypical symptoms."
 
 From a layman's perspective, this answer seems pretty convincing.  From a technological perspective, this is pretty impressive that ChatGPT can [predict](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/) the next series of words or "tokens" based on a prompt, and return results that sound surprisingly human.  
 
