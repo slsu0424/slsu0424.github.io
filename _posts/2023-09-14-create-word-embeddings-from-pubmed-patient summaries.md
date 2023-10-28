@@ -110,7 +110,6 @@ To do this, [Keras](https://keras.io/) provides a handy **Tokenizer() API** that
 
 ```python
 # integer encode words per document 
-
 encod_corp = []
 
 # fit tokenizer on docs
@@ -147,7 +146,6 @@ Keras requires that all documents must be the same length.  We find the maximum 
 
 ```python
 # pad the documents with zeros
-
 pad_corp=pad_sequences(encod_corp,maxlen=maxlen,padding='post',value=0.0)
 
 print(pad_corp)
@@ -179,7 +177,6 @@ We can also add other hidden layers (Flatten, Dense) to discover more complex pa
 
 ```python
 # create keras model
-
 model = Sequential()
 
 # define embedding
@@ -278,7 +275,6 @@ Finally, we train the model on the classification task and evaluate its performa
 
 ```python
 # fit the model
-
 model.fit(pad_corp, labels_arr, epochs=50, verbose=1)
 ```
 ```python
