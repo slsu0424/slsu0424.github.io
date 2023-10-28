@@ -12,7 +12,8 @@ For our example, we extract patient summaries from PubMed and label those that h
 Pre-requisites:
 1. Basic knowledge of neural networks
 2. Basic knowledge of Azure data services
-3. Python
+3. MacOS
+4. Python
 
 All resources can be found [here](https://github.com/slsu0424/word-embed-public).
 
