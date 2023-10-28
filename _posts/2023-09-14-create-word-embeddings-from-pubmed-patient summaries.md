@@ -206,7 +206,6 @@ The embedding layer is a lookup table, which represents each word as floating po
 
 ```python
 # embedding layer
-
 embedding_layer = model.get_layer(index=0)
 
 embedding_layer_weights = embedding_layer.get_weights()[0]
