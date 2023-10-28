@@ -10,7 +10,7 @@ Building upon the previous [tutorial](https://slsu0424.github.io/encoding-pubmed
 For our example, we extract patient summaries from PubMed and label those that had COVID-19 vs. not COVID-19.  Sentences are used to create word embeddings, and the embeddings are trained as part of a neural network to perform a classification task.  By training the embeddings, the computer will learn if there are any meaningful relationships between the words in the text.
 
 Pre-requisites:
-1. Familiarity with Azure services
+1. Familiarity with Azure data services
 2. Python
 3. Basic knowledge of NLP
 
