@@ -13,6 +13,7 @@ Pre-requisites:
 1. Familiarity with Azure data services
 2. Python
 3. Basic knowledge of NLP
+3. Basic knowledge of neural networks
 
 All resources can be found [here](https://github.com/slsu0424/word-embed-public).
 
