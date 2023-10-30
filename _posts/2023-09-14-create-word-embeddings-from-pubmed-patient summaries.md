@@ -13,7 +13,7 @@ Pre-requisites:
 1. Basic knowledge of neural networks
 2. Azure Data Studio
 3. Docker
-4. Python 3.10
+4. Python 3.10.3
 5. SQL Server on Mac (on-prem)
 
 All resources can be found [here](https://github.com/slsu0424/word-embed-public).
