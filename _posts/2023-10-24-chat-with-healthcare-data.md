@@ -5,14 +5,12 @@ author: sandy
 categories: [ ChatGPT, NLP, tutorial ]
 image: assets/images/2023-10/shutterstock_2188258735_license_resize.png
 ---
-What is today's value in chatting with healthcare data?  After all, NLP has been around for a long time.  What makes GenAI different?  
+What is value LLMs in healthcare, specificially when it comes to chat capabilities?  After all, NLP has been around for a long time.  What makes GenAI different?  
 
-This was a topic that I explored back in September, where I presented the 2nd iteration of my talk on Large Language Models (LLMs).  This time I had a chance to go a bit deeper into the demos that covered integrating LLMs with LangChain, and LLMs with SQL.  I have written this tutorial to accompany those demos.
+https://www.nature.com/articles/s41591-023-02448-8
 
-This tutorial will cover 2 examples:
+This was a topic that I explored back in September, where I presented the 2nd iteration of my talk on Large Language Models (LLMs).  I had a chance to go a bit deeper into the demos that covered integrating LLMs with LangChain and SQL, and this tutorial explores those demos in more detail. 
 
-1) LLMs and LangChain to chat with a healthcare document  
-2) LLMs and SQL to chat with a healthcare database
 
 Pre-requisites:
 1. Intermediate knowledge of OpenAI
@@ -20,13 +18,13 @@ Pre-requisites:
 3. Python 3.11
 
 
-All resources can be found [here](https://github.com/slsu0424/pmc-patients).
-
 ## Example 1: LLMs and LangChain to chat with a healthcare document 
+
+All resources can be found [here](https://github.com/slsu0424/pmc-patients).
 
 #### Generate an ADE report
 
-For the first step, I used OpenAI's ChatGPT (GPT-3.5) to generate a synthetic adverse events report for warfarin.  I chose warfarin as it is in the class of drugs that have resulted in [serious adverse drug reactions](https://www.ncbi.nlm.nih.gov/books/NBK519025/).
+I used OpenAI's ChatGPT (GPT-3.5) to generate a synthetic adverse events report for warfarin.  I chose warfarin as it is in the class of drugs that have resulted in [serious adverse drug reactions](https://www.ncbi.nlm.nih.gov/books/NBK519025/).
 
 These were the series of prompts I used to generate the final [output]():
 
@@ -116,6 +114,8 @@ With the Streamlit app loaded, we can ask a question of the ADE document:
 
 ## Example 2: LLMs and SQL to chat with a healthcare database
 
+All resources can be found [here](https://github.com/slsu0424/pmc-patients).
+
 #### Load data into Azure SQL DB
 [MIMIC-III](https://physionet.org/content/mimiciii-demo/1.4/) is a publicly available database comprising of de-identified data for > 40,000 CCU patients who stayed at the Beth Israel Deaconess Medical Center between 2001 and 2012.  
 
@@ -141,8 +141,8 @@ conn_str = f"mssql+pyodbc://{username}:{password}@{server}/{database}?driver={dr
 ## Set up SQL Database Agent
 LangChain provides an agent that allows the user to interact with SQL databases.  Below are the steps to initialize the agent:
 
- ```python
- # create new llm model
+```python
+# create new llm model
 llm = ChatOpenAI(
     temperature=0, 
     openai_api_key=OPENAI_API_KEY, 
@@ -164,10 +164,31 @@ agent_executor = create_sql_agent(
  To note, when creating a new llm model, one can choose ChatOpenAI or OpenAI.  What is the difference?
 
 
-
-
 ## Ask queries in natural language
-In order to query 
+Let's run a simple query:
+```python
+# query 1
+agent_executor.run("how many rows are there?")
+```
+Response:
+```
+> Entering new AgentExecutor chain...
+
+Invoking: `sql_db_list_tables` with `{}`
+
+
+ADMISSIONS, BuildVersion, ErrorLog
+Invoking: `sql_db_query` with `SELECT COUNT(*) FROM ADMISSIONS`
+
+
+[(129,)]There are 129 rows in the ADMISSIONS table.
+
+> Finished chain.
+```
+What I find interesting here is that the chain exposes the process by which the LLM "thinks through" how to answer the query.  Note that the LLM recognizes that it has to find the list of tables available in the database (there is only 1, the ADMISSIONS table).  It then runs a COUNT statement to return the row sum.
+
+You can compare the LLMs response to what would normally be generated through [SQL queries]().  Note that the responses, as expected, are the same.
+
 
 ## Conclusion
 
