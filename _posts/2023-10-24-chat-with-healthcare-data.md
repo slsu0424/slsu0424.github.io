@@ -1,22 +1,30 @@
 ---
 layout: post
-title:  "Chat with healthcare data in natural language: LLMs and LangChain"
+title:  "Chat with healthcare data in natural language"
 author: sandy
 categories: [ ChatGPT, NLP, tutorial ]
 image: assets/images/2023-10/shutterstock_2188258735_license_resize.png
 ---
 What is today's value in chatting with healthcare data?  After all, NLP has been around for a long time.  What makes GenAI different?  
 
-This was a topic that I explored back in September, where I presented the 2nd iteration of my talk on Large Language Models (LLMs).  I had a chance to go a bit deeper into two examples that covered integrating LLMs with LangChain, and LLMs with SQL.  This tutorial will cover the former.
+This was a topic that I explored back in September, where I presented the 2nd iteration of my talk on Large Language Models (LLMs).  This time I had a chance to go a bit deeper into the demos that covered integrating LLMs with LangChain, and LLMs with SQL.  I have written this tutorial to accompany those demos.
 
+This tutorial will cover 2 examples:
+
+1) LLMs and LangChain to chat with a healthcare document  
+2) LLMs and SQL to chat with a healthcare database
 
 Pre-requisites:
 1. Intermediate knowledge of OpenAI
+2. Azure SQL DB
 3. Python 3.11
+
 
 All resources can be found [here](https://github.com/slsu0424/pmc-patients).
 
-## Generate an ADE report
+## Example 1: LLMs and LangChain to chat with a healthcare document 
+
+#### Generate an ADE report
 
 For the first step, I used OpenAI's ChatGPT (GPT-3.5) to generate a synthetic adverse events report for warfarin.  I chose warfarin as it is in the class of drugs that have resulted in [serious adverse drug reactions](https://www.ncbi.nlm.nih.gov/books/NBK519025/).
 
@@ -31,8 +39,7 @@ A snippet of the document is below:
 
 >On October 20, 2023, at 09:30 AM, the patient, John Doe, experienced a significant adverse event related to the anticoagulant medication warfarin. Mr. Doe, a 68-year-old male with a history of atrial fibrillation, had been taking warfarin (5 mg daily) for the past three years as prescribed by his cardiologist.
 
-## Q&A application overview
-
+#### Q&A application overview
 This [blog post](https://github.com/hwchase17/chat-your-data/blob/master/blogpost.md) by LangChain's founder, Harrison Chase, provides a high-level overview for building a text-based Q&A application.  
 
 The main steps include:
@@ -54,7 +61,7 @@ Query Data:
 ![langchain2](/assets/images/2023-10/langchain2.png)
 
 
-## Use LangChain to load documents into a vector store
+#### Use LangChain to load documents into a vector store
 [Langchain](https://docs.langchain.com/docs/) is a framework for developing applications powered by LLMs, like the one above.  The main idea is that developers can "chain" different components around an LLM to create more powerful use cases.  
 
 Hence, we can "chain" an LLM to another component, such as a document.
@@ -106,6 +113,61 @@ This visual shows the workflow in more detail:
 With the Streamlit app loaded, we can ask a question of the ADE document:
 
 
+
+## Example 2: LLMs and SQL to chat with a healthcare database
+
+#### Load data into Azure SQL DB
+[MIMIC-III](https://physionet.org/content/mimiciii-demo/1.4/) is a publicly available database comprising of de-identified data for > 40,000 CCU patients who stayed at the Beth Israel Deaconess Medical Center between 2001 and 2012.  
+
+I downloaded the database (.csv files), and loaded the [ADMISSIONS]() table into Azure SQL DB. 
+
+# Connect to Azure SQL DB
+We use python to connect to Azure SQL DB using pyodbc.  First, we need to get the Azure SQL DB connection string variables:
+
+```python
+# odbc connection string
+server = 'mimicdb-server.database.windows.net'
+database = 'mimicdb'
+username = 'ssu'
+password = '201Marin'
+driver = 'ODBC Driver 18 for SQL Server'
+```
+
+Create a connection:
+```python
+# connect python to sql server
+conn_str = f"mssql+pyodbc://{username}:{password}@{server}/{database}?driver={driver}"
+```
+## Set up SQL Database Agent
+LangChain provides an agent that allows the user to interact with SQL databases.  Below are the steps to initialize the agent:
+
+ ```python
+ # create new llm model
+llm = ChatOpenAI(
+    temperature=0, 
+    openai_api_key=OPENAI_API_KEY, 
+    model_name='gpt-3.5-turbo')
+
+# toolkit for interacting with sql databases
+toolkit = SQLDatabaseToolkit(
+    db=db,
+    llm=llm)
+
+# initialize agent
+agent_executor = create_sql_agent(
+    llm=llm,
+    toolkit=toolkit,
+    verbose=True,
+    agent_type=AgentType.OPENAI_FUNCTION
+    )
+ ```
+ To note, when creating a new llm model, one can choose ChatOpenAI or OpenAI.  What is the difference?
+
+
+
+
+## Ask queries in natural language
+In order to query 
 
 ## Conclusion
 
