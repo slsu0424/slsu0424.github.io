@@ -18,9 +18,9 @@ Pre-requisites:
 3. Python 3.11
 
 
-All resources can be found [here](https://github.com/slsu0424/pmc-patients).
-
 ## Example 1: LLMs and LangChain to chat with a healthcare document 
+
+All resources can be found [here](https://github.com/slsu0424/pmc-patients).
 
 #### Generate an ADE report
 
@@ -114,6 +114,8 @@ With the Streamlit app loaded, we can ask a question of the ADE document:
 
 ## Example 2: LLMs and SQL to chat with a healthcare database
 
+All resources can be found [here](https://github.com/slsu0424/pmc-patients).
+
 #### Load data into Azure SQL DB
 [MIMIC-III](https://physionet.org/content/mimiciii-demo/1.4/) is a publicly available database comprising of de-identified data for > 40,000 CCU patients who stayed at the Beth Israel Deaconess Medical Center between 2001 and 2012.  
 
@@ -163,7 +165,7 @@ agent_executor = create_sql_agent(
 
 
 ## Ask queries in natural language
-Let's run a query:
+Let's run a simple query:
 ```python
 # query 1
 agent_executor.run("how many rows are there?")
@@ -183,6 +185,10 @@ Invoking: `sql_db_query` with `SELECT COUNT(*) FROM ADMISSIONS`
 
 > Finished chain.
 ```
+What I find interesting here is that the chain exposes the process by which the LLM "thinks through" how to answer the query.  Note that the LLM recognizes that it has to find the list of tables available in the database (there is only 1, the ADMISSIONS table).  It then runs a COUNT statement to return the row sum.
+
+You can compare the LLMs response to what would normally be generated through [SQL queries]().  Note that the responses, as expected, are the same.
+
 
 ## Conclusion
 
