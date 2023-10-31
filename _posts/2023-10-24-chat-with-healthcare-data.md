@@ -9,7 +9,7 @@ What is value LLMs in healthcare, specificially when it comes to chat capabiliti
 
 https://www.nature.com/articles/s41591-023-02448-8
 
-This was a topic that I explored back in September, where I presented the 2nd iteration of my talk on Large Language Models (LLMs).  I had a chance to go a bit deeper into the demos that covered integrating LLMs with LangChain and SQL, and this tutorial explores those demos in more detail. 
+This was a topic I also explored in my September [tech talk]() LLMs, where I had a chance to go deeper into the demos that covered integrating LLMs with LangChain and SQL.  This tutorial explores those demos in more detail. 
 
 
 Pre-requisites:
