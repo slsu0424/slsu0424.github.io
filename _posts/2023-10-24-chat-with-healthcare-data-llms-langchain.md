@@ -1,15 +1,13 @@
 ---
 layout: post
-title:  "Chat with healthcare data in natural language: LLMs with LangChain"
+title:  "Chat with healthcare data in natural language: LLMs and LangChain"
 author: sandy
 categories: [ ChatGPT, NLP, tutorial ]
 image: assets/images/2023-10/shutterstock_2188258735_license_resize.png
 ---
 What is today's value in chatting with healthcare data?  After all, NLP has been around for a long time.  What makes GenAI different?  
 
-This was a topic that I explored back in September, where I presented the 2nd iteration of my talk on Large Language Models (LLMs).  This time I had a chance to go a bit deeper into two examples that covered integrating LLMs with LangChain, and LLMs with SQL.  
-
-This tutorial accompanies the first example: LLMs and LangChain to chat with a healthcare document.
+This was a topic that I explored back in September, where I presented the 2nd iteration of my talk on Large Language Models (LLMs).  I had a chance to go a bit deeper into two examples that covered integrating LLMs with LangChain, and LLMs with SQL.  This tutorial will cover the former.
 
 
 Pre-requisites:
@@ -106,8 +104,6 @@ This visual shows the workflow in more detail:
 
 ## Let's ask some questions
 With the Streamlit app loaded, we can ask a question of the ADE document:
-
-
 
 
 
