@@ -9,7 +9,7 @@ What is value LLMs in healthcare, specificially when it comes to chat capabiliti
 
 https://www.nature.com/articles/s41591-023-02448-8
 
-This was a topic that I explored back in September, where I presented the 2nd iteration of my talk on Large Language Models (LLMs).  I had a chance to go a bit deeper into the demos that covered integrating LLMs with LangChain and SQL, and this tutorial explores those demos in more detail. 
+This was a topic I also explored in my September [tech talk]() LLMs, where I had a chance to go deeper into the demos that covered integrating LLMs with LangChain and SQL.  This tutorial explores those demos in more detail. 
 
 
 Pre-requisites:
@@ -64,7 +64,7 @@ Query Data:
 
 Hence, we can "chain" an LLM to another component, such as a document.
 
-LangChain has many different methods to load documents.  We easily use the **PyPDFLoader** to load in the PDF document and create a vector representation using the **VectorStoreIndexCreator**:
+LangChain has many different methods to load documents.  **PyPDFLoader** is used to load in a PDF document and create a vector representation using the **VectorStoreIndexCreator**:
 
 ```python
 # Load PDF document
@@ -122,7 +122,7 @@ All resources can be found [here](https://github.com/slsu0424/pmc-patients).
 I downloaded the database (.csv files), and loaded the [ADMISSIONS]() table into Azure SQL DB. 
 
 # Connect to Azure SQL DB
-We use python to connect to Azure SQL DB using pyodbc.  First, we need to get the Azure SQL DB connection string variables:
+We use to connect to Azure SQL DB via [pyodbc](https://pypi.org/project/pyodbc/).  First, we need to get the Azure SQL DB connection string variables:
 
 ```python
 # odbc connection string
@@ -187,14 +187,12 @@ Invoking: `sql_db_query` with `SELECT COUNT(*) FROM ADMISSIONS`
 ```
 What I find interesting here is that the chain exposes the process by which the LLM "thinks through" how to answer the query.  Note that the LLM recognizes that it has to find the list of tables available in the database (there is only 1, the ADMISSIONS table).  It then runs a COUNT statement to return the row sum.
 
-You can compare the LLMs response to what would normally be generated through [SQL queries]().  Note that the responses, as expected, are the same.
+You can compare the LLMs response to what would normally be generated through [SQL queries]().
 
 
 ## Conclusion
 
-In this tutorial, we explored how to create word embeddings from scratch, using a neural network to perform a classification task.  By taking sample text from PubMed patient summaries, we were able to train a neural network to classify patients who had COVID-19 and those that did not.  In doing so, we were also able to train the embeddings, such that words with similar meanings were visually placed closer together.  
-
-We can boost the performance of the training accuracy by adding in a different layer, such as a convolution layer.  I will explore these in future posts.
+In this tutorial, we explored two examples of how to use LLMs to interact with healthcare data.  First, we looked at integrating LLMs with Langchain to quickly build a chat-enabled application.  Second, we looked at how LLMs can be used a SQL Database to send queries using natural language.  These are powerful use cases by which users can interact with data without having to write code.  
 
 
 ## References
