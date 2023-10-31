@@ -38,7 +38,7 @@ A snippet of the document is below:
 >On October 20, 2023, at 09:30 AM, the patient, John Doe, experienced a significant adverse event related to the anticoagulant medication warfarin. Mr. Doe, a 68-year-old male with a history of atrial fibrillation, had been taking warfarin (5 mg daily) for the past three years as prescribed by his cardiologist.
 
 #### Q&A application overview
-This [blog post](https://github.com/hwchase17/chat-your-data/blob/master/blogpost.md) by LangChain's founder, Harrison Chase, provides a high-level overview for building a text-based Q&A application.  
+This LangChain [blog post](https://github.com/hwchase17/chat-your-data/blob/master/blogpost.md) provides a high-level overview for building a text-based Q&A application.  
 
 The main steps include:
 
@@ -122,7 +122,7 @@ All resources can be found [here](https://github.com/slsu0424/pmc-patients).
 I downloaded the database (.csv files), and loaded the [ADMISSIONS]() table into Azure SQL DB. 
 
 # Connect to Azure SQL DB
-We use to connect to Azure SQL DB via [pyodbc](https://pypi.org/project/pyodbc/).  First, we need to get the Azure SQL DB connection string variables:
+We use python to connect to Azure SQL DB via [pyodbc](https://pypi.org/project/pyodbc/).  First, get the Azure SQL DB connection string variables:
 
 ```python
 # odbc connection string
