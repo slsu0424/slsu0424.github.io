@@ -95,9 +95,8 @@ prompt = st.text_input("Enter your question to query your PDF documents")
 When a user passes in a question, the store is queried to retrieve the data that is 'most similar' to the embedded query.
 
 ```python
-response = index.query(llm=OpenAI(
-  model_name="gpt-3.5-turbo", 
-  temperature=0.2), 
+response = index.query(
+  llm=OpenAI(model_name="gpt-3.5-turbo", temperature=0.2), 
   question = prompt, 
   chain_type = 'stuff')
 ```
@@ -190,3 +189,4 @@ In this tutorial, we explored two examples of how to use LLMs to interact with h
 + <https://github.com/hwchase17/chat-your-data/blob/master/blogpost.md>
 + <https://python.langchain.com/docs/get_started/introduction>
 + <https://medium.com/@kbdhunga/enhancing-conversational-ai-the-power-of-langchains-question-answer-framework-4974e1cab3cf>
++ <https://physionet.org/content/mimiciii-demo/1.4/>
