@@ -152,7 +152,7 @@ agent_executor = create_sql_agent(
     agent_type=AgentType.OPENAI_FUNCTION
     )
  ```
- *Note*: **ChatOpenAI** shares many similar properties to **OpenAI**.  However, it contains more chat-related methods and is better suited for building chatbots.
+ *Note*: The **ChatOpenAI** class shares many similar properties to **OpenAI**.  However, it contains more chat-related methods and is better suited for building chatbots.
 
 #### Ask queries in natural language
 Let's run a simple query:
