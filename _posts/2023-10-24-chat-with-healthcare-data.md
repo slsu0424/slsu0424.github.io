@@ -101,7 +101,7 @@ response = index.query(
   chain_type = 'stuff')
 ```
 
-Under the hood, we pass in the OpenAI model (gpt-3.5-turbo), and set the **temperature**.  The temperature controls the randomness of the output generated (closer to 1 will generate a more creative response).  For **chain_type = 'stuff'**, this will combine the question and relevant document chunks into a single prompt to pass to the LLM.
+Under the hood, we pass in the OpenAI model (gpt-3.5-turbo), and set the **temperature**.  The temperature controls the randomness of the output generated (closer to 1 will generate a more creative response).  For **chain_type = 'stuff'**, this combines the question and relevant document chunks into a single prompt to pass to the LLM.
 
 This visual shows the overall workflow:
 
