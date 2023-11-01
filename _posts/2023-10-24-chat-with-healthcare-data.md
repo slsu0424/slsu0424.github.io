@@ -168,7 +168,7 @@ agent_executor = create_sql_agent(
     agent_type=AgentType.OPENAI_FUNCTION
     )
  ```
- To note, the [ChatOpenAI](https://api.python.langchain.com/en/latest/chat_models/langchain.chat_models.openai.ChatOpenAI.html) class shares many similar properties to [OpenAI](https://api.python.langchain.com/en/latest/llms/langchain.llms.openai.OpenAI.html?highlight=openai#langchain.llms.openai.OpenAI).  However, it contains more chat-related methods and better suited for building chatbots.
+ *Note*: [ChatOpenAI](https://api.python.langchain.com/en/latest/chat_models/langchain.chat_models.openai.ChatOpenAI.html) shares many similar properties to [OpenAI](https://api.python.langchain.com/en/latest/llms/langchain.llms.openai.OpenAI.html).  However, it contains more chat-related methods and is better suited for building chatbots.
 
 ## Ask queries in natural language
 Let's run a simple query:
@@ -198,7 +198,7 @@ You can compare the LLMs response to what would normally be generated through [S
 
 ## Conclusion
 
-In this tutorial, we explored two examples of how to use LLMs to interact with healthcare data.  First, we looked at integrating LLMs with Langchain to quickly build a chat-enabled application.  Second, we looked at how LLMs can be used a SQL Database to send queries using natural language.  These are powerful use cases by which users can interact with data without having to write code.  
+In this tutorial, we explored two examples of how to use LLMs to interact with healthcare data.  First, we looked at integrating LLMs with Langchain to quickly build a chat-enabled application.  Second, we looked at how LLMs can be used a SQL Database to send queries using natural language.  These are powerful use cases by which users can interact with various kinds of healthcare data, without having to write code.  
 
 
 ## References
