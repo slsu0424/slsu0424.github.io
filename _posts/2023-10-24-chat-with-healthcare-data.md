@@ -124,7 +124,7 @@ All resources can be found [here](https://github.com/slsu0424/pmc-patients).
 I downloaded the database (.csv files), and loaded the [ADMISSIONS]() table into Azure SQL DB. 
 
 # Connect to Azure SQL DB
-[pyodbc](https://pypi.org/project/pyodbc/) is used to connect python to Azure SQL DB.  First, we get the database connection string variables, and create a connection:
+We connect python to Azure SQL DB via pyodbc.  Next, get the database connection string variables and create a connection:
 ```python
 # connect python to sql server
 conn_str = f"mssql+pyodbc://{username}:{password}@{server}/{database}?driver={driver}"
