@@ -128,6 +128,10 @@ We connect python to Azure SQL DB via pyodbc.  Next, get the database connection
 ```python
 # connect python to sql server
 conn_str = f"mssql+pyodbc://{username}:{password}@{server}/{database}?driver={driver}"
+
+try:
+    # create instance of sql database from a given database uri
+    db = SQLDatabase.from_uri(conn_str)
 ```
 #### Set up SQL Database Agent
 LangChain provides an agent that allows the user to interact with SQL databases.  Below are the steps to initialize the agent:
