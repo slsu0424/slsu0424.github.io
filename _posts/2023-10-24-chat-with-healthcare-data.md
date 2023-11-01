@@ -190,7 +190,7 @@ Invoking: `sql_db_query` with `SELECT COUNT(*) FROM ADMISSIONS`
 
 > Finished chain.
 ```
-What I find interesting here is that the chain exposes the process by which the LLM "thinks through" how to answer the query.  Note that the LLM recognizes that it has to find the list of tables available in the database (there is only 1, the ADMISSIONS table).  It then runs a COUNT statement to return the row sum.
+What I find interesting here is that the chain exposes the process by which the LLM "thinks through" how to answer the query.  The LLM recognizes that it has to find the list of tables available in the database, and runs a COUNT statement to return the row sum.
 
 You can compare the LLMs response to what would normally be generated through [SQL queries]().
 
