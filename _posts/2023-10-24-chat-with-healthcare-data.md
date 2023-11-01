@@ -121,7 +121,7 @@ All resources can be found [here](https://github.com/slsu0424/pmc-patients).
 #### Load data into Azure SQL DB
 [MIMIC-III](https://physionet.org/content/mimiciii-demo/1.4/) is a publicly available database comprising of de-identified data for > 40,000 CCU patients who stayed at the Beth Israel Deaconess Medical Center between 2001 and 2012.  
 
-I downloaded the database (.csv files), and loaded the [ADMISSIONS]() table into Azure SQL DB. 
+Downloaded the database (.csv files), and load the [ADMISSIONS]() table into Azure SQL DB. 
 
 #### Connect to Azure SQL DB
 We connect python to Azure SQL DB via pyodbc.  Next, get the database connection string variables and create a connection:
