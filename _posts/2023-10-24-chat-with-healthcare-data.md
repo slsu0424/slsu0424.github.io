@@ -5,7 +5,7 @@ author: sandy
 categories: [ ChatGPT, NLP, tutorial ]
 image: assets/images/2023-10/shutterstock_2188258735_license_resize.png
 ---
-What is value of LLMs in healthcare, specificially when it comes to chat capabilities?  After all, NLP has been around for a long time.  What makes GenAI different?  
+What is the value of LLMs in healthcare, specificially when it comes to chat capabilities?  After all, NLP has been around for a long time.  What makes GenAI different?  
 
 https://www.nature.com/articles/s41591-023-02448-8
 
