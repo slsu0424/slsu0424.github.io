@@ -9,7 +9,7 @@ What is the value of LLMs in healthcare, specificially when it comes to chat cap
 
 https://www.nature.com/articles/s41591-023-02448-8
 
-This was a topic I also explored in my September [tech talk] on LLMs, where I had a chance to walk through 2 demos that covered integrating LLMs with LangChain and SQL.  This tutorial explores each demo in more detail. 
+This was a topic I also explored in my September [tech talk] on LLMs, where I had a chance to walk through 2 examples that covered integrating LLMs with LangChain and SQL.  This tutorial explores each example in more detail. 
 
 
 Pre-requisites:
