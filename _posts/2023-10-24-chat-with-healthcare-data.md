@@ -9,7 +9,7 @@ What is value LLMs in healthcare, specificially when it comes to chat capabiliti
 
 https://www.nature.com/articles/s41591-023-02448-8
 
-This was a topic I also explored in my September [tech talk] on LLMs, where I had a chance to go deeper into the demos that covered integrating LLMs with LangChain and SQL.  This tutorial explores those demos in more detail. 
+This was a topic I also explored in my September [tech talk] on LLMs, where I had a chance to walk through 2 demos that covered integrating LLMs with LangChain and SQL.  This tutorial explores each demo in more detail. 
 
 
 Pre-requisites:
@@ -121,7 +121,7 @@ All resources can be found [here](https://github.com/slsu0424/pmc-patients).
 #### Load data into Azure SQL DB
 [MIMIC-III](https://physionet.org/content/mimiciii-demo/1.4/) is a publicly available database comprising of de-identified data for > 40,000 CCU patients who stayed at the Beth Israel Deaconess Medical Center between 2001 and 2012.  
 
-Downloaded the database (.csv files), and load the [ADMISSIONS]() table into Azure SQL DB. 
+Download the database (.csv files), and load the [ADMISSIONS]() table into Azure SQL DB. 
 
 #### Connect to Azure SQL DB
 We connect python to Azure SQL DB via pyodbc.  Next, get the database connection string variables and create a connection:
