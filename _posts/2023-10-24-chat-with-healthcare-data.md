@@ -187,6 +187,6 @@ In this tutorial, we explored two examples of how to use LLMs to interact with h
 ## References
 + <https://www.ncbi.nlm.nih.gov/books/NBK519025/>
 + <https://github.com/hwchase17/chat-your-data/blob/master/blogpost.md>
-+ <https://python.langchain.com/docs/get_started/introduction>
++ <https://python.langchain.com/>
 + <https://medium.com/@kbdhunga/enhancing-conversational-ai-the-power-of-langchains-question-answer-framework-4974e1cab3cf>
 + <https://physionet.org/content/mimiciii-demo/1.4/>
