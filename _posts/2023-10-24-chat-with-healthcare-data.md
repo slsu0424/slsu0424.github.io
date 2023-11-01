@@ -176,7 +176,7 @@ Let's run a simple query:
 agent_executor.run("how many rows are there?")
 ```
 Response:
-```
+```python
 > Entering new AgentExecutor chain...
 
 Invoking: `sql_db_list_tables` with `{}`
