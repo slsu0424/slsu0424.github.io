@@ -5,7 +5,7 @@ author: sandy
 categories: [ Langchain, OpenAI, Python, NLP, tutorial ]
 image: assets/images/2023-10/shutterstock_2188258735_license_resize.png
 ---
-What is the value of LLMs in healthcare, specificially when it comes to chatbot capabilities?  Chatbots have been around for a while now, but have often been inaccurate, clunky, and impersonal.  What makes GenAI different?  
+What is the value of LLMs in healthcare, specificially when it comes to chatbot capabilities?  Chatbots have been around for a while now, but have often been clunky, inaccurate, and impersonal.  What makes GenAI different?  
 
 https://www.nature.com/articles/s41591-023-02448-8
 

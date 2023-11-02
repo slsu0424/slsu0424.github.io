@@ -5,7 +5,7 @@ author: sandy
 categories: [ ChatGPT, NLP, tutorial ]
 image: assets/images/2023-10/shutterstock_2188258735_license_resize.png
 ---
-If someone were to tell me that I would someday be able to query a database without writing SQL statements, I would have said its impossible.  As a former database developer, databases and SQL have always been synonymous.  However, thanks to LLMs, any user can now dialogue with a database using natural language.  This is an exciting and powerful capability that will be a game-changer for anyone that works with data.
+If someone were to tell me that I would someday be able to query a database without writing SQL statements, I would have said its impossible.  However, thanks to LLMs, any user can now dialogue with a database using natural language.  This is an exciting and powerful capability that will be a game-changer for anyone that works with data.
 
 This tutorial continues on from the previous tutorial on using LLMs with Langchain.  Here, we will explore using LLMs and LangChain to interact with a SQL Database.  
 
@@ -95,7 +95,7 @@ Invoking: `sql_db_query` with `SELECT COUNT(*) FROM ADMISSIONS`
 
 > Finished chain.
 ```
-What's interesting here is that the chain exposes the process by which the LLM "thinks through" how to answer the question.  The LLM recognizes that it has to find the list of tables available in the database, and generates SQL statements to do so.  The next SQL statement runs a COUNT to return the row sum, and returns the result in natural language.  
+What's interesting here is that the chain exposes the process by which the LLM "thinks through" how to answer the question.  The LLM recognizes that it has to find the list of tables available in the database, and generates SQL statements to do so.  The next SQL statement runs a COUNT to return the row sum, and the result is returned in natural language.  
 
 Now, let's run a more complex query:
 ```python
