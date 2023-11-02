@@ -5,14 +5,14 @@ author: sandy
 categories: [ ChatGPT, NLP, tutorial ]
 image: assets/images/2023-11/mimic_resize.png
 ---
-If someone were to tell me that I would someday be able to query a database without writing SQL statements, I would have said its impossible.  However, thanks to LLMs, a user can now dialogue with a database using natural language.  This is an powerful capability that will be a game-changer for anyone that works with data, especially in healthcare.
+If someone were to tell me that I would someday be able to query a database without writing SQL statements, I would have said its impossible.  However, thanks to LLMs, a user can now dialogue with a database using natural language.  This is an exciting and powerful new capability for anyone that works with healthcare data.
 
 This tutorial continues on from the previous tutorial on using LLMs with Langchain.  We will explore using LLMs and LangChain to interact with MIMIC-III (critical care data) stored in a SQL Database. 
 
 Pre-requisites:
 1. Knowledge of OpenAI
 2. Knowledge of Langchain
-3. Knowledge of Azure services
+3. Knowledge of Azure SQL Database
 
 Environment:
 1. Python: 3.9.0
