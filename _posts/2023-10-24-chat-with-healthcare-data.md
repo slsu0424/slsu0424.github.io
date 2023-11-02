@@ -14,7 +14,6 @@ This was a topic I also explored in my September [tech talk] on LLMs, where I ha
 Pre-requisites:
 1. Intermediate knowledge of OpenAI
 2. Intermediate knowledge of Azure SQL DB
-3. Python
 
 Environment:
 1. Python: 3.9.0
