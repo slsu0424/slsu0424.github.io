@@ -90,7 +90,7 @@ Let's run a query to aggregate some data:
 # query 2
 agent_executor.run("What is the frequency of ethnicities?")
 ```
-Chain execution:
+Response:
 ```python
 > Entering new AgentExecutor chain...
 
