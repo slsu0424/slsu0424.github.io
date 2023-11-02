@@ -7,7 +7,7 @@ image: assets/images/2023-11/mimic_resize.png
 ---
 If someone were to tell me that I would someday be able to query a database without writing SQL statements, I would have said its impossible.  However, thanks to LLMs, a user can now dialogue with a database using natural language.  This is an exciting and powerful capability that will be a game-changer for anyone that works with data, especially in healthcare.
 
-This tutorial continues on from the previous tutorial on using LLMs with Langchain.  We will explore using LLMs and LangChain to interact with MIMIC-III data stored in a SQL Database. 
+This tutorial continues on from the previous tutorial on using LLMs with Langchain.  We will explore using LLMs and LangChain to interact with a SQL Database. 
 
 Pre-requisites:
 1. Knowledge of OpenAI
@@ -26,10 +26,10 @@ All resources can be found [here](https://github.com/slsu0424/pmc-patients).
 ## Load data into Azure SQL DB
 [MIMIC-III](https://www.nature.com/articles/sdata201635) is a publicly available database comprising of de-identified data for > 40,000 CCU patients who stayed at the Beth Israel Deaconess Medical Center between 2001 and 2012.  
 
-Download the [database files](https://physionet.org/content/mimiciii-demo/1.4/), and load the [ADMISSIONS]() table into Azure SQL DB. 
+Download the database [files](https://physionet.org/content/mimiciii-demo/1.4/), and load the [ADMISSIONS]() table into Azure SQL DB. 
 
 ## Connect to Azure SQL DB
-We next connect python to Azure SQL DB.  This [tutorial]() provides more details on the setup.  As there are known issues with the ODBC Driver on MacOS, be sure to follow this [guide](https://learn.microsoft.com/en-us/sql/connect/odbc/linux-mac/known-issues-in-this-version-of-the-driver?view=sql-server-ver16) if errors are encountered.  
+Next, we need to connect python to Azure SQL DB.  This [tutorial]() provides more details on the setup.  As there are known issues with the ODBC Driver on MacOS, be sure to follow this [guide](https://learn.microsoft.com/en-us/sql/connect/odbc/linux-mac/known-issues-in-this-version-of-the-driver?view=sql-server-ver16) if errors are encountered.  
 
 In my own experience, I had to make the following changes via Terminal:
 
@@ -50,9 +50,12 @@ try:
     db = SQLDatabase.from_uri(conn_str)
 ```
 ## Set the OpenAI API Key
-LangChain provides an agent that allows the user to interact with SQL databases.  Below are the steps to initialize it:
+Navigate to the [OpenAI Platform](https://platform.openai.com/) to obtain your API key.  This will be needed to authenticate requests to the API.
 
-
+```python
+# set API keys to authenticate requests to the API
+OPENAI_API_KEY = "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"
+```
 
 ## Set up SQL Database Agent
 LangChain provides an agent that allows the user to interact with SQL databases.  Below are the steps to initialize it:
