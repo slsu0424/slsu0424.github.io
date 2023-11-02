@@ -5,13 +5,9 @@ author: sandy
 categories: [ ChatGPT, NLP, tutorial ]
 image: assets/images/2023-10/shutterstock_2188258735_license_resize.png
 ---
-If someone were to tell me that I would be able to query a database without SQL, I would have said that's impossible.  
+If someone were to tell me that I would someday be able to query a database without SQL, I would have said its impossible.  Databases and SQL have always been synonymous in my mind.  However, thanks to LLMs, any user can now query a database using natural language.  This is an exciting and powerful capability that will be a game-changer for anyone that works with data.
 
-What is the value of LLMs in healthcare, specificially when it comes to chat capabilities?  After all, NLP has been around for a long time.  What makes GenAI different?  
-
-https://www.nature.com/articles/s41591-023-02448-8
-
-This was a topic I explored in my September [tech talk] on LLMs, where I had a chance to walk through 2 examples that covered integrating LLMs with LangChain and SQL.  This tutorial explores each example in more detail. 
+This tutorial continues on from the previous tutorial on using LLMs with Langchain.  Here, we will explore using LLMs and LangChain to interact with the MIMIC-III database.  
 
 Pre-requisites:
 1. Knowledge of OpenAI
