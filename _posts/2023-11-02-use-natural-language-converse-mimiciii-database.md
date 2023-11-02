@@ -35,12 +35,13 @@ In my own experience, I had to make the following changes via Terminal:
 
 ```bash
 brew install openssl@1.1
+
 rm -rf $(brew --prefix)/opt/openssl
 version=$(ls $(brew --prefix)/Cellar/openssl@1.1 | grep "1.1")
 n -s $(brew --prefix)/Cellar/openssl@1.1/$version $(brew --prefix)/opt/openssl
 ```
 
-Get the [odbc connection string](https://azurelessons.com/azure-sql-database-connection-string/) and create a connection:
+Get the [odbc connection string](https://azurelessons.com/azure-sql-database-connection-string/) and create an instance of the SQL database.
 ```python
 # connect python to sql server
 conn_str = f"mssql+pyodbc://{username}:{password}@{server}/{database}?driver={driver}"
