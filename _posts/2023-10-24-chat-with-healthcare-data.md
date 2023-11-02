@@ -13,13 +13,13 @@ This was a topic I also explored in my September [tech talk] on LLMs, where I ha
 
 Pre-requisites:
 1. Intermediate knowledge of OpenAI
-2. Intermediate knowledge of Azure SQL DB
+2. Intermediate knowledge of Azure SQL Database
 
 Environment:
 1. Python: 3.9.0
 2. OS: MacOS 11.7.3
-3. Database: Azure SQL DB
-4. Driver: ODBC driver 18 for SQL Server
+3. DB: Azure SQL Database
+4. DB Driver: ODBC driver 18 for SQL Server
 
 
 ## Example 1: LLMs and LangChain to chat with a healthcare document 
