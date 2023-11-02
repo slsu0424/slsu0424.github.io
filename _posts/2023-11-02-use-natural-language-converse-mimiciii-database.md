@@ -34,11 +34,9 @@ Next, we connect python to Azure SQL DB.  This [tutorial](https://learn.microsof
 In my own experience, I had to make the following changes via Terminal:
 
 ```bash
-brew install openssl@1.1
-
-rm -rf $(brew --prefix)/opt/openssl
-version=$(ls $(brew --prefix)/Cellar/openssl@1.1 | grep "1.1")
-n -s $(brew --prefix)/Cellar/openssl@1.1/$version $(brew --prefix)/opt/openssl
+$ brew install openssl@1.1
+$ rm -rf $(brew --prefix)/opt/openssl version=$(ls $(brew --prefix)/Cellar/openssl@1.1 | grep "1.1")
+$ ln -s $(brew --prefix)/Cellar/openssl@1.1/$version $(brew --prefix)/opt/openssl
 ```
 
 Get the odbc connection string and create an [instance](https://api.python.langchain.com/en/latest/utilities/langchain.utilities.sql_database.SQLDatabase.html) of the SQL database:
