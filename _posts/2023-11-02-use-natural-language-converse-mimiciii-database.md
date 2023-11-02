@@ -5,9 +5,9 @@ author: sandy
 categories: [ ChatGPT, NLP, tutorial ]
 image: assets/images/2023-10/shutterstock_2188258735_license_resize.png
 ---
-If someone were to tell me that I would someday be able to query a database without SQL, I would have said its impossible.  Databases and SQL have always been synonymous in my mind.  However, thanks to LLMs, any user can now query a database using natural language.  This is an exciting and powerful capability that will be a game-changer for anyone that works with data.
+If someone were to tell me that I would someday be able to query a database without SQL, I would have said its impossible.  As a former database developer, databases and SQL have always been synonymous.  However, thanks to LLMs, any user can now query a database using natural language.  This is an exciting and powerful capability that will be a game-changer for anyone that works with data.
 
-This tutorial continues on from the previous tutorial on using LLMs with Langchain.  Here, we will explore using LLMs and LangChain to interact with the MIMIC-III database.  
+This tutorial continues on from the previous tutorial on using LLMs with Langchain.  Here, we will explore using LLMs and LangChain to interact with a SQL Database.  
 
 Pre-requisites:
 1. Knowledge of OpenAI
