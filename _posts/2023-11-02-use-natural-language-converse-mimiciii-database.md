@@ -54,7 +54,7 @@ Navigate to the [OpenAI Platform](https://platform.openai.com/) to obtain your A
 
 ```python
 # set API keys to authenticate requests to the API
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = "<KEY>"
 ```
 
 ## Set up SQL Database Agent
