@@ -35,8 +35,12 @@ We next connect python to Azure SQL DB.  This tutorial provides more details on 
 
 In my own experience, I had to make the following changes via Terminal:
 
-1. $ brew install openssl@1.1
-2. $ run symlink commands
+```bash
+brew install openssl@1.1
+rm -rf $(brew --prefix)/opt/openssl
+version=$(ls $(brew --prefix)/Cellar/openssl@1.1 | grep "1.1")
+n -s $(brew --prefix)/Cellar/openssl@1.1/$version $(brew --prefix)/opt/openssl
+```
 
 Get the database connection string variables and create a connection:
 ```python
