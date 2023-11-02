@@ -29,7 +29,7 @@ The [MIMIC-III](https://physionet.org/content/mimiciii-demo/1.4/) is a publicly 
 Download the database (.csv files), and load the [ADMISSIONS]() table into Azure SQL DB. 
 
 ## Connect to Azure SQL DB
-We next connect python to Azure SQL DB.  This [tutorial]() provides more details on setting this up.  As there are known issues with the ODBC Driver on MacOS, be sure to follow this [guide](https://learn.microsoft.com/en-us/sql/connect/odbc/linux-mac/known-issues-in-this-version-of-the-driver?view=sql-server-ver16) if errors are encountered.  
+We next connect python to Azure SQL DB.  This [tutorial]() provides more details on the setup.  As there are known issues with the ODBC Driver on MacOS, be sure to follow this [guide](https://learn.microsoft.com/en-us/sql/connect/odbc/linux-mac/known-issues-in-this-version-of-the-driver?view=sql-server-ver16) if errors are encountered.  
 
 In my own experience, I had to make the following changes via Terminal:
 

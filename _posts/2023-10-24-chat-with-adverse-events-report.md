@@ -5,7 +5,7 @@ author: sandy
 categories: [ Langchain, OpenAI, Python, NLP, tutorial ]
 image: assets/images/2023-10/shutterstock_2188258735_license_resize.png
 ---
-What is the value of LLMs in healthcare, specificially when it comes to chat capabilities?  After all, NLP has been around for a long time.  What makes GenAI different?  
+What is the value of LLMs in healthcare, specificially when it comes to chatbot capabilities?  Chatbots have been around for a while now, but have often been inaccurate, clunky, and impersonal.  What makes GenAI different?  
 
 https://www.nature.com/articles/s41591-023-02448-8
 
@@ -22,7 +22,6 @@ Environment:
 All resources can be found [here](https://github.com/slsu0424/pmc-patients).
 
 ## Generate an ADE report
-
 I used OpenAI's ChatGPT (GPT-3.5) to generate a synthetic adverse events report for warfarin.  I chose warfarin as it is in the class of drugs that have resulted in [serious adverse drug reactions](https://www.ncbi.nlm.nih.gov/books/NBK519025/).
 
 These were the series of prompts I used to generate the final [output]():
@@ -82,7 +81,7 @@ The default settings to note are:
 - Storage - embeddings are stored in **Chroma**, an open-source vector store 
 
 ## Set up Streamlit app to query document
-Next, we set up a simple UI to allow users to ask questions of the ADE document.  
+With [Streamlit](https://streamlit.io/), we set up a simple UI to allow users to ask questions of the ADE document.  
 
 ```python
 # Display the page title and the text box for the user to ask the question
