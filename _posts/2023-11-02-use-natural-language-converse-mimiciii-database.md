@@ -145,8 +145,8 @@ In this tutorial, we explored an example of how to use LLMs to interact with a S
 ## References
 + <https://www.nature.com/articles/sdata201635>
 + <https://physionet.org/content/mimiciii-demo/1.4/>
-+ <https://learn.microsoft.com/en-us/azure/azure-sql/database/connect-query-python?view=azuresql>
-+ <https://learn.microsoft.com/en-us/sql/connect/odbc/linux-mac/known-issues-in-this-version-of-the-driver?view=sql-server-ver16>
++ <https://learn.microsoft.com/en-us/azure/azure-sql/database/connect-query-python>
++ <https://learn.microsoft.com/en-us/sql/connect/odbc/linux-mac/known-issues-in-this-version-of-the-driver>
 + <https://api.python.langchain.com/en/latest/utilities/langchain.utilities.sql_database.SQLDatabase.html>
 + <https://platform.openai.com/>
 + <https://python.langchain.com/docs/integrations/toolkits/sql_database>
