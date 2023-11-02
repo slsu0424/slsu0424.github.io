@@ -14,7 +14,7 @@ This was a topic I explored in my September [tech talk] on LLMs, where I had a c
 Pre-requisites:
 1. Knowledge of OpenAI
 2. Knowledge of Langchain
-3. Knowledge of Azure SQL Database
+3. Knowledge of Azure services
 
 Environment:
 1. Python: 3.9.0
@@ -23,112 +23,14 @@ Environment:
 4. DB Driver: ODBC driver 18 for SQL Server
 
 
-## Example 1: LLMs and LangChain to chat with a healthcare document 
-
 All resources can be found [here](https://github.com/slsu0424/pmc-patients).
 
-#### Generate an ADE report
-
-I used OpenAI's ChatGPT (GPT-3.5) to generate a synthetic adverse events report for warfarin.  I chose warfarin as it is in the class of drugs that have resulted in [serious adverse drug reactions](https://www.ncbi.nlm.nih.gov/books/NBK519025/).
-
-These were the series of prompts I used to generate the final [output]():
-
-"Create an adverse event report related to warfarin.  Limit to 250 words."  
-"Remove the Reporting Authority section"  
-"expand to 500 words"  
-"Include the Reporting Authority section"  
-
-A snippet of the document is below:
-
->On October 20, 2023, at 09:30 AM, the patient, John Doe, experienced a significant adverse event related to the anticoagulant medication warfarin. Mr. Doe, a 68-year-old male with a history of atrial fibrillation, had been taking warfarin (5 mg daily) for the past three years as prescribed by his cardiologist.
-
-#### Q&A application overview
-This LangChain [blog post](https://github.com/hwchase17/chat-your-data/blob/master/blogpost.md) provides a high-level overview for building a text-based Q&A application.  
-
-The main steps include:
-
-1. Load documents
-2. Split documents into chunks
-3. Create embedding vectors from chunks
-4. Store vectors in vector database
-5. Retrieve relevant documents from database
-6. Pass relevant documents to LLM
-7. LLM generates final answer
-
-Ingest Data:
-
-![langchain1](/assets/images/2023-10/langchain1.png)
-
-Query Data:
-
-![langchain2](/assets/images/2023-10/langchain2.png)
-
-
-#### Use LangChain to load documents into a vector store
-[Langchain](https://docs.langchain.com/docs/) is a framework for developing applications powered by LLMs.  The main idea is that developers can "chain" different components around an LLM to create more powerful use cases.  
-
-Hence, we can "chain" an LLM to another component, such as a document.
-
-LangChain has many different methods to load documents.  **PyPDFLoader** is used to load in a PDF document and create a vector representation using the **VectorStoreIndexCreator**:
-
-```python
-# Load PDF document
-loaders = PyPDFLoader('/Users/sandysu/Documents/GitHub/OpenAI/docs/ADR11.pdf')
-
-# Create a vector representation of the loaded document
-index = VectorstoreIndexCreator().from_loaders([loaders])
-```
-
-The VectorStoreIndexCreator handles steps 2-4 above (chunking, embedding, and storage).  This [article](https://medium.com/@kbdhunga/enhancing-conversational-ai-the-power-of-langchains-question-answer-framework-4974e1cab3cf) goes into more detail about the class, including customization.  
-
-The default settings to note are: 
-
-- Chunking - uses **RecursiveCharacterTextSplitter()** to divide text at specific characters
-- Embedding - uses **OpenAIEmbeddings**  to generate embeddings
-- Storage - embeddings are stored in **Chroma**, an open-source vector store 
-
-#### Set up Streamlit app to query document
-Next, we set up a simple UI to allow users to ask questions of the ADE document.  
-
-```python
-# Display the page title and the text box for the user to ask the question
-st.title('🦜 Query your PDF document')
-prompt = st.text_input("Enter your question to query your PDF documents")
-```
-
-#### Query the vector store
-When a user passes in a question, the store is queried to retrieve the data that is 'most similar' to the embedded query.
-
-```python
-response = index.query(
-  llm=OpenAI(model_name="gpt-3.5-turbo", temperature=0.2), 
-  question = prompt, 
-  chain_type = 'stuff')
-```
-
-Under the hood, we pass in the OpenAI model (gpt-3.5-turbo).  The **temperature** controls the randomness of the output generated (closer to 1 will generate a more creative response).  For **chain_type = 'stuff'**, this combines the question and relevant document chunks into a single prompt to pass to the LLM.
-
-This visual shows the overall workflow:
-
-<a href="https://python.langchain.com/docs/modules/data_connection/vectorstores/#:~:text=One%20of%20the%20most%20common%20ways%20to%20store,that%20are%20%27most%20similar%27%20to%20the%20embedded%20query">
-  <img src="/assets/images/2023-10/langchain3.png" alt="langchain3" width="750" height="311">
-</a>
-
-
-## Let's ask some questions
-With the Streamlit app loaded, we can ask a question of the ADE document:
-
-
-
-## Example 2: LLMs and SQL to chat with a healthcare database
-All resources can be found [here](https://github.com/slsu0424/pmc-patients).
-
-#### Load data into Azure SQL DB
-[MIMIC-III](https://physionet.org/content/mimiciii-demo/1.4/) is a publicly available database comprising of de-identified data for > 40,000 CCU patients who stayed at the Beth Israel Deaconess Medical Center between 2001 and 2012.  
+## Load data into Azure SQL DB
+The [MIMIC-III](https://physionet.org/content/mimiciii-demo/1.4/) is a publicly available database comprising of de-identified data for > 40,000 CCU patients who stayed at the Beth Israel Deaconess Medical Center between 2001 and 2012.  
 
 Download the database (.csv files), and load the [ADMISSIONS]() table into Azure SQL DB. 
 
-#### Connect to Azure SQL DB
+## Connect to Azure SQL DB
 We next connect python to Azure SQL DB.  This tutorial provides more details on setting this up.  As there are known issues with the ODBC Driver on MacOS, be sure to follow this [guide](https://learn.microsoft.com/en-us/sql/connect/odbc/linux-mac/known-issues-in-this-version-of-the-driver?view=sql-server-ver16) if errors are encountered.  
 
 In my own experience, I had to make the following changes to my system:
@@ -145,7 +47,7 @@ try:
     # create instance of sql database from a given database uri
     db = SQLDatabase.from_uri(conn_str)
 ```
-#### Set up SQL Database Agent
+## Set up SQL Database Agent
 LangChain provides an agent that allows the user to interact with SQL databases.  Below are the steps to initialize the agent:
 
 ```python
@@ -170,8 +72,8 @@ agent_executor = create_sql_agent(
  ```
  *Note*: The **ChatOpenAI** class shares many similar properties to the **OpenAI** class.  However, it contains more chat-related methods and is better suited for building chatbots.
 
-#### Ask queries in natural language
-Let's run a simple query:
+## Ask questions in natural language
+Let's run a simple query using a language prompt:
 ```python
 # query 1
 agent_executor.run("how many rows are there?")
@@ -192,6 +94,85 @@ Invoking: `sql_db_query` with `SELECT COUNT(*) FROM ADMISSIONS`
 > Finished chain.
 ```
 What's interesting here is that the chain exposes the process by which the LLM "thinks through" how to answer the query.  The LLM recognizes that it has to find the list of tables available in the database, and runs a COUNT statement to return the row sum.
+
+Now, let's run a more complex query:
+```python
+# query 2
+agent_executor.run("What is the frequency of ethnicities?")
+```
+Response:
+```python
+> Entering new AgentExecutor chain...
+
+Invoking: `sql_db_list_tables` with `{}`
+
+
+ADMISSIONS, BuildVersion, ErrorLog
+Invoking: `sql_db_schema` with `ADMISSIONS`
+
+
+
+CREATE TABLE [ADMISSIONS] (
+	row_id INTEGER NOT NULL, 
+	subject_id INTEGER NOT NULL, 
+	hadm_id INTEGER NOT NULL, 
+	admittime DATETIME2 NOT NULL, 
+	dischtime DATETIME2 NOT NULL, 
+	deathtime DATETIME2 NULL, 
+	admission_type NVARCHAR(50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL, 
+	admission_location NVARCHAR(50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL, 
+	discharge_location NVARCHAR(50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL, 
+	insurance NVARCHAR(50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL, 
+	language NVARCHAR(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL, 
+	religion NVARCHAR(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL, 
+	marital_status NVARCHAR(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL, 
+	ethnicity NVARCHAR(100) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL, 
+	edregtime DATETIME2 NULL, 
+	edouttime DATETIME2 NULL, 
+	diagnosis NVARCHAR(150) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL, 
+	hospital_expire_flag NVARCHAR(150) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL, 
+	has_chartevents_data NVARCHAR(150) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL
+)
+
+/*
+3 rows from ADMISSIONS table:
+row_id	subject_id	hadm_id	admittime	dischtime	deathtime	admission_type	admission_location	discharge_location	insurance	language	religion	marital_status	ethnicity	edregtime	edouttime	diagnosis	hospital_expire_flag	has_chartevents_data
+12258	10006	142345	2164-10-23 21:09:00	2164-11-01 17:15:00	None	EMERGENCY	EMERGENCY ROOM ADMIT	HOME HEALTH CARE	Medicare	None	CATHOLIC	SEPARATED	BLACK/AFRICAN AMERICAN	2164-10-23 16:43:00	2164-10-23 23:00:00	SEPSIS	0	1
+12263	10011	105331	2126-08-14 22:32:00	2126-08-28 18:59:00	2126-08-28 18:59:00	EMERGENCY	TRANSFER FROM HOSP/EXTRAM	DEAD/EXPIRED	Private	None	CATHOLIC	SINGLE	UNKNOWN/NOT SPECIFIED	None	None	HEPATITIS B	1	1
+12265	10013	165520	2125-10-04 23:36:00	2125-10-07 15:13:00	2125-10-07 15:13:00	EMERGENCY	TRANSFER FROM HOSP/EXTRAM	DEAD/EXPIRED	Medicare	None	CATHOLIC	None	UNKNOWN/NOT SPECIFIED	None	None	SEPSIS	1	1
+*/
+Invoking: `sql_db_query` with `SELECT ethnicity, COUNT(*) AS frequency FROM ADMISSIONS GROUP BY ethnicity ORDER BY frequency DESC LIMIT 10`
+
+
+Error: (pyodbc.ProgrammingError) ('42000', "[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Incorrect syntax near 'LIMIT'. (102) (SQLExecDirectW)")
+[SQL: SELECT ethnicity, COUNT(*) AS frequency FROM ADMISSIONS GROUP BY ethnicity ORDER BY frequency DESC LIMIT 10]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Invoking: `sql_db_query_checker` with `SELECT ethnicity, COUNT(*) AS frequency FROM ADMISSIONS GROUP BY ethnicity ORDER BY frequency DESC OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY`
+
+
+SELECT ethnicity, COUNT(*) AS frequency 
+FROM ADMISSIONS 
+GROUP BY ethnicity 
+ORDER BY frequency DESC 
+OFFSET 0 ROWS 
+FETCH NEXT 10 ROWS ONLY
+Invoking: `sql_db_query` with `SELECT ethnicity, COUNT(*) AS frequency FROM ADMISSIONS GROUP BY ethnicity ORDER BY frequency DESC OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY`
+
+
+[('WHITE', 86), ('HISPANIC/LATINO - PUERTO RICAN', 15), ('UNKNOWN/NOT SPECIFIED', 11), ('BLACK/AFRICAN AMERICAN', 7), ('OTHER', 3), ('HISPANIC OR LATINO', 2), ('ASIAN', 2), ('AMERICAN INDIAN/ALASKA NATIVE FEDERALLY RECOGNIZED TRIBE', 2), ('UNABLE TO OBTAIN', 1)]The frequency of ethnicities in the database is as follows:
+
+- WHITE: 86
+- HISPANIC/LATINO - PUERTO RICAN: 15
+- UNKNOWN/NOT SPECIFIED: 11
+- BLACK/AFRICAN AMERICAN: 7
+- OTHER: 3
+- HISPANIC OR LATINO: 2
+- ASIAN: 2
+- AMERICAN INDIAN/ALASKA NATIVE FEDERALLY RECOGNIZED TRIBE: 2
+- UNABLE TO OBTAIN: 1
+
+> Finished chain.
+```
 
 We can compare the LLM response to what would normally be generated by [SQL queries]().
 
