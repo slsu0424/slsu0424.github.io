@@ -1,25 +1,23 @@
 ---
 layout: post
-title:  "Chat with healthcare data in natural language"
+title:  "Chat with an adverse events report using natural language"
 author: sandy
-categories: [ ChatGPT, NLP, tutorial ]
+categories: [ Langchain, OpenAI, Python, NLP, tutorial ]
 image: assets/images/2023-10/shutterstock_2188258735_license_resize.png
 ---
 What is the value of LLMs in healthcare, specificially when it comes to chat capabilities?  After all, NLP has been around for a long time.  What makes GenAI different?  
 
 https://www.nature.com/articles/s41591-023-02448-8
 
-This was a topic I explored in my September [tech talk] on LLMs, where I had a chance to walk through 2 examples that covered integrating LLMs with LangChain, and LLMs with SQL.  This tutorial will explore using LLMs and LangChain to chat with a healthcare document.
+This was a topic I explored in my September [tech talk] on LLMs, where I had a chance to walk through 2 examples that covered integrating LLMs with LangChain, and LLMs with SQL.  This tutorial will explore using LLMs and LangChain to chat with an adverse events report.
 
 Pre-requisites:
-1. Intermediate knowledge of OpenAI
-2. Intermediate knowledge of Azure SQL Database
+1. Knowledge of OpenAI
+2. Knowledge of Langchain
 
 Environment:
 1. Python: 3.9.0
 2. OS: MacOS 11.7.3
-3. DB: Azure SQL Database
-4. DB Driver: ODBC driver 18 for SQL Server
 
 All resources can be found [here](https://github.com/slsu0424/pmc-patients).
 
@@ -102,7 +100,7 @@ response = index.query(
   chain_type = 'stuff')
 ```
 
-Under the hood, we pass in the OpenAI model (gpt-3.5-turbo).  The **temperature** controls the randomness of the output generated (closer to 1 will generate a more creative response).  For **chain_type = 'stuff'**, this combines the question and relevant document chunks into a single prompt to pass to the LLM.
+Under the hood, we pass in the OpenAI model (gpt-3.5-turbo) and set the **temperature**.  The temperature controls the randomness of the output generated (closer to 1 will generate a more creative response).  For **chain_type = 'stuff'**, this combines the question and relevant document chunks into a single prompt to pass to the LLM.
 
 This visual shows the overall workflow:
 
