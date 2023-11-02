@@ -12,8 +12,9 @@ https://www.nature.com/articles/s41591-023-02448-8
 This was a topic I explored in my September [tech talk] on LLMs, where I had a chance to walk through 2 examples that covered integrating LLMs with LangChain and SQL.  This tutorial explores each example in more detail. 
 
 Pre-requisites:
-1. Intermediate knowledge of OpenAI
-2. Intermediate knowledge of Azure SQL Database
+1. Knowledge of OpenAI
+2. Knowledge of Langchain
+3. Knowledge of Azure SQL Database
 
 Environment:
 1. Python: 3.9.0
