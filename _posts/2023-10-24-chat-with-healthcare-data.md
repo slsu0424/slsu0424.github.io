@@ -132,6 +132,7 @@ Download the database (.csv files), and load the [ADMISSIONS]() table into Azure
 We connect python to Azure SQL DB via pyodbc.  Make sure that the [Microsoft ODBC 18 driver for SQL Server (macOS)](https://learn.microsoft.com/en-us/sql/connect/odbc/linux-mac/install-microsoft-odbc-driver-sql-server-macos?view=sql-server-ver15#microsoft-odbc-18) is installed.  
 
 brew install openssl@1.1
+run symlink commands
 
 Get the database connection string variables and create a connection:
 ```python
