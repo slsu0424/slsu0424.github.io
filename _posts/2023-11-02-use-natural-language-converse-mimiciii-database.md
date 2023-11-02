@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Chat with the MIMIC-III database using natural language"
+title:  "Use natural language to converse with the MIMIC-III database"
 author: sandy
 categories: [ ChatGPT, NLP, tutorial ]
 image: assets/images/2023-10/shutterstock_2188258735_license_resize.png
@@ -48,7 +48,7 @@ try:
     db = SQLDatabase.from_uri(conn_str)
 ```
 ## Set up SQL Database Agent
-LangChain provides an agent that allows the user to interact with SQL databases.  Below are the steps to initialize the agent:
+LangChain provides an agent that allows the user to interact with SQL databases.  Below are the steps to initialize it:
 
 ```python
 # create new llm model
@@ -134,21 +134,7 @@ CREATE TABLE [ADMISSIONS] (
 	has_chartevents_data NVARCHAR(150) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL
 )
 
-/*
-3 rows from ADMISSIONS table:
-row_id	subject_id	hadm_id	admittime	dischtime	deathtime	admission_type	admission_location	discharge_location	insurance	language	religion	marital_status	ethnicity	edregtime	edouttime	diagnosis	hospital_expire_flag	has_chartevents_data
-12258	10006	142345	2164-10-23 21:09:00	2164-11-01 17:15:00	None	EMERGENCY	EMERGENCY ROOM ADMIT	HOME HEALTH CARE	Medicare	None	CATHOLIC	SEPARATED	BLACK/AFRICAN AMERICAN	2164-10-23 16:43:00	2164-10-23 23:00:00	SEPSIS	0	1
-12263	10011	105331	2126-08-14 22:32:00	2126-08-28 18:59:00	2126-08-28 18:59:00	EMERGENCY	TRANSFER FROM HOSP/EXTRAM	DEAD/EXPIRED	Private	None	CATHOLIC	SINGLE	UNKNOWN/NOT SPECIFIED	None	None	HEPATITIS B	1	1
-12265	10013	165520	2125-10-04 23:36:00	2125-10-07 15:13:00	2125-10-07 15:13:00	EMERGENCY	TRANSFER FROM HOSP/EXTRAM	DEAD/EXPIRED	Medicare	None	CATHOLIC	None	UNKNOWN/NOT SPECIFIED	None	None	SEPSIS	1	1
-*/
-Invoking: `sql_db_query` with `SELECT ethnicity, COUNT(*) AS frequency FROM ADMISSIONS GROUP BY ethnicity ORDER BY frequency DESC LIMIT 10`
-
-
-Error: (pyodbc.ProgrammingError) ('42000', "[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Incorrect syntax near 'LIMIT'. (102) (SQLExecDirectW)")
-[SQL: SELECT ethnicity, COUNT(*) AS frequency FROM ADMISSIONS GROUP BY ethnicity ORDER BY frequency DESC LIMIT 10]
-(Background on this error at: https://sqlalche.me/e/20/f405)
-Invoking: `sql_db_query_checker` with `SELECT ethnicity, COUNT(*) AS frequency FROM ADMISSIONS GROUP BY ethnicity ORDER BY frequency DESC OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY`
-
+...
 
 SELECT ethnicity, COUNT(*) AS frequency 
 FROM ADMISSIONS 
