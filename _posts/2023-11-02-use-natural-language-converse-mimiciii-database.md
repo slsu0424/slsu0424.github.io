@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Use natural language to converse with the MIMIC-III database"
+title:  "Interact with the MIMIC-III database without queries"
 author: sandy
 categories: [ ChatGPT, NLP, tutorial ]
 image: assets/images/2023-10/shutterstock_2188258735_license_resize.png
@@ -33,10 +33,14 @@ Download the database (.csv files), and load the [ADMISSIONS]() table into Azure
 ## Connect to Azure SQL DB
 We next connect python to Azure SQL DB.  This tutorial provides more details on setting this up.  As there are known issues with the ODBC Driver on MacOS, be sure to follow this [guide](https://learn.microsoft.com/en-us/sql/connect/odbc/linux-mac/known-issues-in-this-version-of-the-driver?view=sql-server-ver16) if errors are encountered.  
 
-In my own experience, I had to make the following changes to my system:
+In my own experience, I had to make the following changes via Terminal:
 
-1. brew install openssl@1.1
-2. run symlink commands
+```bash
+brew install openssl@1.1
+rm -rf $(brew --prefix)/opt/openssl
+version=$(ls $(brew --prefix)/Cellar/openssl@1.1 | grep "1.1")
+n -s $(brew --prefix)/Cellar/openssl@1.1/$version $(brew --prefix)/opt/openssl
+```
 
 Get the database connection string variables and create a connection:
 ```python
@@ -120,19 +124,6 @@ CREATE TABLE [ADMISSIONS] (
 	dischtime DATETIME2 NOT NULL, 
 	deathtime DATETIME2 NULL, 
 	admission_type NVARCHAR(50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL, 
-	admission_location NVARCHAR(50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL, 
-	discharge_location NVARCHAR(50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL, 
-	insurance NVARCHAR(50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL, 
-	language NVARCHAR(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL, 
-	religion NVARCHAR(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL, 
-	marital_status NVARCHAR(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL, 
-	ethnicity NVARCHAR(100) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL, 
-	edregtime DATETIME2 NULL, 
-	edouttime DATETIME2 NULL, 
-	diagnosis NVARCHAR(150) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL, 
-	hospital_expire_flag NVARCHAR(150) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL, 
-	has_chartevents_data NVARCHAR(150) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL
-)
 
 ...
 
