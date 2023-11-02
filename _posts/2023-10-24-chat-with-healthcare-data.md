@@ -9,7 +9,7 @@ What is the value of LLMs in healthcare, specificially when it comes to chat cap
 
 https://www.nature.com/articles/s41591-023-02448-8
 
-This was a topic I explored in my September [tech talk] on LLMs, where I had a chance to walk through 2 examples that covered integrating LLMs with LangChain and SQL.  This tutorial explores each example in more detail. 
+This was a topic I explored in my September [tech talk] on LLMs, where I had a chance to walk through 2 examples that covered integrating LLMs with LangChain, and LLMs with SQL.  This tutorial will explore using LLMs and LangChain to chat with a healthcare document.
 
 Pre-requisites:
 1. Intermediate knowledge of OpenAI
@@ -21,12 +21,9 @@ Environment:
 3. DB: Azure SQL Database
 4. DB Driver: ODBC driver 18 for SQL Server
 
-
-## Example 1: LLMs and LangChain to chat with a healthcare document 
-
 All resources can be found [here](https://github.com/slsu0424/pmc-patients).
 
-#### Generate an ADE report
+## Generate an ADE report
 
 I used OpenAI's ChatGPT (GPT-3.5) to generate a synthetic adverse events report for warfarin.  I chose warfarin as it is in the class of drugs that have resulted in [serious adverse drug reactions](https://www.ncbi.nlm.nih.gov/books/NBK519025/).
 
@@ -41,7 +38,7 @@ A snippet of the document is below:
 
 >On October 20, 2023, at 09:30 AM, the patient, John Doe, experienced a significant adverse event related to the anticoagulant medication warfarin. Mr. Doe, a 68-year-old male with a history of atrial fibrillation, had been taking warfarin (5 mg daily) for the past three years as prescribed by his cardiologist.
 
-#### Q&A application overview
+## Q&A application overview
 This LangChain [blog post](https://github.com/hwchase17/chat-your-data/blob/master/blogpost.md) provides a high-level overview for building a text-based Q&A application.  
 
 The main steps include:
@@ -63,7 +60,7 @@ Query Data:
 ![langchain2](/assets/images/2023-10/langchain2.png)
 
 
-#### Use LangChain to load documents into a vector store
+## Use LangChain to load documents into a vector store
 [Langchain](https://docs.langchain.com/docs/) is a framework for developing applications powered by LLMs.  The main idea is that developers can "chain" different components around an LLM to create more powerful use cases.  
 
 Hence, we can "chain" an LLM to another component, such as a document.
@@ -86,7 +83,7 @@ The default settings to note are:
 - Embedding - uses **OpenAIEmbeddings**  to generate embeddings
 - Storage - embeddings are stored in **Chroma**, an open-source vector store 
 
-#### Set up Streamlit app to query document
+## Set up Streamlit app to query document
 Next, we set up a simple UI to allow users to ask questions of the ADE document.  
 
 ```python
@@ -95,7 +92,7 @@ st.title('🦜 Query your PDF document')
 prompt = st.text_input("Enter your question to query your PDF documents")
 ```
 
-#### Query the vector store
+## Query the vector store
 When a user passes in a question, the store is queried to retrieve the data that is 'most similar' to the embedded query.
 
 ```python
@@ -119,80 +116,6 @@ With the Streamlit app loaded, we can ask a question of the ADE document:
 
 
 
-## Example 2: LLMs and SQL to chat with a healthcare database
-All resources can be found [here](https://github.com/slsu0424/pmc-patients).
-
-#### Load data into Azure SQL DB
-[MIMIC-III](https://physionet.org/content/mimiciii-demo/1.4/) is a publicly available database comprising of de-identified data for > 40,000 CCU patients who stayed at the Beth Israel Deaconess Medical Center between 2001 and 2012.  
-
-Download the database (.csv files), and load the [ADMISSIONS]() table into Azure SQL DB. 
-
-#### Connect to Azure SQL DB
-We next connect python to Azure SQL DB.  This tutorial provides more details on setting this up.  As there are known issues with the ODBC Driver on MacOS, be sure to follow this [guide](https://learn.microsoft.com/en-us/sql/connect/odbc/linux-mac/known-issues-in-this-version-of-the-driver?view=sql-server-ver16) if errors are encountered.  
-
-In my own experience, I had to make the following changes to my system:
-
-1. brew install openssl@1.1
-2. run symlink commands
-
-Get the database connection string variables and create a connection:
-```python
-# connect python to sql server
-conn_str = f"mssql+pyodbc://{username}:{password}@{server}/{database}?driver={driver}"
-
-try:
-    # create instance of sql database from a given database uri
-    db = SQLDatabase.from_uri(conn_str)
-```
-#### Set up SQL Database Agent
-LangChain provides an agent that allows the user to interact with SQL databases.  Below are the steps to initialize the agent:
-
-```python
-# create new llm model
-llm = ChatOpenAI(
-    temperature=0, 
-    openai_api_key=OPENAI_API_KEY, 
-    model_name='gpt-3.5-turbo')
-
-# toolkit for interacting with sql databases
-toolkit = SQLDatabaseToolkit(
-    db=db,
-    llm=llm)
-
-# initialize agent
-agent_executor = create_sql_agent(
-    llm=llm,
-    toolkit=toolkit,
-    verbose=True,
-    agent_type=AgentType.OPENAI_FUNCTION
-    )
- ```
- *Note*: The **ChatOpenAI** class shares many similar properties to the **OpenAI** class.  However, it contains more chat-related methods and is better suited for building chatbots.
-
-#### Ask queries in natural language
-Let's run a simple query:
-```python
-# query 1
-agent_executor.run("how many rows are there?")
-```
-Response:
-```python
-> Entering new AgentExecutor chain...
-
-Invoking: `sql_db_list_tables` with `{}`
-
-
-ADMISSIONS, BuildVersion, ErrorLog
-Invoking: `sql_db_query` with `SELECT COUNT(*) FROM ADMISSIONS`
-
-
-[(129,)]There are 129 rows in the ADMISSIONS table.
-
-> Finished chain.
-```
-What's interesting here is that the chain exposes the process by which the LLM "thinks through" how to answer the query.  The LLM recognizes that it has to find the list of tables available in the database, and runs a COUNT statement to return the row sum.
-
-We can compare the LLM response to what would normally be generated by [SQL queries]().
 
 
 ## Conclusion
