@@ -21,10 +21,10 @@ Environment:
 4. DB Driver: ODBC driver 18 for SQL Server
 
 
-All resources can be found [here](https://github.com/slsu0424/pmc-patients).
+All resources can be found [here](https://github.com/slsu0424/langchain-sql-public).
 
 ## Load data into Azure SQL DB
-[MIMIC-III](https://www.nature.com/articles/sdata201635) is a publicly available database comprising of de-identified data for > 40,000 CCU patients who stayed at the Beth Israel Deaconess Medical Center between 2001 and 2012.  
+[MIMIC-III](https://www.nature.com/articles/sdata201635) is a publicly available database comprising of de-identified data for > 40,000 critical care patients who stayed at the Beth Israel Deaconess Medical Center between 2001 and 2012.  
 
 Download the database [files](https://physionet.org/content/mimiciii-demo/1.4/), and load the [ADMISSIONS]() table into Azure SQL DB. 
 
