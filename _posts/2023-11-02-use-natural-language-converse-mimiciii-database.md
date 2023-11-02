@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Interact with the MIMIC-III database without SQL"
+title:  "Interact with the MIMIC-III database without writing SQL"
 author: sandy
 categories: [ ChatGPT, NLP, tutorial ]
 image: assets/images/2023-10/shutterstock_2188258735_license_resize.png
 ---
-If someone were to tell me that I would someday be able to query a database without SQL, I would have said its impossible.  Databases and SQL have always been synonymous in my mind.  However, thanks to LLMs, any user can now query a database using natural language.  This is an exciting and powerful capability that will be a game-changer for anyone that works with data.
+If someone were to tell me that I would someday be able to query a database without writing SQL statements, I would have said its impossible.  As a former database developer, databases and SQL have always been synonymous.  However, thanks to LLMs, any user can now dialogue with a database using natural language.  This is an exciting and powerful capability that will be a game-changer for anyone that works with data.
 
-This tutorial continues on from the previous tutorial on using LLMs with Langchain.  Here, we will explore using LLMs and LangChain to interact with the MIMIC-III database.  
+This tutorial continues on from the previous tutorial on using LLMs with Langchain.  Here, we will explore using LLMs and LangChain to interact with a SQL Database.  
 
 Pre-requisites:
 1. Knowledge of OpenAI
@@ -29,7 +29,7 @@ The [MIMIC-III](https://physionet.org/content/mimiciii-demo/1.4/) is a publicly 
 Download the database (.csv files), and load the [ADMISSIONS]() table into Azure SQL DB. 
 
 ## Connect to Azure SQL DB
-We next connect python to Azure SQL DB.  This [tutorial]() provides more details on setting this up.  As there are known issues with the ODBC Driver on MacOS, be sure to follow this [guide](https://learn.microsoft.com/en-us/sql/connect/odbc/linux-mac/known-issues-in-this-version-of-the-driver?view=sql-server-ver16) if errors are encountered.  
+We next connect python to Azure SQL DB.  This [tutorial]() provides more details on the setup.  As there are known issues with the ODBC Driver on MacOS, be sure to follow this [guide](https://learn.microsoft.com/en-us/sql/connect/odbc/linux-mac/known-issues-in-this-version-of-the-driver?view=sql-server-ver16) if errors are encountered.  
 
 In my own experience, I had to make the following changes via Terminal:
 
@@ -95,7 +95,7 @@ Invoking: `sql_db_query` with `SELECT COUNT(*) FROM ADMISSIONS`
 
 > Finished chain.
 ```
-What's interesting here is that the chain exposes the process by which the LLM "thinks through" how to answer the query.  The LLM recognizes that it has to find the list of tables available in the database, and runs a COUNT statement to return the row sum.
+What's interesting here is that the chain exposes the process by which the LLM "thinks through" how to answer the question.  The LLM recognizes that it has to find the list of tables available in the database, and generates SQL statements to do so.  The next SQL statement runs a COUNT to return the row sum, and returns the result in natural language.  
 
 Now, let's run a more complex query:
 ```python
