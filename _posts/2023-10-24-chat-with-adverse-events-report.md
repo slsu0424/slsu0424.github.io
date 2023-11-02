@@ -9,7 +9,7 @@ What is the value of LLMs in healthcare, specificially when it comes to chatbot 
 
 https://www.nature.com/articles/s41591-023-02448-8
 
-This was a topic I explored in my September [tech talk] on LLMs, where I had a chance to walk through 2 examples that covered integrating LLMs with LangChain, and LLMs with SQL.  This tutorial will explore using LLMs and LangChain to chat with an adverse events report.
+This was a topic I explored in my September [tech talk] on LLMs, where I had a chance to walk through 2 examples that covered integrating LLMs with LangChain, and LLMs with SQL databases.  This tutorial will explore using LLMs and LangChain to chat with an adverse events report.
 
 Pre-requisites:
 1. Knowledge of OpenAI
@@ -124,4 +124,3 @@ In this tutorial, we explored two examples of how to use LLMs to interact with h
 + <https://github.com/hwchase17/chat-your-data/blob/master/blogpost.md>
 + <https://python.langchain.com/>
 + <https://medium.com/@kbdhunga/enhancing-conversational-ai-the-power-of-langchains-question-answer-framework-4974e1cab3cf>
-+ <https://physionet.org/content/mimiciii-demo/1.4/>
