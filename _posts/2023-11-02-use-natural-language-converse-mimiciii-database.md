@@ -7,7 +7,7 @@ image: assets/images/2023-11/mimic_resize.png
 ---
 If someone were to tell me that I would someday be able to query a database without writing SQL statements, I would have said its impossible.  However, thanks to LLMs, a user can now dialogue with a database using natural language.  This is an exciting and powerful new capability for anyone that works with healthcare data.
 
-This tutorial continues on from the previous tutorial on using LLMs with Langchain.  We will explore using LLMs and LangChain to interact with MIMIC-III (critical care data) stored in a SQL Database. 
+This tutorial continues on from the previous [tutorial]() on using LLMs with Langchain.  We will explore using LLMs and LangChain to interact with MIMIC-III (critical care data) stored in a SQL Database. 
 
 Pre-requisites:
 1. Knowledge of OpenAI
@@ -41,7 +41,7 @@ version=$(ls $(brew --prefix)/Cellar/openssl@1.1 | grep "1.1")
 n -s $(brew --prefix)/Cellar/openssl@1.1/$version $(brew --prefix)/opt/openssl
 ```
 
-Get the [odbc connection string](https://azurelessons.com/azure-sql-database-connection-string/) and create an instance of the SQL database:
+Get the odbc connection string and create an [instance](https://api.python.langchain.com/en/latest/utilities/langchain.utilities.sql_database.SQLDatabase.html) of the SQL database:
 ```python
 # connect python to sql server
 conn_str = f"mssql+pyodbc://{username}:{password}@{server}/{database}?driver={driver}"
