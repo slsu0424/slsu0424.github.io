@@ -5,11 +5,11 @@ author: sandy
 categories: [ Langchain, OpenAI, Python, NLP, tutorial ]
 image: assets/images/2023-10/shutterstock_2188258735_license_resize.png
 ---
-What is the value of LLMs in healthcare, specificially when it comes to chatbot capabilities?  Chatbots have been around for a while now, but have often been inaccurate, clunky, and impersonal.  What makes GenAI different?  
+What is the value of LLMs in healthcare, specificially when it comes to chatbot capabilities?  Chatbots have been around for a while now, but have often been clunky, inaccurate, and impersonal.  What makes GenAI different?  
 
 https://www.nature.com/articles/s41591-023-02448-8
 
-This was a topic I explored in my September [tech talk] on LLMs, where I had a chance to walk through 2 examples that covered integrating LLMs with LangChain, and LLMs with SQL.  This tutorial will explore using LLMs and LangChain to chat with an adverse events report.
+This was a topic I explored in my September [tech talk] on LLMs, where I had a chance to walk through 2 examples that covered integrating LLMs with LangChain, and LLMs with SQL databases.  This tutorial will explore using LLMs and LangChain to chat with an adverse events report.
 
 Pre-requisites:
 1. Knowledge of OpenAI
@@ -124,4 +124,3 @@ In this tutorial, we explored two examples of how to use LLMs to interact with h
 + <https://github.com/hwchase17/chat-your-data/blob/master/blogpost.md>
 + <https://python.langchain.com/>
 + <https://medium.com/@kbdhunga/enhancing-conversational-ai-the-power-of-langchains-question-answer-framework-4974e1cab3cf>
-+ <https://physionet.org/content/mimiciii-demo/1.4/>
