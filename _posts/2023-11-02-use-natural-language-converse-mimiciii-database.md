@@ -122,9 +122,7 @@ CREATE TABLE [ADMISSIONS] (
 	hadm_id INTEGER NOT NULL, 
 	admittime DATETIME2 NOT NULL, 
 	dischtime DATETIME2 NOT NULL, 
-	deathtime DATETIME2 NULL, 
-	admission_type NVARCHAR(50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL, 
-
+	deathtime DATETIME2 NULL,
 ...
 
 SELECT ethnicity, COUNT(*) AS frequency 
