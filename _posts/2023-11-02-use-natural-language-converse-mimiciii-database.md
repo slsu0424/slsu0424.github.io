@@ -1,10 +1,12 @@
 ---
 layout: post
-title:  "Interact with the MIMIC-III database without queries"
+title:  "Interact with the MIMIC-III database without SQL"
 author: sandy
 categories: [ ChatGPT, NLP, tutorial ]
 image: assets/images/2023-10/shutterstock_2188258735_license_resize.png
 ---
+If someone were to tell me that I would be able to query a database without SQL, I would have said that's impossible.  
+
 What is the value of LLMs in healthcare, specificially when it comes to chat capabilities?  After all, NLP has been around for a long time.  What makes GenAI different?  
 
 https://www.nature.com/articles/s41591-023-02448-8
@@ -31,7 +33,7 @@ The [MIMIC-III](https://physionet.org/content/mimiciii-demo/1.4/) is a publicly 
 Download the database (.csv files), and load the [ADMISSIONS]() table into Azure SQL DB. 
 
 ## Connect to Azure SQL DB
-We next connect python to Azure SQL DB.  This tutorial provides more details on setting this up.  As there are known issues with the ODBC Driver on MacOS, be sure to follow this [guide](https://learn.microsoft.com/en-us/sql/connect/odbc/linux-mac/known-issues-in-this-version-of-the-driver?view=sql-server-ver16) if errors are encountered.  
+We next connect python to Azure SQL DB.  This [tutorial]() provides more details on setting this up.  As there are known issues with the ODBC Driver on MacOS, be sure to follow this [guide](https://learn.microsoft.com/en-us/sql/connect/odbc/linux-mac/known-issues-in-this-version-of-the-driver?view=sql-server-ver16) if errors are encountered.  
 
 In my own experience, I had to make the following changes via Terminal:
 
@@ -42,7 +44,7 @@ version=$(ls $(brew --prefix)/Cellar/openssl@1.1 | grep "1.1")
 n -s $(brew --prefix)/Cellar/openssl@1.1/$version $(brew --prefix)/opt/openssl
 ```
 
-Get the database connection string variables and create a connection:
+Get the [odbc connection string](https://azurelessons.com/azure-sql-database-connection-string/) and create a connection:
 ```python
 # connect python to sql server
 conn_str = f"mssql+pyodbc://{username}:{password}@{server}/{database}?driver={driver}"
