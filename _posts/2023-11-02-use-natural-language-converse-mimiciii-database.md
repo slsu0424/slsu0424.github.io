@@ -21,10 +21,10 @@ Environment:
 4. DB Driver: ODBC driver 18 for SQL Server
 
 
-All resources can be found [here](https://github.com/slsu0424/pmc-patients).
+All resources can be found [here](https://github.com/slsu0424/langchain-sql-public).
 
 ## Load data into Azure SQL DB
-[MIMIC-III](https://www.nature.com/articles/sdata201635) is a publicly available database comprising of de-identified data for > 40,000 CCU patients who stayed at the Beth Israel Deaconess Medical Center between 2001 and 2012.  
+[MIMIC-III](https://www.nature.com/articles/sdata201635) is a publicly available database comprising of de-identified data for > 40,000 critical care patients who stayed at the Beth Israel Deaconess Medical Center between 2001 and 2012.  
 
 Download the database [files](https://physionet.org/content/mimiciii-demo/1.4/), and load the [ADMISSIONS]() table into Azure SQL DB. 
 
@@ -35,12 +35,13 @@ In my own experience, I had to make the following changes via Terminal:
 
 ```bash
 brew install openssl@1.1
+
 rm -rf $(brew --prefix)/opt/openssl
 version=$(ls $(brew --prefix)/Cellar/openssl@1.1 | grep "1.1")
 n -s $(brew --prefix)/Cellar/openssl@1.1/$version $(brew --prefix)/opt/openssl
 ```
 
-Get the [odbc connection string](https://azurelessons.com/azure-sql-database-connection-string/) and create a connection:
+Get the [odbc connection string](https://azurelessons.com/azure-sql-database-connection-string/) and create an instance of the SQL database.
 ```python
 # connect python to sql server
 conn_str = f"mssql+pyodbc://{username}:{password}@{server}/{database}?driver={driver}"
