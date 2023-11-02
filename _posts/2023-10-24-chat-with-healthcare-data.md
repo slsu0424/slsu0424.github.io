@@ -11,11 +11,14 @@ https://www.nature.com/articles/s41591-023-02448-8
 
 This was a topic I also explored in my September [tech talk] on LLMs, where I had a chance to walk through 2 examples that covered integrating LLMs with LangChain and SQL.  This tutorial explores each example in more detail. 
 
-
 Pre-requisites:
-1. Intermediate knowledge of OpenAI
-2. Azure SQL DB
-3. Python 3.11
+1. Knowledge of OpenAI
+
+Environment:
+1. Python: 3.9.0
+2. OS: MacOS 11.7.3
+3. Database: Azure SQL DB
+4. Driver: ODBC driver 18 for SQL Server
 
 
 ## Example 1: LLMs and LangChain to chat with a healthcare document 
@@ -124,7 +127,11 @@ All resources can be found [here](https://github.com/slsu0424/pmc-patients).
 Download the database (.csv files), and load the [ADMISSIONS]() table into Azure SQL DB. 
 
 #### Connect to Azure SQL DB
-We connect python to Azure SQL DB via pyodbc.  Next, get the database connection string variables and create a connection:
+We connect python to Azure SQL DB via pyodbc.  Make sure that the [Microsoft ODBC 18 driver for SQL Server (macOS)](https://learn.microsoft.com/en-us/sql/connect/odbc/linux-mac/install-microsoft-odbc-driver-sql-server-macos?view=sql-server-ver15#microsoft-odbc-18) is installed.  
+
+brew install openssl@1.1
+
+Get the database connection string variables and create a connection:
 ```python
 # connect python to sql server
 conn_str = f"mssql+pyodbc://{username}:{password}@{server}/{database}?driver={driver}"
