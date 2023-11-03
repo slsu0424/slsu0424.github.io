@@ -6,7 +6,6 @@ categories: [ langchain, ChatGPT, python, tutorial ]
 #image: assets/images/2023-10/shutterstock_2188258735_license_resize.png
 image: assets/images/2023-10/stock-photo-chatgpt-chat-bot-screen-seen-on-smartphone-and-laptop-display-with-chat-gpt-login-screen-on-the-2237752713.jpg
 #image: assets/images/2023-10/ade.jpg
-
 ---
 What is the value of LLMs in healthcare, specificially when it comes to chatbot capabilities?  Can they really "understand" healthcare data and produce meaningful insights?  In my experience, chatbots were nothing more than clunky and impersonal customer service agents.  However, an early 2022 [article](https://www.nytimes.com/2022/03/03/technology/ai-chatbot.html) shed light on a new generation of chatbots - ones that were actually going to be more intelligent and helpful.
 
@@ -26,6 +25,7 @@ Environment:
 
 All resources can be found [here](https://github.com/slsu0424/langchain-ade-public).
 
+
 ## Generate an ADE report
 I used OpenAI's [ChatGPT](https://chat.openai.com/) (GPT-3.5) to generate a synthetic adverse events report for warfarin.  I chose warfarin as it is in the class of drugs that have resulted in [serious adverse drug reactions](https://www.ncbi.nlm.nih.gov/books/NBK519025/).
 
@@ -39,6 +39,7 @@ These were the series of prompts I used to generate the final [output]():
 A snippet of the document is below:
 
 >On October 20, 2023, at 09:30 AM, the patient, John Doe, experienced a significant adverse event related to the anticoagulant medication warfarin. Mr. Doe, a 68-year-old male with a history of atrial fibrillation, had been taking warfarin (5 mg daily) for the past three years as prescribed by his cardiologist.
+
 
 ## Q&A application overview
 This LangChain [blog post](https://github.com/hwchase17/chat-your-data/blob/master/blogpost.md) provides a high-level overview for building a text-based Q&A application.  
@@ -60,6 +61,17 @@ Ingest Data:
 Query Data:
 
 ![langchain2](/assets/images/2023-10/langchain2.png)
+
+
+## Set the OpenAI API Key
+Navigate to [OpenAI](https://platform.openai.com/) to obtain the API key.  This will be needed to authenticate requests to the API.
+
+```python
+# set API keys to authenticate requests to the API
+API_KEY = "<API_KEY>"
+
+os.environ["OPENAI_API_KEY"] = API_KEY
+```
 
 
 ## Use LangChain to load documents into a vector store
@@ -93,6 +105,7 @@ With [Streamlit](https://streamlit.io/), we set up a simple UI to allow users to
 st.title('🦜 Query your PDF document')
 prompt = st.text_input("Enter your question to query your PDF documents")
 ```
+
 
 ## Query the vector store
 When a user passes in a question, the store is queried to retrieve the data that is 'most similar' to the embedded query.
