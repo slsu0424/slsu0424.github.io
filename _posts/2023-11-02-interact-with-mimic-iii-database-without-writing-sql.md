@@ -8,7 +8,7 @@ image: assets/images/2023-11/mimic_resize.png
 ---
 If someone told me that I would someday be able to "talk" to a database, I would have said it's impossible.  However, thanks to LLMs, a user can now converse with a database using natural language.  This is an exciting and powerful new capability for anyone that works with healthcare data.
 
-This tutorial continues on from the previous [tutorial](https://slsu0424.github.io/chat-adverse-events-report-natural-language/) on using LLMs with Langchain.  We will explore using LLMs and LangChain to interact with a SQL Database.  The data will come from <a href="https://www.nature.com/articles/sdata201635" target="_blank">MIMIC-III</a>, a publicly available dataset comprising of de-identified data for > 40,000 critical care patients who stayed at the Beth Israel Deaconess Medical Center between 2001 and 2012.  
+This tutorial continues on from the previous [tutorial](https://slsu0424.github.io/chat-adverse-events-report-natural-language/) on using LLMs with Langchain.  We will explore using LLMs and LangChain to interact with a SQL Database containing critical care data. 
 
 Pre-requisites:
 1. Knowledge of OpenAI
@@ -25,6 +25,8 @@ Environment:
 All resources can be found [here](https://github.com/slsu0424/langchain-sql-public).
 
 ## Load data into Azure SQL DB
+<a href="https://www.nature.com/articles/sdata201635" target="_blank">MIMIC-III</a>is a publicly available dataset comprising of de-identified data for > 40,000 critical care patients who stayed at the Beth Israel Deaconess Medical Center between 2001 and 2012
+
 Download the MIMIC-III <a href="https://physionet.org/content/mimiciii-demo/1.4/" target="_blank">files</a>, and load the [ADMISSIONS]() table into Azure SQL DB. 
 
 ## Connect to Azure SQL DB
