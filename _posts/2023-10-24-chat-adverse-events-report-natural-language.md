@@ -3,7 +3,7 @@ layout: post
 title:  "Chat with an adverse events report using natural language"
 author: sandy
 categories: [ langchain, ChatGPT, python, tutorial ]
-image: assets/images/2023-10/shutterstock_2188258735_license_resize.png
+iage: assets/images/2023-10/shutterstock_2188258735_license_resize.png
 #image: assets/images/2023-10/stock-photo-chatgpt-chat-bot-screen-seen-on-smartphone-and-laptop-display-with-chat-gpt-login-screen-on-the-2237752713.jpg
 #image: assets/images/2023-10/ade.jpg
 ---
