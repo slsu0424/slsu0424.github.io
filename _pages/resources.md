@@ -27,10 +27,10 @@ comments: false
 <p>
 <b>AI in Healthcare</b>
 <ul>
-<li><a href="https://huggingface.co/hf4h" target="_blank">>Hugging Face for Health</a></li>
-<li><a href="https://www.kaggle.com/search?q=healthcare" target="_blank">>Kaggle</a></li>
-<li><a href="https://ai.nejm.org/" target="_blank">>New England Journal of Medicine AI</a></li>
-<li><a href="https://paperswithcode.com/search?q_meta=&q_type=&q=healthcare" target="_blank">>Papers With Code</a></li>
+<li><a href="https://huggingface.co/hf4h" target="_blank">Hugging Face for Health</a></li>
+<li><a href="https://www.kaggle.com/search?q=healthcare" target="_blank">Kaggle</a></li>
+<li><a href="https://ai.nejm.org/" target="_blank">New England Journal of Medicine AI</a></li>
+<li><a href="https://paperswithcode.com/search?q_meta=&q_type=&q=healthcare" target="_blank">Papers With Code</a></li>
 <li><a href="https://www.youtube.com/c/stanfordaimi" target="_blank">Stanford Center for Artificial Intelligence in Medicine and Imaging</a></li>
 </ul>
 </p>
