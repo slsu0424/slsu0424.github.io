@@ -45,7 +45,6 @@ Get the odbc connection string and create an [instance](https://api.python.langc
 conn_str = f"mssql+pyodbc://{username}:{password}@{server}/{database}?driver={driver}"
 
 try:
-    # create instance of sql database from a given database uri
     db = SQLDatabase.from_uri(conn_str)
 ```
 ## Set the OpenAI API Key
