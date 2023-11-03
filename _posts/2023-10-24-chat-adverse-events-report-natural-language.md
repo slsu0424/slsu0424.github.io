@@ -13,7 +13,7 @@ Fast forward to today, and the chat fervor has only grown stronger.  This has cr
 
 From a technical lens, this was a topic I explored in my September [talk](https://www.meetup.com/cloud-data-driven/events/294617896/) on LLMs.  I had the chance to walk through 2 examples that covered integrating LLMs with LangChain, and LLMs with SQL databases.  
 
-This tutorial will explore using LLMs and LangChain to chat with an adverse events report.
+This tutorial will explore using LLMs and LangChain to chat with a healthcare document - an adverse events report.
 
 Pre-requisites:
 1. Knowledge of OpenAI
