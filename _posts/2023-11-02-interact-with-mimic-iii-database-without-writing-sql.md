@@ -5,7 +5,7 @@ author: sandy
 categories: [ azure, langchain, ChatGPT, python, SQL, tutorial ]
 image: assets/images/2023-11/mimic_resize.png
 ---
-If someone told me that I would someday be able to "talk" to a database, I would have said it's impossible.  However, thanks to LLMs, a user can now dialogue with a database using natural language.  This is an exciting and powerful new capability for anyone that works with healthcare data.
+If someone told me that I would someday be able to "talk" to a database, I would have said it's impossible.  However, thanks to LLMs, a user can now converse with a database using natural language.  This is an exciting and powerful new capability for anyone that works with healthcare data.
 
 This tutorial continues on from the previous [tutorial](https://slsu0424.github.io/chat-adverse-events-report-natural-language/) on using LLMs with Langchain.  We will explore using LLMs and LangChain to interact with a SQL Database. 
 
