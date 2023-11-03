@@ -2,7 +2,7 @@
 layout: post
 title:  "Encoding PubMed abstracts for NLP tasks"
 author: sandy
-categories: [ PubMed, NLP, tutorial ]
+categories: [ pubmed, nlp, tutorial ]
 image: assets/images/2023-07/shutterstock_2254749635_license_resize.png
 featured: true
 ---
