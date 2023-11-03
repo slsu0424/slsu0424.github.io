@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Interact with the MIMIC-III database without writing SQL"
+title:  "Interact with MIMIC-III data without writing SQL"
 author: sandy
 categories: [ azure, langchain, ChatGPT, python, SQL, tutorial ]
 image: assets/images/2023-11/mimic_resize.png
