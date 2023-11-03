@@ -13,7 +13,6 @@ This article will begin a series of technical tutorials that are geared towards 
 
 
 ## A simple approach to NLP - one-hot encoding
-
 To start, I wanted to backtrack the origins of LLMs, which are a type of neural network.  A neural network is a type of machine learning approach that attempts to mimic the way the brain works (biological neural network).  This approach has been shown to perform better on NLP tasks than previous methods.  For a great overview of NLP, check out this [guide](https://www.deeplearning.ai/resources/natural-language-processing).
 
 The goal of NLP is to enable computers to "understand" natural language in order to perform some task, such as sentiment analysis.  In order to do so, natural language (text) has to be converted (encode) into a numerical format.
@@ -28,7 +27,6 @@ Consider the following text: 'I have a fever'.  The vocabulary consists of 4 uni
 
 
 ## Let's convert a few PubMed abstracts to one-hot vectors
-
 To put the above tutorial into practice, I thought I would give this a try with a few abstracts.  Let's say that we want to perform an NLP task on papers that discuss cardiovascular disease (CVD) risk factors.  This is what my query and results look like in PubMed:
 
 ![PubMed](/assets/images/2023-07/PubMed.png)
@@ -58,7 +56,6 @@ Each word is represented as a one-hot vector with a length equal to the size of 
 ![encoding](/assets/images//2023-07/encoding.png)
 
 ## Limitations of one-hot encoding
-
 One challenge seen with the one-hot encoding approach is that there is no information about the words the vectors represent, or how the words relate to each other. That is, it tells us nothing about the similarities or differences between words.  If we were to graph each vector and calculate a similarity measure (e.g., cosine similarity) between them, we would see that there is 0 similiarity between any two vectors.  Refer to this [article](https://towardsdatascience.com/word-embeddings-intuition-behind-the-vector-representation-of-the-words-7e4eb2410bba) for a mathematical overview of the concept.
 
 
@@ -76,7 +73,6 @@ Given these limitations, this technique makes it difficult for a computer to det
 
 
 ## Conclusion
-
 In this tutorial, we explored one-hot encoding, a very simple way to convert categorical variables for natural language processing tasks.  By taking a subset of PubMed abstracts, we were able to see how this approach becomes highly inefficient with larger vocabularies.  Some of these inefficiencies are due to a lack of understanding relationships between words, as well as a sparse and highly-dimensional feature space.
 
 There have been different techniques that have improved upon the limitations of one-hot encoding, and they have worked increasingly well with neural networks.  I will explore these in future posts.
