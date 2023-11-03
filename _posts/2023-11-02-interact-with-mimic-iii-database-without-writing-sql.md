@@ -3,7 +3,8 @@ layout: post
 title:  "Interact with MIMIC-III data without writing SQL"
 author: sandy
 categories: [ azure, langchain, ChatGPT, python, SQL, tutorial ]
-image: assets/images/2023-11/mimic_resize.png
+#image: assets/images/2023-11/mimic_resize.png
+image: assets/images/2023-11/stock-photo-monitoring-of-ecg-blood-pressure-saturation-of-the-patient-in-icu-icu-monitor-with-several-1111028177.jpg
 ---
 If someone told me that I would someday be able to "talk" to a database, I would have said it's impossible.  However, thanks to LLMs, a user can now converse with a database using natural language.  This is an exciting and powerful new capability for anyone that works with healthcare data.
 
