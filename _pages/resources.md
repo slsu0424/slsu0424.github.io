@@ -27,30 +27,30 @@ comments: false
 <p>
 <b>AI in Healthcare</b>
 <ul>
-<li><a href="https://huggingface.co/hf4h">Hugging Face for Health</a></li>
-<li><a href="https://www.kaggle.com/search?q=healthcare">Kaggle</a></li>
-<li><a href="https://ai.nejm.org/">New England Journal of Medicine AI</a></li>
-<li><a href="https://paperswithcode.com/search?q_meta=&q_type=&q=healthcare">Papers With Code</a></li>
-<li><a href="https://www.youtube.com/c/stanfordaimi">Stanford Center for Artificial Intelligence in Medicine and Imaging</a></li>
+<li><a href="https://huggingface.co/hf4h" target="_blank">>Hugging Face for Health</a></li>
+<li><a href="https://www.kaggle.com/search?q=healthcare" target="_blank">>Kaggle</a></li>
+<li><a href="https://ai.nejm.org/" target="_blank">>New England Journal of Medicine AI</a></li>
+<li><a href="https://paperswithcode.com/search?q_meta=&q_type=&q=healthcare" target="_blank">>Papers With Code</a></li>
+<li><a href="https://www.youtube.com/c/stanfordaimi" target="_blank">Stanford Center for Artificial Intelligence in Medicine and Imaging</a></li>
 </ul>
 </p>
 
 <p>
 <b>Data Science & AI</b>
 <ul>
-<li><a href="https://developers.google.com/machine-learning">Google Machine Learning Education</a></li>
-<li><a href="https://machinelearningmastery.com/">Machine Learning Mastery</a></li>
-<li><a href="https://www.tensorflow.org/">TensorFlow</a></li>
-<li><a href="https://towardsdatascience.com/">Towards Data Science</a></li>
+<li><a href="https://developers.google.com/machine-learning" target="_blank">Google Machine Learning Education</a></li>
+<li><a href="https://machinelearningmastery.com/" target="_blank">Machine Learning Mastery</a></li>
+<li><a href="https://www.tensorflow.org/" target="_blank">TensorFlow</a></li>
+<li><a href="https://towardsdatascience.com/" target="_blank">Towards Data Science</a></li>
 </ul>
 </p>
 
 <p>
 <b>Technology</b>
 <ul>
-<li><a href="https://arstechnica.com/information-technology/">Ars Technica</a></li>
-<li><a href="https://www.forbes.com/sites/forbestechcouncil">Forbes Technology Council</a></li>
-<li><a href="https://www.techopedia.com/">Technopedia</a></li>
+<li><a href="https://arstechnica.com/information-technology/" target="_blank">Ars Technica</a></li>
+<li><a href="https://www.forbes.com/sites/forbestechcouncil" target="_blank">Forbes Technology Council</a></li>
+<li><a href="https://www.techopedia.com/" target="_blank">Technopedia</a></li>
 </ul>
 </p>
 
