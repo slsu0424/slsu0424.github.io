@@ -13,14 +13,14 @@ comments: false
 <p>
 <b>Healthcare</b>
 <ul>
-<li><a href="https://www.beckershospitalreview.com/">Becker's Hospital Review</a></li>
-<li><a href="https://www.forbes.com/healthcare">Forbes Healthcare</a></li>
-<li><a href="https://erictopol.substack.com/">Ground Truths</a></li>
-<li><a href="https://www.hcinnovationgroup.com/">Healthcare Innovation</a></li>
-<li><a href="https://healthitanalytics.com/">Healthcare IT Analytics</a></li>
-<li><a href="https://www.healthcareitnews.com/">Healthcare IT News</a></li>
-<li><a href="https://www.modernhealthcare.com/">Modern Healthcare</a></li>
-<li><a href="https://www.statnews.com/">Stat News</a></li>
+<li><a href="https://www.beckershospitalreview.com/" target="_blank">Becker's Hospital Review</a></li>
+<li><a href="https://www.forbes.com/healthcare" target="_blank">Forbes Healthcare</a></li>
+<li><a href="https://erictopol.substack.com/" target="_blank">Ground Truths</a></li>
+<li><a href="https://www.hcinnovationgroup.com/" target="_blank">Healthcare Innovation</a></li>
+<li><a href="https://healthitanalytics.com/" target="_blank">Healthcare IT Analytics</a></li>
+<li><a href="https://www.healthcareitnews.com/" target="_blank">Healthcare IT News</a></li>
+<li><a href="https://www.modernhealthcare.com/" target="_blank">Modern Healthcare</a></li>
+<li><a href="https://www.statnews.com/" target="_blank">Stat News</a></li>
 </ul>
 </p>
 
