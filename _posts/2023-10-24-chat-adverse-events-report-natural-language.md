@@ -7,9 +7,9 @@ image: assets/images/2023-10/shutterstock_2188258735_license_resize.png
 #image: assets/images/2023-10/stock-photo-chatgpt-chat-bot-screen-seen-on-smartphone-and-laptop-display-with-chat-gpt-login-screen-on-the-2237752713.jpg
 
 ---
-What is the value of LLMs in healthcare, specificially when it comes to chatbot capabilities?  Can they really "understand" healthcare data and produce meaningful insights?  In my experience, chatbots were nothing more than inaccurate and impersonal customer service agents.  However, an early 2022 [article](https://www.nytimes.com/2022/03/03/technology/ai-chatbot.html) shed light on a new generation of chatbots - ones that were actually going to be more intelligent and helpful.
+What is the value of LLMs in healthcare, specificially when it comes to chatbot capabilities?  Can they really "understand" healthcare data and produce meaningful insights?  In my experience, chatbots were nothing more than clunky and impersonal customer service agents.  However, an early 2022 [article](https://www.nytimes.com/2022/03/03/technology/ai-chatbot.html) shed light on a new generation of chatbots - ones that were actually going to be more intelligent and helpful.
 
-Fast forward to today, and the chat fervor has only grown stronger.  This has crossed over into the healthcare domain, with articles even appearing in Nature exploring [LLMs in medicine](https://www.nature.com/articles/s41591-023-02448-8).  I am excited about this technology to streamline administrative healthcare processes, or provide relevant patient information at the bedside. 
+Fast forward to today, and the chat fervor has only grown stronger.  This has crossed over into the healthcare domain, with articles even appearing in Nature exploring [LLMs in medicine](https://www.nature.com/articles/s41591-023-02448-8).  The technology's potential to streamline administrative processes or provide relevant patient information at the bedside is very appealing. 
 
 From a technical lens, this was a topic I explored in my September [talk](https://www.meetup.com/cloud-data-driven/events/294617896/) on LLMs.  I had the chance to walk through 2 examples that covered integrating LLMs with LangChain, and LLMs with SQL databases.  
 
