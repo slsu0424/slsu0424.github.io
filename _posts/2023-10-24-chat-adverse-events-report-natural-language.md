@@ -5,11 +5,11 @@ author: sandy
 categories: [ Langchain, OpenAI, Python, NLP, tutorial ]
 image: assets/images/2023-10/shutterstock_2188258735_license_resize.png
 ---
-What is the value of LLMs in healthcare, specificially when it comes to chatbot capabilities?  Chatbots have been around for a while now, but have often been clunky, inaccurate, and impersonal.  What makes GenAI different?  
+What is the value of LLMs in healthcare, specificially when it comes to chatbot capabilities?  Chatbots have been around for a while now, but in my experience, have often been clunky, inaccurate, and impersonal.  In early 2022, this [article](https://www.nytimes.com/2022/03/03/technology/ai-chatbot.html) shed light on a new generation of chatbots - ones that were going to be more intelligent and helpful.
 
-https://www.nature.com/articles/s41591-023-02448-8
+Fast forward to today, and the chat fervor has only grown stronger.  This has crossed over into the healthcare domain, with articles even appearing in [Nature](https://www.nature.com/articles/s41591-023-02448-8) exploring LLMs in medicine.  I am excited about this technology to potentially streamline administrative processes, or provide relevant patient information at the bedside. 
 
-This was a topic I explored in my September [tech talk] on LLMs, where I had a chance to walk through 2 examples that covered integrating LLMs with LangChain, and LLMs with SQL databases.  This tutorial will explore using LLMs and LangChain to chat with an adverse events report.
+From a technical lens, this was a topic I explored in my September [tech talk](https://www.meetup.com/cloud-data-driven/events/294617896/) on LLMs, where I had a chance to walk through 2 examples that covered integrating LLMs with LangChain, and LLMs with SQL databases.  This tutorial will explore using LLMs and LangChain to chat with an adverse events report.
 
 Pre-requisites:
 1. Knowledge of OpenAI
@@ -19,7 +19,7 @@ Environment:
 1. Python: 3.9.0
 2. OS: MacOS 11.7.3
 
-All resources can be found [here](https://github.com/slsu0424/pmc-patients).
+All resources can be found [here](https://github.com/slsu0424/langchain-ade-public).
 
 ## Generate an ADE report
 I used OpenAI's ChatGPT (GPT-3.5) to generate a synthetic adverse events report for warfarin.  I chose warfarin as it is in the class of drugs that have resulted in [serious adverse drug reactions](https://www.ncbi.nlm.nih.gov/books/NBK519025/).
