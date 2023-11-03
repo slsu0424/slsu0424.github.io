@@ -2,7 +2,7 @@
 layout: post
 title:  "Chat with an adverse events report using natural language"
 author: sandy
-categories: [ langchain, ChatGPT, python, NLP, tutorial ]
+categories: [ langchain, ChatGPT, python, tutorial ]
 image: assets/images/2023-10/shutterstock_2188258735_license_resize.png
 ---
 What is the value of LLMs in healthcare, specificially when it comes to chatbot capabilities?  In my experience, chatbots have often been clunky, inaccurate, and impersonal.  In early 2022, this [article](https://www.nytimes.com/2022/03/03/technology/ai-chatbot.html) shed light on a new generation of chatbots - ones that were actually going to be more intelligent and helpful.
