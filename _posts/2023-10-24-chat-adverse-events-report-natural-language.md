@@ -26,7 +26,7 @@ Environment:
 All resources can be found [here](https://github.com/slsu0424/langchain-ade-public).
 
 ## Generate an ADE report
-I used OpenAI's ChatGPT (GPT-3.5) to generate a synthetic adverse events report for warfarin.  I chose warfarin as it is in the class of drugs that have resulted in [serious adverse drug reactions](https://www.ncbi.nlm.nih.gov/books/NBK519025/).
+I used OpenAI's [ChatGPT](https://chat.openai.com/) (GPT-3.5) to generate a synthetic adverse events report for warfarin.  I chose warfarin as it is in the class of drugs that have resulted in [serious adverse drug reactions](https://www.ncbi.nlm.nih.gov/books/NBK519025/).
 
 These were the series of prompts I used to generate the final [output]():
 
@@ -126,6 +126,7 @@ In this tutorial, we explored two examples of how to use LLMs to interact with h
 ## References
 + <https://www.nytimes.com/2022/03/03/technology/ai-chatbot.html>
 + <https://www.nature.com/articles/s41591-023-02448-8>
++ <https://chat.openai.com/>
 + <https://www.ncbi.nlm.nih.gov/books/NBK519025/>
 + <https://github.com/hwchase17/chat-your-data/blob/master/blogpost.md>
 + <https://python.langchain.com/>
