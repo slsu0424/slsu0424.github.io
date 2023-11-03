@@ -26,7 +26,7 @@ All resources can be found [here](https://github.com/slsu0424/langchain-sql-publ
 ## Load data into Azure SQL DB
 <a href="https://www.nature.com/articles/sdata201635" target="_blank">MIMIC-III</a> is a publicly available database comprising of de-identified data for > 40,000 critical care patients who stayed at the Beth Israel Deaconess Medical Center between 2001 and 2012.  
 
-Download the database [files](https://physionet.org/content/mimiciii-demo/1.4/), and load the [ADMISSIONS]() table into Azure SQL DB. 
+Download the database <a href="https://physionet.org/content/mimiciii-demo/1.4/" target="_blank">files</a>, and load the [ADMISSIONS]() table into Azure SQL DB. 
 
 ## Connect to Azure SQL DB
 Next, we connect python to Azure SQL DB.  This [tutorial](https://learn.microsoft.com/en-us/azure/azure-sql/database/connect-query-python?view=azuresql) provides more details on the setup.  As there are known issues with the ODBC Driver on MacOS, be sure to follow this [guide](https://learn.microsoft.com/en-us/sql/connect/odbc/linux-mac/known-issues-in-this-version-of-the-driver?view=sql-server-ver16) if errors are encountered.  
@@ -39,12 +39,15 @@ $ rm -rf $(brew --prefix)/opt/openssl version=$(ls $(brew --prefix)/Cellar/opens
 $ ln -s $(brew --prefix)/Cellar/openssl@1.1/$version $(brew --prefix)/opt/openssl
 ```
 
-Get the odbc connection string and create an [instance](https://api.python.langchain.com/en/latest/utilities/langchain.utilities.sql_database.SQLDatabase.html) of the SQL database:
+Get the odbc connection string to create an [instance](https://api.python.langchain.com/en/latest/utilities/langchain.utilities.sql_database.SQLDatabase.html) of the SQL database:
 ```python
 # connect python to sql server
+
+# database uri
 conn_str = f"mssql+pyodbc://{username}:{password}@{server}/{database}?driver={driver}"
 
 try:
+    # create sql database instance from uri
     db = SQLDatabase.from_uri(conn_str)
 ```
 ## Set the OpenAI API Key
