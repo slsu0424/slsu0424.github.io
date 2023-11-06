@@ -16,7 +16,7 @@ Pre-requisites:
 3. Knowledge of Azure SQL Database
 
 Environment:
-1. Python: 3.9.0
+1. Python: 3.11.0
 2. OS: MacOS 11.7.3
 3. DB: Azure SQL 12.0.2000.8
 4. DB Driver: ODBC driver 18 for SQL Server
