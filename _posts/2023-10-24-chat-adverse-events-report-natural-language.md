@@ -20,7 +20,7 @@ Pre-requisites:
 2. Knowledge of Langchain
 
 Environment:
-1. Python: 3.9.0
+1. Python: 3.11.0
 2. OS: MacOS 11.7.3
 
 All resources can be found [here](https://github.com/slsu0424/langchain-ade-public).
