@@ -2,7 +2,7 @@
 layout: post
 title:  "Interact with critical care data without writing SQL"
 author: sandy
-categories: [ azure, langchain, ChatGPT, python, SQL, tutorial ]
+categories: [ azure, langChain, ChatGPT, python, SQL, tutorial ]
 image: assets/images/2023-11/mimic_resize.png
 #image: assets/images/2023-11/stock-photo-monitoring-of-ecg-blood-pressure-saturation-of-the-patient-in-icu-icu-monitor-with-several-1111028177.jpg
 ---
