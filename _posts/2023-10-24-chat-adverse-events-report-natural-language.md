@@ -16,8 +16,9 @@ From a technical lens, this was a topic I explored in my September [talk](https:
 This tutorial will explore using LLMs and LangChain to chat with an adverse events report.
 
 Pre-requisites:
-1. Knowledge of OpenAI
-2. Knowledge of Langchain
+1. Basic knowledge of OpenAI
+2. Basic knowledge of Langchain
+3. Basic of Streamlit
 
 Environment:
 1. Python: 3.11.0
