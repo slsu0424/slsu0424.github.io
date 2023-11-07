@@ -11,9 +11,9 @@ If someone told me that I would someday be able to "talk" to a database, I would
 This tutorial continues on from the previous [tutorial](https://slsu0424.github.io/chat-adverse-events-report-natural-language/) on using LLMs with Langchain.  We will explore using LLMs and LangChain to interact with a SQL Database containing critical care data. 
 
 Pre-requisites:
-1. Knowledge of OpenAI
-2. Knowledge of LangChain
-3. Knowledge of Azure SQL Database
+1. Basic knowledge of OpenAI
+2. Basic knowledge of LangChain
+3. Intermediate knowledge of Azure SQL Database
 
 Environment:
 1. Python: 3.11.0
