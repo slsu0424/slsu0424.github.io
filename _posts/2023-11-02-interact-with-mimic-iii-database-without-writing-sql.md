@@ -12,7 +12,7 @@ This tutorial continues on from the previous [tutorial](https://slsu0424.github.
 
 Pre-requisites:
 1. Knowledge of OpenAI
-2. Knowledge of Langchain
+2. Knowledge of LangChain
 3. Knowledge of Azure SQL Database
 
 Environment:
