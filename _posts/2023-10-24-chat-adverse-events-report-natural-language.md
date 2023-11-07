@@ -17,7 +17,7 @@ This tutorial will explore using LLMs and LangChain to chat with an adverse even
 
 Pre-requisites:
 1. Basic knowledge of OpenAI
-2. Basic knowledge of Langchain
+2. Basic knowledge of LangChain
 3. Basic of Streamlit
 
 Environment:
