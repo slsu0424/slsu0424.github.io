@@ -29,11 +29,11 @@ All resources can be found [here](https://github.com/slsu0424/langchain-ade-publ
 
 
 ## Generate an ADE report
-Individual Case Reports for adverse events can be requested through the <a href="https://www.fda.gov/drugs/questions-and-answers-fdas-adverse-event-reporting-system-faers/instructions-requesting-individual-case-reports" target="_blank">FDA</a>.  
+Individual Case Reports for adverse events are typically requested through the <a href="https://www.fda.gov/drugs/questions-and-answers-fdas-adverse-event-reporting-system-faers/instructions-requesting-individual-case-reports" target="_blank">FDA</a>.  
 
 A sample report would look like this:
 
-<a href="https://www.researchgate.net/publication/271223596_Automatically_Recognizing_Medication_and_Adverse_Event_Information_From_Food_and_Drug_Administration's_Adverse_Event_Reporting_System_Narratives?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6Il9kaXJlY3QiLCJwYWdlIjoiX2RpcmVjdCJ9fQ">
+<a href="https://www.researchgate.net/publication/271223596_Automatically_Recognizing_Medication_and_Adverse_Event_Information_From_Food_and_Drug_Administration's_Adverse_Event_Reporting_System_Narratives?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6Il9kaXJlY3QiLCJwYWdlIjoiX2RpcmVjdCJ9fQ" target="_blank">
   <img src="/assets/images/2023-10/sample-AERS-Report.png" alt="aers" width="750" height="670">
 </a>
 
