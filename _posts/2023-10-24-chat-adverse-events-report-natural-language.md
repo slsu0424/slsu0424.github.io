@@ -11,7 +11,7 @@ What is the value of LLMs in healthcare, specificially when it comes to chatbot 
 
 Fast forward to today, and the chat fervor has only grown stronger.  This has crossed over into the healthcare domain, with articles even appearing in Nature exploring [LLMs in medicine](https://www.nature.com/articles/s41591-023-02448-8).  The technology's potential to streamline administrative processes or provide relevant patient information at the bedside is very appealing. 
 
-From a technical lens, this was a topic I explored in my September [talk](https://www.meetup.com/cloud-data-driven/events/294617896/) on LLMs.  I had the chance to walk through 2 examples that covered integrating LLMs with LangChain, and LLMs with SQL databases.  
+From a technical lens, this was a topic I explored in my September [talk](https://www.meetup.com/cloud-data-driven/events/294617896/) on LLMs.  I had the opportunity to walk through 2 examples that covered integrating LLMs with LangChain, and LLMs with SQL databases.  
 
 This tutorial will explore using LLMs and LangChain to chat with an adverse events report.
 
