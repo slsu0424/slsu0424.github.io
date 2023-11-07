@@ -76,7 +76,7 @@ os.environ["OPENAI_API_KEY"] = API_KEY
 
 
 ## Use LangChain to load documents into a vector store
-[Langchain](https://docs.langchain.com/docs/) is a framework for developing applications powered by LLMs.  The main idea is that developers can "chain" different components around an LLM to create more powerful use cases.  
+[LangChain](https://docs.langchain.com/docs/) is a framework for developing applications powered by LLMs.  The main idea is that developers can "chain" different components around an LLM to create more powerful use cases.  
 
 Hence, we can "chain" an LLM to another component, such as a document.
 
