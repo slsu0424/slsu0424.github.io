@@ -137,7 +137,7 @@ With the Streamlit app loaded, we can ask a question of the ADE document:
 ## Conclusion
 In this tutorial, we explored using LLMs and Langchain to retrieve information from an adverse events report.  Langchain is a framework that enables building of LLM-based applications, such as a chatbot.  We then used Streamlit as a web app front-end to ask questions of the document.  This is a powerful use case by which users can dialogue with a healthcare document using natural language.
 
-I would be interested to explore with different types of documents (i.e., Standards of Care guidelines for [Diabetes](https://diabetesjournals.org/care/issue/46/Supplement_1)), and building out a more robust GUI.  I will explore these in a future post.
+I would be interested to explore with different types of documents (i.e., Standards of Care guidelines for [Diabetes](https://diabetesjournals.org/care/issue/46/Supplement_1)), and building out an advanced UI with Streamlit.  I will explore these in a future post.
 
 
 ## References
