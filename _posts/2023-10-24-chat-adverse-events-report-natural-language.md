@@ -27,7 +27,7 @@ All resources can be found [here](https://github.com/slsu0424/langchain-ade-publ
 
 
 ## Generate an ADE report
-The standard for obtaining Individual Case Reports for adverse events is through the [FDA](https://www.fda.gov/drugs/questions-and-answers-fdas-adverse-event-reporting-system-faers/instructions-requesting-individual-case-reports).  However, for the purposes of this tutorial, I decided to use OpenAI's [ChatGPT](https://chat.openai.com/) (GPT-3.5) to generate a synthetic adverse events report.  I chose warfarin, as it is in the class of drugs that have resulted in [serious adverse drug reactions](https://www.ncbi.nlm.nih.gov/books/NBK519025/).
+Individual Case Reports for adverse events can be requested through the <a href="https://www.fda.gov/drugs/questions-and-answers-fdas-adverse-event-reporting-system-faers/instructions-requesting-individual-case-reports" target="_blank">FDA</a>.  For the purposes of this tutorial, I decided to use OpenAI's <a href="https://chat.openai.com/" target="_blank">ChatGPT</a> (GPT-3.5) to generate a synthetic adverse events report.  I chose warfarin, as it is in the class of drugs that have resulted in [serious adverse drug reactions](https://www.ncbi.nlm.nih.gov/books/NBK519025/).
 
 These were the series of prompts I used to generate the final [output](https://github.com/slsu0424/langchain-ade-public/blob/main/ade.pdf):
 
@@ -134,7 +134,7 @@ With the Streamlit app loaded, we can ask a question of the ADE document:
 
 
 ## Conclusion
-In this tutorial, we explored two examples of how to use LLMs to interact with healthcare data.  First, we looked at integrating LLMs with Langchain to quickly build a chat-enabled application.  This is a powerful use cases by which users can interact with various kinds of healthcare data, without having to write code.  
+In this tutorial, we explored using LLMs and Langchain to retrieve information from an adverse events report.  Langchain is a framework that enables building of LLM-based applications, such as a text-based Q&A bot.  We then used Streamlit as a front-end to ask questions of the document.  This is a powerful use cases by which users can interact with various kinds of healthcare data, without having to write code.  
 
 
 ## References
@@ -143,6 +143,6 @@ In this tutorial, we explored two examples of how to use LLMs to interact with h
 + <https://chat.openai.com/>
 + <https://www.ncbi.nlm.nih.gov/books/NBK519025/>
 + <https://github.com/hwchase17/chat-your-data/blob/master/blogpost.md>
-+ <https://platform.openai.com/>>
++ <https://platform.openai.com/>
 + <https://python.langchain.com/>
 + <https://medium.com/@kbdhunga/enhancing-conversational-ai-the-power-of-langchains-question-answer-framework-4974e1cab3cf>
