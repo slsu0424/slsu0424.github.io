@@ -11,7 +11,7 @@ What is the value of LLMs in healthcare, specificially when it comes to chatbot 
 
 Fast forward to today, and the chat fervor has only grown stronger.  This has crossed over into the healthcare domain, with articles even appearing in Nature exploring [LLMs in medicine](https://www.nature.com/articles/s41591-023-02448-8).  The technology's potential to streamline administrative processes or provide relevant patient information at the bedside is very appealing. 
 
-From a technical lens, this was a topic I explored in my September [talk](https://www.meetup.com/cloud-data-driven/events/294617896/) on LLMs.  I had the chance to walk through 2 examples that covered integrating LLMs with LangChain, and LLMs with SQL databases.  
+From a technical lens, this was a topic I explored in my September [talk](https://www.meetup.com/cloud-data-driven/events/294617896/) on LLMs.  I had the opportunity to walk through 2 examples that covered integrating LLMs with LangChain, and LLMs with SQL databases.  
 
 This tutorial will explore using LLMs and LangChain to chat with an adverse events report.
 
@@ -28,7 +28,7 @@ All resources can be found [here](https://github.com/slsu0424/langchain-ade-publ
 
 
 ## Generate an ADE report
-Individual Case Reports for adverse events can be requested through the <a href="https://www.fda.gov/drugs/questions-and-answers-fdas-adverse-event-reporting-system-faers/instructions-requesting-individual-case-reports" target="_blank">FDA</a>.  For the purposes of this tutorial, I decided to use OpenAI's <a href="https://chat.openai.com/" target="_blank">ChatGPT</a> (GPT-3.5) to generate a synthetic adverse events report.  I chose warfarin, as it is in the class of drugs that have resulted in <a href="https://www.ncbi.nlm.nih.gov/books/NBK519025/" target="_blank">serious adverse drug reactions</a>.
+Individual Case Reports for adverse events can be requested through the <a href="https://www.fda.gov/drugs/questions-and-answers-fdas-adverse-event-reporting-system-faers/instructions-requesting-individual-case-reports" target="_blank">FDA</a>.  For the purpose of this tutorial, I decided to use OpenAI's <a href="https://chat.openai.com/" target="_blank">ChatGPT</a> (GPT-3.5) to generate a synthetic adverse events report.  I chose warfarin, as it is in the class of drugs that have resulted in <a href="https://www.ncbi.nlm.nih.gov/books/NBK519025/" target="_blank">serious adverse drug reactions</a>.
 
 These were the series of prompts I used to generate the final [output](https://github.com/slsu0424/langchain-ade-public/blob/main/ade.pdf):
 
@@ -137,7 +137,7 @@ With the Streamlit app loaded, we can ask a question of the ADE document:
 ## Conclusion
 In this tutorial, we explored using LLMs and Langchain to retrieve information from an adverse events report.  Langchain is a framework that enables building of LLM-based applications, such as a chatbot.  We then used Streamlit as a web app front-end to ask questions of the document.  This is a powerful use case by which users can dialogue with a healthcare document using natural language.
 
-I would be interested to explore with different types of documents (i.e., Standards of Care guidelines for [Diabetes](https://diabetesjournals.org/care/issue/46/Supplement_1)), and building out a more robust GUI.  I will explore these in a future post.
+I would be interested to explore with different types of documents (i.e., Standards of Care guidelines for [Diabetes](https://diabetesjournals.org/care/issue/46/Supplement_1)), and building out an advanced UI with Streamlit.  I will explore these in a future post.
 
 
 ## References
