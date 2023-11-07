@@ -28,7 +28,7 @@ All resources can be found [here](https://github.com/slsu0424/langchain-ade-publ
 
 
 ## Generate an ADE report
-Individual Case Reports for adverse events can be requested through the <a href="https://www.fda.gov/drugs/questions-and-answers-fdas-adverse-event-reporting-system-faers/instructions-requesting-individual-case-reports" target="_blank">FDA</a>.  For the purposes of this tutorial, I decided to use OpenAI's <a href="https://chat.openai.com/" target="_blank">ChatGPT</a> (GPT-3.5) to generate a synthetic adverse events report.  I chose warfarin, as it is in the class of drugs that have resulted in <a href="https://www.ncbi.nlm.nih.gov/books/NBK519025/" target="_blank">serious adverse drug reactions</a>.
+Individual Case Reports for adverse events can be requested through the <a href="https://www.fda.gov/drugs/questions-and-answers-fdas-adverse-event-reporting-system-faers/instructions-requesting-individual-case-reports" target="_blank">FDA</a>.  For the purpose of this tutorial, I decided to use OpenAI's <a href="https://chat.openai.com/" target="_blank">ChatGPT</a> (GPT-3.5) to generate a synthetic adverse events report.  I chose warfarin, as it is in the class of drugs that have resulted in <a href="https://www.ncbi.nlm.nih.gov/books/NBK519025/" target="_blank">serious adverse drug reactions</a>.
 
 These were the series of prompts I used to generate the final [output](https://github.com/slsu0424/langchain-ade-public/blob/main/ade.pdf):
 
