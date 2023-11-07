@@ -8,7 +8,7 @@ categories: [ langChain, ChatGPT, python, tutorial ]
 #image: assets/images/2023-10/ade.jpg
 image: assets/images/2023-10/meds.jpg
 ---
-What is the value of LLMs in healthcare, specificially when it comes to chatbot capabilities?  Can they really "understand" healthcare data and produce meaningful insights?  In my experience, chatbots were nothing more than clunky and impersonal customer service agents.  However, a March 2022 [article](https://www.nytimes.com/2022/03/03/technology/ai-chatbot.html) shed light on a new generation of chatbots - ones that were actually going to be more intelligent and helpful.
+What is the value of LLMs in healthcare, specificially when it comes to chatbot capabilities?  Can they really "understand" healthcare data to produce meaningful insights?  In my experience, chatbots were nothing more than clunky and impersonal customer service agents.  However, a March 2022 [article](https://www.nytimes.com/2022/03/03/technology/ai-chatbot.html) shed light on a new generation of chatbots - ones that were actually going to be more intelligent and helpful.
 
 Fast forward to today, and the chat fervor has only grown stronger.  This has crossed over into the healthcare domain, with articles even appearing in Nature exploring [LLMs in medicine](https://www.nature.com/articles/s41591-023-02448-8).  The technology's potential to streamline administrative processes or provide relevant patient information at the bedside is very appealing. 
 
