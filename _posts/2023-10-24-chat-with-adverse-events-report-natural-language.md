@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Summarize an adverse events report with LLMs"
+title:  "Summarize an Adverse Events report with LLMs"
 author: sandy
 categories: [ langChain, ChatGPT, python, tutorial ]
 #image: assets/images/2023-10/shutterstock_2188258735_license_resize.png
@@ -130,7 +130,7 @@ response = index.query(
   chain_type = 'stuff')
 ```
 
-Under the hood, we pass in the **ChatOpenAI** model (gpt-3.5-turbo) and set the **temperature**.  The temperature controls the randomness of the output generated (closer to 1 will generate a more creative response).  For **chain_type = 'stuff'**, this combines the question and relevant document chunks into a single prompt to pass to the LLM.
+Under the hood, we pass in the **ChatOpenAI** model (gpt-3.5-turbo) and set the **temperature**.  The temperature controls the randomness of the output generated (closer to 1 will generate a more creative response).  **chain_type = 'stuff'** combines the question and relevant document chunks into a single prompt to pass to the LLM.
 
 This visual shows the overall workflow:
 
