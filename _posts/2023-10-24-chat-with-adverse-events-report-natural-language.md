@@ -14,7 +14,7 @@ Fast forward to today, and the chat fervor has only grown stronger.  This has cr
 
 From a technical lens, this was a topic I explored in my September [talk](https://www.meetup.com/cloud-data-driven/events/294617896/) on LLMs.  I had the opportunity to walk through 2 examples that covered integrating LLMs with LangChain, and LLMs with SQL databases.  
 
-This tutorial will explore using LLMs and LangChain to chat with an adverse events report.
+This tutorial will explore using LLMs and LangChain to summarize an adverse events report.
 
 Pre-requisites:
 1. Basic knowledge of OpenAI
@@ -115,8 +115,8 @@ With [Streamlit](https://streamlit.io/), we set up a simple web app to allow use
 
 ```python
 # Display the page title and the text box for the user to ask the question
-st.title('🦜 Query your PDF document')
-prompt = st.text_input("Enter your question to query your PDF documents")
+st.title('🦜 LangChain: Chat with Adverse Events Report')
+prompt = st.text_input("Enter your question")
 ```
 
 
@@ -125,12 +125,12 @@ When a user passes in a question, the store is queried to retrieve the data that
 
 ```python
 response = index.query(
-  llm=OpenAI(model_name="gpt-3.5-turbo", temperature=0.2), 
+  llm=ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.2), 
   question = prompt, 
   chain_type = 'stuff')
 ```
 
-Under the hood, we pass in the OpenAI model (gpt-3.5-turbo) and set the **temperature**.  The temperature controls the randomness of the output generated (closer to 1 will generate a more creative response).  For **chain_type = 'stuff'**, this combines the question and relevant document chunks into a single prompt to pass to the LLM.
+Under the hood, we pass in the **ChatOpenAI** model (gpt-3.5-turbo) and set the **temperature**.  The temperature controls the randomness of the output generated (closer to 1 will generate a more creative response).  For **chain_type = 'stuff'**, this combines the question and relevant document chunks into a single prompt to pass to the LLM.
 
 This visual shows the overall workflow:
 
