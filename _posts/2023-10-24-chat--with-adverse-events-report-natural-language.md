@@ -22,8 +22,9 @@ Pre-requisites:
 3. Basic knowledge of Streamlit
 
 Environment:
-1. Python: 3.11.0
-2. OS: MacOS 11.7.3
+1. OS: MacOS 12.7.1
+2. Python: 3.11
+3. VS Code: 1.84.1
 
 All resources can be found [here](https://github.com/slsu0424/langchain-ade-public).
 
