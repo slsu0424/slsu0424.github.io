@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Chat with an adverse events report using natural language"
+title:  "Summarize an ADE narrative using natural language"
 author: sandy
 categories: [ langChain, ChatGPT, python, tutorial ]
 #image: assets/images/2023-10/shutterstock_2188258735_license_resize.png
@@ -22,8 +22,9 @@ Pre-requisites:
 3. Basic knowledge of Streamlit
 
 Environment:
-1. Python: 3.11.0
-2. OS: MacOS 11.7.3
+1. OS: MacOS 12.7.1
+2. Python: 3.11
+3. VS Code: 1.84.1
 
 All resources can be found [here](https://github.com/slsu0424/langchain-ade-public).
 
@@ -41,7 +42,7 @@ A sample report would look like this:
 
 For the purpose of this tutorial, I decided to use OpenAI's <a href="https://chat.openai.com/" target="_blank">ChatGPT</a> (GPT-3.5) to generate a synthetic adverse events report.  I chose warfarin, as it is in the class of drugs that have resulted in <a href="https://www.ncbi.nlm.nih.gov/books/NBK519025/" target="_blank">serious adverse drug reactions</a>.
 
-These were the series of prompts I used to generate the final [output](https://github.com/slsu0424/langchain-ade-public/blob/main/ade.pdf):
+These were the series of prompts I used to generate the final [report](https://github.com/slsu0424/langchain-ade-public/blob/main/ade.pdf):
 
 "Create an adverse event report related to warfarin.  Limit to 250 words."  
 "Remove the Reporting Authority section"  
