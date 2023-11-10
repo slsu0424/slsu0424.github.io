@@ -115,7 +115,7 @@ With [Streamlit](https://streamlit.io/), we set up a simple web app to allow use
 
 ```python
 # Display the page title and the text box for the user to ask the question
-st.title('🦜 LangChain: Chat with the Adverse Events Report')
+st.title('🦜 LangChain: Chat with Adverse Events Report')
 prompt = st.text_input("Enter your question")
 ```
 
@@ -125,12 +125,12 @@ When a user passes in a question, the store is queried to retrieve the data that
 
 ```python
 response = index.query(
-  llm=OpenAI(model_name="gpt-3.5-turbo", temperature=0.2), 
+  llm=ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.2), 
   question = prompt, 
   chain_type = 'stuff')
 ```
 
-Under the hood, we pass in the OpenAI model (gpt-3.5-turbo) and set the **temperature**.  The temperature controls the randomness of the output generated (closer to 1 will generate a more creative response).  For **chain_type = 'stuff'**, this combines the question and relevant document chunks into a single prompt to pass to the LLM.
+Under the hood, we pass in the **ChatOpenAI** model (gpt-3.5-turbo) and set the **temperature**.  The temperature controls the randomness of the output generated (closer to 1 will generate a more creative response).  For **chain_type = 'stuff'**, this combines the question and relevant document chunks into a single prompt to pass to the LLM.
 
 This visual shows the overall workflow:
 
