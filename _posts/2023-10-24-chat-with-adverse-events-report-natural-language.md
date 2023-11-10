@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Summarize an adverse events report with LLMs"
+title:  "Summarize an Adverse Events report with LLMs"
 author: sandy
 categories: [ langChain, ChatGPT, python, tutorial ]
 #image: assets/images/2023-10/shutterstock_2188258735_license_resize.png
