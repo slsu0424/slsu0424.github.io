@@ -14,7 +14,7 @@ Fast forward to today, and the chat fervor has only grown stronger.  This has cr
 
 From a technical lens, this was a topic I explored in my September [talk](https://www.meetup.com/cloud-data-driven/events/294617896/) on LLMs.  I had the opportunity to walk through 2 examples that covered integrating LLMs with LangChain, and LLMs with SQL databases.  
 
-This tutorial will explore using LLMs and LangChain to chat with an adverse events report.
+This tutorial will explore using LLMs and LangChain to summarize an adverse events report.
 
 Pre-requisites:
 1. Basic knowledge of OpenAI
@@ -115,8 +115,8 @@ With [Streamlit](https://streamlit.io/), we set up a simple web app to allow use
 
 ```python
 # Display the page title and the text box for the user to ask the question
-st.title('🦜 Query your PDF document')
-prompt = st.text_input("Enter your question to query your PDF documents")
+st.title('🦜 LangChain: Chat with the Adverse Events Report')
+prompt = st.text_input("Enter your question")
 ```
 
 
