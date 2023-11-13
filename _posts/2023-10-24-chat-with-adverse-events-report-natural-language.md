@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Summarize an Adverse Events report with LLMs"
+title:  "Innovate Adverse Events reporting with LLMs"
 author: sandy
 categories: [ langChain, ChatGPT, python, tutorial ]
-#image: assets/images/2023-10/shutterstock_2188258735_license_resize.png
-#image: assets/images/2023-10/stock-photo-chatgpt-chat-bot-screen-seen-on-smartphone-and-laptop-display-with-chat-gpt-login-screen-on-the-2237752713.jpg
-#image: assets/images/2023-10/ade.jpg
-image: assets/images/2023-10/meds.jpg
+#image: assets/images/2023-10/meds.jpg
+image: assets/images/2023-10/shutterstock_2269334607_license_resize.png
 ---
+Patient safety continues to be an [issue](https://www.nbcnews.com/health/health-news/nearly-1-4-us-hospital-patients-experience-harmful-event-study-finds-rcna65119) in 2023, with nearly 1 in 4 patients experiencing an adverse event upon admission, according to the [New England Journal of Medicine](https://www.nejm.org/doi/full/10.1056/NEJMsa2206117).  Nearly 40% of adverse events were related to medications given in the hospital, underscoring the importance .  
+
 What is the value of LLMs in healthcare, specificially when it comes to chatbot capabilities?  Can they really "understand" healthcare data to produce meaningful insights?  In my experience, chatbots were nothing more than clunky and impersonal customer service agents.  However, a March 2022 [article](https://www.nytimes.com/2022/03/03/technology/ai-chatbot.html) shed light on a new generation of chatbots - ones that were actually going to be more intelligent and helpful.
 
 Fast forward to today, and the chat fervor has only grown stronger.  This has crossed over into the healthcare domain, with articles even appearing in Nature exploring [LLMs in medicine](https://www.nature.com/articles/s41591-023-02448-8).  The technology's potential to streamline administrative processes or provide relevant patient information at the bedside is very appealing. 
