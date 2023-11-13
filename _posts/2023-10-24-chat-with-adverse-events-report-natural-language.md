@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "NLP at the FDA: Exploring LLMs in reviewing Adverse Events"
+title:  "NLP at the FDA: Using LLMs to review Adverse Events"
 author: sandy
 categories: [ langChain, ChatGPT, python, tutorial ]
 #image: assets/images/2023-10/meds.jpg
