@@ -106,8 +106,8 @@ The default settings to note are:
 - Embedding - uses **OpenAIEmbeddings**  to generate embeddings
 - Storage - embeddings are stored in **Chroma**, an open-source vector store 
 
-## Set up Streamlit app to query document
-With [Streamlit](https://streamlit.io/), we set up a simple web app to allow users to ask questions of the ADE document.  
+## Set up Streamlit app
+With [Streamlit](https://streamlit.io/), we set up a simple web app to allow users to ask questions of the document:  
 
 ```python
 # Display the page title and the text box for the user to ask the question
@@ -136,7 +136,7 @@ This visual shows the overall workflow:
 
 
 ## Let's ask some questions
-With the Streamlit app loaded, we can ask a question of the adverse events document:
+With the Streamlit app running, we can ask questions in natural language:
 
 
 
@@ -145,7 +145,9 @@ With the Streamlit app loaded, we can ask a question of the adverse events docum
 ## Conclusion
 In this tutorial, we explored using LLMs and Langchain to retrieve information from an adverse events report.  Langchain is a framework that enables building of LLM-based applications, such as a chatbot.  We then used Streamlit as a web app front-end to ask questions of the document.  This is a powerful use case by which users can dialogue with a healthcare document using natural language.
 
-I would be interested to explore with different types of documents (i.e., Standards of Care guidelines for [Diabetes](https://diabetesjournals.org/care/issue/46/Supplement_1)), and building out an advanced UI with Streamlit.  I will explore these in a future post.
+Future considerations:
+- Use different types of documents (i.e., Standards of Care guidelines for [Diabetes](https://diabetesjournals.org/care/issue/46/Supplement_1)) 
+- Build out an advanced UI with Streamlit
 
 
 ## References
