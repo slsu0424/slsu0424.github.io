@@ -131,7 +131,8 @@ Under the hood, we pass in the **ChatOpenAI** model (gpt-3.5-turbo) and set the 
 This visual shows the overall workflow:
 
 <a href="https://python.langchain.com/docs/modules/data_connection/vectorstores/#:~:text=One%20of%20the%20most%20common%20ways%20to%20store,that%20are%20%27most%20similar%27%20to%20the%20embedded%20query">
-  <img src="/assets/images/2023-10/langchain3.png" alt="langchain3" width="750" height="311">
+  <img src="/assets/images/2023-10/langchain3.png" alt="langchain3">
+<!--   <img src="/assets/images/2023-10/langchain3.png" alt="langchain3" width="750" height="311"> -->
 </a>
 
 
