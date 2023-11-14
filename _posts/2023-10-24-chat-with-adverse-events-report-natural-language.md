@@ -136,7 +136,7 @@ This visual shows the overall workflow:
 
 
 ## Let's ask some questions
-With the Streamlit app running, we can ask a question of the adverse events document:
+With the Streamlit app running, we can ask questions in natural language:
 
 
 
