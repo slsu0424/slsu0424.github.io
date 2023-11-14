@@ -153,7 +153,11 @@ Future considerations:
 
 
 ## References
-+ <https://www.nature.com/articles/s41591-023-02448-8>
++ <https://www.nbcnews.com/health/health-news/nearly-1-4-us-hospital-patients-experience-harmful-event-study-finds-rcna65119>
++ <https://www.fda.gov/drugs/surveillance/questions-and-answers-fdas-adverse-event-reporting-system-faers>
++ <https://www.fda.gov/about-fda/nctr-research-focus-areas/bertox-initiative>
++ <https://www.fda.gov/drugs/questions-and-answers-fdas-adverse-event-reporting-system-faers/instructions-requesting-individual-case-reports>
++ <https://www.researchgate.net/publication/271223596_Automatically_Recognizing_Medication_and_Adverse_Event_Information_From_Food_and_Drug_Administration's_Adverse_Event_Reporting_System_Narratives?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6Il9kaXJlY3QiLCJwYWdlIjoiX2RpcmVjdCJ9fQ>
 + <https://chat.openai.com/>
 + <https://www.ncbi.nlm.nih.gov/books/NBK519025/>
 + <https://github.com/hwchase17/chat-your-data/blob/master/blogpost.md>
