@@ -10,7 +10,7 @@ Patient safety continues to be an issue in 2023, with nearly [1 in 4 patients](h
 
 For the former, consumers and healthcare professionals are encouraged to report adverse events to the FDA.  The information is captured in the [FDA Adverse Events Reporting System](https://www.fda.gov/drugs/surveillance/questions-and-answers-fdas-adverse-event-reporting-system-faers), which is used to improve product safety and protect public health.  Over the years, [NLP](https://www.lifescienceleader.com/doc/how-the-fda-views-natural-language-processing-0001) has been used to improve FDA case analysis, such as identifying causal relationships between products and adverse events.   AI continues to play an important role at the FDA, including this latest initiative to apply [LLMs](https://www.fda.gov/about-fda/nctr-research-focus-areas/bertox-initiative) to improve efficiency and accuracy.  
 
-From a technical lens, this was a topic I explored in my September [talk](https://www.meetup.com/cloud-data-driven/events/294617896/) on LLMs.  I covered 2 examples of using LLMs with LangChain, and LLMs with SQL databases, for healthcare use cases.  
+From a technical lens, this was a topic I explored in my September [talk](https://www.meetup.com/cloud-data-driven/events/294617896/) on LLMs.  I covered 2 examples of using LLMs with LangChain, and LLMs with SQL databases.  
 
 This tutorial will demonstrate using LLMs and LangChain to quickly summarize an adverse events report.
 
