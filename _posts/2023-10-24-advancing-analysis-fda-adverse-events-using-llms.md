@@ -6,7 +6,7 @@ categories: [ langChain, ChatGPT, python, tutorial ]
 #image: assets/images/2023-10/meds.jpg
 image: assets/images/2023-10/shutterstock_2269334607_license_resize.png
 ---
-Patient safety continues to be an issue in 2023, with nearly [1 in 4 patients](https://www.nbcnews.com/health/health-news/nearly-1-4-us-hospital-patients-experience-harmful-event-study-finds-rcna65119) experiencing an adverse event upon admission.  Up to 40% of adverse events were related to medications given in the hospital, underscoring the importance of post-market drug surveillance and sufficient bedside resources.  
+Patient safety continues to be an issue in 2023, with nearly [1 in 4 patients](https://www.nbcnews.com/health/health-news/nearly-1-4-us-hospital-patients-experience-harmful-event-study-finds-rcna65119) experiencing an adverse event (ADE) upon admission.  Up to 40% of adverse events were related to medications given in the hospital, underscoring the importance of post-market drug surveillance and sufficient bedside resources.  
 
 For the former, consumers and healthcare professionals are encouraged to report adverse events to the FDA.  The information is captured in the [FDA Adverse Events Reporting System](https://www.fda.gov/drugs/surveillance/questions-and-answers-fdas-adverse-event-reporting-system-faers), which is used to improve product safety and protect public health.  Over the years, [NLP](https://www.lifescienceleader.com/doc/how-the-fda-views-natural-language-processing-0001) has been used in FDA case analysis, such as identifying causal relationships between products and adverse events.   AI continues to play an important role there, including the use of [LLMs](https://www.fda.gov/about-fda/nctr-research-focus-areas/bertox-initiative) to improve efficiency and accuracy.  
 
@@ -35,7 +35,7 @@ Individual Case Reports for adverse events are typically requested through the F
 </a>
 </p>
 
-For the purpose of this tutorial, I used OpenAI's <a href="https://chat.openai.com/" target="_blank">ChatGPT</a> (GPT-3.5) to generate a synthetic adverse events report.  I chose warfarin, as it is in the class of drugs that have resulted in <a href="https://www.ncbi.nlm.nih.gov/books/NBK519025/" target="_blank">serious adverse drug reactions</a>.
+For the purpose of this tutorial, I used OpenAI's <a href="https://openai.com/" target="_blank">ChatGPT</a> (GPT-3.5) to generate a synthetic adverse events report.  I chose warfarin, as it is in the class of drugs that have resulted in <a href="https://www.ncbi.nlm.nih.gov/books/NBK519025/" target="_blank">serious adverse drug reactions</a>.
 
 These were the series of prompts I used to generate the final [report](https://github.com/slsu0424/langchain-ade-public/blob/main/ade.pdf):
 
@@ -143,7 +143,7 @@ With the Streamlit app running, we can ask questions in natural language:
 
 
 ## Conclusion
-In this tutorial, we explored using LLMs and Langchain to retrieve information from an adverse events report.  Langchain is a framework that enables building of LLM-based applications.  We also used Streamlit to build a web app to ask questions of the document.  Although NLP has been around for a long time, I was surprised by the simplicity of using natural language prompts and the ease of setting up the app.
+In this tutorial, we explored using LLMs and Langchain to retrieve information from an adverse events report.  LangChain is a framework that enables building of LLM-based applications, such as a chatbot.  Although NLP has been around for a long time, I was plesantly surprised by the simplicity of using natural language prompts and the human-like responses.  I can see how this type of technology could quickly allow  
 
 Future considerations:
 - Use different types of documents (i.e., Standards of Care guidelines for [Diabetes](https://diabetesjournals.org/care/issue/46/Supplement_1)) 
@@ -155,10 +155,9 @@ Future considerations:
 + <https://www.fda.gov/drugs/surveillance/questions-and-answers-fdas-adverse-event-reporting-system-faers>
 + <https://www.lifescienceleader.com/doc/how-the-fda-views-natural-language-processing-0001>
 + <https://www.fda.gov/about-fda/nctr-research-focus-areas/bertox-initiative>
-+ <https://chat.openai.com/>
++ <https://openai.com/>
 + <https://www.ncbi.nlm.nih.gov/books/NBK519025/>
 + <https://github.com/hwchase17/chat-your-data/blob/master/blogpost.md>
-+ <https://platform.openai.com/>
 + <https://python.langchain.com/>
 + <https://medium.com/@kbdhunga/enhancing-conversational-ai-the-power-of-langchains-question-answer-framework-4974e1cab3cf>
 + <https://streamlit.io/>
