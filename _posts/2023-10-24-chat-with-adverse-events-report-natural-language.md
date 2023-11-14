@@ -12,7 +12,7 @@ For the former, consumers and healthcare professionals are encouraged to [report
 
 What is the potential value of LLMs in this domain?  This was a topic I explored in my September [talk](https://www.meetup.com/cloud-data-driven/events/294617896/) on LLMs.  I had the opportunity to walk through 2 examples that covered integrating LLMs with LangChain, and LLMs with SQL databases.  
 
-This tutorial will explore using LLMs and LangChain to summarize an adverse events report.
+This tutorial will show how to use LLMs and LangChain to summarize an adverse events report.
 
 Pre-requisites:
 1. Basic knowledge of OpenAI
