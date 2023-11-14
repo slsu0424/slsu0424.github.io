@@ -4,7 +4,7 @@ title:  "Advancing analysis of FDA Adverse Events using LLMs"
 author: sandy
 categories: [ langChain, ChatGPT, python, tutorial ]
 #image: assets/images/2023-10/meds.jpg
-image: assets/images/2023-10/shutterstock_2269334607_license_resize.png
+image: assets/images/2023-10/shutterstock_1510230056_license_resize.png
 ---
 Patient safety continues to be an issue in 2023, with nearly [1 in 4 patients](https://www.nbcnews.com/health/health-news/nearly-1-4-us-hospital-patients-experience-harmful-event-study-finds-rcna65119) experiencing an adverse event (AE) upon admission.  Up to 40% of adverse events were related to medications given in the hospital, underscoring the importance of post-market drug surveillance and sufficient bedside resources.  
 
