@@ -135,8 +135,8 @@ This visual shows the overall workflow:
 </a>
 
 
-## Let's ask some questions
-With the Streamlit app running, we can ask questions in natural language:
+## Let's summarize
+With the Streamlit app running, we can chat with the document by asking a question followed by a summarization task:
 
 ![streamlit1](/assets/images/2023-10/streamlit1.png)
 
