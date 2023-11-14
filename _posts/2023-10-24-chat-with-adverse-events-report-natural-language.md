@@ -16,8 +16,6 @@ This tutorial will demonstrate using LLMs and LangChain to quickly summarize an 
 
 Pre-requisites:
 1. Basic knowledge of OpenAI
-2. Basic knowledge of LangChain
-3. Basic knowledge of Streamlit
 
 Environment:
 1. OS: MacOS 12.7.1
