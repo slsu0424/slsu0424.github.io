@@ -146,7 +146,7 @@ With the Streamlit app running, we can ask questions in natural language:
 In this tutorial, we explored using LLMs and LangChain to retrieve information from an adverse events report.  LangChain is a framework that enables building of LLM-based applications, such as a chatbot.  Although NLP has been around for a long time, I was surprised by the simplicity of using natural language prompts and the human-like responses.  I see a strong potential for using LLMs to advance FDA operations to improve product safety.
 
 Future considerations:
-- [Standards of Care](https://diabetesjournals.org/care/issue/46/Supplement_1) in Diabetes for document processing
+- Use [Standards of Care](https://diabetesjournals.org/care/issue/46/Supplement_1) in Diabetes for document processing
 - Build out an advanced UI with Streamlit
 
 
