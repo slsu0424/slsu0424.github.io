@@ -155,7 +155,6 @@ Future considerations:
 + <https://www.fda.gov/drugs/surveillance/questions-and-answers-fdas-adverse-event-reporting-system-faers>
 + <https://www.lifescienceleader.com/doc/how-the-fda-views-natural-language-processing-0001>
 + <https://www.fda.gov/about-fda/nctr-research-focus-areas/bertox-initiative>
-+ <https://www.fda.gov/drugs/questions-and-answers-fdas-adverse-event-reporting-system-faers/instructions-requesting-individual-case-reports>
 + <https://chat.openai.com/>
 + <https://www.ncbi.nlm.nih.gov/books/NBK519025/>
 + <https://github.com/hwchase17/chat-your-data/blob/master/blogpost.md>
