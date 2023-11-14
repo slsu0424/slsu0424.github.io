@@ -8,7 +8,7 @@ image: assets/images/2023-10/shutterstock_2269334607_license_resize.png
 ---
 Patient safety continues to be an issue in 2023, with nearly [1 in 4 patients](https://www.nbcnews.com/health/health-news/nearly-1-4-us-hospital-patients-experience-harmful-event-study-finds-rcna65119) experiencing an adverse event upon admission.  Up to 40% of adverse events were related to medications given in the hospital, underscoring the importance of post-market drug surveillance and appropriate bedside staffing.  
 
-For the former, consumers and healthcare professionals are encouraged to report adverse events to the FDA.  The information is captured in the [FDA Adverse Events Reporting System](https://www.fda.gov/drugs/surveillance/questions-and-answers-fdas-adverse-event-reporting-system-faers), which is used to improve product safety and protect public health.  Over the years, [NLP](https://www.lifescienceleader.com/doc/how-the-fda-views-natural-language-processing-0001) has been used to improve FDA case analysis, such as identifying causal relationships between products and adverse events.   AI continues to play an important role there, now applying [LLMs](https://www.fda.gov/about-fda/nctr-research-focus-areas/bertox-initiative) to improve efficiency and accuracy.  
+For the former, consumers and healthcare professionals are encouraged to report adverse events to the FDA.  The information is captured in the [FDA Adverse Events Reporting System](https://www.fda.gov/drugs/surveillance/questions-and-answers-fdas-adverse-event-reporting-system-faers), which is used to improve product safety and protect public health.  Over the years, [NLP](https://www.lifescienceleader.com/doc/how-the-fda-views-natural-language-processing-0001) has been used to improve FDA case analysis, such as identifying causal relationships between products and adverse events.   AI continues to play an important role there, now using [LLMs](https://www.fda.gov/about-fda/nctr-research-focus-areas/bertox-initiative) to improve efficiency and accuracy.  
 
 rom a technical lens, this was a topic I explored in my September [talk](https://www.meetup.com/cloud-data-driven/events/294617896/) on LLMs.  I covered 2 healthcare examples of using LLMs with LangChain, and LLMs with SQL databases. 
 
@@ -157,7 +157,6 @@ Future considerations:
 + <https://www.fda.gov/drugs/surveillance/questions-and-answers-fdas-adverse-event-reporting-system-faers>
 + <https://www.fda.gov/about-fda/nctr-research-focus-areas/bertox-initiative>
 + <https://www.fda.gov/drugs/questions-and-answers-fdas-adverse-event-reporting-system-faers/instructions-requesting-individual-case-reports>
-+ <https://www.researchgate.net/publication/271223596_Automatically_Recognizing_Medication_and_Adverse_Event_Information_From_Food_and_Drug_Administration's_Adverse_Event_Reporting_System_Narratives?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6Il9kaXJlY3QiLCJwYWdlIjoiX2RpcmVjdCJ9fQ>
 + <https://chat.openai.com/>
 + <https://www.ncbi.nlm.nih.gov/books/NBK519025/>
 + <https://github.com/hwchase17/chat-your-data/blob/master/blogpost.md>
