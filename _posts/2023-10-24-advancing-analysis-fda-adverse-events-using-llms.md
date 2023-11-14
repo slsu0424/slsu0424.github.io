@@ -32,7 +32,8 @@ A sample report would look like this:
 
 <p style="text-align: center;">
 <a href="https://www.researchgate.net/publication/271223596_Automatically_Recognizing_Medication_and_Adverse_Event_Information_From_Food_and_Drug_Administration's_Adverse_Event_Reporting_System_Narratives?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6Il9kaXJlY3QiLCJwYWdlIjoiX2RpcmVjdCJ9fQ" target="_blank">
-  <img src="/assets/images/2023-10/sample-AERS-Report.png" alt="aers" width="750" height="670" alig>
+  <img src="/assets/images/2023-10/sample-AERS-Report.png" alt="aers" alig>
+<!-- <img src="/assets/images/2023-10/sample-AERS-Report.png" alt="aers" width="750" height="670" alig> -->
 </a>
 </p>
 
@@ -130,7 +131,7 @@ Under the hood, we pass in the **ChatOpenAI** model (gpt-3.5-turbo) and set the 
 
 This visual shows the overall workflow:
 
-<a href="https://python.langchain.com/docs/modules/data_connection/vectorstores/#:~:text=One%20of%20the%20most%20common%20ways%20to%20store,that%20are%20%27most%20similar%27%20to%20the%20embedded%20query">
+<a href="https://python.langchain.com/docs/modules/data_connection/vectorstores/">
   <img src="/assets/images/2023-10/langchain3.png" alt="langchain3">
 <!--   <img src="/assets/images/2023-10/langchain3.png" alt="langchain3" width="750" height="311"> -->
 </a>
@@ -144,7 +145,7 @@ With the Streamlit app running, we can ask questions in natural language:
 
 
 ## Conclusion
-In this tutorial, we explored using LLMs and Langchain to retrieve information from an adverse events report.  Langchain is a framework that enables building of LLM-based applications, such as a chatbot.  We then used Streamlit as a UI to ask questions of the document.  Although NLP has been around for a long time, I was surprised by the simplicity of using natural language prompts, the human-like quality of the responses, and the ease of setting up the Q&A app.
+In this tutorial, we explored using LLMs and Langchain to retrieve information from an adverse events report.  Langchain is a framework that enables building of LLM-based applications, such as a chatbot.  We also used Streamlit to build a web app to ask questions of the document.  Although NLP has been around for a long time, I was surprised by the simplicity of using natural language prompts and the ease of setting up the app.
 
 Future considerations:
 - Use different types of documents (i.e., Standards of Care guidelines for [Diabetes](https://diabetesjournals.org/care/issue/46/Supplement_1)) 
