@@ -39,10 +39,10 @@ For the purpose of this tutorial, I used OpenAI's <a href="https://openai.com/" 
 
 These were the series of prompts I used to generate the final [report](https://github.com/slsu0424/langchain-ade-public/blob/main/ade.pdf):
 
-"Create an adverse event report related to warfarin. Limit to 250 words."
-"Remove the Reporting Authority section"
-"expand to 500 words"
-"Include the Reporting Authority section"
+"Create an adverse event report related to warfarin. Limit to 250 words."  
+"Remove the Reporting Authority section"  
+"expand to 500 words"  
+"Include the Reporting Authority section"  
 
 A snippet of the document is below:
 
