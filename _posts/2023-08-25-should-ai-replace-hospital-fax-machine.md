@@ -35,13 +35,13 @@ But there could also be a cloud outage, a malicious entity that wants to conduct
 There's nothing wrong with marginal improvements.  Is it better to misdiagnose 1 patient or 1000 patients?  A small error allows time to investigate and course correct.
 
 
-## A world-class AI doctor in your pocket: A pipe dream?
+## A world-class AI doctor in your pocket: Do I really want one?
 Good technology works seamlessly and increases productivity.  Much like today's travel apps, it would be amazing to have a doctor that knows everything about me in the future.  There are some models already out there that attempt this - Livongo by Teladoc, as an example.  However, even if it has been covered insurance, I haven't really used it unless out of necessity.  
 
-I fear that an AI doctor might sit as one of those unused apps on my phone.  Most people can find a satisfactory answer to a medical question via an internet search, coupled with an in-person visit to the doctor's office.  Would having an AI doctor change things for the better?  Perhaps.  In my mind, having a virtual doctor could not replace the dialogue I would like to have with a real human being.
+An AI doctor might sit as one of those unused apps on my phone.  Most people can find a satisfactory answer to a medical question via an internet search, coupled with an in-person visit to the doctor's office.  Would having an AI doctor change things for the better?  Maybe.  However, having a virtual doctor could not replace the dialogue I would like to have with a real human being.
 
 However, I like the idea of AI enabling earlier diagnosis - this is one use case I believe will see more rapid adoption. 
 
 ## Conclusion
 
-I appreciated this insightful and hopeful article for the future of healthcare.  Perhaps with this new wave of AI, there is a renewed commitment by people and processes to enable a better healthcare experience for everyone.  Finally, may we put that old fax machine to rest.
+I appreciated this insightful and hopeful article for the future of healthcare.  Perhaps with this new wave of AI, there is a renewed commitment by people and processes to enable a better healthcare experience for everyone.  Perhaps we can put that fax machine to rest.
