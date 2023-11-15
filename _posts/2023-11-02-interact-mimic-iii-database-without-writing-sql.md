@@ -18,8 +18,8 @@ Pre-requisites:
 Environment:
 1. Python: 3.11.0
 2. OS: MacOS 11.7.3
-3. DB: Azure SQL 12.0.2000.8
-4. DB Driver: ODBC driver 18 for SQL Server
+3. Database: Azure SQL 12.0.2000.8
+4. Database Driver: ODBC driver 18 for SQL Server
 
 
 All resources can be found [here](https://github.com/slsu0424/langchain-sql-public).
