@@ -76,7 +76,7 @@ Navigate to [OpenAI](https://platform.openai.com/) to obtain the API key.  This 
 
 ```python
 # set API keys to authenticate requests to the API
-API_KEY = "Replace with API key"
+API_KEY = "<API key>"
 
 os.environ["OPENAI_API_KEY"] = API_KEY
 ```
@@ -87,11 +87,11 @@ os.environ["OPENAI_API_KEY"] = API_KEY
 
 Hence, we can "chain" an LLM to another component, such as a document.
 
-LangChain has many different methods to load documents.  **PyPDFLoader** is used to load in a PDF document and create a vector representation using the **VectorStoreIndexCreator**:
+LangChain has many different methods to load documents.  **TextLoader** is used to load in a text document and create a vector representation using the **VectorStoreIndexCreator**:
 
 ```python
 # Load PDF document
-loaders = PyPDFLoader("Replace with path to PDF document")
+loaders = TextLoader("<Path to text document>")
 
 # Create a vector representation of the loaded document
 index = VectorstoreIndexCreator().from_loaders([loaders])
