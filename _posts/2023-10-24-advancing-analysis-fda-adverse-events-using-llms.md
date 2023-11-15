@@ -44,7 +44,7 @@ These were the series of prompts I used to generate the final [report](https://g
 
 A snippet of the document is below:
 
->On June 15, 2023, Ms. Emily Johnson, a 58-year-old female with a medical history of deep vein thrombosis and pulmonary embolism, experienced a severe adverse event related to the use of warfarin..
+>On June 15, 2023, Ms. Emily Johnson, a 58-year-old female with a medical history of deep vein thrombosis and pulmonary embolism, experienced a severe adverse event related to the use of warfarin.
 
 
 ## Q&A application overview
@@ -133,8 +133,8 @@ This visual shows the overall workflow:
 </a>
 
 
-## Let's summarize
-With the Streamlit app running, we prompt the document by asking a question followed by a summarization task:
+## Run the Streamlit app
+With the app running, we prompt the document by asking a question followed by a summarization task:
 
 ![streamlit1](/assets/images/2023-10/streamlit1.png)
 
