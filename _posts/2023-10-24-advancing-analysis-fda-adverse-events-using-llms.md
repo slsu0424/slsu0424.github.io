@@ -76,7 +76,7 @@ Navigate to [OpenAI](https://platform.openai.com/) to obtain the API key.  This 
 
 ```python
 # set API keys to authenticate requests to the API
-API_KEY = "Replace with your API key"
+API_KEY = "Replace with API key"
 
 os.environ["OPENAI_API_KEY"] = API_KEY
 ```
