@@ -141,7 +141,7 @@ With the Streamlit app running, we prompt the document by asking a question foll
 ![streamlit1](/assets/images/2023-10/streamlit1.png)
 
 ## Conclusion
-In this tutorial, we explored using LLMs and LangChain to retrieve information from an adverse events report.  LangChain is a framework that enables building of LLM-based applications, such as a chatbot.  Although NLP has been around for a long time, I was surprised by the simplicity of using natural language prompts and the human-like responses.  I see potential for using LLMs to advance FDA operations and improve product safety.
+In this tutorial, we explored using LLMs and LangChain to retrieve information from an adverse events report.  LangChain is a framework that enables building of LLM-based applications, such as a chatbot.  Although NLP has been around for a long time, I was surprised by the simplicity of using natural language prompts and the human-like responses.  I see potential for using LLMs to increase FDA efficiency and improve product safety.
 
 Future considerations:
 - Use [Standards of Care in Diabetes](https://diabetesjournals.org/care/issue/46/Supplement_1) for document processing
