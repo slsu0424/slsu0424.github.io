@@ -39,14 +39,12 @@ For the purpose of this tutorial, I used OpenAI's <a href="https://openai.com/" 
 
 These were the series of prompts I used to generate the final [report](https://github.com/slsu0424/langchain-ade-public/blob/main/ade.pdf):
 
-"Create an adverse event report related to warfarin.  Limit to 250 words."  
-"Remove the Reporting Authority section"  
-"expand to 500 words"  
-"Include the Reporting Authority section"  
+"Create an adverse event report related to warfarin.  Limit to 500 words."  
+"Make up a date"  
 
 A snippet of the document is below:
 
->On October 20, 2023, at 09:30 AM, the patient, John Doe, experienced a significant adverse event related to the anticoagulant medication warfarin. Mr. Doe, a 68-year-old male with a history of atrial fibrillation, had been taking warfarin (5 mg daily) for the past three years as prescribed by his cardiologist.
+>On June 15, 2023, Ms. Emily Johnson, a 58-year-old female with a medical history of deep vein thrombosis and pulmonary embolism, experienced a severe adverse event related to the use of warfarin..
 
 
 ## Q&A application overview
@@ -141,7 +139,7 @@ With the Streamlit app running, we prompt the document by asking a question foll
 ![streamlit1](/assets/images/2023-10/streamlit1.png)
 
 ## Conclusion
-In this tutorial, we explored using LLMs and LangChain to retrieve information from an adverse events report.  LangChain is a framework that enables building of LLM-based applications, such as a chatbot.  Although NLP has been around for a long time, I was surprised by the simplicity of using natural language prompts and the human-like responses.  I see the potential for using LLMs to increase FDA efficiency and improve product safety.
+In this tutorial, we explored using LLMs and LangChain to retrieve information from an adverse events report.  LangChain is a framework that enables building of LLM-based applications, such as a chatbot.  Although NLP has been around for a long time, I was surprised by the simplicity of using natural language prompts to generate coherent responses.  I think this technology will make adverse events analysis more efficient and accurate, hopefully improving product safety in a timely manner.
 
 Future considerations:
 - Use [Standards of Care in Diabetes](https://diabetesjournals.org/care/issue/46/Supplement_1) for document processing
