@@ -39,10 +39,10 @@ For the purpose of this tutorial, I used OpenAI's <a href="https://openai.com/" 
 
 These were the series of prompts I used to generate the final [report](https://github.com/slsu0424/langchain-ade-public/blob/main/ade.pdf):
 
-"Create an adverse event report related to warfarin. Limit to 250 words."
-"Remove the Reporting Authority section"
-"expand to 500 words"
-"Include the Reporting Authority section"
+"Create an adverse event report related to warfarin. Limit to 250 words."  
+"Remove the Reporting Authority section"  
+"expand to 500 words"  
+"Include the Reporting Authority section"  
 
 A snippet of the document is below:
 
@@ -76,7 +76,7 @@ Navigate to [OpenAI](https://platform.openai.com/) to obtain the API key.  This 
 
 ```python
 # set API keys to authenticate requests to the API
-API_KEY = "Replace with your API key"
+API_KEY = "Replace with API key"
 
 os.environ["OPENAI_API_KEY"] = API_KEY
 ```
@@ -141,7 +141,7 @@ With the Streamlit app running, we prompt the document by asking a question foll
 ![streamlit1](/assets/images/2023-10/streamlit1.png)
 
 ## Conclusion
-In this tutorial, we explored using LLMs and LangChain to retrieve information from an adverse events report.  LangChain is a framework that enables building of LLM-based applications, such as a chatbot.  Although NLP has been around for a long time, I was surprised by the simplicity of using natural language prompts to generate coherent responses.  I think this technology will make adverse events analysis process more efficient, improving product safety in a timely manner.
+In this tutorial, we explored using LLMs and LangChain to retrieve information from an adverse events report.  LangChain is a framework that enables building of LLM-based applications, such as a chatbot.  Although NLP has been around for a long time, I was surprised by the simplicity of using natural language prompts to generate coherent responses.  I think LLMs will make the adverse events analysis more efficient, and improve product safety in a timely manner.
 
 Future considerations:
 - Use [Standards of Care in Diabetes](https://diabetesjournals.org/care/issue/46/Supplement_1) for document processing
