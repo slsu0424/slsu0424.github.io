@@ -39,12 +39,14 @@ For the purpose of this tutorial, I used OpenAI's <a href="https://openai.com/" 
 
 These were the series of prompts I used to generate the final [report](https://github.com/slsu0424/langchain-ade-public/blob/main/ade.pdf):
 
-"Create an adverse event report related to warfarin.  Limit to 500 words."  
-"Make up a date"  
+"Create an adverse event report related to warfarin. Limit to 250 words."
+"Remove the Reporting Authority section"
+"expand to 500 words"
+"Include the Reporting Authority section"
 
 A snippet of the document is below:
 
->On June 15, 2023, Ms. Emily Johnson, a 58-year-old female with a medical history of deep vein thrombosis and pulmonary embolism, experienced a severe adverse event related to the use of warfarin.
+>On October 20, 2023, at 09:30 AM, the patient, John Doe, experienced a significant adverse event related to the anticoagulant medication warfarin. Mr. Doe, a 68-year-old male with a history of atrial fibrillation, had been taking warfarin (5 mg daily) for the past three years as prescribed by his cardiologist.
 
 
 ## Q&A application overview
