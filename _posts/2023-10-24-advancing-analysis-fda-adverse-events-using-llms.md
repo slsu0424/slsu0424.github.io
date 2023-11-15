@@ -26,11 +26,11 @@ All resources can be found [here](https://github.com/slsu0424/langchain-ade-publ
 
 
 ## Generate an ADE report
-Individual Case Reports for adverse events are typically requested through the FDA, and a sample report is shown below:
+Individual Case Reports for adverse events are typically requested through the FDA.  A sample report is shown below:
 
 <p style="text-align: center;">
 <a href="https://www.researchgate.net/publication/271223596_Automatically_Recognizing_Medication_and_Adverse_Event_Information_From_Food_and_Drug_Administration's_Adverse_Event_Reporting_System_Narratives?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6Il9kaXJlY3QiLCJwYWdlIjoiX2RpcmVjdCJ9fQ" target="_blank">
-  <img src="/assets/images/2023-10/sample-AERS-Report.png" alt="aers" alig>
+  <img src="/assets/images/2023-10/sample-AERS-Report.png" alt="faers">
 <!-- <img src="/assets/images/2023-10/sample-AERS-Report.png" alt="aers" width="750" height="670" alig> -->
 </a>
 </p>
@@ -141,7 +141,7 @@ With the Streamlit app running, we prompt the document by asking a question foll
 ![streamlit1](/assets/images/2023-10/streamlit1.png)
 
 ## Conclusion
-In this tutorial, we explored using LLMs and LangChain to retrieve information from an adverse events report.  LangChain is a framework that enables building of LLM-based applications, such as a chatbot.  Although NLP has been around for a long time, I was surprised by the simplicity of using natural language prompts and the human-like responses.  I see t potential for using LLMs to increase FDA efficiency and improve product safety.
+In this tutorial, we explored using LLMs and LangChain to retrieve information from an adverse events report.  LangChain is a framework that enables building of LLM-based applications, such as a chatbot.  Although NLP has been around for a long time, I was surprised by the simplicity of using natural language prompts and the human-like responses.  I see the potential for using LLMs to increase FDA efficiency and improve product safety.
 
 Future considerations:
 - Use [Standards of Care in Diabetes](https://diabetesjournals.org/care/issue/46/Supplement_1) for document processing
