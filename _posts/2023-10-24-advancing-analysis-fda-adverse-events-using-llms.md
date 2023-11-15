@@ -91,7 +91,7 @@ LangChain has many different methods to load documents.  **TextLoader** is used 
 
 ```python
 # Load PDF document
-loaders = TextLoader('<Path to text document>')
+loaders = TextLoader('<path to text document>')
 
 # Create a vector representation of the loaded document
 index = VectorstoreIndexCreator().from_loaders([loaders])
