@@ -91,7 +91,7 @@ LangChain has many different methods to load documents.  **PyPDFLoader** is used
 
 ```python
 # Load PDF document
-loaders = PyPDFLoader('<path to PDF document>.pdf')
+loaders = PyPDFLoader('<path to PDF>.pdf')
 
 # Create a vector representation of the loaded document
 index = VectorstoreIndexCreator().from_loaders([loaders])
@@ -135,8 +135,8 @@ This visual shows the overall workflow:
 </a>
 
 
-## Run the Streamlit app
-With the app running, we prompt the document by asking a question followed by a summarization task:
+## Let's summarize
+With the Streamlit app running, we prompt the document by asking a question followed by a summarization task:
 
 ![streamlit1](/assets/images/2023-10/streamlit1.png)
 
