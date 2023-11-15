@@ -52,7 +52,7 @@ try:
     db = SQLDatabase.from_uri(conn_str)
 ```
 ## Set the OpenAI API Key
-Navigate to [OpenAI](https://platform.openai.com/) to obtain the API key.  This will be needed to authenticate requests to the API.
+Navigate to [OpenAI](https://www.openai.com/) to obtain the API key.  This will be needed to authenticate requests to the API.
 
 ```python
 # set API keys to authenticate requests to the API
@@ -150,5 +150,5 @@ In this tutorial, we learned how to use LLMs to interact with the MIMIC-III data
 + <https://learn.microsoft.com/en-us/azure/azure-sql/database/connect-query-python>
 + <https://learn.microsoft.com/en-us/sql/connect/odbc/linux-mac/known-issues-in-this-version-of-the-driver>
 + <https://api.python.langchain.com/en/latest/utilities/langchain.utilities.sql_database.SQLDatabase.html>
-+ <https://platform.openai.com/>
++ <https://www.openai.com/>
 + <https://python.langchain.com/docs/integrations/toolkits/sql_database>
