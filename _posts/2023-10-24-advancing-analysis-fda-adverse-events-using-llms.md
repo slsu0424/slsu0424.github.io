@@ -50,7 +50,7 @@ A snippet of the document is below:
 
 
 ## Q&A application overview
-This LangChain [blog post](https://github.com/hwchase17/chat-your-data/blob/master/blogpost.md) provides a high-level overview for building a text-based Q&A application.  
+This LangChain [blog post](https://github.com/hwchase17/chat-your-data/blob/master/blogpost.md) provides a high-level overview for building a Q&A application.  
 
 The main steps include:
 
@@ -85,7 +85,7 @@ os.environ["OPENAI_API_KEY"] = API_KEY
 ## Use LangChain to load documents into a vector store
 [LangChain](https://docs.langchain.com/docs/) is a framework for developing applications powered by LLMs.  The main idea is that developers can "chain" different components around an LLM to create more powerful use cases.  
 
-Hence, we can "chain" an LLM to a document.
+Hence, we can connect LLMs to documents.
 
 LangChain has many different methods to load documents.  **TextLoader** is used to load in a text document and create a vector representation using the **VectorStoreIndexCreator**:
 
@@ -142,7 +142,7 @@ With the Streamlit app running, we prompt the document by asking a question foll
 
 
 ## Conclusion
-In this tutorial, we explored using LLMs and LangChain to retrieve information from an adverse events report.  LangChain is a framework that enables building of LLM-based applications, such as a chatbot.  Although NLP has been around for a long time, I was surprised by the simplicity of using natural language prompts.  I think LLMs will make the adverse events analysis more efficient, and improve product safety.
+In this tutorial, we explored using LLMs and LangChain to retrieve information from an adverse events report.  LangChain is a framework that enables building of LLM-based applications, such as a chatbot.  Although NLP is not new, I was surprised by the simplicity of using natural language prompts and the human-like quality of responses.  I think LLMs will make the adverse events analysis more efficient, and improve product safety.
 
 I would be interested in using different types of documents (i.e., Standards of Care), and building out an advanced UI with Streamlit. I will explore these in a future post.
 
