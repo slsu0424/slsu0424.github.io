@@ -14,7 +14,7 @@ From a technical lens, this was a topic I explored in my September [talk](https:
 
 This tutorial will demonstrate using LLMs and LangChain to quickly summarize an adverse events report.
 
-Pre-requisites:
+Prerequisites:
 - Basic knowledge of OpenAI
 
 Environment:
