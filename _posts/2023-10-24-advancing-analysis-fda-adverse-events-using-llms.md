@@ -15,12 +15,12 @@ From a technical lens, this was a topic I explored in my September [talk](https:
 This tutorial will demonstrate using LLMs and LangChain to quickly summarize an adverse events report.
 
 Pre-requisites:
-1. Basic knowledge of OpenAI
+- Basic knowledge of OpenAI
 
 Environment:
-1. OS: MacOS 12.7.1
-2. Python: 3.11
-3. VS Code: 1.84.1
+- OS: MacOS 12.7.1
+- Python: 3.11
+- VS Code: 1.84.1
 
 All resources can be found [here](https://github.com/slsu0424/langchain-ade-public).
 
