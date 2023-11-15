@@ -144,7 +144,7 @@ With the Streamlit app running, we prompt the document by asking a question foll
 ## Conclusion
 In this tutorial, we explored using LLMs and LangChain to retrieve information from an adverse events report.  LangChain is a framework that enables building of LLM-based applications.  Although NLP has been around for a long time, I was surprised by the simplicity of using natural language prompts and the human-like responses.  I think LLMs will make the adverse events analysis more efficient, and improve product safety.
 
-I would be interested to explore with different types of documents (i.e., Standards of Care guidelines), and building out an advanced UI with Streamlit. I will explore these in a future post.
+I would be interested to explore with different types of documents (i.e., Standards of Care), and building out an advanced UI with Streamlit. I will explore these in a future post.
 
 
 ## References
