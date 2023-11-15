@@ -6,9 +6,9 @@ categories: [ langChain, ChatGPT, python, tutorial ]
 image: assets/images/2023-10/shutterstock_2269334607_license_resize.png
 #image: assets/images/2023-10/shutterstock_1510230056_license_resize.png
 ---
-Patient safety continues to be an issue in 2023, with nearly [1 in 4 patients](https://www.nbcnews.com/health/health-news/nearly-1-4-us-hospital-patients-experience-harmful-event-study-finds-rcna65119) experiencing an adverse event upon admission.  Up to 40% of adverse events were related to medications given in the hospital, underscoring the importance of post-market drug surveillance and adequate bedside staffing.  
+Patient safety continues to be an issue in 2023, with nearly [1 in 4 patients](https://www.nbcnews.com/health/health-news/nearly-1-4-us-hospital-patients-experience-harmful-event-study-finds-rcna65119) experiencing an adverse event upon admission.  Up to 40% of adverse events were related to medications given in the hospital, underscoring the importance of post-market drug surveillance and sufficient bedside staffing.  
 
-For the former, consumers and healthcare professionals are encouraged to report adverse events to the FDA.  The information is captured in the [FDA Adverse Events Reporting System](https://www.fda.gov/drugs/surveillance/questions-and-answers-fdas-adverse-event-reporting-system-faers), which is used to improve product safety and protect public health.  [NLP](https://www.lifescienceleader.com/doc/how-the-fda-views-natural-language-processing-0001) has been used in FDA case analysis, such as identifying causal relationships between products and adverse events.   AI continues to play an important role there, including the use of [LLMs](https://www.fda.gov/about-fda/nctr-research-focus-areas/bertox-initiative) to improve efficiency and accuracy.  
+For the former, consumers and healthcare professionals are encouraged to report adverse events to the FDA.  The information is captured in the [FDA Adverse Events Reporting System](https://www.fda.gov/drugs/surveillance/questions-and-answers-fdas-adverse-event-reporting-system-faers), which is used to improve product safety and protect public health.  [NLP](https://www.lifescienceleader.com/doc/how-the-fda-views-natural-language-processing-0001) has been used in adverse events analysis, such as identifying causal relationships between products and adverse events.   AI continues to play an important role there, including the use of [LLMs](https://www.fda.gov/about-fda/nctr-research-focus-areas/bertox-initiative) to improve efficiency and accuracy.  
 
 From a technical lens, this was a topic I explored in my September [talk](https://www.meetup.com/cloud-data-driven/events/294617896/) on LLMs.  I covered 2 healthcare examples of using LLMs with LangChain, and LLMs with SQL databases. 
 
@@ -44,7 +44,7 @@ These were the series of prompts I used to generate the final [report](https://g
 
 A snippet of the document is below:
 
->On June 15, 2023, Ms. Emily Johnson, a 58-year-old female with a medical history of deep vein thrombosis and pulmonary embolism, experienced a severe adverse event related to the use of warfarin..
+>On June 15, 2023, Ms. Emily Johnson, a 58-year-old female with a medical history of deep vein thrombosis and pulmonary embolism, experienced a severe adverse event related to the use of warfarin.
 
 
 ## Q&A application overview
@@ -133,13 +133,13 @@ This visual shows the overall workflow:
 </a>
 
 
-## Let's summarize
-With the Streamlit app running, we prompt the document by asking a question followed by a summarization task:
+## Run the Streamlit app
+With the app running, we prompt the document by asking a question followed by a summarization task:
 
 ![streamlit1](/assets/images/2023-10/streamlit1.png)
 
 ## Conclusion
-In this tutorial, we explored using LLMs and LangChain to retrieve information from an adverse events report.  LangChain is a framework that enables building of LLM-based applications, such as a chatbot.  Although NLP has been around for a long time, I was surprised by the simplicity of using natural language prompts to generate coherent responses.  I think this technology will make adverse events analysis more efficient and accurate, hopefully improving product safety in a timely manner.
+In this tutorial, we explored using LLMs and LangChain to retrieve information from an adverse events report.  LangChain is a framework that enables building of LLM-based applications, such as a chatbot.  Although NLP has been around for a long time, I was surprised by the simplicity of using natural language prompts to generate coherent responses.  I think this technology will make adverse events analysis process more efficient, improving product safety in a timely manner.
 
 Future considerations:
 - Use [Standards of Care in Diabetes](https://diabetesjournals.org/care/issue/46/Supplement_1) for document processing
