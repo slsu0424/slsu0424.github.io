@@ -7,7 +7,7 @@ categories: [ AI, healthcare ]
 image: assets/images/2023-08/istock_fax2.jpg
 ---
 
-VC firm Andressen Horowitz recently published an interesting [article](https://a16z.com/2023/08/02/where-will-ai-have-the-biggest-impact-healthcare/) on the newest AI technologies that will have a big impact on healthcare.  I read with guarded optimism, given AI's lack of success in healthcare over the last decade and during the [COVID-19 pandemic](https://hbr.org/2022/03/why-ai-failed-to-live-up-to-its-potential-during-the-pandemic).  While I see great potential, I I do not believe AI to have as much impact in a field where human connection is vital and insurance companies have a say.
+VC firm Andressen Horowitz recently published an interesting [article](https://a16z.com/2023/08/02/where-will-ai-have-the-biggest-impact-healthcare/) on the newest AI technologies that will have a big impact on healthcare.  I read with guarded optimism, given AI's lack of success in healthcare over the last decade and during the [COVID-19 pandemic](https://hbr.org/2022/03/why-ai-failed-to-live-up-to-its-potential-during-the-pandemic).  While I see great potential, I do not believe AI to have as much impact in a field where human connection is vital and insurance companies have a stake.
 
 ## Less (cumbersome) software, more productivity
 I love new technology.  I love it because it makes me more productive.  As I was booking holiday travel recently, I realized how *easy* it has become to do things on my own - on my own time, in my own way.  No calling a travel agent to arrange a trip.  No taking out a paper map to get to the hotel.  I don't think you'll find too many people who will complain about the convenience this provides.
@@ -22,6 +22,7 @@ That's not productivity.
 The article states that instead of healthtech companies developing new software, they'll develop "AI ‘people’ who are cheap, fast, cheerful and empathic.”  However, if I'm a patient, I want a human being to help me feel better.  The thought of a machine having empathy discounts any reason to see a doctor at all.
 
 A good piece of software is one that will handle the simple things like document capture, reconciliation, etc.  I agree with the article that the first revolution will be non-clinical use cases.  If AI can help us get past that hurdle, then I think we will have achieved productivity.
+
 
 ## Marginal improvements are worth the effort
 Having worked in high-tech technical roles over the last decade, I have seen the evolution of more advanced computing capabilities.  Working in big data and cloud platforms have shown the ability to create powerful solutions with seemingly limitless compute power.  I may even argue that next-gen AI solutions and the infrastructure that powers them will produce 10x the value that will displace outdated technologies.
