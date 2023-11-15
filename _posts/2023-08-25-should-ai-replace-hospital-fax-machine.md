@@ -6,7 +6,7 @@ categories: [ AI, healthcare ]
 #image: assets/images/2023-08/vecteezy.jpg
 image: assets/images/2023-08/istock_fax2.jpg
 ---
-VC firm Andressen Horowitz recently published an interesting [article](https://a16z.com/2023/08/02/where-will-ai-have-the-biggest-impact-healthcare/) on the newest AI technologies that will have a big impact on healthcare.  My first reaction was 'Haven't we seen this before?' and 'What makes things different *this* time around?'  While I see great potential, I remain cautious for AI to have as much impact in a field where human connection is vital.
+VC firm Andressen Horowitz recently published an interesting [article](https://a16z.com/2023/08/02/where-will-ai-have-the-biggest-impact-healthcare/) on the newest AI technologies that will have a big impact on healthcare.  I proceeded to read with cautious optimism, as AI's attempts in healthcare have failed to live up to its [potential](https://hbr.org/2022/03/why-ai-failed-to-live-up-to-its-potential-during-the-pandemic).  I asked myself, "Is this IBM Watson 2.0?"  What will make things different *this* time around?"   While I see great potential, I remain cautious for AI to have as much impact in a field where human connection is vital.
 
 ## Less (cumbersome) software, more productivity
 
