@@ -91,7 +91,7 @@ Hence, we can connect LLMs to documents.
 LangChain has many different methods to load documents.  **TextLoader** is used to load in a text document and create a vector representation using the **VectorStoreIndexCreator**:
 
 ```python
-# Load PDF document
+# Load text document
 loaders = TextLoader('<path to text document>')
 
 # Create a vector representation of the loaded document
@@ -120,10 +120,12 @@ prompt = st.text_input("Enter your question")
 When a user passes in a question, the store is queried to retrieve the data that is 'most similar' to the embedded query.
 
 ```python
-response = index.query(
-  llm=ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.2), 
-  question = prompt, 
-  chain_type = 'stuff')
+# get response from LLM
+if prompt:
+  response = index.query(
+    llm=ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.2), 
+    question = prompt, 
+    chain_type = 'stuff')
 ```
 
 Under the hood, we pass in the **ChatOpenAI** model (gpt-3.5-turbo) and set the **temperature**.  The temperature controls the randomness of the output generated (closer to 1 will generate a more creative response).  **chain_type = 'stuff'** combines the question and relevant document chunks into a single prompt to pass to the LLM.
