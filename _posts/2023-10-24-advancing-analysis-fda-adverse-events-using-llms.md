@@ -38,16 +38,16 @@ Individual Case Reports for adverse events are typically requested through the F
 
 For the purpose of this tutorial, I used OpenAI's <a href="https://openai.com/" target="_blank">ChatGPT</a> (GPT-3.5) to generate a synthetic adverse events report.  I chose warfarin, as it is in the class of drugs that have resulted in <a href="https://www.ncbi.nlm.nih.gov/books/NBK519025/" target="_blank">serious adverse drug reactions</a>.
 
-These were the series of prompts I used to generate the final [report](https://github.com/slsu0424/langchain-ade-public/blob/main/ade.pdf):
+These were the series of prompts I used to generate the final [report](https://github.com/slsu0424/langchain-ade-public/blob/main/ade.txt):
 
-"Create an adverse event report related to warfarin. Limit to 250 words."  
-"Remove the Reporting Authority section"  
-"expand to 500 words"  
-"Include the Reporting Authority section"  
+"Create an adverse event report for warfarin that is submitted to the FDA"
+"Fill out the report with hypothetical information"
+"Remove the placeholders [ ]"
+"Rewrite the event as a narrative, not a list"
 
 A snippet of the document is below:
 
->On October 20, 2023, at 09:30 AM, the patient, John Doe, experienced a significant adverse event related to the anticoagulant medication warfarin. Mr. Doe, a 68-year-old male with a history of atrial fibrillation, had been taking warfarin (5 mg daily) for the past three years as prescribed by his cardiologist.
+>On November 10, 2023, Mr. John Doe, a 65-year-old male with a medical history of hypertension and atrial fibrillation, was brought to our attention at ABC Medical Center. The patient had been prescribed warfarin (5 mg daily) for his atrial fibrillation.
 
 
 ## Q&A application overview
@@ -145,9 +145,9 @@ With the Streamlit app running, we prompt the document by asking a question foll
 
 
 ## Conclusion
-In this tutorial, we explored using LLMs and LangChain to retrieve information from an adverse events report.  LangChain is a framework that enables building of LLM-based applications, such as a chatbot.  Although NLP is not new, I was surprised by the simplicity of using natural language prompts and the human-like quality of responses.  I think LLMs will make the adverse events analysis more efficient, and improve product safety.
+In this tutorial, we explored using LLMs and LangChain to retrieve information from an adverse events report.  LangChain is a framework that enables building of LLM-based applications, such as a chatbot.  Although NLP is not new, I was surprised by the simplicity of using natural language prompts and the human-like quality of responses.  I think LLMs can make the adverse events analysis more efficient, and improve product safety.
 
-I would be interested in using different types of documents (i.e., Standards of Care), and building out an advanced UI with Streamlit. I will explore these in a future post.
+It would be interesting to test out LLMs on different types of documents (i.e., Standards of Care), and build out an advanced UI with Streamlit. I will explore these in a future post.
 
 
 ## References
