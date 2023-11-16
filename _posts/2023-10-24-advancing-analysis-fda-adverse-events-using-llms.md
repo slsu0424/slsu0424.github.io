@@ -91,7 +91,7 @@ Hence, we can connect LLMs to documents.
 LangChain has many different methods to load documents.  **TextLoader** is used to load in a text document and create a vector representation using the **VectorStoreIndexCreator**:
 
 ```python
-# Load PDF document
+# Load text document
 loaders = TextLoader('<path to text document>')
 
 # Create a vector representation of the loaded document
