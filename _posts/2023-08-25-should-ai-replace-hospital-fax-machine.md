@@ -3,8 +3,8 @@ layout: post
 title:  "Should AI replace the hospital fax machine?"
 author: sandy
 categories: [ AI, healthcare ]
-#image: assets/images/2023-08/vecteezy.jpg
-image: assets/images/2023-08/istock_fax2.jpg
+image: assets/images/2023-08/istockphoto-182175374-1024x1024.jpg
+#image: assets/images/2023-08/istock_fax2.jpg
 ---
 
 VC firm Andressen Horowitz recently published an interesting [article](https://a16z.com/2023/08/02/where-will-ai-have-the-biggest-impact-healthcare/) on the newest AI technologies that will have a big impact on healthcare.  I read with guarded optimism, given AI's lack of success in healthcare over the last decade and during the [COVID-19 pandemic](https://hbr.org/2022/03/why-ai-failed-to-live-up-to-its-potential-during-the-pandemic).  While I see great potential, I do not believe AI to have as much impact in a field where human connection is vital and insurance companies have a stake.
