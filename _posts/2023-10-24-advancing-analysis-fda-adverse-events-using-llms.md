@@ -145,7 +145,7 @@ With Streamlit running, we prompt the document by asking a question followed by 
 
 
 ## Conclusion
-In this tutorial, we explored using LLMs and LangChain to retrieve information from an adverse events report.  LangChain is a framework for building LLM-based applications, such as a chatbot.  Although NLP is not new, I was surprised by the ease of using natural language prompts to retrieve information.  I think LLMs have the potential to make adverse events analysis more efficient, and improve product safety.
+In this tutorial, we explored using LLMs and LangChain to retrieve information from an adverse events report.  LangChain is a framework for building LLM-based applications, such as a chatbot.  Although NLP is not new, I was surprised by the ease of using natural language prompts to retrieve information.  I think LLMs can make adverse events analysis more efficient, and improve product safety.
 
 It would be interesting to test out LLMs on different types of documents (i.e., Standards of Care), and build out an advanced UI with Streamlit. I will explore these in a future post.
 
