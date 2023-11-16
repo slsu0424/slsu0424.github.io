@@ -45,7 +45,7 @@ These were the series of prompts I used to generate the final [report](https://g
 "Remove the placeholders [ ]"  
 "Rewrite the event as a narrative, not a list"  
 
-A snippet of the document is below:
+A snippet of the report is below:
 
 >On November 10, 2023, Mr. John Doe, a 65-year-old male with a medical history of hypertension and atrial fibrillation, was brought to our attention at ABC Medical Center. The patient had been prescribed warfarin (5 mg daily) for his atrial fibrillation.
 
@@ -145,7 +145,7 @@ With Streamlit running, we prompt the document by asking a question followed by 
 
 
 ## Conclusion
-In this tutorial, we explored using LLMs and LangChain to retrieve information from an adverse events report.  LangChain is a framework that enables building of LLM-based applications, such as a chatbot.  Although NLP is not new, I was surprised by the ease of using natural language prompts to retrieve information.  I think LLMs can make the adverse events analysis more efficient, and improve product safety.
+In this tutorial, we explored using LLMs and LangChain to retrieve information from an adverse events report.  LangChain is a framework for building LLM-based applications, such as a chatbot.  Although NLP is not new, I was surprised by the ease of using natural language prompts to retrieve information.  I think LLMs can make adverse events analysis more efficient, and improve product safety.
 
 It would be interesting to test out LLMs on different types of documents (i.e., Standards of Care), and build out an advanced UI with Streamlit. I will explore these in a future post.
 
