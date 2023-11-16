@@ -139,7 +139,7 @@ This visual shows the overall workflow:
 
 
 ## Let's summarize
-With the Streamlit app running, we prompt the document by asking a question followed by a summarization task:
+With Streamlit running, we prompt the document by asking a question followed by a summarization task:
 
 ![streamlit1](/assets/images/2023-10/streamlit1.png)
 
