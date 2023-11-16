@@ -40,10 +40,10 @@ For the purpose of this tutorial, I used OpenAI's <a href="https://openai.com/" 
 
 These were the series of prompts I used to generate the final [report](https://github.com/slsu0424/langchain-ade-public/blob/main/ade.txt):
 
-"Create an adverse event report for warfarin that is submitted to the FDA"
-"Fill out the report with hypothetical information"
-"Remove the placeholders [ ]"
-"Rewrite the event as a narrative, not a list"
+"Create an adverse event report for warfarin that is submitted to the FDA"  
+"Fill out the report with hypothetical information"  
+"Remove the placeholders [ ]"  
+"Rewrite the event as a narrative, not a list"  
 
 A snippet of the document is below:
 
