@@ -6,9 +6,7 @@ categories: [ AI, healthcare ]
 image: assets/images/2023-08/iStock-170040960_license_resize.png
 ---
 
-
-<a href="https://a16z.com/2023/08/02/where-will-ai-have-the-biggest-impact-healthcare/" target="_blank">article</a>
-VC firm Andressen Horowitz recently published an interesting <a href="https://a16z.com/2023/08/02/where-will-ai-have-the-biggest-impact-healthcare/" target="_blank">article</a> on the newest AI technologies that will have a big impact on healthcare.  I read with guarded optimism, given AI's lack of success in healthcare over the last decade and during the [COVID-19 pandemic](https://hbr.org/2022/03/why-ai-failed-to-live-up-to-its-potential-during-the-pandemic).  While I see great potential, I do not believe AI to have as much impact in a field where human connection is vital.
+VC firm Andressen Horowitz recently published an <a href="https://a16z.com/2023/08/02/where-will-ai-have-the-biggest-impact-healthcare/" target="_blank">article</a> on how the latest AI technologies will have a big impact on healthcare.  Is it finally time for healthcare to bid good-bye to the trusted [fax machine](https://www.computerworld.com/article/3697270/the-fax-is-still-king-in-healthcare-and-its-not-going-away-anytime-soon.html)?  I read with guarded optimism, given AI's lack of success in healthcare over the last decade and during the [COVID-19 pandemic](https://hbr.org/2022/03/why-ai-failed-to-live-up-to-its-potential-during-the-pandemic).  While I see great potential, I do not believe AI to have as much impact in a field where human connection and privacy is vital.
 
 ## Less (cumbersome) software, more productivity
 I love new technology.  I love it because it makes me more productive.  As I was booking holiday travel recently, I realized how *easy* it has become to do things on my own - on my own time, in my own way.  No calling a travel agent to arrange a trip.  No taking out a paper map to get to the hotel.  I don't think you'll find too many people who will complain about the convenience this provides.
