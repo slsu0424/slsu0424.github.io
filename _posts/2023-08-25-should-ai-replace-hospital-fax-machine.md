@@ -38,7 +38,7 @@ There's nothing wrong with marginal improvements.  Is it better to misdiagnose 1
 ## A world-class AI doctor in your pocket: Do I really want one?
 Good technology works seamlessly and increases productivity.  Much like today's travel apps, it would be amazing to have a doctor that knows everything about me in the future.  There are some models already out there that attempt this - Livongo by Teladoc, as an example.  However, even if it is covered by insurance, I haven't really used it unless out of necessity.  
 
-An AI doctor might sit as one of those unused apps on my phone.  Most people can find a satisfactory answer to a medical question via an internet search, coupled with an in-person visit to the doctor's office.  Could having an AI doctor change things for the better?  Maybe.  However, having a virtual doctor would never replace a conversation with a real human being.
+An AI doctor might sit as one of those unused apps on my phone.  Most people can find a satisfactory answer to a medical question via an internet search, coupled with an in-person visit to the doctor's office.  Can an AI doctor change things for the better?  Maybe.  However, a virtual doctor will never replace a conversation with a real human being.
 
 However, I like the idea of AI enabling earlier diagnosis - this is one use case I believe will see more rapid adoption. 
 
