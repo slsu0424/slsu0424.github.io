@@ -121,7 +121,6 @@ When a user passes in a question, the store is queried to retrieve the data that
 
 ```python
 if prompt:
-  # get the resonse from LLM
   response = index.query(
     llm=ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.2), 
     question = prompt, 
