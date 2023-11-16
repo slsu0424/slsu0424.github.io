@@ -120,6 +120,7 @@ prompt = st.text_input("Enter your question")
 When a user passes in a question, the store is queried to retrieve the data that is 'most similar' to the embedded query.
 
 ```python
+# get response from LLM
 if prompt:
   response = index.query(
     llm=ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.2), 
