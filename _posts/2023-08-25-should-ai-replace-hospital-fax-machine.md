@@ -3,8 +3,7 @@ layout: post
 title:  "Should AI replace the hospital fax machine?"
 author: sandy
 categories: [ AI, healthcare ]
-#image: assets/images/2023-08/istockphoto-182175374-1024x1024.jpg
-image: assets/images/2023-08/istock_fax2.jpg
+image: assets/images/2023-08/iStock-170040960_license_resize.png
 ---
 
 
