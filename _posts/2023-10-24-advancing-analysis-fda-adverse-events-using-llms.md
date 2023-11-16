@@ -120,10 +120,12 @@ prompt = st.text_input("Enter your question")
 When a user passes in a question, the store is queried to retrieve the data that is 'most similar' to the embedded query.
 
 ```python
-response = index.query(
-  llm=ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.2), 
-  question = prompt, 
-  chain_type = 'stuff')
+if prompt:
+  # get the resonse from LLM
+  response = index.query(
+    llm=ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.2), 
+    question = prompt, 
+    chain_type = 'stuff')
 ```
 
 Under the hood, we pass in the **ChatOpenAI** model (gpt-3.5-turbo) and set the **temperature**.  The temperature controls the randomness of the output generated (closer to 1 will generate a more creative response).  **chain_type = 'stuff'** combines the question and relevant document chunks into a single prompt to pass to the LLM.
