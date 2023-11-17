@@ -22,13 +22,14 @@ Environment:
 3. Database: Azure SQL 12.0.2000.8
 4. Database Driver: ODBC driver 18 for SQL Server
 
+All resources can be found <a href="https://github.com/slsu0424/langchain-sql-public" target="_blank">here</a>.
 
-All resources can be found [here](https://github.com/slsu0424/langchain-sql-public).
 
 ## Load data into Azure SQL Database
 <a href="https://www.nature.com/articles/sdata201635" target="_blank">MIMIC-III</a> is a publicly available dataset comprising of de-identified data for > 40,000 critical care patients who stayed at the Beth Israel Deaconess Medical Center between 2001 and 2012
 
 Download the MIMIC-III <a href="https://physionet.org/content/mimiciii-demo/1.4/" target="_blank">files</a>, and load the [ADMISSIONS]() table into Azure SQL Database. 
+
 
 ## Connect to Azure SQL Database
 Next, we connect python to Azure SQL Database.  This [tutorial](https://learn.microsoft.com/en-us/azure/azure-sql/database/connect-query-python?view=azuresql) provides more details on the setup.  As there are known issues with the Microsoft ODBC Driver on MacOS, be sure to follow this [guide](https://learn.microsoft.com/en-us/sql/connect/odbc/linux-mac/known-issues-in-this-version-of-the-driver?view=sql-server-ver16) if errors are encountered.  
