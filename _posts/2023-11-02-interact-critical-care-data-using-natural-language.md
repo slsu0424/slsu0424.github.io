@@ -34,7 +34,7 @@ Download the MIMIC-III <a href="https://physionet.org/content/mimiciii-demo/1.4/
 ## Connect to Azure SQL Database
 Next, we connect python to Azure SQL Database.  This [tutorial](https://learn.microsoft.com/en-us/azure/azure-sql/database/connect-query-python?view=azuresql) provides more details on the setup.  As there are known issues with the Microsoft ODBC Driver on MacOS, be sure to follow this [guide](https://learn.microsoft.com/en-us/sql/connect/odbc/linux-mac/known-issues-in-this-version-of-the-driver?view=sql-server-ver16) if errors are encountered.  
 
-In my own experience, I had to make the following changes via Terminal:
+n my own experience, I had to make the following changes via Terminal:
 
 ```bash
 $ brew install openssl@1.1
