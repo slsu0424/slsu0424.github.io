@@ -52,7 +52,7 @@ try:
     db = SQLDatabase.from_uri(connectionString)
 ```
 ## Set the OpenAI API Key
-Navigate to [OpenAI](https://www.openai.com/) to obtain the API key.  This will be needed to authenticate requests to the API.
+Navigate to [OpenAI](https://www.openai.com/) to obtain the API Key.  This will be needed to authenticate requests to the API.
 
 ```python
 # set API keys to authenticate requests to the API
