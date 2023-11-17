@@ -48,7 +48,7 @@ Get the odbc connection string to create an [instance](https://api.python.langch
 # database uri
 connectionString = f"mssql+pyodbc://{username}:{password}@{server}/{database}?driver={driver}"
 
-try
+try:
     # create sql database instance from uri
     db = SQLDatabase.from_uri(connectionString)
 ```
