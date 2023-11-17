@@ -6,8 +6,8 @@ categories: [ langChain, ChatGPT, python, tutorial ]
 #image: assets/images/2023-10/shutterstock_2269334607_license_resize.png
 #image: assets/images/2023-10/shutterstock_1510230056_license_resize.png
 #image: assets/images/2023-10/istockphoto-pills.jpg
-image: assets/images/2023-10/istockphoto-1192445057-1024x1024.jpg
-#image: assets/images/2023-10/istockphoto-468132914-1024x1024.jpg
+#image: assets/images/2023-10/istockphoto-1192445057-1024x1024.jpg
+image: assets/images/2023-10/iStock-1192445057_license_resize.png
 
 ---
 
