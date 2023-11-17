@@ -19,8 +19,8 @@ Prerequisites:
 - Basic knowledge of OpenAI
 
 Environment:
+- Python: 3.11.6
 - OS: MacOS 12.7.1
-- Python: 3.11
 - VS Code: 1.84.1
 
 All resources can be found <a href="https://github.com/slsu0424/langchain-ade-public" target="_blank">here</a>.
