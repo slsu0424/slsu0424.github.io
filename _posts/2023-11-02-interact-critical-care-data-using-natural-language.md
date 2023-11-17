@@ -43,14 +43,14 @@ $ ln -s $(brew --prefix)/Cellar/openssl@1.1/$version $(brew --prefix)/opt/openss
 
 Get the odbc connection string to create an [instance](https://api.python.langchain.com/en/latest/utilities/langchain.utilities.sql_database.SQLDatabase.html) of the SQL database:
 ```python
-# connect python to sql server
+# connect python to azure sql db
 
 # database uri
-conn_str = f"mssql+pyodbc://{username}:{password}@{server}/{database}?driver={driver}"
+connectionString = f"mssql+pyodbc://{username}:{password}@{server}/{database}?driver={driver}"
 
 try:
     # create sql database instance from uri
-    db = SQLDatabase.from_uri(conn_str)
+    db = SQLDatabase.from_uri(connectionString)
 ```
 ## Set the OpenAI API Key
 Navigate to [OpenAI](https://www.openai.com/) to obtain the API key.  This will be needed to authenticate requests to the API.
