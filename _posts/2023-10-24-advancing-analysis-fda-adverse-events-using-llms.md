@@ -91,10 +91,10 @@ Hence, we can connect LLMs to documents.
 LangChain has many different methods to load documents.  **TextLoader** is used to load in a text document and create a vector representation using the **VectorStoreIndexCreator**:
 
 ```python
-# Load text document
+# load text document
 loaders = TextLoader('<path to text document>')
 
-# Create a vector representation of the loaded document
+# create a vector representation of the loaded document
 index = VectorstoreIndexCreator().from_loaders([loaders])
 ```
 
@@ -110,7 +110,7 @@ The default settings to note are:
 With [Streamlit](https://streamlit.io/), we set up a simple web app to allow users to ask questions of the document:  
 
 ```python
-# Display the page title and the text box for the user to ask the question
+# display the page title and the text box for the user to ask the question
 st.title('🦜 LangChain: Chat with Adverse Events Report')
 prompt = st.text_input("Enter your question")
 ```
