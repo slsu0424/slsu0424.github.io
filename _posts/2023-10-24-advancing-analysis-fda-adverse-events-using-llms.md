@@ -23,8 +23,7 @@ Environment:
 - Python: 3.11
 - VS Code: 1.84.1
 
-All resources can be found [here](https://github.com/slsu0424/langchain-ade-public).
-
+All resources can be found <a href="https://github.com/slsu0424/langchain-ade-public" target="_blank">here</a>.
 
 ## Generate an ADE report
 Individual Case Reports for adverse events are typically requested through the FDA.  A sample report is shown below:

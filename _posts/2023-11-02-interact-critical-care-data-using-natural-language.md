@@ -12,15 +12,15 @@ If someone told me that I would someday be able to "talk" to a database, I would
 This tutorial continues on from the previous [tutorial](https://slsu0424.github.io/advancing-analysis-fda-adverse-events-using-llms/) on using LLMs with LangChain.  We will explore using LLMs and LangChain to interact with a SQL Database containing critical care data. 
 
 Pre-requisites:
-1. Basic knowledge of OpenAI
-2. Basic knowledge of LangChain
-3. Intermediate knowledge of Azure SQL Database
+- Basic knowledge of OpenAI
+- Basic knowledge of LangChain
+- Intermediate knowledge of Azure SQL Database
 
 Environment:
-1. Python: 3.11.0
-2. OS: MacOS 11.7.3
-3. Database: Azure SQL 12.0.2000.8
-4. Database Driver: ODBC driver 18 for SQL Server
+- Python: 3.11.0
+- OS: MacOS 11.7.3
+- Database: Azure SQL 12.0.2000.8
+- Database Driver: ODBC driver 18 for SQL Server
 
 All resources can be found <a href="https://github.com/slsu0424/langchain-sql-public" target="_blank">here</a>.
 
