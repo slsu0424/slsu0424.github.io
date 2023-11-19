@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" href="/assets/images/logo.png">
+
+<title>Advancing analysis of FDA Adverse Events using LLMs | Health Tech Bytes</title>
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Advancing analysis of FDA Adverse Events using LLMs | Health Tech Bytes</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Advancing analysis of FDA Adverse Events using LLMs" />
+<meta name="author" content="sandy" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Patient safety continues to be an issue in 2023, with nearly 1 in 4 patients experiencing an adverse event upon admission. Up to 40% of adverse events were related to medications given in the hospital, underscoring the importance of post-market drug surveillance and sufficient bedside staffing." />
+<meta property="og:description" content="Patient safety continues to be an issue in 2023, with nearly 1 in 4 patients experiencing an adverse event upon admission. Up to 40% of adverse events were related to medications given in the hospital, underscoring the importance of post-market drug surveillance and sufficient bedside staffing." />
+<link rel="canonical" href="http://localhost:4000/advancing-analysis-fda-adverse-events-using-llms/" />
+<meta property="og:url" content="http://localhost:4000/advancing-analysis-fda-adverse-events-using-llms/" />
+<meta property="og:site_name" content="Health Tech Bytes" />
+<meta property="og:image" content="http://localhost:4000/assets/images/2023-11/iStock-1192445057_license_resize.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-11-17T00:00:00-05:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/assets/images/2023-11/iStock-1192445057_license_resize.png" />
+<meta property="twitter:title" content="Advancing analysis of FDA Adverse Events using LLMs" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@sandy" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"sandy"},"dateModified":"2023-11-17T00:00:00-05:00","datePublished":"2023-11-17T00:00:00-05:00","description":"Patient safety continues to be an issue in 2023, with nearly 1 in 4 patients experiencing an adverse event upon admission. Up to 40% of adverse events were related to medications given in the hospital, underscoring the importance of post-market drug surveillance and sufficient bedside staffing.","headline":"Advancing analysis of FDA Adverse Events using LLMs","image":"http://localhost:4000/assets/images/2023-11/iStock-1192445057_license_resize.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/advancing-analysis-fda-adverse-events-using-llms/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"sandy"},"url":"http://localhost:4000/advancing-analysis-fda-adverse-events-using-llms/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+
+<link href="/assets/css/main.css" rel="stylesheet">
+
+<script src="/assets/js/jquery.min.js"></script>
+
+</head>
+
+
+
+
+<body class="layout-post">
+	<!-- defer loading of font and font awesome -->
+	<noscript id="deferred-styles">
+		<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	</noscript>
+
+
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+
+    <div class="container pr-0">
+
+    <!-- Begin Logo -->
+    <a class="navbar-brand" href="/">
+    <img src="/assets/images/logo.png" alt="Health Tech Bytes">
+    </a>
+    <!-- End Logo -->
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+
+        <!-- Begin Menu -->
+
+            <ul class="navbar-nav ml-auto">
+
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/index.html">Blog</a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link" href="/resources">Resources</a>
+                </li>
+<!--
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://github.com/slsu0424"><i class="fab fa-github"></i> Github</a>
+                </li>
+-->
+                <script src="/assets/js/lunr.js"></script>
+
+
+<style>
+    .lunrsearchresult .title {color: #d9230f;}
+    .lunrsearchresult .url {color: silver;}
+    .lunrsearchresult a {display: block; color: #777;}
+    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
+    .lunrsearchresult a:hover .title {text-decoration: underline;}
+</style>
+
+
+<form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Type and enter..."/>
+</form>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+            </ul>
+
+        <!-- End Menu -->
+
+    </div>
+
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+
+<div class="site-content">
+
+<div class="container">
+
+<!-- Site Title
+================================================== -->
+<div class="mainheading">
+    <h1 class="sitetitle">Health Tech Bytes</h1>
+    <p class="lead">
+        Where health and technology meet, one byte at a time.
+    </p>
+</div>
+
+<!-- Content
+================================================== -->
+<div class="main-content">
+    <!-- Begin Article
+================================================== -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Share -->
+        <div class="col-md-2 pl-0">
+            <div class="share sticky-top sticky-top-offset">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Advancing analysis of FDA Adverse Events using LLMs&url=http://localhost:4000/advancing-analysis-fda-adverse-events-using-llms/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=http://localhost:4000/advancing-analysis-fda-adverse-events-using-llms/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/advancing-analysis-fda-adverse-events-using-llms/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+    
+    <div class="sep">
+    </div>
+    <ul>
+        <li>
+        <a class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>
+
+        </div>
+
+        <!-- Post -->
+        
+
+        <div class="col-md-9 flex-first flex-md-unordered">
+            <div class="mainheading">
+
+                <!-- Author Box -->
+                
+                <div class="row post-top-meta">
+                    <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
+                        
+                        <img class="author-thumb" src="https://www.gravatar.com/avatar/2805ebc521560def5e29b70a496914f63b35e8c268b2022558b1e3619270d41f?s=250&d=mm&r=x" alt="Sandy">
+                        
+                    </div>
+                    <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
+                        <a target="_blank" class="link-dark" href="https://medium.com/@sandylsu">Sandy</a><a target="_blank" href="https://twitter.com/sandylsu" class="btn follow">Follow</a>
+                        <span class="author-description">Author at Health Tech Bytes. Cloud Architect, data science and AI practitioner, health informatics strategist</span></div>
+                    </div>
+                
+
+                <!-- Post Title -->
+                <h1 class="posttitle">Advancing analysis of FDA Adverse Events using LLMs</h1>
+                <h1 class="posttitle-meta"><span class="post-date"><span>Published on </span><time class="post-date" datetime="2023-11-17">17 Nov 2023</time><span> |           
+                
+
+7 min read
+
+</span></h1>
+            </div>
+
+            <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
+            
+            <!-- End Adsense -->
+
+            <!-- Post Featured Image -->
+            
+
+            
+            <img class="featured-image img-fluid" src="/assets/images/2023-11/iStock-1192445057_license_resize.png" alt="Advancing analysis of FDA Adverse Events using LLMs">
+            
+
+            
+            <!-- End Featured Image -->
+
+            <!-- Post Content -->
+            <div class="article-post">
+                <!-- Toc if any -->
+                
+                <!-- End Toc -->
+                <p>Patient safety continues to be an issue in 2023, with nearly <a href="https://www.nbcnews.com/health/health-news/nearly-1-4-us-hospital-patients-experience-harmful-event-study-finds-rcna65119">1 in 4 patients</a> experiencing an adverse event upon admission.  Up to 40% of adverse events were related to medications given in the hospital, underscoring the importance of post-market drug surveillance and sufficient bedside staffing.</p>
+
+<p>For the former, consumers and healthcare professionals are encouraged to report adverse events to the FDA.  The information is captured in the <a href="https://www.fda.gov/drugs/surveillance/questions-and-answers-fdas-adverse-event-reporting-system-faers">FDA Adverse Events Reporting System</a>, which is used to improve product safety and protect public health.  In recent years, <a href="https://www.lifescienceleader.com/doc/how-the-fda-views-natural-language-processing-0001">NLP</a> has helped the FDA identify causal relationships between products and adverse events.   A recent initiative is now evaluating <a href="https://www.fda.gov/about-fda/nctr-research-focus-areas/bertox-initiative">LLMs</a> to improve efficiency and accuracy.</p>
+
+<p>From a technical lens, this was a topic I explored in my September <a href="https://www.meetup.com/cloud-data-driven/events/294617896/">talk</a> on LLMs.  I covered 2 healthcare demos for using LLMs with LangChain, and LLMs with SQL databases.</p>
+
+<p>This tutorial will demonstrate using LLMs and LangChain to quickly summarize an adverse events report.</p>
+
+<p>Prerequisites:</p>
+<ul>
+  <li>Basic knowledge of OpenAI</li>
+</ul>
+
+<p>Environment:</p>
+<ul>
+  <li>Python: 3.11.6</li>
+  <li>OS: MacOS 12.7.1</li>
+  <li>VS Code: 1.84.1</li>
+</ul>
+
+<p>All resources can be found <a href="https://github.com/slsu0424/langchain-ade-public" target="_blank">here</a>.</p>
+
+<h2 id="generate-an-ade-report">Generate an ADE report</h2>
+<p>Individual Case Reports for adverse events are typically requested through the FDA.  A sample report is shown below:</p>
+
+<p style="text-align: center;">
+<a href="https://www.researchgate.net/publication/271223596_Automatically_Recognizing_Medication_and_Adverse_Event_Information_From_Food_and_Drug_Administration's_Adverse_Event_Reporting_System_Narratives?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6Il9kaXJlY3QiLCJwYWdlIjoiX2RpcmVjdCJ9fQ" target="_blank">
+  <img src="/assets/images/2023-10/sample-AERS-Report.png" alt="faers" />
+<!-- <img src="/assets/images/2023-10/sample-AERS-Report.png" alt="aers" width="750" height="670" alig> -->
+</a>
+</p>
+
+<p>For the purpose of this tutorial, I used OpenAI’s <a href="https://openai.com/" target="_blank">ChatGPT</a> (GPT-3.5) to generate a synthetic adverse events report.  I chose warfarin, as it is in the class of drugs that have resulted in <a href="https://www.ncbi.nlm.nih.gov/books/NBK519025/" target="_blank">serious adverse drug reactions</a>.</p>
+
+<p>These were the series of prompts I used to generate the final <a href="https://github.com/slsu0424/langchain-ade-public/blob/main/ade.txt">report</a>:</p>
+
+<p>“Create an adverse event report for warfarin that is submitted to the FDA”<br />
+“Fill out the report with hypothetical information”<br />
+“Remove the placeholders [ ]”<br />
+“Rewrite the event as a narrative, not a list”</p>
+
+<p>A snippet of the report is below:</p>
+
+<blockquote>
+  <p>On November 10, 2023, Mr. John Doe, a 65-year-old male with a medical history of hypertension and atrial fibrillation, was brought to our attention at ABC Medical Center. The patient had been prescribed warfarin (5 mg daily) for his atrial fibrillation.</p>
+</blockquote>
+
+<h2 id="qa-application-overview">Q&amp;A application overview</h2>
+<p>This LangChain <a href="https://github.com/hwchase17/chat-your-data/blob/master/blogpost.md">blog post</a> provides a high-level overview for building a Q&amp;A application.</p>
+
+<p>The main steps include:</p>
+
+<ol>
+  <li>Load documents</li>
+  <li>Split documents into chunks</li>
+  <li>Create embedding vectors from chunks</li>
+  <li>Store vectors in vector database</li>
+  <li>Retrieve relevant documents from database</li>
+  <li>Pass relevant documents to LLM</li>
+  <li>LLM generates final answer</li>
+</ol>
+
+<p>Ingest Data:</p>
+
+<p><img src="/assets/images/2023-10/langchain1.png" alt="langchain1" /></p>
+
+<p>Query Data:</p>
+
+<p><img src="/assets/images/2023-10/langchain2.png" alt="langchain2" /></p>
+
+<h2 id="set-the-openai-api-key">Set the OpenAI API Key</h2>
+<p>Navigate to <a href="https://platform.openai.com/">OpenAI</a> to obtain the API Key.  This will be needed to authenticate requests to the API.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="c1"># set API keys to authenticate requests to the API
+</span><span class="n">API_KEY</span> <span class="o">=</span> <span class="sh">'</span><span class="s">&lt;API Key&gt;</span><span class="sh">'</span>
+
+<span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">[</span><span class="sh">"</span><span class="s">OPENAI_API_KEY</span><span class="sh">"</span><span class="p">]</span> <span class="o">=</span> <span class="n">API_KEY</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="use-langchain-to-load-documents-into-a-vector-store">Use LangChain to load documents into a vector store</h2>
+<p><a href="https://docs.langchain.com/docs/">LangChain</a> is a framework for developing applications powered by LLMs.  The main idea is that developers can “chain” different components around an LLM to create more powerful use cases.</p>
+
+<p>Hence, we can connect LLMs to documents.</p>
+
+<p>LangChain has many different methods to load documents.  <strong>TextLoader</strong> is used to load in a text document and create a vector representation using the <strong>VectorStoreIndexCreator</strong>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="c1"># load text document
+</span><span class="n">loaders</span> <span class="o">=</span> <span class="nc">TextLoader</span><span class="p">(</span><span class="sh">'</span><span class="s">&lt;path to text document&gt;</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="c1"># create a vector representation of the loaded document
+</span><span class="n">index</span> <span class="o">=</span> <span class="nc">VectorstoreIndexCreator</span><span class="p">().</span><span class="nf">from_loaders</span><span class="p">([</span><span class="n">loaders</span><span class="p">])</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The VectorStoreIndexCreator handles steps 2-4 above (chunking, embedding, and storage).  This <a href="https://medium.com/@kbdhunga/enhancing-conversational-ai-the-power-of-langchains-question-answer-framework-4974e1cab3cf">article</a> goes into more detail about the class, including customization.</p>
+
+<p>The default settings to note are:</p>
+
+<ul>
+  <li>Chunking - uses <strong>RecursiveCharacterTextSplitter()</strong> to divide text at specific characters</li>
+  <li>Embedding - uses <strong>OpenAIEmbeddings</strong>  to generate embeddings</li>
+  <li>Storage - embeddings are stored in <strong>Chroma</strong>, an open-source vector store</li>
+</ul>
+
+<h2 id="set-up-streamlit-app">Set up Streamlit app</h2>
+<p>With <a href="https://streamlit.io/">Streamlit</a>, we set up a simple web app to allow users to ask questions of the document:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="c1"># display the page title and the text box for the user to ask the question
+</span><span class="n">st</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">'</span><span class="s">🦜 LangChain: Chat with Adverse Events Report</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">prompt</span> <span class="o">=</span> <span class="n">st</span><span class="p">.</span><span class="nf">text_input</span><span class="p">(</span><span class="sh">"</span><span class="s">Enter your question</span><span class="sh">"</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="query-the-vector-store">Query the vector store</h2>
+<p>When a user passes in a question, the store is queried to retrieve the data that is ‘most similar’ to the embedded query.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="c1"># get response from LLM
+</span><span class="k">if</span> <span class="n">prompt</span><span class="p">:</span>
+  <span class="n">response</span> <span class="o">=</span> <span class="n">index</span><span class="p">.</span><span class="nf">query</span><span class="p">(</span>
+    <span class="n">llm</span><span class="o">=</span><span class="nc">ChatOpenAI</span><span class="p">(</span><span class="n">model_name</span><span class="o">=</span><span class="sh">"</span><span class="s">gpt-3.5-turbo</span><span class="sh">"</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">0.2</span><span class="p">),</span> 
+    <span class="n">question</span> <span class="o">=</span> <span class="n">prompt</span><span class="p">,</span> 
+    <span class="n">chain_type</span> <span class="o">=</span> <span class="sh">'</span><span class="s">stuff</span><span class="sh">'</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Under the hood, we pass in the <strong>ChatOpenAI</strong> model (gpt-3.5-turbo) and set the <strong>temperature</strong>.  The temperature controls the randomness of the output generated (closer to 1 will generate a more creative response).  <strong>chain_type = ‘stuff’</strong> combines the question and relevant document chunks into a single prompt to pass to the LLM.</p>
+
+<p>This visual shows the overall workflow:</p>
+
+<p><a href="https://python.langchain.com/docs/modules/data_connection/vectorstores/">
+  <img src="/assets/images/2023-10/langchain3.png" alt="langchain3" />
+<!--   <img src="/assets/images/2023-10/langchain3.png" alt="langchain3" width="750" height="311"> -->
+</a></p>
+
+<h2 id="lets-summarize">Let’s summarize</h2>
+<p>With Streamlit running, we prompt the document by asking a question followed by a summarization task:</p>
+
+<p><img src="/assets/images/2023-10/streamlit1.png" alt="streamlit1" /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>In this tutorial, we explored using LLMs and LangChain to retrieve information from an adverse events report.  LangChain is a framework for building LLM-based applications, such as a chatbot.  Although NLP is not new, I was surprised by the ease of using natural language prompts to retrieve information.  I think LLMs can make adverse events analysis more efficient, and improve product safety.</p>
+
+<p>It would be interesting to test out LLMs on different types of documents (i.e., Standards of Care), and build out an advanced UI with Streamlit. I will explore these in a future post.</p>
+
+<h2 id="references">References</h2>
+<ul>
+  <li><a href="https://www.nbcnews.com/health/health-news/nearly-1-4-us-hospital-patients-experience-harmful-event-study-finds-rcna65119">https://www.nbcnews.com/health/health-news/nearly-1-4-us-hospital-patients-experience-harmful-event-study-finds-rcna65119</a></li>
+  <li><a href="https://www.fda.gov/drugs/surveillance/questions-and-answers-fdas-adverse-event-reporting-system-faers">https://www.fda.gov/drugs/surveillance/questions-and-answers-fdas-adverse-event-reporting-system-faers</a></li>
+  <li><a href="https://www.lifescienceleader.com/doc/how-the-fda-views-natural-language-processing-0001">https://www.lifescienceleader.com/doc/how-the-fda-views-natural-language-processing-0001</a></li>
+  <li><a href="https://www.fda.gov/about-fda/nctr-research-focus-areas/bertox-initiative">https://www.fda.gov/about-fda/nctr-research-focus-areas/bertox-initiative</a></li>
+  <li><a href="https://openai.com/">https://openai.com/</a></li>
+  <li><a href="https://www.ncbi.nlm.nih.gov/books/NBK519025/">https://www.ncbi.nlm.nih.gov/books/NBK519025/</a></li>
+  <li><a href="https://github.com/hwchase17/chat-your-data/blob/master/blogpost.md">https://github.com/hwchase17/chat-your-data/blob/master/blogpost.md</a></li>
+  <li><a href="https://python.langchain.com/">https://python.langchain.com/</a></li>
+  <li><a href="https://medium.com/@kbdhunga/enhancing-conversational-ai-the-power-of-langchains-question-answer-framework-4974e1cab3cf">https://medium.com/@kbdhunga/enhancing-conversational-ai-the-power-of-langchains-question-answer-framework-4974e1cab3cf</a></li>
+  <li><a href="https://streamlit.io/">https://streamlit.io/</a></li>
+</ul>
+
+            </div>
+
+            <!-- Rating -->
+            
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2023-11-17">17 Nov 2023</time></span>           
+                
+                </small>
+            </p>
+
+            <!-- Post Categories -->
+            <div class="after-post-cats">
+                <ul class="tags mb-4">
+                    
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#ChatGPT">ChatGPT</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#langChain">langChain</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#python">python</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#tutorial">tutorial</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- End Categories -->
+
+            <!-- Post Tags -->
+            <div class="after-post-tags">
+                <ul class="tags">
+                    
+                    
+                </ul>
+            </div>
+            <!-- End Tags -->
+
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <!-- 
+            <a class="prev d-block col-md-6" href="//switchover-disruptions-true-cost-ai-scribe/"> &laquo; Switchover disruptions: The true cost of an AI scribe</a> 
+            -->
+            
+            <a class="prev d-block col-md-6" href="/switchover-disruptions-true-cost-ai-scribe/"> &laquo; Switchover disruptions: The true cost of an AI scribe</a>
+            
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+        </div>
+        <!-- End Post -->
+
+    </div>
+</div>
+<!-- End Article
+================================================== -->
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'demowebsite'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+
+</div>
+
+
+<!-- Bottom Alert Bar
+================================================== -->
+<div class="alertbar">
+	<div class="container text-center">
+		<span><img src="/assets/images/logo.png" alt="Health Tech Bytes"> &nbsp; Never miss a <b>story</b> from Health Tech Bytes, subscribe to our newsletter</span>
+        <form action="https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
+            <div class="mc-field-group">
+            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
+            <input type="submit" value="Subscribe" name="subscribe" class="heart">
+            </div>
+        </form>
+	</div>
+</div>
+
+    
+</div>
+
+<!-- Categories Jumbotron
+================================================== -->
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+            <div class="d-md-flex align-items-center justify-content-center h-100">
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+            </div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+            
+            
+                
+                    <a class="mt-1 mb-1" href="/categories#healthcare">healthcare (3)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#AI">AI (3)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#PubMed">PubMed (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#NLP">NLP (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#tutorial">tutorial (3)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#azure">azure (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#python">python (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#SQL">SQL (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#economics">economics (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#langChain">langChain (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#ChatGPT">ChatGPT (1)</a>
+                
+            
+            
+		</div>
+	</div>
+</div>
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                Copyright © 2023 Health Tech Bytes 
+            </div>
+            <div class="col-md-6 col-sm-6 text-center text-lg-right">    
+                Built with <a target="_blank" href="https://www.wowthemes.net/mediumish-free-jekyll-template/">WowThemes</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+</div> <!-- /.site-content -->
+
+<!-- Scripts
+================================================== -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<script src="/assets/js/mediumish.js"></script>
+
+
+
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script> 
+
+
+<script id="dsq-count-scr" src="//demowebsite.disqus.com/count.js"></script>
+
+
+</body>
+</html>
