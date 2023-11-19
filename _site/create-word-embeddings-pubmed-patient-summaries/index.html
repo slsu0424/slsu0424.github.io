@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" href="/assets/images/logo.png">
+
+<title>Create word embeddings from PubMed patient summaries | Health Tech Bytes</title>
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Create word embeddings from PubMed patient summaries | Health Tech Bytes</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Create word embeddings from PubMed patient summaries" />
+<meta name="author" content="sandy" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Building upon the previous tutorial on one-hot encoding, this tutorial will explore the concept of word embeddings and implement this with real-world data." />
+<meta property="og:description" content="Building upon the previous tutorial on one-hot encoding, this tutorial will explore the concept of word embeddings and implement this with real-world data." />
+<link rel="canonical" href="http://localhost:4000/create-word-embeddings-pubmed-patient-summaries/" />
+<meta property="og:url" content="http://localhost:4000/create-word-embeddings-pubmed-patient-summaries/" />
+<meta property="og:site_name" content="Health Tech Bytes" />
+<meta property="og:image" content="http://localhost:4000/assets/images/2023-09/shutterstock_1025566351_license_resize.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-09-14T00:00:00-04:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/assets/images/2023-09/shutterstock_1025566351_license_resize.png" />
+<meta property="twitter:title" content="Create word embeddings from PubMed patient summaries" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@sandy" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"sandy"},"dateModified":"2023-09-14T00:00:00-04:00","datePublished":"2023-09-14T00:00:00-04:00","description":"Building upon the previous tutorial on one-hot encoding, this tutorial will explore the concept of word embeddings and implement this with real-world data.","headline":"Create word embeddings from PubMed patient summaries","image":"http://localhost:4000/assets/images/2023-09/shutterstock_1025566351_license_resize.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/create-word-embeddings-pubmed-patient-summaries/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"sandy"},"url":"http://localhost:4000/create-word-embeddings-pubmed-patient-summaries/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+
+<link href="/assets/css/main.css" rel="stylesheet">
+
+<script src="/assets/js/jquery.min.js"></script>
+
+</head>
+
+
+
+
+<body class="layout-post">
+	<!-- defer loading of font and font awesome -->
+	<noscript id="deferred-styles">
+		<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	</noscript>
+
+
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+
+    <div class="container pr-0">
+
+    <!-- Begin Logo -->
+    <a class="navbar-brand" href="/">
+    <img src="/assets/images/logo.png" alt="Health Tech Bytes">
+    </a>
+    <!-- End Logo -->
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+
+        <!-- Begin Menu -->
+
+            <ul class="navbar-nav ml-auto">
+
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/index.html">Blog</a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link" href="/resources">Resources</a>
+                </li>
+<!--
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://github.com/slsu0424"><i class="fab fa-github"></i> Github</a>
+                </li>
+-->
+                <script src="/assets/js/lunr.js"></script>
+
+
+<style>
+    .lunrsearchresult .title {color: #d9230f;}
+    .lunrsearchresult .url {color: silver;}
+    .lunrsearchresult a {display: block; color: #777;}
+    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
+    .lunrsearchresult a:hover .title {text-decoration: underline;}
+</style>
+
+
+<form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Type and enter..."/>
+</form>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+            </ul>
+
+        <!-- End Menu -->
+
+    </div>
+
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+
+<div class="site-content">
+
+<div class="container">
+
+<!-- Site Title
+================================================== -->
+<div class="mainheading">
+    <h1 class="sitetitle">Health Tech Bytes</h1>
+    <p class="lead">
+        Where health and technology meet, one byte at a time.
+    </p>
+</div>
+
+<!-- Content
+================================================== -->
+<div class="main-content">
+    <!-- Begin Article
+================================================== -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Share -->
+        <div class="col-md-2 pl-0">
+            <div class="share sticky-top sticky-top-offset">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Create word embeddings from PubMed patient summaries&url=http://localhost:4000/create-word-embeddings-pubmed-patient-summaries/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=http://localhost:4000/create-word-embeddings-pubmed-patient-summaries/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/create-word-embeddings-pubmed-patient-summaries/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+    
+    <div class="sep">
+    </div>
+    <ul>
+        <li>
+        <a class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>
+
+        </div>
+
+        <!-- Post -->
+        
+
+        <div class="col-md-9 flex-first flex-md-unordered">
+            <div class="mainheading">
+
+                <!-- Author Box -->
+                
+                <div class="row post-top-meta">
+                    <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
+                        
+                        <img class="author-thumb" src="https://www.gravatar.com/avatar/2805ebc521560def5e29b70a496914f63b35e8c268b2022558b1e3619270d41f?s=250&d=mm&r=x" alt="Sandy">
+                        
+                    </div>
+                    <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
+                        <a target="_blank" class="link-dark" href="https://medium.com/@sandylsu">Sandy</a><a target="_blank" href="https://twitter.com/sandylsu" class="btn follow">Follow</a>
+                        <span class="author-description">Author at Health Tech Bytes. Cloud Architect, data science and AI practitioner, health informatics strategist</span></div>
+                    </div>
+                
+
+                <!-- Post Title -->
+                <h1 class="posttitle">Create word embeddings from PubMed patient summaries</h1>
+                <h1 class="posttitle-meta"><span class="post-date"><span>Published on </span><time class="post-date" datetime="2023-09-14">14 Sep 2023</time><span> |           
+                
+
+14 min read
+
+</span></h1>
+            </div>
+
+            <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
+            
+            <!-- End Adsense -->
+
+            <!-- Post Featured Image -->
+            
+
+            
+            <img class="featured-image img-fluid" src="/assets/images/2023-09/shutterstock_1025566351_license_resize.png" alt="Create word embeddings from PubMed patient summaries">
+            
+
+            
+            <!-- End Featured Image -->
+
+            <!-- Post Content -->
+            <div class="article-post">
+                <!-- Toc if any -->
+                
+                <!-- End Toc -->
+                <p>Building upon the previous <a href="https://slsu0424.github.io/encoding-pubmed-abstracts-for-nlp-tasks/">tutorial</a> on one-hot encoding, this tutorial will explore the concept of word embeddings and implement this with real-world data.</p>
+
+<p>For our example, we extract patient summaries from PubMed and label those that had COVID-19 vs. not COVID-19.  Word embeddings are created from text, and the embeddings are trained as part of a neural network to perform a classification task.  Through training, the computer will learn word relationships.</p>
+
+<p>Pre-requisites:</p>
+<ol>
+  <li>Basic knowledge of neural networks</li>
+  <li>Azure Data Studio</li>
+  <li>Docker</li>
+  <li>Python 3.10.3</li>
+  <li>SQL Server on Mac (on-prem)</li>
+</ol>
+
+<p>All resources can be found <a href="https://github.com/slsu0424/word-embed-public">here</a>.</p>
+
+<h2 id="a-short-intro-to-word-embeddings">A short intro to Word Embeddings</h2>
+<p>Word Embeddings were a bit of a complex concept to grasp, until I got into the weeds of building one.  I’ve come to appreciate that they are an important concept in deep learning, for the reason that word meanings can be approximated mathematically.</p>
+
+<p>To best understand the intuition behind word embeddings, I highly recommend reading this <a href="http://colah.github.io/posts/2014-07-NLP-RNNs-Representations">blog post</a> from Christopher Olah.</p>
+
+<p>There are a number of techniques available to build a word embedding, including using pre-trained embeddings generated by GloVe, word2vec, etc.  In this tutorial, we will build an embedding from scratch.</p>
+
+<h2 id="lets-get-data">Let’s get data</h2>
+<p>I selected a dataset of ~167K PubMed patient summaries via <a href="https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main">HuggingFace</a>.  The data is loaded into <a href="https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac">SQL Server on a Mac</a>.</p>
+
+<p>Start SQL Server via the terminal, giving the username and password:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>$ mssql -u &lt;sql server username&gt; -p &lt;sql server password&gt;
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><a href="https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/">Connect</a> SQL Server to Azure Data Studio to query the data.</p>
+
+<p>Attached is a screenshot to modify the columns before importing the data:</p>
+
+<p><img src="/assets/images/2023-09/azstudio_setup.png" alt="" /></p>
+
+<p>Run the below <a href="https://github.com/slsu0424/word-embed-public/blob/main/queries.sql">query</a> to return the first 100 records and save as csv.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre>SELECT TOP (100) [patient_id]
+  ,[patient_uid]
+  ,[PMID]
+  ,[file_path]
+  ,[title]
+  ,[patient]
+  ,[age]
+  ,[gender]
+  ,[similar_patients]
+  ,[relevant_articles]
+FROM [test].[dbo].[PMC-Patients]
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="define-class-labels">Define class labels</h2>
+<p>Since this is a binary classification task, we will label the dataset as:</p>
+<ul>
+  <li>patients with COVID-19 = ‘1’</li>
+  <li>patients without COVID-19 = ‘0’</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="n">labels</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">label</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="sh">''</span>
+
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="p">.</span><span class="nf">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="sh">'</span><span class="s">COVID-19</span><span class="sh">'</span> <span class="ow">in</span> <span class="n">row</span><span class="p">[</span><span class="sh">'</span><span class="s">patient</span><span class="sh">'</span><span class="p">]:</span>
+        <span class="n">row</span><span class="p">[</span><span class="sh">'</span><span class="s">label</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="sh">'</span><span class="s">1</span><span class="sh">'</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">row</span><span class="p">[</span><span class="sh">'</span><span class="s">label</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="sh">'</span><span class="s">0</span><span class="sh">'</span> 
+
+    <span class="n">labels</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="sh">'</span><span class="s">label</span><span class="sh">'</span><span class="p">])</span>
+
+<span class="n">labels_arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">(</span><span class="n">labels</span><span class="p">).</span><span class="nf">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">labels_arr</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>[1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 1. 0.
+ 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+ 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+ 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0.
+ 0. 0. 1. 0.]
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="create-a-corpus">Create a corpus</h2>
+<p>Now that we have our labeled dataset, we create a corpus.  We take the 1st sentence from each document.  A sample of the first 3 documents is below:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>['This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea.', 
+'We describe the case of a 55-year-old male who presented to the emergency department via emergency medical services for the chief complaint of sudden onset shortness of breath that woke him from his sleep just prior to arrival.', 
+'A 20-year-old Caucasian male (1.75 m tall and 76 kg (BMI 24.8)), was admitted to the medical department for persistent hyperpyrexia, severe sore throat, dyspnea, and impaired consciousness with stupor., 
+...]
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>For 100 documents, there are 2541 total words in the corpus.</p>
+
+<h2 id="convert-text-to-integers">Convert text to integers</h2>
+<p>Since we saw the limitations with one-hot encoding, a better approach would be to assign each word a unique integer.  The integer encoding for a specific word remains the same across all documents, so this will reduce the size of the corpus to unique words.</p>
+
+<p>To do this, <a href="https://keras.io/">Keras</a> provides a handy <strong>Tokenizer() API</strong> that can handle multiple documents.  For a deeper understanding of its implementation, see this <a href="https://machinelearningmastery.com/prepare-text-data-deep-learning-keras">tutorial</a>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="rouge-code"><pre><span class="c1"># integer encode words per document 
+</span><span class="n">encod_corp</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># fit tokenizer on docs
+</span><span class="n">t</span> <span class="o">=</span> <span class="nc">Tokenizer</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="sh">'</span><span class="s">!</span><span class="sh">"</span><span class="s">#$%&amp;()*+,/:;&lt;=&gt;?@[</span><span class="se">\\</span><span class="s">]^_`{|}~</span><span class="se">\t\n</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">t</span><span class="p">.</span><span class="nf">fit_on_texts</span><span class="p">(</span><span class="n">corp</span><span class="p">)</span> 
+<span class="n">encod_corp</span> <span class="o">=</span> <span class="n">t</span><span class="p">.</span><span class="nf">texts_to_sequences</span><span class="p">(</span><span class="n">corp</span><span class="p">)</span>
+
+<span class="c1"># get unique words
+</span><span class="n">vocab</span> <span class="o">=</span> <span class="n">t</span><span class="p">.</span><span class="n">word_index</span>
+
+<span class="c1"># print vocab list
+</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">vocab:</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">(</span><span class="n">vocab</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+   <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
+
+<span class="n">vocab_size</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">vocab</span><span class="p">)</span> 
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Vocab size = %s unique words</span><span class="sh">'</span> <span class="o">%</span> <span class="n">vocab_size</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre>vocab:
+1 a
+2 of
+3 with
+4 and
+5 the
+
+Vocab size = 931 unique words
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Out of 2541 total words, 931 unique words are found.</p>
+
+<h2 id="pad-the-documents">Pad the documents</h2>
+<p>Keras requires that all documents must be the same length.  We find the maximum length of a document, which is 55 words.  Zeroes are then added to the shorter documents using the <strong>pad_sequences</strong> function:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="c1"># pad the documents with zeros
+</span><span class="n">pad_corp</span><span class="o">=</span><span class="nf">pad_sequences</span><span class="p">(</span><span class="n">encod_corp</span><span class="p">,</span><span class="n">maxlen</span><span class="o">=</span><span class="n">maxlen</span><span class="p">,</span><span class="n">padding</span><span class="o">=</span><span class="sh">'</span><span class="s">post</span><span class="sh">'</span><span class="p">,</span><span class="n">value</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">pad_corp</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>[[ 31 281  10   7 160  44   6 282 283  28  54   3  84   2  29  45  36   4
+  161   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+    0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+    0]
+   ... 
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The above array represents the text of Document 1.</p>
+
+<h2 id="create-an-embedding">Create an embedding</h2>
+<p>To create the embedding, we create a Keras Sequential model.  Sequential means that each layer in the network has exactly one input and one output.  To define the embedding, we need 3 inputs:</p>
+
+<ul>
+  <li>input_dim: size of vocabulary</li>
+  <li>output_dim: embedding dimension</li>
+  <li>input_length: maximum length of a document</li>
+</ul>
+
+<p>A output_dim = 2 means that every vocabulary word is represented by a vector that contains 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on, but will also be more computationally expensive.</p>
+
+<p>Once the embedding layer is added to the network, the learning process is configured, and we run model.predict() to generate the predicted outputs.</p>
+
+<p>We can also add other hidden layers (Flatten, Dense) to discover more complex patterns in the data.  These will be discussed once we train the embeddings.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="rouge-code"><pre><span class="c1"># create keras model
+</span><span class="n">model</span> <span class="o">=</span> <span class="nc">Sequential</span><span class="p">()</span>
+
+<span class="c1"># define embedding
+</span><span class="n">embedding_layer</span> <span class="o">=</span> <span class="nc">Embedding</span><span class="p">(</span>
+                        <span class="n">input_dim</span><span class="o">=</span><span class="n">vocab_size</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span>
+                        <span class="n">output_dim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> 
+                        <span class="n">input_length</span><span class="o">=</span><span class="n">maxlen</span><span class="p">)</span>
+
+<span class="c1"># add layers
+</span><span class="n">model</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="n">embedding_layer</span><span class="p">)</span>
+<span class="n">model</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nc">Flatten</span><span class="p">())</span> 
+<span class="n">model</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nc">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="sh">'</span><span class="s">sigmoid</span><span class="sh">'</span><span class="p">))</span>
+
+<span class="c1"># configure the learning process
+</span><span class="n">model</span><span class="p">.</span><span class="nf">compile</span><span class="p">(</span>
+        <span class="n">optimizer</span><span class="o">=</span><span class="sh">'</span><span class="s">adam</span><span class="sh">'</span><span class="p">,</span>
+        <span class="n">loss</span><span class="o">=</span><span class="sh">'</span><span class="s">categorical_crossentropy</span><span class="sh">'</span><span class="p">,</span> 
+        <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">accuracy</span><span class="sh">'</span><span class="p">])</span>
+
+<span class="c1"># model prediction
+</span><span class="n">embedding_output</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">predict</span><span class="p">(</span><span class="n">pad_corp</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="visualize-intial-embeddings">Visualize intial embeddings</h2>
+<p>The embedding layer is a lookup table, which represents each word as floating point values (weights) in the dimension specified.  These weights are initialized randomly before training the model.  The weights can be obtained as follows:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="c1"># embedding layer
+</span><span class="n">embedding_layer</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">get_layer</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">embedding_layer_weights</span> <span class="o">=</span> <span class="n">embedding_layer</span><span class="p">.</span><span class="nf">get_weights</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">embedding_layer_weights</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Since the output_dim = 2, the <a href="https://github.com/slsu0424/word-embed-public/embedding-layer-weights.txt">embedding_layer_weights</a> consists of each word represented by 2 weights:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre>[[ 7.04301521e-03  3.39607336e-02] (index 0)
+ [ 4.43325080e-02 -4.35174219e-02] --&gt; 'a'
+ [-1.84080116e-02 -4.48269024e-02] --&gt; 'of'
+ [-4.74609025e-02  4.29279730e-03] --&gt; 'with'
+ [ 1.24161355e-02  4.76875566e-02] --&gt; 'and'
+ [-1.89721715e-02 -2.00293791e-02] --&gt; 'the'
+ [-2.18192935e-02 -4.75601330e-02] --&gt; 'to'
+ [-2.51929164e-02 -9.96438414e-03] --&gt; 'was'
+...]]
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The <a href="https://github.com/slsu0424/word-embed-public/embedding-output.txt">embedding_output</a> is the result of the embedding layer for a given input sequence.  For Document 1, we see that each value from the embedding layer is mapped to a word in that document:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre>[[[ 2.08440907e-02  3.52325179e-02] --&gt; 'This'
+  [-1.70833841e-02 -4.37318459e-02] --&gt; '60-year-old'
+  [-4.54872735e-02  1.42193772e-02] --&gt; 'male'
+  [-2.51929164e-02 -9.96438414e-03] --&gt; 'was'
+  [-4.34226505e-02 -2.67695189e-02] --&gt; 'hospitalized'
+  [-3.18809636e-02  3.46260779e-02] --&gt; 'due'
+  [-2.18192935e-02 -4.75601330e-02] --&gt; 'to'
+  ...]]]
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Let’s see how this looks visually.  Since these embeddings are not trained, it would make sense that the words are fairly scattered:</p>
+
+<p><img src="https://github.com/slsu0424/word-embed-public/blob/main/output1.png?raw=true" alt="output1.png" /></p>
+
+<h2 id="visualize-trained-embeddings">Visualize trained embeddings</h2>
+<p>After adding the embedding layer, we have a 55 x 2 (doc length x embedding dimension) matrix.  We need to compress (flatten) this into a 1D vector, to send to the next hidden (dense) layer.</p>
+
+<p>As shown above, we add the Flatten and Dense layers to the model.</p>
+
+<p>Summary of layers:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre>_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ embedding_28 (Embedding)    (None, 55, 2)             1864      
+                                                                 
+ flatten_17 (Flatten)        (None, 110)               0         
+                                                                 
+ dense_17 (Dense)            (None, 1)                 111       
+                                                                 
+=================================================================
+Total params: 1975 (7.71 KB)
+Trainable params: 1975 (7.71 KB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>The 55×2 matrix is now reduced to a 110-element vector by the Flatten layer.</p>
+
+<p>Finally, we train the model on the classification task and evaluate its performance.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="c1"># fit the model
+</span><span class="n">model</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">pad_corp</span><span class="p">,</span> <span class="n">labels_arr</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="c1"># evaluate the model
+</span><span class="n">loss</span><span class="p">,</span> <span class="n">accuracy</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">evaluate</span><span class="p">(</span><span class="n">pad_corp</span><span class="p">,</span> <span class="n">labels_arr</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Accuracy: %f</span><span class="sh">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">accuracy</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>4/4 [==============================] - 0s 2ms/step - loss: 0.0000e+00 - accuracy: 0.8900
+Accuracy: 88.999999
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Since these embeddings are now trained, we can visualize more defined clusters with ~89% accuracy for the prediction task.</p>
+
+<p><img src="https://github.com/slsu0424/word-embed-public/blob/main/output2.png?raw=true" alt="output2.png" /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>In this tutorial, we explored how to create word embeddings from scratch, using a neural network to perform a classification task.  By taking sample text from PubMed patient summaries, we were able to train a neural network to classify patients who had COVID-19 and those that did not.  In doing so, we were also able to train the embeddings, such that words with similar meanings were visually placed closer together.</p>
+
+<p>We can boost the performance of the training accuracy by adding in a different layer, such as a convolution layer.  I will explore this in a future post.</p>
+
+<h2 id="references">References</h2>
+<ul>
+  <li><a href="http://colah.github.io/posts/2014-07-NLP-RNNs-Representations">http://colah.github.io/posts/2014-07-NLP-RNNs-Representations</a></li>
+  <li><a href="https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main">https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main</a></li>
+  <li><a href="https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac">https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac</a></li>
+  <li><a href="https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/">https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/</a></li>
+  <li><a href="https://keras.io/">https://keras.io/</a></li>
+  <li><a href="https://machinelearningmastery.com/prepare-text-data-deep-learning-keras">https://machinelearningmastery.com/prepare-text-data-deep-learning-keras</a></li>
+  <li><a href="https://machinelearningmastery.com/use-word-embedding-layers-deep-learning-keras">https://machinelearningmastery.com/use-word-embedding-layers-deep-learning-keras</a></li>
+  <li><a href="https://cs229.stanford.edu/summer2020/cs229-notes-deep_learning.pdf">https://cs229.stanford.edu/summer2020/cs229-notes-deep_learning.pdf</a></li>
+  <li><a href="https://github.com/keras-team/keras/issues/3110">https://github.com/keras-team/keras/issues/3110</a></li>
+</ul>
+
+            </div>
+
+            <!-- Rating -->
+            
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2023-09-14">14 Sep 2023</time></span>           
+                
+                </small>
+            </p>
+
+            <!-- Post Categories -->
+            <div class="after-post-cats">
+                <ul class="tags mb-4">
+                    
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#NLP">NLP</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#PubMed">PubMed</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#SQL">SQL</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#azure">azure</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#python">python</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#tutorial">tutorial</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- End Categories -->
+
+            <!-- Post Tags -->
+            <div class="after-post-tags">
+                <ul class="tags">
+                    
+                    
+                </ul>
+            </div>
+            <!-- End Tags -->
+
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <!-- 
+            <a class="prev d-block col-md-6" href="//should-ai-replace-hospital-fax-machine/"> &laquo; Should AI replace the hospital fax machine?</a> 
+            -->
+            
+            <a class="prev d-block col-md-6" href="/should-ai-replace-hospital-fax-machine/"> &laquo; Should AI replace the hospital fax machine?</a>
+            
+            
+            <!-- 
+            <a class="next d-block col-md-6 text-lg-right" href="//switchover-disruptions-true-cost-ai-scribe/">Switchover disruptions: The true cost of an AI scribe &raquo; </a>
+            -->
+
+            <a class="next d-block col-md-6 text-lg-right" href="/switchover-disruptions-true-cost-ai-scribe/"> Switchover disruptions: The true cost of an AI scribe &raquo; </a>
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+        </div>
+        <!-- End Post -->
+
+    </div>
+</div>
+<!-- End Article
+================================================== -->
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'demowebsite'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+
+</div>
+
+
+<!-- Bottom Alert Bar
+================================================== -->
+<div class="alertbar">
+	<div class="container text-center">
+		<span><img src="/assets/images/logo.png" alt="Health Tech Bytes"> &nbsp; Never miss a <b>story</b> from Health Tech Bytes, subscribe to our newsletter</span>
+        <form action="https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
+            <div class="mc-field-group">
+            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
+            <input type="submit" value="Subscribe" name="subscribe" class="heart">
+            </div>
+        </form>
+	</div>
+</div>
+
+    
+</div>
+
+<!-- Categories Jumbotron
+================================================== -->
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+            <div class="d-md-flex align-items-center justify-content-center h-100">
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+            </div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+            
+            
+                
+                    <a class="mt-1 mb-1" href="/categories#healthcare">healthcare (3)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#AI">AI (3)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#PubMed">PubMed (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#NLP">NLP (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#tutorial">tutorial (3)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#azure">azure (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#python">python (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#SQL">SQL (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#economics">economics (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#langChain">langChain (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#ChatGPT">ChatGPT (1)</a>
+                
+            
+            
+		</div>
+	</div>
+</div>
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                Copyright © 2023 Health Tech Bytes 
+            </div>
+            <div class="col-md-6 col-sm-6 text-center text-lg-right">    
+                Built with <a target="_blank" href="https://www.wowthemes.net/mediumish-free-jekyll-template/">WowThemes</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+</div> <!-- /.site-content -->
+
+<!-- Scripts
+================================================== -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<script src="/assets/js/mediumish.js"></script>
+
+
+
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script> 
+
+
+<script id="dsq-count-scr" src="//demowebsite.disqus.com/count.js"></script>
+
+
+</body>
+</html>

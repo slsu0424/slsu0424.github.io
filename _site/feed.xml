@@ -1,0 +1,923 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Health Tech Bytes</title>
+    <description>Where health and technology meet, one byte at a time.</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 18 Nov 2023 22:11:33 -0500</pubDate>
+    <lastBuildDate>Sat, 18 Nov 2023 22:11:33 -0500</lastBuildDate>
+    <generator>Jekyll v4.3.2</generator>
+    
+      <item>
+        <title>Advancing analysis of FDA Adverse Events using LLMs</title>
+        <description>&lt;p&gt;Patient safety continues to be an issue in 2023, with nearly &lt;a href=&quot;https://www.nbcnews.com/health/health-news/nearly-1-4-us-hospital-patients-experience-harmful-event-study-finds-rcna65119&quot;&gt;1 in 4 patients&lt;/a&gt; experiencing an adverse event upon admission.  Up to 40% of adverse events were related to medications given in the hospital, underscoring the importance of post-market drug surveillance and sufficient bedside staffing.&lt;/p&gt;
+
+&lt;p&gt;For the former, consumers and healthcare professionals are encouraged to report adverse events to the FDA.  The information is captured in the &lt;a href=&quot;https://www.fda.gov/drugs/surveillance/questions-and-answers-fdas-adverse-event-reporting-system-faers&quot;&gt;FDA Adverse Events Reporting System&lt;/a&gt;, which is used to improve product safety and protect public health.  In recent years, &lt;a href=&quot;https://www.lifescienceleader.com/doc/how-the-fda-views-natural-language-processing-0001&quot;&gt;NLP&lt;/a&gt; has helped the FDA identify causal relationships between products and adverse events.   A recent initiative is now evaluating &lt;a href=&quot;https://www.fda.gov/about-fda/nctr-research-focus-areas/bertox-initiative&quot;&gt;LLMs&lt;/a&gt; to improve efficiency and accuracy.&lt;/p&gt;
+
+&lt;p&gt;From a technical lens, this was a topic I explored in my September &lt;a href=&quot;https://www.meetup.com/cloud-data-driven/events/294617896/&quot;&gt;talk&lt;/a&gt; on LLMs.  I covered 2 healthcare demos for using LLMs with LangChain, and LLMs with SQL databases.&lt;/p&gt;
+
+&lt;p&gt;This tutorial will demonstrate using LLMs and LangChain to quickly summarize an adverse events report.&lt;/p&gt;
+
+&lt;p&gt;Prerequisites:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Basic knowledge of OpenAI&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Environment:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Python: 3.11.6&lt;/li&gt;
+  &lt;li&gt;OS: MacOS 12.7.1&lt;/li&gt;
+  &lt;li&gt;VS Code: 1.84.1&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;All resources can be found &lt;a href=&quot;https://github.com/slsu0424/langchain-ade-public&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;generate-an-ade-report&quot;&gt;Generate an ADE report&lt;/h2&gt;
+&lt;p&gt;Individual Case Reports for adverse events are typically requested through the FDA.  A sample report is shown below:&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;
+&lt;a href=&quot;https://www.researchgate.net/publication/271223596_Automatically_Recognizing_Medication_and_Adverse_Event_Information_From_Food_and_Drug_Administration&apos;s_Adverse_Event_Reporting_System_Narratives?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6Il9kaXJlY3QiLCJwYWdlIjoiX2RpcmVjdCJ9fQ&quot; target=&quot;_blank&quot;&gt;
+  &lt;img src=&quot;/assets/images/2023-10/sample-AERS-Report.png&quot; alt=&quot;faers&quot; /&gt;
+&lt;!-- &lt;img src=&quot;/assets/images/2023-10/sample-AERS-Report.png&quot; alt=&quot;aers&quot; width=&quot;750&quot; height=&quot;670&quot; alig&gt; --&gt;
+&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;For the purpose of this tutorial, I used OpenAI’s &lt;a href=&quot;https://openai.com/&quot; target=&quot;_blank&quot;&gt;ChatGPT&lt;/a&gt; (GPT-3.5) to generate a synthetic adverse events report.  I chose warfarin, as it is in the class of drugs that have resulted in &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/books/NBK519025/&quot; target=&quot;_blank&quot;&gt;serious adverse drug reactions&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;These were the series of prompts I used to generate the final &lt;a href=&quot;https://github.com/slsu0424/langchain-ade-public/blob/main/ade.txt&quot;&gt;report&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;“Create an adverse event report for warfarin that is submitted to the FDA”&lt;br /&gt;
+“Fill out the report with hypothetical information”&lt;br /&gt;
+“Remove the placeholders [ ]”&lt;br /&gt;
+“Rewrite the event as a narrative, not a list”&lt;/p&gt;
+
+&lt;p&gt;A snippet of the report is below:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;On November 10, 2023, Mr. John Doe, a 65-year-old male with a medical history of hypertension and atrial fibrillation, was brought to our attention at ABC Medical Center. The patient had been prescribed warfarin (5 mg daily) for his atrial fibrillation.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;qa-application-overview&quot;&gt;Q&amp;amp;A application overview&lt;/h2&gt;
+&lt;p&gt;This LangChain &lt;a href=&quot;https://github.com/hwchase17/chat-your-data/blob/master/blogpost.md&quot;&gt;blog post&lt;/a&gt; provides a high-level overview for building a Q&amp;amp;A application.&lt;/p&gt;
+
+&lt;p&gt;The main steps include:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Load documents&lt;/li&gt;
+  &lt;li&gt;Split documents into chunks&lt;/li&gt;
+  &lt;li&gt;Create embedding vectors from chunks&lt;/li&gt;
+  &lt;li&gt;Store vectors in vector database&lt;/li&gt;
+  &lt;li&gt;Retrieve relevant documents from database&lt;/li&gt;
+  &lt;li&gt;Pass relevant documents to LLM&lt;/li&gt;
+  &lt;li&gt;LLM generates final answer&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Ingest Data:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2023-10/langchain1.png&quot; alt=&quot;langchain1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Query Data:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2023-10/langchain2.png&quot; alt=&quot;langchain2&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;set-the-openai-api-key&quot;&gt;Set the OpenAI API Key&lt;/h2&gt;
+&lt;p&gt;Navigate to &lt;a href=&quot;https://platform.openai.com/&quot;&gt;OpenAI&lt;/a&gt; to obtain the API Key.  This will be needed to authenticate requests to the API.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;# set API keys to authenticate requests to the API
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;API_KEY&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;lt;API Key&amp;gt;&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;environ&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;OPENAI_API_KEY&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;API_KEY&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;use-langchain-to-load-documents-into-a-vector-store&quot;&gt;Use LangChain to load documents into a vector store&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.langchain.com/docs/&quot;&gt;LangChain&lt;/a&gt; is a framework for developing applications powered by LLMs.  The main idea is that developers can “chain” different components around an LLM to create more powerful use cases.&lt;/p&gt;
+
+&lt;p&gt;Hence, we can connect LLMs to documents.&lt;/p&gt;
+
+&lt;p&gt;LangChain has many different methods to load documents.  &lt;strong&gt;TextLoader&lt;/strong&gt; is used to load in a text document and create a vector representation using the &lt;strong&gt;VectorStoreIndexCreator&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;# load text document
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loaders&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TextLoader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;lt;path to text document&amp;gt;&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# create a vector representation of the loaded document
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;VectorstoreIndexCreator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;from_loaders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loaders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The VectorStoreIndexCreator handles steps 2-4 above (chunking, embedding, and storage).  This &lt;a href=&quot;https://medium.com/@kbdhunga/enhancing-conversational-ai-the-power-of-langchains-question-answer-framework-4974e1cab3cf&quot;&gt;article&lt;/a&gt; goes into more detail about the class, including customization.&lt;/p&gt;
+
+&lt;p&gt;The default settings to note are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Chunking - uses &lt;strong&gt;RecursiveCharacterTextSplitter()&lt;/strong&gt; to divide text at specific characters&lt;/li&gt;
+  &lt;li&gt;Embedding - uses &lt;strong&gt;OpenAIEmbeddings&lt;/strong&gt;  to generate embeddings&lt;/li&gt;
+  &lt;li&gt;Storage - embeddings are stored in &lt;strong&gt;Chroma&lt;/strong&gt;, an open-source vector store&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;set-up-streamlit-app&quot;&gt;Set up Streamlit app&lt;/h2&gt;
+&lt;p&gt;With &lt;a href=&quot;https://streamlit.io/&quot;&gt;Streamlit&lt;/a&gt;, we set up a simple web app to allow users to ask questions of the document:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;# display the page title and the text box for the user to ask the question
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;🦜 LangChain: Chat with Adverse Events Report&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;prompt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;text_input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Enter your question&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;query-the-vector-store&quot;&gt;Query the vector store&lt;/h2&gt;
+&lt;p&gt;When a user passes in a question, the store is queried to retrieve the data that is ‘most similar’ to the embedded query.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;# get response from LLM
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prompt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;llm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;ChatOpenAI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;gpt-3.5-turbo&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temperature&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; 
+    &lt;span class=&quot;n&quot;&gt;question&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prompt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+    &lt;span class=&quot;n&quot;&gt;chain_type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;stuff&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Under the hood, we pass in the &lt;strong&gt;ChatOpenAI&lt;/strong&gt; model (gpt-3.5-turbo) and set the &lt;strong&gt;temperature&lt;/strong&gt;.  The temperature controls the randomness of the output generated (closer to 1 will generate a more creative response).  &lt;strong&gt;chain_type = ‘stuff’&lt;/strong&gt; combines the question and relevant document chunks into a single prompt to pass to the LLM.&lt;/p&gt;
+
+&lt;p&gt;This visual shows the overall workflow:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://python.langchain.com/docs/modules/data_connection/vectorstores/&quot;&gt;
+  &lt;img src=&quot;/assets/images/2023-10/langchain3.png&quot; alt=&quot;langchain3&quot; /&gt;
+&lt;!--   &lt;img src=&quot;/assets/images/2023-10/langchain3.png&quot; alt=&quot;langchain3&quot; width=&quot;750&quot; height=&quot;311&quot;&gt; --&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;lets-summarize&quot;&gt;Let’s summarize&lt;/h2&gt;
+&lt;p&gt;With Streamlit running, we prompt the document by asking a question followed by a summarization task:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2023-10/streamlit1.png&quot; alt=&quot;streamlit1&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;In this tutorial, we explored using LLMs and LangChain to retrieve information from an adverse events report.  LangChain is a framework for building LLM-based applications, such as a chatbot.  Although NLP is not new, I was surprised by the ease of using natural language prompts to retrieve information.  I think LLMs can make adverse events analysis more efficient, and improve product safety.&lt;/p&gt;
+
+&lt;p&gt;It would be interesting to test out LLMs on different types of documents (i.e., Standards of Care), and build out an advanced UI with Streamlit. I will explore these in a future post.&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.nbcnews.com/health/health-news/nearly-1-4-us-hospital-patients-experience-harmful-event-study-finds-rcna65119&quot;&gt;https://www.nbcnews.com/health/health-news/nearly-1-4-us-hospital-patients-experience-harmful-event-study-finds-rcna65119&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.fda.gov/drugs/surveillance/questions-and-answers-fdas-adverse-event-reporting-system-faers&quot;&gt;https://www.fda.gov/drugs/surveillance/questions-and-answers-fdas-adverse-event-reporting-system-faers&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.lifescienceleader.com/doc/how-the-fda-views-natural-language-processing-0001&quot;&gt;https://www.lifescienceleader.com/doc/how-the-fda-views-natural-language-processing-0001&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.fda.gov/about-fda/nctr-research-focus-areas/bertox-initiative&quot;&gt;https://www.fda.gov/about-fda/nctr-research-focus-areas/bertox-initiative&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://openai.com/&quot;&gt;https://openai.com/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.ncbi.nlm.nih.gov/books/NBK519025/&quot;&gt;https://www.ncbi.nlm.nih.gov/books/NBK519025/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/hwchase17/chat-your-data/blob/master/blogpost.md&quot;&gt;https://github.com/hwchase17/chat-your-data/blob/master/blogpost.md&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://python.langchain.com/&quot;&gt;https://python.langchain.com/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/@kbdhunga/enhancing-conversational-ai-the-power-of-langchains-question-answer-framework-4974e1cab3cf&quot;&gt;https://medium.com/@kbdhunga/enhancing-conversational-ai-the-power-of-langchains-question-answer-framework-4974e1cab3cf&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://streamlit.io/&quot;&gt;https://streamlit.io/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 17 Nov 2023 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/advancing-analysis-fda-adverse-events-using-llms/</link>
+        <guid isPermaLink="true">http://localhost:4000/advancing-analysis-fda-adverse-events-using-llms/</guid>
+        
+        
+        <category>langChain</category>
+        
+        <category>ChatGPT</category>
+        
+        <category>python</category>
+        
+        <category>tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>Switchover disruptions: The true cost of an AI scribe</title>
+        <description>&lt;p&gt;“Switchover disruptions” were highlighted in Harvard Business Review’s recent &lt;a href=&quot;https://hbr.org/2023/09/ai-adoption-in-u-s-health-care-wont-be-easy&quot;&gt;article&lt;/a&gt; on the challenges of AI adoption in healthcare.  &lt;a href=&quot;https://www.aeaweb.org/articles?id=10.1257/mic.4.3.1&quot;&gt;Economists&lt;/a&gt; define it as the cost of integrating new technologies that can dampen an organization’s profits.&lt;/p&gt;
+
+&lt;p&gt;This prompted me to examine the ways in which this next wave of AI (Large Language Models/LLMs) can minimize such disruptions, and if this type of AI is worth the tradeoff.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-unsettling-case-of-high-switchover-disruption-ehrs&quot;&gt;The unsettling case of high switchover disruption: EHRs&lt;/h2&gt;
+
+&lt;p&gt;I was fascinated by the article’s comparison of 2 new technologies that arrived in healthcare: EHRs (2009) vs. a new surgical technique to remove the gallbladder (1988).  EHRs faced strong resistance, until the Obama administration stepped in to &lt;a href=&quot;https://www.hipaajournal.com/what-is-the-hitech-act/#:~:text=The%20HITECH%20Act%20was%20created%20to%20promote%20and,%28HIPAA%29%20by%20tightening%20up%20the%20language%20of%20HIPAA.&quot;&gt;incentivize&lt;/a&gt; organizations to go digital.  In contrast, the new (minimally invasive) surgical technique faced low switchover disruption - physician adoption was easier and limited to surgeons.&lt;/p&gt;
+
+&lt;p&gt;The key?  Hospitals and surgeons were &lt;em&gt;already in the business&lt;/em&gt; of doing the procedure.&lt;/p&gt;
+
+&lt;p&gt;EHRs should have been an easy win.  Why wouldn’t a patient want to see all their medical information stored in one place?  Why wouldn’t a physician want to see a more complete view of their patient’s health?  In all other industries where digitization has led to improved efficiency, the complete opposite happened with EHRs.  Perhaps we were not aligned on improving healthcare outcomes after all.&lt;/p&gt;
+
+&lt;p&gt;I agree that the issue came down to control.  Not surprisingly (in a capitalist society), there are power struggles between physicians, payers, and government.  But guess who loses out in the end?  The patient.&lt;/p&gt;
+
+&lt;p&gt;Will the same fate await this next wave of AI?&lt;/p&gt;
+
+&lt;h2 id=&quot;a-plausible-use-case-ai-medical-scribe&quot;&gt;A plausible use case: AI Medical Scribe&lt;/h2&gt;
+
+&lt;p&gt;The arrival of ChatGPT has created a dizzying revival for using AI in healthcare, with the promise of automated diagnosis and treatments.  This, by the way, were the same statements touted by &lt;a href=&quot;https://spectrum.ieee.org/how-ibm-watson-overpromised-and-underdelivered-on-ai-health-care&quot;&gt;IBM Watson&lt;/a&gt; a decade ago.  Granted, today’s AI technology has improved over its predecessors, it doesn’t matter unless it can prove its business value.  Martin Kohn, the former IBM Research chief medical scientist, stated:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Prove to me that it will actually do something useful—that it will make my life better, and my patients’ lives better.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I believe AI systems can do something useful - work as a AI medical scribe.  Although this is less glamorous than diagnosing and treating patients, this is probably the best use case for AI today.  Case in point: One of the ill by-products of digitization has been increased &lt;a href=&quot;https://www.medicaleconomics.com/view/top-challenges-2021-1-administrative-burdens-and-paperwork&quot;&gt;administrative burden&lt;/a&gt; placed upon healthcare providers.  If technology can reduce this burden by summarizing patient information or answering patients efficiently, providers will have more face-to-face time with patients, and increase productivity.  For example, &lt;a href=&quot;https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2804309&quot;&gt;JAMA&lt;/a&gt; reported that ChatGPT provided comparable quality and empathetic responses to patient questions found in an online forum (vs. physicians).&lt;/p&gt;
+
+&lt;p&gt;I think more physicians and health system leaders will be on board with these AI technologies, as &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/books/NBK436891/&quot;&gt;efficiency&lt;/a&gt; is one key to improving organizational performance (i.e., reduced costs, better patient outcomes) and potential profits.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-true-cost-of-running-llms&quot;&gt;The true cost of running LLMs&lt;/h2&gt;
+
+&lt;p&gt;While LLMs have demonstrated remarkable performance in terms of human comprehension, one must also consider the cost to run them.  They are not cheap, due to the amount of data they can ingest and the compute power required to process the data.  The Wall Street Journal ran a &lt;a href=&quot;https://www.wsj.com/tech/ai/ais-costly-buildup-could-make-early-products-a-hard-sell-bdd29b9f&quot;&gt;piece&lt;/a&gt; earlier this month on the struggles for tech giants to monetize these technologies.  According to the article, Microsoft is using OpenAI’s latest version (GPT-4) software for its AI features.  However, that version is the largest and most expensive model available.&lt;/p&gt;
+
+&lt;p&gt;Equally important is understanding the technology’s impact on the environment.  According to this &lt;a href=&quot;https://arstechnica.com/gadgets/2023/04/generative-ai-is-cool-but-lets-not-forget-its-human-and-environmental-costs/&quot;&gt;op-ed&lt;/a&gt; from Ars Technica, the most expensive and proprietary (“black box”) models are reserved for very deep pocketed organizations.  As such,  building and deploying these models “requires a lot of planetary resources: rare metals for manufacturing GPUs, water to cool huge data centers, energy to keep those data centers running 24/7 on a planetary scale… all of these are often overlooked in favor of focusing on the future potential of the resulting models.”&lt;/p&gt;
+
+&lt;p&gt;What’s the right ROI then?  Would it behoove healthcare organizations to use smaller, open-source LLMs?  A lack of privacy standards should be of upmost concern, and will likely push organizations to move towards proprietary LLMs.  However, it might be overkill to use the likes of GPT-4 and beyond to answer patient questions.  Perhaps the sweet spot could lie with patient summarization and triaging tasks.  One must consider the tradeoff in terms of time/cost for leveraging human labor vs. a turbo-charged AI chatbot.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;This article provided useful insights and recommendations to overcome the challenges of AI adoption in healthcare.  The challenges were no different a decade ago with EHR adoption, and it was very interesting to understand the power dynamics that made adoption difficult.  While there are no clear answers yet, these next-gen AI technologies have seen a bit more acceptance by the healthcare community.  However, I think it remains to be seen how far-reaching this technology will be, with a medical scribe sounding like a safe bet.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 12 Oct 2023 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/switchover-disruptions-true-cost-ai-scribe/</link>
+        <guid isPermaLink="true">http://localhost:4000/switchover-disruptions-true-cost-ai-scribe/</guid>
+        
+        
+        <category>healthcare</category>
+        
+        <category>AI</category>
+        
+        <category>economics</category>
+        
+      </item>
+    
+      <item>
+        <title>Create word embeddings from PubMed patient summaries</title>
+        <description>&lt;p&gt;Building upon the previous &lt;a href=&quot;https://slsu0424.github.io/encoding-pubmed-abstracts-for-nlp-tasks/&quot;&gt;tutorial&lt;/a&gt; on one-hot encoding, this tutorial will explore the concept of word embeddings and implement this with real-world data.&lt;/p&gt;
+
+&lt;p&gt;For our example, we extract patient summaries from PubMed and label those that had COVID-19 vs. not COVID-19.  Word embeddings are created from text, and the embeddings are trained as part of a neural network to perform a classification task.  Through training, the computer will learn word relationships.&lt;/p&gt;
+
+&lt;p&gt;Pre-requisites:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Basic knowledge of neural networks&lt;/li&gt;
+  &lt;li&gt;Azure Data Studio&lt;/li&gt;
+  &lt;li&gt;Docker&lt;/li&gt;
+  &lt;li&gt;Python 3.10.3&lt;/li&gt;
+  &lt;li&gt;SQL Server on Mac (on-prem)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;All resources can be found &lt;a href=&quot;https://github.com/slsu0424/word-embed-public&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;a-short-intro-to-word-embeddings&quot;&gt;A short intro to Word Embeddings&lt;/h2&gt;
+&lt;p&gt;Word Embeddings were a bit of a complex concept to grasp, until I got into the weeds of building one.  I’ve come to appreciate that they are an important concept in deep learning, for the reason that word meanings can be approximated mathematically.&lt;/p&gt;
+
+&lt;p&gt;To best understand the intuition behind word embeddings, I highly recommend reading this &lt;a href=&quot;http://colah.github.io/posts/2014-07-NLP-RNNs-Representations&quot;&gt;blog post&lt;/a&gt; from Christopher Olah.&lt;/p&gt;
+
+&lt;p&gt;There are a number of techniques available to build a word embedding, including using pre-trained embeddings generated by GloVe, word2vec, etc.  In this tutorial, we will build an embedding from scratch.&lt;/p&gt;
+
+&lt;h2 id=&quot;lets-get-data&quot;&gt;Let’s get data&lt;/h2&gt;
+&lt;p&gt;I selected a dataset of ~167K PubMed patient summaries via &lt;a href=&quot;https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main&quot;&gt;HuggingFace&lt;/a&gt;.  The data is loaded into &lt;a href=&quot;https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac&quot;&gt;SQL Server on a Mac&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Start SQL Server via the terminal, giving the username and password:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;$ mssql -u &amp;lt;sql server username&amp;gt; -p &amp;lt;sql server password&amp;gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/&quot;&gt;Connect&lt;/a&gt; SQL Server to Azure Data Studio to query the data.&lt;/p&gt;
+
+&lt;p&gt;Attached is a screenshot to modify the columns before importing the data:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2023-09/azstudio_setup.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Run the below &lt;a href=&quot;https://github.com/slsu0424/word-embed-public/blob/main/queries.sql&quot;&gt;query&lt;/a&gt; to return the first 100 records and save as csv.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;SELECT TOP (100) [patient_id]
+  ,[patient_uid]
+  ,[PMID]
+  ,[file_path]
+  ,[title]
+  ,[patient]
+  ,[age]
+  ,[gender]
+  ,[similar_patients]
+  ,[relevant_articles]
+FROM [test].[dbo].[PMC-Patients]
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;define-class-labels&quot;&gt;Define class labels&lt;/h2&gt;
+&lt;p&gt;Since this is a binary classification task, we will label the dataset as:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;patients with COVID-19 = ‘1’&lt;/li&gt;
+  &lt;li&gt;patients without COVID-19 = ‘0’&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;labels&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&apos;&apos;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;iterrows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;COVID-19&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;patient&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt; 
+
+    &lt;span class=&quot;n&quot;&gt;labels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;labels_arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;labels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;astype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;labels_arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;[1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 1. 0.
+ 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+ 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+ 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0.
+ 0. 0. 1. 0.]
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;create-a-corpus&quot;&gt;Create a corpus&lt;/h2&gt;
+&lt;p&gt;Now that we have our labeled dataset, we create a corpus.  We take the 1st sentence from each document.  A sample of the first 3 documents is below:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;[&apos;This 60-year-old male was hospitalized due to moderate ARDS from COVID-19 with symptoms of fever, dry cough, and dyspnea.&apos;, 
+&apos;We describe the case of a 55-year-old male who presented to the emergency department via emergency medical services for the chief complaint of sudden onset shortness of breath that woke him from his sleep just prior to arrival.&apos;, 
+&apos;A 20-year-old Caucasian male (1.75 m tall and 76 kg (BMI 24.8)), was admitted to the medical department for persistent hyperpyrexia, severe sore throat, dyspnea, and impaired consciousness with stupor., 
+...]
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;For 100 documents, there are 2541 total words in the corpus.&lt;/p&gt;
+
+&lt;h2 id=&quot;convert-text-to-integers&quot;&gt;Convert text to integers&lt;/h2&gt;
+&lt;p&gt;Since we saw the limitations with one-hot encoding, a better approach would be to assign each word a unique integer.  The integer encoding for a specific word remains the same across all documents, so this will reduce the size of the corpus to unique words.&lt;/p&gt;
+
+&lt;p&gt;To do this, &lt;a href=&quot;https://keras.io/&quot;&gt;Keras&lt;/a&gt; provides a handy &lt;strong&gt;Tokenizer() API&lt;/strong&gt; that can handle multiple documents.  For a deeper understanding of its implementation, see this &lt;a href=&quot;https://machinelearningmastery.com/prepare-text-data-deep-learning-keras&quot;&gt;tutorial&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;# integer encode words per document 
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encod_corp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# fit tokenizer on docs
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Tokenizer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filters&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;#$%&amp;amp;()*+,/:;&amp;lt;=&amp;gt;?@[&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;]^_`{|}~&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\t\n&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fit_on_texts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;corp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+&lt;span class=&quot;n&quot;&gt;encod_corp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;texts_to_sequences&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;corp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# get unique words
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vocab&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word_index&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# print vocab list
+&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;vocab:&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vocab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+   &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;vocab_size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vocab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Vocab size = %s unique words&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vocab_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;vocab:
+1 a
+2 of
+3 with
+4 and
+5 the
+
+Vocab size = 931 unique words
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Out of 2541 total words, 931 unique words are found.&lt;/p&gt;
+
+&lt;h2 id=&quot;pad-the-documents&quot;&gt;Pad the documents&lt;/h2&gt;
+&lt;p&gt;Keras requires that all documents must be the same length.  We find the maximum length of a document, which is 55 words.  Zeroes are then added to the shorter documents using the &lt;strong&gt;pad_sequences&lt;/strong&gt; function:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;# pad the documents with zeros
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pad_corp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;pad_sequences&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encod_corp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;maxlen&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;maxlen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pad_corp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;[[ 31 281  10   7 160  44   6 282 283  28  54   3  84   2  29  45  36   4
+  161   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+    0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+    0]
+   ... 
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The above array represents the text of Document 1.&lt;/p&gt;
+
+&lt;h2 id=&quot;create-an-embedding&quot;&gt;Create an embedding&lt;/h2&gt;
+&lt;p&gt;To create the embedding, we create a Keras Sequential model.  Sequential means that each layer in the network has exactly one input and one output.  To define the embedding, we need 3 inputs:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;input_dim: size of vocabulary&lt;/li&gt;
+  &lt;li&gt;output_dim: embedding dimension&lt;/li&gt;
+  &lt;li&gt;input_length: maximum length of a document&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A output_dim = 2 means that every vocabulary word is represented by a vector that contains 2 elements, or features.  These numbers can be chosen arbitrarily.  A larger output_dim will have more features to train on, but will also be more computationally expensive.&lt;/p&gt;
+
+&lt;p&gt;Once the embedding layer is added to the network, the learning process is configured, and we run model.predict() to generate the predicted outputs.&lt;/p&gt;
+
+&lt;p&gt;We can also add other hidden layers (Flatten, Dense) to discover more complex patterns in the data.  These will be discussed once we train the embeddings.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;# create keras model
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Sequential&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# define embedding
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;embedding_layer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Embedding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+                        &lt;span class=&quot;n&quot;&gt;input_dim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vocab_size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                        &lt;span class=&quot;n&quot;&gt;output_dim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+                        &lt;span class=&quot;n&quot;&gt;input_length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;maxlen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# add layers
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;embedding_layer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Flatten&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; 
+&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Dense&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;activation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;sigmoid&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# configure the learning process
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;compile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;optimizer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;adam&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;loss&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;categorical_crossentropy&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+        &lt;span class=&quot;n&quot;&gt;metrics&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;accuracy&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# model prediction
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;embedding_output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;predict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pad_corp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;visualize-intial-embeddings&quot;&gt;Visualize intial embeddings&lt;/h2&gt;
+&lt;p&gt;The embedding layer is a lookup table, which represents each word as floating point values (weights) in the dimension specified.  These weights are initialized randomly before training the model.  The weights can be obtained as follows:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;# embedding layer
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;embedding_layer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;get_layer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;embedding_layer_weights&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;embedding_layer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;get_weights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;embedding_layer_weights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Since the output_dim = 2, the &lt;a href=&quot;https://github.com/slsu0424/word-embed-public/embedding-layer-weights.txt&quot;&gt;embedding_layer_weights&lt;/a&gt; consists of each word represented by 2 weights:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;[[ 7.04301521e-03  3.39607336e-02] (index 0)
+ [ 4.43325080e-02 -4.35174219e-02] --&amp;gt; &apos;a&apos;
+ [-1.84080116e-02 -4.48269024e-02] --&amp;gt; &apos;of&apos;
+ [-4.74609025e-02  4.29279730e-03] --&amp;gt; &apos;with&apos;
+ [ 1.24161355e-02  4.76875566e-02] --&amp;gt; &apos;and&apos;
+ [-1.89721715e-02 -2.00293791e-02] --&amp;gt; &apos;the&apos;
+ [-2.18192935e-02 -4.75601330e-02] --&amp;gt; &apos;to&apos;
+ [-2.51929164e-02 -9.96438414e-03] --&amp;gt; &apos;was&apos;
+...]]
+
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://github.com/slsu0424/word-embed-public/embedding-output.txt&quot;&gt;embedding_output&lt;/a&gt; is the result of the embedding layer for a given input sequence.  For Document 1, we see that each value from the embedding layer is mapped to a word in that document:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;[[[ 2.08440907e-02  3.52325179e-02] --&amp;gt; &apos;This&apos;
+  [-1.70833841e-02 -4.37318459e-02] --&amp;gt; &apos;60-year-old&apos;
+  [-4.54872735e-02  1.42193772e-02] --&amp;gt; &apos;male&apos;
+  [-2.51929164e-02 -9.96438414e-03] --&amp;gt; &apos;was&apos;
+  [-4.34226505e-02 -2.67695189e-02] --&amp;gt; &apos;hospitalized&apos;
+  [-3.18809636e-02  3.46260779e-02] --&amp;gt; &apos;due&apos;
+  [-2.18192935e-02 -4.75601330e-02] --&amp;gt; &apos;to&apos;
+  ...]]]
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Let’s see how this looks visually.  Since these embeddings are not trained, it would make sense that the words are fairly scattered:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/slsu0424/word-embed-public/blob/main/output1.png?raw=true&quot; alt=&quot;output1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;visualize-trained-embeddings&quot;&gt;Visualize trained embeddings&lt;/h2&gt;
+&lt;p&gt;After adding the embedding layer, we have a 55 x 2 (doc length x embedding dimension) matrix.  We need to compress (flatten) this into a 1D vector, to send to the next hidden (dense) layer.&lt;/p&gt;
+
+&lt;p&gt;As shown above, we add the Flatten and Dense layers to the model.&lt;/p&gt;
+
+&lt;p&gt;Summary of layers:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ embedding_28 (Embedding)    (None, 55, 2)             1864      
+                                                                 
+ flatten_17 (Flatten)        (None, 110)               0         
+                                                                 
+ dense_17 (Dense)            (None, 1)                 111       
+                                                                 
+=================================================================
+Total params: 1975 (7.71 KB)
+Trainable params: 1975 (7.71 KB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The 55×2 matrix is now reduced to a 110-element vector by the Flatten layer.&lt;/p&gt;
+
+&lt;p&gt;Finally, we train the model on the classification task and evaluate its performance.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;# fit the model
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pad_corp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;labels_arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;epochs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;verbose&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;# evaluate the model
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;accuracy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;evaluate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pad_corp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;labels_arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;verbose&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Accuracy: %f&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;accuracy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;4/4 [==============================] - 0s 2ms/step - loss: 0.0000e+00 - accuracy: 0.8900
+Accuracy: 88.999999
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Since these embeddings are now trained, we can visualize more defined clusters with ~89% accuracy for the prediction task.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/slsu0424/word-embed-public/blob/main/output2.png?raw=true&quot; alt=&quot;output2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;In this tutorial, we explored how to create word embeddings from scratch, using a neural network to perform a classification task.  By taking sample text from PubMed patient summaries, we were able to train a neural network to classify patients who had COVID-19 and those that did not.  In doing so, we were also able to train the embeddings, such that words with similar meanings were visually placed closer together.&lt;/p&gt;
+
+&lt;p&gt;We can boost the performance of the training accuracy by adding in a different layer, such as a convolution layer.  I will explore this in a future post.&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://colah.github.io/posts/2014-07-NLP-RNNs-Representations&quot;&gt;http://colah.github.io/posts/2014-07-NLP-RNNs-Representations&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main&quot;&gt;https://huggingface.co/datasets/zhengyun21/PMC-Patients/tree/main&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac&quot;&gt;https://builtin.com/software-engineering-perspectives/sql-server-management-studio-mac&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/&quot;&gt;https://www.sqlshack.com/sql-server-data-import-using-azure-data-studio/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://keras.io/&quot;&gt;https://keras.io/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://machinelearningmastery.com/prepare-text-data-deep-learning-keras&quot;&gt;https://machinelearningmastery.com/prepare-text-data-deep-learning-keras&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://machinelearningmastery.com/use-word-embedding-layers-deep-learning-keras&quot;&gt;https://machinelearningmastery.com/use-word-embedding-layers-deep-learning-keras&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cs229.stanford.edu/summer2020/cs229-notes-deep_learning.pdf&quot;&gt;https://cs229.stanford.edu/summer2020/cs229-notes-deep_learning.pdf&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/keras-team/keras/issues/3110&quot;&gt;https://github.com/keras-team/keras/issues/3110&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 14 Sep 2023 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/create-word-embeddings-pubmed-patient-summaries/</link>
+        <guid isPermaLink="true">http://localhost:4000/create-word-embeddings-pubmed-patient-summaries/</guid>
+        
+        
+        <category>azure</category>
+        
+        <category>PubMed</category>
+        
+        <category>NLP</category>
+        
+        <category>python</category>
+        
+        <category>SQL</category>
+        
+        <category>tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>Should AI replace the hospital fax machine?</title>
+        <description>&lt;p&gt;VC firm Andressen Horowitz recently published an &lt;a href=&quot;https://a16z.com/2023/08/02/where-will-ai-have-the-biggest-impact-healthcare&quot; target=&quot;_blank&quot;&gt;article&lt;/a&gt; on how the latest AI technologies will have a big impact on healthcare.  Is it finally time to say good-bye to the trusted &lt;a href=&quot;https://www.computerworld.com/article/3697270/the-fax-is-still-king-in-healthcare-and-its-not-going-away-anytime-soon.html&quot; target=&quot;_blank&quot;&gt;fax machine?&lt;/a&gt;  I read with guarded optimism, given AI’s lack of success in healthcare over the last decade and during the &lt;a href=&quot;https://hbr.org/2022/03/why-ai-failed-to-live-up-to-its-potential-during-the-pandemic&quot; target=&quot;_blank&quot;&gt;COVID-19 pandemic&lt;/a&gt;.  While I see great potential, I do not believe AI to have as much impact in a field where human connection and privacy is vital.&lt;/p&gt;
+
+&lt;h2 id=&quot;less-cumbersome-software-more-productivity&quot;&gt;Less (cumbersome) software, more productivity&lt;/h2&gt;
+&lt;p&gt;I love new technology.  I love it because it makes me more productive.  As I was booking holiday travel recently, I realized how &lt;em&gt;easy&lt;/em&gt; it has become to do things on my own - on my own time, in my own way.  No calling a travel agent to arrange a trip.  No taking out a paper map to get to the hotel.  I don’t think you’ll find too many people who will complain about the convenience this provides.&lt;/p&gt;
+
+&lt;p&gt;We use new software all the time these days.  Everytime a new app comes out, we can easily download it and check it out.  It integrates seamlessly into our everyday lives; it makes things a bit more efficient.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, healthcare seems to have gotten it backwards -
+every new healthcare software solution promises more productivity, but instead does the opposite.  EHRs require more clicks for physicians.  For patients, my personal favorite is when I am asked to fill out insurance information in the EHR before my next appointment, even though I provided it at the previous appointment.  So, why bother filling out anything online?&lt;/p&gt;
+
+&lt;p&gt;That’s not productivity.&lt;/p&gt;
+
+&lt;p&gt;The article states that instead of healthtech companies developing new software, they’ll develop “AI ‘people’ who are cheap, fast, cheerful and empathic.”  However, if I’m a patient, I want a human being to help me feel better.  The thought of a machine having empathy discounts any reason to see a doctor at all.&lt;/p&gt;
+
+&lt;p&gt;A good piece of software is one that will handle the simple things like document capture, reconciliation, etc.  I agree with the article that the first revolution will be non-clinical use cases.  If AI can help us get past that hurdle, then I think we will have achieved productivity.&lt;/p&gt;
+
+&lt;h2 id=&quot;marginal-improvements-are-worth-the-effort&quot;&gt;Marginal improvements are worth the effort&lt;/h2&gt;
+&lt;p&gt;Having worked in high-tech technical roles over the last decade, I have seen the evolution of more advanced computing capabilities.  Working in big data and cloud platforms have shown the ability to create powerful solutions with seemingly limitless compute power.  I may even argue that next-gen AI solutions and the infrastructure that powers them will produce 10x the value that will displace outdated technologies.&lt;/p&gt;
+
+&lt;p&gt;Hence, replace the humble fax machine.&lt;/p&gt;
+
+&lt;p&gt;Yet, I am wary about moving at that pace in healthcare.  On the one hand, cloud computing can process billions of data points for genomic sequencing or population health management.  The article is correct in that AI will require more compute resources due to algorithm complexity and compute resources required.  There will be more insights, more personalization, more productivity.&lt;/p&gt;
+
+&lt;p&gt;But there could also be a cloud outage, a malicious entity that wants to conduct a cybersecurity attack on a hospital, a patient record that ends up in the wrong hands.&lt;/p&gt;
+
+&lt;p&gt;There’s nothing wrong with marginal improvements.  Is it better to misdiagnose 1 patient or 1000 patients?  A small error allows time to investigate and course correct.&lt;/p&gt;
+
+&lt;h2 id=&quot;a-world-class-ai-doctor-in-your-pocket-do-i-really-want-one&quot;&gt;A world-class AI doctor in your pocket: Do I really want one?&lt;/h2&gt;
+&lt;p&gt;Good technology works seamlessly and increases productivity.  Much like today’s travel apps, it would be amazing to have a doctor that knows everything about me in the future.  There are some models already out there that attempt this - Livongo by Teladoc, as an example.  However, even if it is covered by insurance, I haven’t really used it unless out of necessity.&lt;/p&gt;
+
+&lt;p&gt;An AI doctor might sit as one of those unused apps on my phone.  Most people can find a satisfactory answer to a medical question via an internet search, coupled with an in-person visit to the doctor’s office.  Can an AI doctor change things for the better?  Maybe.  However, a virtual doctor will never replace a conversation with a real human being.&lt;/p&gt;
+
+&lt;p&gt;However, I like the idea of AI enabling earlier diagnosis - this is one use case I believe will see more rapid adoption.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;I appreciated this insightful and hopeful article for the future of healthcare.  Perhaps with this new wave of AI, there is a renewed commitment by people and processes to enable a better healthcare experience for everyone.  Perhaps we can put that fax machine to rest.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 25 Aug 2023 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/should-ai-replace-hospital-fax-machine/</link>
+        <guid isPermaLink="true">http://localhost:4000/should-ai-replace-hospital-fax-machine/</guid>
+        
+        
+        <category>AI</category>
+        
+        <category>healthcare</category>
+        
+      </item>
+    
+      <item>
+        <title>Encoding PubMed abstracts for NLP tasks</title>
+        <description>&lt;p&gt;Last month, I gave a &lt;a href=&quot;https://www.meetup.com/new-jersey-sql-data-platform-user-group/events/294231326/&quot;&gt;talk&lt;/a&gt; at a local meetup on LLMs, LangChain &amp;amp; SQL.  Since then, I’ve wanted to explore the technical foundations of LLMs, particularly neural networks.&lt;/p&gt;
+
+&lt;p&gt;This article will begin a series of technical tutorials that are geared towards healthcare care use cases.  While there is no shortage of resources to learn about LLMs, neural networks, or the latest ML algorithms, my focus will be to reinforce technical concepts related to deep learning.&lt;/p&gt;
+
+&lt;h2 id=&quot;a-simple-approach-to-nlp---one-hot-encoding&quot;&gt;A simple approach to NLP - one-hot encoding&lt;/h2&gt;
+&lt;p&gt;To start, I wanted to backtrack the origins of LLMs, which are a type of neural network.  A neural network is a type of machine learning approach that attempts to mimic the way the brain works (biological neural network).  This approach has been shown to perform better on NLP tasks than previous methods.  For a great overview of NLP, check out this &lt;a href=&quot;https://www.deeplearning.ai/resources/natural-language-processing&quot;&gt;guide&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The goal of NLP is to enable computers to “understand” natural language in order to perform some task, such as sentiment analysis.  In order to do so, natural language (text) has to be converted (encode) into a numerical format.&lt;/p&gt;
+
+&lt;p&gt;There are numerous approaches to encode text, with more advanced approaches surfacing over the years.  I will start with one-hot encoding, as it is one of the most familiar data pre-processing techniques for ML.  However, we will also begin to see the limitations of such a technique through the example below.&lt;/p&gt;
+
+&lt;p&gt;For NLP, one of the simplest techniques for encoding text is to represent each categorical variable (a word) as a binary vector.  A one-hot vector can be thought of as a type of binary vector where the index of the word is denoted as ‘1’, and all other words are denoted as ‘0’.  The size/dimension of the vector is determined by the total number of unique words (vocabulary) found in the text.&lt;/p&gt;
+
+&lt;p&gt;Consider the following text: ‘I have a fever’.  The vocabulary consists of 4 unique words (I, have, a, fever), and each word is represented as a one-hot vector.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2023-07/fever.png&quot; alt=&quot;PubMed&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;lets-convert-a-few-pubmed-abstracts-to-one-hot-vectors&quot;&gt;Let’s convert a few PubMed abstracts to one-hot vectors&lt;/h2&gt;
+&lt;p&gt;To put the above tutorial into practice, I thought I would give this a try with a few abstracts.  Let’s say that we want to perform an NLP task on papers that discuss cardiovascular disease (CVD) risk factors.  This is what my query and results look like in PubMed:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2023-07/PubMed.png&quot; alt=&quot;PubMed&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Each abstract represents a single document in a corpus (collection of documents).  Let’s take the first 5 words from each abstract.  For simplicity purposes, we will ignore header terms such as ‘Context’, ‘Introduction’, ‘Purpose’.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images//2023-07/PubMed2.png&quot; alt=&quot;PubMed&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There are 15 words in the corpus:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Doc 1: “The difference between actual and”&lt;br /&gt;
+Doc 2: “Cardiovascular disease (CVD) is a”&lt;br /&gt;
+Doc 3: “To evaluate awareness about cardiovascular”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Next, we need to find the unique words.  We have 14 unique words (‘cardiovascular’ is repeated twice):&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Doc 1: The(1) difference(2) between(3) actual(4) and(5)&lt;br /&gt;
+Doc 2: Cardiovascular(6) disease(7) (CVD)(8) is(9) a(10)&lt;br /&gt;
+Doc 3: To(11) evaluate(12) awareness(13) about(14) cardiovascular(6)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;We represent these unique words in a vocabulary:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Vocabulary = {‘The’, ‘difference’, ‘between’, ‘actual’, ‘and’, ‘Cardiovascular’, ‘disease’, ‘(CVD)’, ‘is’, ‘a’, ‘To’, ‘evaluate’, ‘awareness’, ‘about’}&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Each word is represented as a one-hot vector with a length equal to the size of the vocabulary (N = 14).  We will have something that looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images//2023-07/encoding.png&quot; alt=&quot;encoding&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;limitations-of-one-hot-encoding&quot;&gt;Limitations of one-hot encoding&lt;/h2&gt;
+&lt;p&gt;One challenge seen with the one-hot encoding approach is that there is no information about the words the vectors represent, or how the words relate to each other. That is, it tells us nothing about the similarities or differences between words.  If we were to graph each vector and calculate a similarity measure (e.g., cosine similarity) between them, we would see that there is 0 similiarity between any two vectors.  Refer to this &lt;a href=&quot;https://towardsdatascience.com/word-embeddings-intuition-behind-the-vector-representation-of-the-words-7e4eb2410bba&quot;&gt;article&lt;/a&gt; for a mathematical overview of the concept.&lt;/p&gt;
+
+&lt;p&gt;A second challenge is sparse, highly dimensional data.  When each word in a document is replaced with a one-hot vector, we start to get a large feature space with a lot of zeroes.  In fact, when increase our vocabulary size (for example, double the vocabulary size N = 28 words), the feature space will morph into something like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2023-07/encoding2.png&quot; alt=&quot;encoding_sparse&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This dataset is:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;sparse (majority of the elements are zeroes)&lt;/li&gt;
+  &lt;li&gt;highly-dimensional (a larger vocabulary creates a larger feature space, which requires more computational power and data)&lt;/li&gt;
+  &lt;li&gt;hard-coded (machine does not learning anything from the data)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Given these limitations, this technique makes it difficult for a computer to detect any sort of meaningful patterns to make an accurate prediction.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;In this tutorial, we explored one-hot encoding, a very simple way to convert categorical variables for natural language processing tasks.  By taking a subset of PubMed abstracts, we were able to see how this approach becomes highly inefficient with larger vocabularies.  Some of these inefficiencies are due to a lack of understanding relationships between words, as well as a sparse and highly-dimensional feature space.&lt;/p&gt;
+
+&lt;p&gt;There have been different techniques that have improved upon the limitations of one-hot encoding, and they have worked increasingly well with neural networks.  I will explore these in future posts.&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.deeplearning.ai/resources/natural-language-processing&quot;&gt;https://www.deeplearning.ai/resources/natural-language-processing&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://web.stanford.edu/class/cs224n/readings/cs224n-2019-notes01-wordvecs1.pdf&quot;&gt;https://web.stanford.edu/class/cs224n/readings/cs224n-2019-notes01-wordvecs1.pdf&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developers.google.com/machine-learning/glossary#one-hot-encoding&quot;&gt;https://developers.google.com/machine-learning/glossary#one-hot-encoding&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.tensorflow.org/text/guide/word_embeddings&quot;&gt;https://www.tensorflow.org/text/guide/word_embeddings&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/intelligentmachines/word-embedding-and-one-hot-encoding-ad17b4bbe111&quot;&gt;https://medium.com/intelligentmachines/word-embedding-and-one-hot-encoding-ad17b4bbe111&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://builtin.com/data-science/curse-dimensionality&quot;&gt;https://builtin.com/data-science/curse-dimensionality&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://towardsdatascience.com/word-embeddings-intuition-behind-the-vector-representation-of-the-words-7e4eb2410bba&quot;&gt;https://towardsdatascience.com/word-embeddings-intuition-behind-the-vector-representation-of-the-words-7e4eb2410bba&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wordcount.com/&quot;&gt;https://wordcount.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 27 Jul 2023 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/encoding-pubmed-abstracts-nlp-tasks/</link>
+        <guid isPermaLink="true">http://localhost:4000/encoding-pubmed-abstracts-nlp-tasks/</guid>
+        
+        
+        <category>PubMed</category>
+        
+        <category>NLP</category>
+        
+        <category>tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>When a correct diagnosis matters</title>
+        <description>&lt;p&gt;When does a correct diagnosis matter?  Does it matter if a human or computer makes the decision?  I reflect on a recent article by the Mayo Clinic on a diagnosis concluded by ChatGPT vs. cardiologist, and its implications for patient care.&lt;/p&gt;
+
+&lt;p&gt;Over the last few months, I have been following the tech news closely as new AI technologies, particularly &lt;a href=&quot;https://en.wikipedia.org/wiki/Large_language_model&quot;&gt;Large Language Models&lt;/a&gt; (LLMs) and &lt;a href=&quot;https://en.wikipedia.org/wiki/ChatGPT&quot;&gt;ChatGPT&lt;/a&gt; (a type of LLM), have exploded on to the scene.  Of course, being a bit skeptical, I was curious to see how this next iteration of AI would fare in healthcare.&lt;/p&gt;
+
+&lt;h4 id=&quot;putting-llms-to-the-test&quot;&gt;Putting LLMs to the test&lt;/h4&gt;
+
+&lt;p&gt;In their article &lt;a href=&quot;https://www.mayoclinicplatform.org/2023/05/10/when-physicians-go-head-to-head-with-large-language-models&quot;&gt;When Physicians Go Head-to-Head with Large Language Models&lt;/a&gt;, John Halamka, MD, and his team at the Mayo Clinic Platform sought to evaluate these latest technologies.  They prompted ChatGPT with the following patient presentation:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Mr. Jones, 59 years old, with a history of hypertension, stroke, and elevated lipid levels, arrives in the ED complaining of sudden-onset intense substernal chest pain that radiates to his left leg but does not affect his left arm or jaw. He also has an elevated troponin I level. What is the correct diagnosis?”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ChatGPT replied:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Based on the symptoms and medical history provided, Mr. Jones is presenting with a potential myocardial infarction (MI), also known as a heart attack. The sudden onset of intense substernal chest pain that radiates to his left leg is a common symptom of a heart attack. The fact that the pain does not affect his left arm or jaw is not unusual, as some heart attacks can present with atypical symptoms.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;From a layman’s perspective, this answer seems pretty convincing.  From a technological perspective, this is pretty impressive that ChatGPT can &lt;a href=&quot;https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/&quot;&gt;predict&lt;/a&gt; the next series of words or “tokens” based on a prompt, and return results that sound surprisingly human.&lt;/p&gt;
+
+&lt;h4 id=&quot;the-case-for-human-diagnostic-reasoning&quot;&gt;The case for human diagnostic reasoning&lt;/h4&gt;
+
+&lt;p&gt;Herein lies the problem - just because we have a highly probablistic AI system doesn’t mean it translates well into clinical practice.  The article goes on to compare ChatGPT’s answer to a cardiologist who encountered an identical patient scenario:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Based on a methodical review of all the patient data, Dr. Schleifer et al. questioned the significance of the patient’s radiating left leg pain. One of the hallmarks of a genuine expert diagnostician is their more completely developed disease scripts and their ability to spot inconsistencies that don’t fit into these scripts. The leg pain was one of those clues that might warrant a walk down a different diagnostic path.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;They also used a reasoning technique sometimes referred to as pre-mortem examination. Essentially, they asked themselves: What would happen once a specific diagnosis is made and acted upon? What are the consequences, good and bad? In the case of Mr. Jones, if he is treated with the anticoagulants usually indicated for a typical MI, and he actually had another condition such as an aortic dissection, the consequences could prove disastrous.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;which-response-is-more-reassuring&quot;&gt;Which response is more reassuring?&lt;/h4&gt;
+
+&lt;p&gt;Taking a step back and looking at the responses of ChatGPT vs. cardiologist, I thought about which one would resonate more if I were a patient.&lt;/p&gt;
+
+&lt;p&gt;Let’s think about this - if you ever find yourself in the emergency room, physicians will conduct a battery of tests before coming to a conclusion.  I appreciate the pre-mortem examination technique, as it forces one to think about the implications of a specific diagnosis.  I wouldn’t want my doctor to draw a conclusion based on what an AI system said, but that they would do a full workup to confirm their hypothesis.&lt;/p&gt;
+
+&lt;p&gt;In all fairness though, ChatGPT did close out its response as follows:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;It is important to note that a definitive diagnosis can only be made by a healthcare professional after conducting a thorough medical evaluation, including a physical examination, ECG, and other tests as necessary.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I think this response is fine.  However, if a more accurate conclusion was made by human being, then what is the value of using this system if it is going to add more minutes to a clinical workflow?&lt;/p&gt;
+
+&lt;h4 id=&quot;a-correct-diagnosis-matters-in-all-cases-but-more-common-cases-may-be-automated&quot;&gt;A correct diagnosis matters in all cases, but more common cases may be automated&lt;/h4&gt;
+
+&lt;p&gt;One thing to note is that LLMs are limited by their tendency to &lt;a href=&quot;https://spectrum.ieee.org/ai-hallucination&quot;&gt;hallucinate&lt;/a&gt;.  It means that a generative AI system can output novel text that sound completely plausible, but are factually incorrect.  Currently, there are more focused LLMs trained on the medical domain that are under development, with the idea that narrower models may mitigate these hallucinations.&lt;/p&gt;
+
+&lt;p&gt;Despite these limitations, I agree with the authors that LLMs still have value in healthcare.  My key takeaways:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;ChatGPT may be better suited to situations where common medical conditions are seen and have a standard treatment plan (i.e., primary care)&lt;/li&gt;
+  &lt;li&gt;Automating common cases can free up physician time for more complex cases or other tasks&lt;/li&gt;
+  &lt;li&gt;In complex clinical cases, employing human reasoning and intuition can mean life or death for a patient&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Lastly, I would argue that most physicians aim to establish a trust relationship with their patients, mutually working towards the best possible outcome.  This type of relationship fails to exist between a human and a computer.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 02 Jun 2023 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/when-correct-diagnosis-matters/</link>
+        <guid isPermaLink="true">http://localhost:4000/when-correct-diagnosis-matters/</guid>
+        
+        
+        <category>healthcare</category>
+        
+        <category>AI</category>
+        
+      </item>
+    
+  </channel>
+</rss>
