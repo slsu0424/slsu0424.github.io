@@ -14,10 +14,10 @@ comments: false
 <b>Healthcare</b>
 <ul>
 <li><a href="https://www.beckershospitalreview.com/" target="_blank">Becker's Hospital Review</a></li>
+<li><a href="https://www.fiercehealthcare.com/" target="_blank">Fierce Healthcare</a></li>
 <li><a href="https://www.forbes.com/healthcare" target="_blank">Forbes Healthcare</a></li>
 <li><a href="https://erictopol.substack.com/" target="_blank">Ground Truths</a></li>
 <li><a href="https://www.hcinnovationgroup.com/" target="_blank">Healthcare Innovation</a></li>
-<li><a href="https://healthitanalytics.com/" target="_blank">Healthcare IT Analytics</a></li>
 <li><a href="https://www.healthcareitnews.com/" target="_blank">Healthcare IT News</a></li>
 <li><a href="https://www.modernhealthcare.com/" target="_blank">Modern Healthcare</a></li>
 <li><a href="https://www.statnews.com/" target="_blank">Stat News</a></li>
@@ -39,6 +39,7 @@ comments: false
 <b>Data Science & AI</b>
 <ul>
 <li><a href="https://developers.google.com/machine-learning" target="_blank">Google Machine Learning Education</a></li>
+<li><a href="https://www.kdnuggets.com" target="_blank">KDnuggets</a></li>
 <li><a href="https://machinelearningmastery.com/" target="_blank">Machine Learning Mastery</a></li>
 <li><a href="https://www.tensorflow.org/" target="_blank">TensorFlow</a></li>
 <li><a href="https://towardsdatascience.com/" target="_blank">Towards Data Science</a></li>
@@ -51,6 +52,7 @@ comments: false
 <li><a href="https://arstechnica.com/information-technology/" target="_blank">Ars Technica</a></li>
 <li><a href="https://www.forbes.com/sites/forbestechcouncil" target="_blank">Forbes Technology Council</a></li>
 <li><a href="https://www.geekwire.com/" target="_blank">GeekWire</a></li>
+<li><a href="https://techcrunch.com/" target="_blank">TechCrunch</a></li>
 <li><a href="https://www.techopedia.com/" target="_blank">Technopedia</a></li>
 </ul>
 </p>
