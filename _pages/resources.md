@@ -39,6 +39,7 @@ comments: false
 <b>Data Science & AI</b>
 <ul>
 <li><a href="https://developers.google.com/machine-learning" target="_blank">Google Machine Learning Education</a></li>
+<li><a href="https://www.kdnuggets.com" target="_blank">KDnuggets</a></li>
 <li><a href="https://machinelearningmastery.com/" target="_blank">Machine Learning Mastery</a></li>
 <li><a href="https://www.tensorflow.org/" target="_blank">TensorFlow</a></li>
 <li><a href="https://towardsdatascience.com/" target="_blank">Towards Data Science</a></li>
