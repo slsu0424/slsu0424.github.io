@@ -11,7 +11,7 @@ image: assets/images/2023-11/iStock-1192445057_license_resize.png
 
 ---
 
-Patient safety continues to be an issue in 2023, with nearly [1 in 4 patients](https://www.nbcnews.com/health/health-news/nearly-1-4-us-hospital-patients-experience-harmful-event-study-finds-rcna65119) experiencing an adverse event upon admission.  Up to 40% of adverse events were related to medications given in the hospital, underscoring the importance of post-market drug surveillance and sufficient bedside staffing.  
+Patient safety continues to be an issue in 2023, with nearly [1 in 4 patients](https://www.chiefhealthcareexecutive.com/view/one-in-four-hospital-admissions-leads-to-adverse-event-study-finds) experiencing an adverse event upon admission.  Up to 40% of adverse events were related to medications given in the hospital, underscoring the importance of post-market drug surveillance and sufficient bedside staffing.  
 
 For the former, consumers and healthcare professionals are encouraged to report adverse events to the FDA.  The information is captured in the [FDA Adverse Events Reporting System](https://www.fda.gov/drugs/surveillance/questions-and-answers-fdas-adverse-event-reporting-system-faers), which is used to improve product safety and protect public health.  In recent years, [NLP](https://www.lifescienceleader.com/doc/how-the-fda-views-natural-language-processing-0001) has helped the FDA identify causal relationships between products and adverse events.   A recent initiative is now evaluating [LLMs](https://www.fda.gov/about-fda/nctr-research-focus-areas/bertox-initiative) to improve efficiency and accuracy.  
 
