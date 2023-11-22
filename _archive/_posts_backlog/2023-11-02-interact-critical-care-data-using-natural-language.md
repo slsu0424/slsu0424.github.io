@@ -7,7 +7,7 @@ categories: [ azure, langChain, ChatGPT, python, SQL, tutorial ]
 image: assets/images/2023-11/shutterstock_1111028177_license_resize.png
 ---
 
-ChatGPT has had quite an illustrious year, to say the least.  From jaw-dropping capabilities of generating code to 
+ChatGPT has had quite an illustrious year, to say the least.  Not only has it managed to generate code and write poetry with ease, it has also sparked a cultural shift in how we consider such technology in everyday life.  
 
 
 If someone told me that I would someday be able to "talk" to a database, I would have said it's impossible.  However, thanks to LLMs, a user can now converse with a database using natural language.  This is an exciting and powerful new capability for anyone that works with healthcare data.
