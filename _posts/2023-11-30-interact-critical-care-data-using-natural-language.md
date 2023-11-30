@@ -7,7 +7,7 @@ categories: [ azure, langChain, ChatGPT, python, SQL, tutorial ]
 image: assets/images/2023-11/shutterstock_1111028177_license_resize.png
 ---
 
-ChatGPT has had an illustrious year.  Not only has it managed to be a coding assistant and pass various licensing exams, it has also sparked a significant cultural debate around how this technology should be used in everyday life.  
+ChatGPT has had an illustrious year.  Not only has it managed to be an imaginative assistant and pass various licensing exams, it has also sparked a significant cultural debate around how this technology should be used in everyday life.  
 
 Earlier this year, ChatGPT has shown promise in healthcare by [passing](https://journals.plos.org/digitalhealth/article?id=10.1371/journal.pdig.0000198) the US Medical Licensing Exam (USMLE), but what does this actually mean for doctors and patients?  The aforementioned paper suggests that there could be potential for clinical decision-making; in contrast, it also produced concerning results in [real-world scenarios](https://www.fastcompany.com/90863983/chatgpt-medical-diagnosis-emergency-room).  I think it will be some time and plenty of [opinions](https://www.nature.com/articles/d41586-023-03803-y) to determine how and where generative AI will be used in healthcare.  
 
