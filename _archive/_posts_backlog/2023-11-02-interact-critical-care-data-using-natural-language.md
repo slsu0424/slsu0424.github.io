@@ -149,6 +149,10 @@ In this tutorial, we learned how to use LLMs to interact with the MIMIC-III data
 
 
 ## References
++ <https://journals.plos.org/digitalhealth/article?id=10.1371/journal.pdig.0000198>
++ <https://www.fastcompany.com/90863983/chatgpt-medical-diagnosis-emergency-room>
++ <https://cloud.google.com/blog/topics/healthcare-life-sciences/sharing-google-med-palm-2-medical-large-language-model>
++ <https://www.mayoclinic.org/first-aid/emergency-health-information/basics/art-20134333>
 + <https://www.nature.com/articles/sdata201635>
 + <https://physionet.org/content/mimiciii-demo/1.4/>
 + <https://learn.microsoft.com/en-us/azure/azure-sql/database/connect-query-python>
