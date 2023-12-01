@@ -35,7 +35,7 @@ All resources can be found <a href="https://github.com/slsu0424/langchain-sql-pu
 
 Download the MIMIC-III* <a href="https://physionet.org/content/mimiciii-demo/1.4/" target="_blank">files</a> (open access), and load the [ADMISSIONS]() table into Azure SQL Database. 
 
-*Note*: If planning to use [credentialed](https://mimic.mit.edu/docs/gettingstarted/) MIMIC data, it is recommended to enroll in the [Azure OpenAI service](https://physionet.org/news/post/415).
+**Note*: If planning to use [credentialed](https://mimic.mit.edu/docs/gettingstarted/) MIMIC data, it is recommended to enroll in the [Azure OpenAI service](https://physionet.org/news/post/415).
 
 ## Connect to Azure SQL Database
 Next, we connect python to Azure SQL Database.  This [tutorial](https://learn.microsoft.com/en-us/azure/azure-sql/database/connect-query-python?view=azuresql) provides more details on the setup.  As there are known issues with the Microsoft ODBC Driver on MacOS, be sure to follow this [guide](https://learn.microsoft.com/en-us/sql/connect/odbc/linux-mac/known-issues-in-this-version-of-the-driver?view=sql-server-ver16) if errors are encountered.  
