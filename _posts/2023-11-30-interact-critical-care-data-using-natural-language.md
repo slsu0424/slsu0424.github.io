@@ -35,7 +35,7 @@ All resources can be found <a href="https://github.com/slsu0424/langchain-sql-pu
 
 Download the MIMIC-III* <a href="https://physionet.org/content/mimiciii-demo/1.4/" target="_blank">files</a> (open access), and load the [ADMISSIONS]() table into Azure SQL Database. 
 
-*Please note that if planning to use credentialed MIMIC data, it is recommended to enroll in the Azure OpenAI service - https://lnkd.in/eWcjS96R
+**Note: that if planning to use credentialed MIMIC data, it is recommended to enroll in the Azure OpenAI service - https://lnkd.in/eWcjS96R.
 
 
 ## Connect to Azure SQL Database
