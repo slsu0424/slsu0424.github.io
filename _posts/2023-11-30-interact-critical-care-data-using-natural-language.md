@@ -33,7 +33,7 @@ All resources can be found <a href="https://github.com/slsu0424/langchain-sql-pu
 ## Load data into Azure SQL Database
 <a href="https://www.nature.com/articles/sdata201635" target="_blank">MIMIC-III</a> is a publicly available dataset comprising of de-identified data for > 40,000 critical care patients who stayed at the Beth Israel Deaconess Medical Center between 2001 and 2012
 
-Download the MIMIC-III <a href="https://physionet.org/content/mimiciii-demo/1.4/" target="_blank">files</a>, and load the [ADMISSIONS]() table into Azure SQL Database. 
+Download the MIMIC-III <a href="https://physionet.org/content/mimiciii-demo/1.4/" target="_blank">files</a> (open access), and load the [ADMISSIONS]() table into Azure SQL Database. 
 
 
 ## Connect to Azure SQL Database
