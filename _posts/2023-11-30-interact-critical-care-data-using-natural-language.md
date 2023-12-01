@@ -159,4 +159,4 @@ In this tutorial, we learned how to use LLMs to interact with the MIMIC-III data
 + <https://learn.microsoft.com/en-us/sql/connect/odbc/linux-mac/known-issues-in-this-version-of-the-driver>
 + <https://api.python.langchain.com/en/latest/utilities/langchain.utilities.sql_database.SQLDatabase.html>
 + <https://www.openai.com/>
-+ <https://python.langchain.com/docs/integrations/toolkits/sql_database>
++ <htps://python.langchain.com/docs/integrations/toolkits/sql_database>
