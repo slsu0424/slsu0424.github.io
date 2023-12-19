@@ -68,11 +68,11 @@ The main steps include:
 
 Ingest Data:
 
-![langchain1](/assets/images/2023-10/langchain1.png)
+![langchain1](/assets/images/2023-11/langchain1.png)
 
 Query Data:
 
-![langchain2](/assets/images/2023-10/langchain2.png)
+![langchain2](/assets/images/2023-11/langchain2.png)
 
 
 ## Set the OpenAI API Key
@@ -136,7 +136,7 @@ Under the hood, we pass in the **ChatOpenAI** model (gpt-3.5-turbo) and set the 
 This visual shows the overall workflow:
 
 <a href="https://python.langchain.com/docs/modules/data_connection/vectorstores/">
-  <img src="/assets/images/2023-10/langchain3.png" alt="langchain3">
+  <img src="/assets/images/2023-11/langchain3.png" alt="langchain3">
 <!--   <img src="/assets/images/2023-10/langchain3.png" alt="langchain3" width="750" height="311"> -->
 </a>
 
@@ -144,7 +144,7 @@ This visual shows the overall workflow:
 ## Let's summarize
 With Streamlit running, we prompt the document by asking a question followed by a summarization task:
 
-![streamlit1](/assets/images/2023-10/streamlit1.png)
+![streamlit1](/assets/images/2023-11/streamlit1.png)
 
 
 ## Conclusion
