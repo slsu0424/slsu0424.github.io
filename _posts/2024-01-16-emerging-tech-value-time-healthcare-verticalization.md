@@ -55,7 +55,7 @@ However, this is just one very small piece.  Dr. Robert Pearl, the former CEO of
 
 ## Conclusion
 
-This research helped me better understand the external forces driving the ever-increasing costs of healthcare in the US.  Despite the technological prowess of the US, our country still falls behind in terms of health outcomes and spend.  I suspect that if we continue to see more consolidations, these tech innovations could play a more important role in health outcomes.  
+This short analysis helped me better understand the external forces driving the ever-increasing costs of healthcare in the US.  Despite the technological prowess of the US, our country still falls behind in terms of health outcomes and spend.  I suspect that if we continue to see more consolidations, these tech innovations could play a more important role in health outcomes.  
 
 I am also interested in looking at tech adoption in other developed countries, and will cover this in a future post.  
 
