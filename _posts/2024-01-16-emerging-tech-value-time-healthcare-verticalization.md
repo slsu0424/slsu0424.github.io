@@ -51,13 +51,13 @@ I believe that today's combination of market forces enabling consolidation and e
 
 ![Bain](/assets/images/2024-01/bain.png)
 
-However, this is just one very small piece.  Dr. Robert Pearl, the former CEO of The Permanente Medical Group, [stated](https://www.forbes.com/sites/robertpearl/2023/05/31/what-kaisers-acquisition-of-geisinger-means-for-us-all) that the key to Kaiser Permanente's decades of success - producing better health outcomes - was due to a combination of innovative insurers and physicians.  I agree with him.  Next-gen technologies are by definition innovative, but without key counterparts in insurance and clinical staff, they will fail to produce meaningful results.
+However, this is just one very small piece.  Dr. Robert Pearl, the former CEO of The Permanente Medical Group, [stated](https://www.forbes.com/sites/robertpearl/2023/05/31/what-kaisers-acquisition-of-geisinger-means-for-us-all) that the key to Kaiser Permanente's decades of success - producing better health outcomes - was due to a combination of innovative insurers and physicians.  Although I still have a lot to learn on the insurance side, I can see how this would be a winning formula.  Next-gen technologies are by definition innovative, but without key counterparts in risk management and clinical staff, they may fail to produce meaningful results.
 
 ## Conclusion
 
 This research helped me better understand the external forces driving the ever-increasing costs of healthcare in the US.  Despite the technological prowess of the US, our country still falls behind in terms of health outcomes and spend.  I suspect that if we continue to see more consolidations, these tech innovations could play a more important role in health outcomes.  
 
-I did not spend as much time evaluating tech innovations in other developed countries, but I plan to look at this in a future post.  
+I am also interested in looking at tech adoption in other developed countries, and will cover this in a future post.  
 
 
 ## References
