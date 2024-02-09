@@ -4,6 +4,7 @@ title:  "Create word embeddings from PubMed patient summaries"
 author: sandy
 categories: [ azure, PubMed, NLP, python, SQL, tutorial ]
 image: assets/images/2023-09/shutterstock_1025566351_license_resize.png
+featured: true
 ---
 
 Building upon the previous [tutorial](https://slsu0424.github.io/encoding-pubmed-abstracts-for-nlp-tasks/) on one-hot encoding, this tutorial will explore the concept of word embeddings and implement this with real-world data.  
