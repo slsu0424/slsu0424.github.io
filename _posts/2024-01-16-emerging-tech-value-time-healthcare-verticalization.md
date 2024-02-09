@@ -51,7 +51,7 @@ I believe that today's combination of market forces enabling consolidation and e
 
 ![Bain](/assets/images/2024-01/bain_resize.png)
 
-However, this is just one very small piece.  Dr. Robert Pearl, the former CEO of The Permanente Medical Group, [stated](https://www.forbes.com/sites/robertpearl/2023/05/31/what-kaisers-acquisition-of-geisinger-means-for-us-all) that the key to Kaiser Permanente's decades of success - producing better health outcomes - was due to a combination of innovative insurers and physicians.  Although I still have a lot to learn on the insurance side, I can see how this would be a winning formula.  Next-gen technologies are by definition innovative, but without key counterparts in risk management and clinical staff, they will fail to produce meaningful results.
+However, this is just one very small piece.  Dr. Robert Pearl, the former CEO of The Permanente Medical Group, [stated](https://www.forbes.com/sites/robertpearl/2023/05/31/what-kaisers-acquisition-of-geisinger-means-for-us-all) that the key to Kaiser Permanente's decades of success - producing better health outcomes - was due to a combination of innovative insurers and physicians.  Although I still have a lot to learn on the insurance side, I can see how this would be a winning formula.  Next-gen technologies are by definition innovative, but without key counterparts in risk management and clinical staff, they may fail to produce meaningful results.
 
 ## Conclusion
 
