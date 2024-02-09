@@ -17,7 +17,7 @@ According to the [Peterson Center-KFF Health System Tracker](https://www.healths
 
 ![PC-KFF](/assets/images/2024-01/life-expectancy-at-birth-in-years-1980-2022_resize.png)
 
-Now let's look at health expenditures: In 2022, the US spent over $4,000 more per person on healthcare than the next highest spending country (Germany), and almost twice as much as the average of comparable countries.  Note that the US life expectancy still ranks the lowest in the list:
+Now let's look at health expenditures: In 2022, the US spent over $4,000 more per person than the next highest spending country (Germany), and almost twice as much as the average of comparable countries.  Note that the US life expectancy still ranks the lowest in the list:
 
 ![PC-KFF](/assets/images/2024-01/life-expectancy-and-per-capita-healthcare-spending-ppp-adjusted-2022_resize.png)
 
