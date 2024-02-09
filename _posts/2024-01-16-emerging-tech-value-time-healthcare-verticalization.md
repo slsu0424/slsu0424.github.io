@@ -15,11 +15,11 @@ For 2024, I'm going to be switching up some of my posts to focus a bit more on t
 
 According to the [Peterson Center-KFF Health System Tracker](https://www.healthsystemtracker.org/chart-collection/u-s-life-expectancy-compare-countries/), in 2022, the US life expectancy at birth still lagged behind its peer countries:
 
-![PC-KFF](/assets/images/2024-01/life-expectancy-at-birth-in-years-1980-2022.png)
+![PC-KFF](/assets/images/2024-01/life-expectancy-at-birth-in-years-1980-2022_resize.png)
 
 Now let's look at health expenditures: In 2022, the US spent over $4,000 more per person on healthcare than the next highest spending country (Germany), and almost twice as much as the average of comparable countries.  Note that the US life expectancy still ranks the lowest in the list:
 
-![PC-KFF](/assets/images/2024-01/life-expectancy-and-per-capita-healthcare-spending-ppp-adjusted-2022.png)
+![PC-KFF](/assets/images/2024-01/life-expectancy-and-per-capita-healthcare-spending-ppp-adjusted-2022_resize.png)
 
 When looking at these stats compared to other countries, I couldn't help but question why - despite the fact that [the US is #1](https://finance.yahoo.com/news/15-countries-produce-best-software-222422955.html) in producing the best software engineers - our health outcomes still fare worse than our neighbors.
 
@@ -41,7 +41,7 @@ This has to be a good thing for all healthcare stakeholders, right?
 
 Industry executives think so, with the idea that verticalization will bring all important aspects of medical care - physicians, pharmacy, insurance, and IT systems - under one roof.  I certainly like that idea, as the current setup of running around between these entities is beyond frustrating for everyone involved.  This sentiment is supported by [analysis](https://www.commonwealthfund.org/publications/issue-briefs/2023/oct/high-us-health-care-spending-where-is-it-all-going) from the Commonwealth Fund, where administrative costs account for 30% of excess US healthcare spend: 
 
-![Commonwealth](/assets/images/2024-01/high_us_health_care_spending_where_is_it_all_going_exhibit.png)
+![Commonwealth](/assets/images/2024-01/high_us_health_care_spending_where_is_it_all_going_exhibit_resize.png)
 
 But will this hurt patients in the end?  The Economist suggests that there could be unfair competition due to consolidation.  Quality of patient care may suffer.  All the while, these healthcare intermediaries have been producing excess returns greater than the S&P 500.  Much of this has not come to fruition yet, so it will be interesting to see if these strategies pay off.  As the Commonwealth Fund notes, regulators and researchers will be watching closely. 
 
