@@ -45,3 +45,9 @@ However, I like the idea of AI enabling earlier diagnosis - this is one use case
 ## Conclusion
 
 I appreciated this insightful and hopeful article for the future of healthcare.  Perhaps with this new wave of AI, there is a renewed commitment by people and processes to enable a better healthcare experience for everyone.  Perhaps we can put that fax machine to rest.
+
+## References
+
++ <https://a16z.com/2023/08/02/where-will-ai-have-the-biggest-impact-healthcare>
++ <https://www.computerworld.com/article/3697270/the-fax-is-still-king-in-healthcare-and-its-not-going-away-anytime-soon.html>
++ <https://hbr.org/2022/03/why-ai-failed-to-live-up-to-its-potential-during-the-pandemic>
