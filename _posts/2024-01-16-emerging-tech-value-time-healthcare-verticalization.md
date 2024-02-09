@@ -17,7 +17,7 @@ According to the [Peterson Center-KFF Health System Tracker](https://www.healths
 
 ![PC-KFF](/assets/images/2024-01/life-expectancy-at-birth-in-years-1980-2022_resize.png)
 
-Now let's look at health expenditures: In 2022, the US spent over $4,000 more per person on healthcare than the next highest spending country (Germany), and almost twice as much as the average of comparable countries.  Note that the US life expectancy still ranks the lowest in the list:
+Now let's look at health expenditures: In 2022, the US spent over $4,000 more per person than the next highest spending country (Germany), and almost twice as much as the average of comparable countries.  Note that the US life expectancy still ranks the lowest in the list:
 
 ![PC-KFF](/assets/images/2024-01/life-expectancy-and-per-capita-healthcare-spending-ppp-adjusted-2022_resize.png)
 
@@ -49,9 +49,9 @@ But will this hurt patients in the end?  The Economist suggests that there could
 
 I believe that today's combination of market forces enabling consolidation and emerging technologies can create lasting efficiencies.  One of the earliest benefits I see for generative AI is the ability to summarize data quickly.  This can alleviate the administrative burden, especially for pulling together clinical narratives and structured patient data in EHRs, as well as handling workflows such as pre-authorizations.  In fact, these are the [top generative AI use cases](https://www.bain.com/insights/getting-the-most-out-of-generative-ai-in-healthcare/) per a Bain & Company report:
 
-![Bain](/assets/images/2024-01/bain.png)
+![Bain](/assets/images/2024-01/bain_resize.png)
 
-However, this is just one very small piece.  Dr. Robert Pearl, the former CEO of The Permanente Medical Group, [stated](https://www.forbes.com/sites/robertpearl/2023/05/31/what-kaisers-acquisition-of-geisinger-means-for-us-all) that the key to Kaiser Permanente's decades of success - producing better health outcomes - was due to a combination of innovative insurers and physicians.  Although I still have a lot to learn on the insurance side, I can see how this would be a winning formula.  Next-gen technologies are by definition innovative, but without key counterparts in risk management and clinical staff, they will fail to produce meaningful results.
+However, this is just one very small piece.  Dr. Robert Pearl, the former CEO of The Permanente Medical Group, [stated](https://www.forbes.com/sites/robertpearl/2023/05/31/what-kaisers-acquisition-of-geisinger-means-for-us-all) that the key to Kaiser Permanente's decades of success - producing better health outcomes - was due to a combination of innovative insurers and physicians.  Although I still have a lot to learn on the insurance side, I can see how this would be a winning formula.  Next-gen technologies are by definition innovative, but without key counterparts in risk management and clinical staff, they may fail to produce meaningful results.
 
 ## Conclusion
 
