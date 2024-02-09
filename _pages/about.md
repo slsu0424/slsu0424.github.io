@@ -8,7 +8,7 @@ comments: false
 <div class="row justify-content-between">
 <div class="col-md-8 pr-5">
 
-<p>Hi, I'm Sandy.</p>
+<p>Welcome, my name is Sandy Su.</p>
   
 <p>I am a cloud architect, data science and AI practitioner, and health informatics strategist.  This is a professional site to share my learnings on the evolving landscape of technology in healthcare.</p>
 
