@@ -4,7 +4,7 @@ title:  "Encoding PubMed abstracts for NLP tasks"
 author: sandy
 categories: [ PubMed, NLP, tutorial ]
 image: assets/images/2023-07/shutterstock_2254749635_license_resize.png
-featured: true
+featured: false
 ---
 
 Last month, I gave a [talk](https://www.meetup.com/new-jersey-sql-data-platform-user-group/events/294231326/) at a local meetup on LLMs, LangChain & SQL.  Since then, I've wanted to explore the technical foundations of LLMs, particularly neural networks.
