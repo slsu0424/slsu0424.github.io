@@ -25,7 +25,7 @@ In their article [When Physicians Go Head-to-Head with Large Language Models](ht
 
 > “The elevated troponin I level is also a significant finding, as it indicates damage to the heart muscle. Troponin is a protein released into the bloodstream when heart muscle cells are damaged or die, which is a hallmark of a heart attack.
 
-From a layman's perspective, this answer seems pretty convincing.  From a technological perspective, this is pretty impressive that ChatGPT can [predict](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/) the next series of words or "tokens" based on a prompt, and return results that sound surprisingly human.  
+From a layman's perspective, this answer seems pretty convincing.  From a technological perspective, this is pretty impressive that ChatGPT can [predict](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work) the next series of words or "tokens" based on a prompt, and return results that sound surprisingly human.  
 
 #### The case for human diagnostic reasoning
 
@@ -47,9 +47,9 @@ In all fairness though, ChatGPT did close out its response as follows:
 
 I think this response is fine.  However, if a more accurate conclusion was made by human being, then what is the value of using this system if it is going to add more minutes to a clinical workflow?
 
-#### A correct diagnosis matters in all cases, but more common cases may be automated
+#### Conclusion
 
-One thing to note is that LLMs are limited by their tendency to [hallucinate](https://spectrum.ieee.org/ai-hallucination).  It means that a generative AI system can output novel text that sound completely plausible, but are factually incorrect.  Currently, there are more focused LLMs trained on the medical domain that are under development, with the idea that narrower models may mitigate these hallucinations.
+I believe that a correct diagnosis matters in all cases, but more common cases may be automated.  One thing to note is that LLMs are limited by their tendency to [hallucinate](https://spectrum.ieee.org/ai-hallucination).  It means that a generative AI system can output novel text that sound completely plausible, but are factually incorrect.  Currently, there are more focused LLMs trained on the medical domain that are under development, with the idea that narrower models may mitigate these hallucinations.
 
 Despite these limitations, I agree with the authors that LLMs still have value in healthcare.  My key takeaways:
 * ChatGPT may be better suited to situations where common medical conditions are seen and have a standard treatment plan (i.e., primary care) 
@@ -57,3 +57,10 @@ Despite these limitations, I agree with the authors that LLMs still have value i
 * In complex clinical cases, employing human reasoning and intuition can mean life or death for a patient 
 
 Lastly, I would argue that most physicians aim to establish a trust relationship with their patients, mutually working towards the best possible outcome.  This type of relationship fails to exist between a human and a computer.
+
+#### References
++ <https://en.wikipedia.org/wiki/Large_language_model>
++ <https://en.wikipedia.org/wiki/ChatGPT>
++ <https://www.mayoclinicplatform.org/2023/05/10/when-physicians-go-head-to-head-with-large-language-models>
++ <https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work>
++ <https://spectrum.ieee.org/ai-hallucination>
