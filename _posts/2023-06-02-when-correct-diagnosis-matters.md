@@ -46,9 +46,11 @@ In all fairness though, ChatGPT did close out its response as follows:
 
 I think this response is fine.  However, if a more accurate conclusion was made by human being, then what is the value of using this system if it is going to add more minutes to a clinical workflow?
 
-## Conclusion
+## Common cases can be automated
 
-I believe that a correct diagnosis matters in all cases, but more common cases may be automated.  One thing to note is that LLMs are limited by their tendency to [hallucinate](https://spectrum.ieee.org/ai-hallucination).  It means that a generative AI system can output novel text that sound completely plausible, but are factually incorrect.  Currently, there are more focused LLMs trained on the medical domain that are under development, with the idea that narrower models may mitigate these hallucinations.
+While I believe a correct diagnosis matters in all cases, more common cases may be benefit from automated responses by LLMs.  One thing to note is that LLMs are limited by their tendency to [hallucinate](https://spectrum.ieee.org/ai-hallucination).  It means that a generative AI system can output novel text that sound completely plausible, but are factually incorrect.  Currently, there are more focused LLMs trained on the medical domain that are under development, with the idea that narrower models may mitigate these hallucinations.
+
+## Conclusion
 
 Despite these limitations, I agree with the authors that LLMs still have value in healthcare.  My key takeaways:
 * ChatGPT may be better suited to situations where common medical conditions are seen and have a standard treatment plan (i.e., primary care) 
