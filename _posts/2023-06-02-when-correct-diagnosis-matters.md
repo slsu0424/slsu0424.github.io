@@ -14,8 +14,7 @@ When does a correct diagnosis matter?  Does it matter if a human or computer mak
 
 Over the last few months, I have been following the tech news closely as new AI technologies, particularly [Large Language Models](https://en.wikipedia.org/wiki/Large_language_model) (LLMs) and [ChatGPT](https://en.wikipedia.org/wiki/ChatGPT) (a type of LLM), have exploded on to the scene.  Of course, being a bit skeptical, I was curious to see how this next iteration of AI would fare in healthcare.
 
-
-#### Putting LLMs to the test
+## Putting LLMs to the test
 
 In their article [When Physicians Go Head-to-Head with Large Language Models](https://www.mayoclinicplatform.org/2023/05/10/when-physicians-go-head-to-head-with-large-language-models), John Halamka, MD, and his team at the Mayo Clinic Platform sought to evaluate these latest technologies.  They prompted ChatGPT with the following patient presentation:
 
@@ -27,7 +26,7 @@ ChatGPT replied:
 
 From a layman's perspective, this answer seems pretty convincing.  From a technological perspective, this is pretty impressive that ChatGPT can [predict](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/) the next series of words or "tokens" based on a prompt, and return results that sound surprisingly human.  
 
-#### The case for human diagnostic reasoning
+## The case for human diagnostic reasoning
 
 Herein lies the problem - just because we have a highly probablistic AI system doesn't mean it translates well into clinical practice.  The article goes on to compare ChatGPT's answer to a cardiologist who encountered an identical patient scenario: 
 
@@ -35,7 +34,7 @@ Herein lies the problem - just because we have a highly probablistic AI system d
 
 > They also used a reasoning technique sometimes referred to as pre-mortem examination. Essentially, they asked themselves: What would happen once a specific diagnosis is made and acted upon? What are the consequences, good and bad? In the case of Mr. Jones, if he is treated with the anticoagulants usually indicated for a typical MI, and he actually had another condition such as an aortic dissection, the consequences could prove disastrous.
 
-#### Which response is more reassuring?
+## Which response is more reassuring?
 
 Taking a step back and looking at the responses of ChatGPT vs. cardiologist, I thought about which one would resonate more if I were a patient.  
 
@@ -47,9 +46,9 @@ In all fairness though, ChatGPT did close out its response as follows:
 
 I think this response is fine.  However, if a more accurate conclusion was made by human being, then what is the value of using this system if it is going to add more minutes to a clinical workflow?
 
-#### A correct diagnosis matters in all cases, but more common cases may be automated
+## Conclusion
 
-One thing to note is that LLMs are limited by their tendency to [hallucinate](https://spectrum.ieee.org/ai-hallucination).  It means that a generative AI system can output novel text that sound completely plausible, but are factually incorrect.  Currently, there are more focused LLMs trained on the medical domain that are under development, with the idea that narrower models may mitigate these hallucinations.
+I believe that a correct diagnosis matters in all cases, but more common cases may be automated.  One thing to note is that LLMs are limited by their tendency to [hallucinate](https://spectrum.ieee.org/ai-hallucination).  It means that a generative AI system can output novel text that sound completely plausible, but are factually incorrect.  Currently, there are more focused LLMs trained on the medical domain that are under development, with the idea that narrower models may mitigate these hallucinations.
 
 Despite these limitations, I agree with the authors that LLMs still have value in healthcare.  My key takeaways:
 * ChatGPT may be better suited to situations where common medical conditions are seen and have a standard treatment plan (i.e., primary care) 
@@ -57,3 +56,10 @@ Despite these limitations, I agree with the authors that LLMs still have value i
 * In complex clinical cases, employing human reasoning and intuition can mean life or death for a patient 
 
 Lastly, I would argue that most physicians aim to establish a trust relationship with their patients, mutually working towards the best possible outcome.  This type of relationship fails to exist between a human and a computer.
+
+## References
++ <https://en.wikipedia.org/wiki/Large_language_model>
++ <https://en.wikipedia.org/wiki/ChatGPT>
++ <https://www.mayoclinicplatform.org/2023/05/10/when-physicians-go-head-to-head-with-large-language-models>
++ <https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work>
++ <https://spectrum.ieee.org/ai-hallucination>
