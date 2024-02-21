@@ -154,9 +154,9 @@ In this tutorial, we learned how to use LLMs to interact with the MIMIC-III data
 + <https://www.fastcompany.com/90863983/chatgpt-medical-diagnosis-emergency-room>
 + <https://www.nature.com/articles/d41586-023-03803-y>
 + <https://www.nature.com/articles/sdata201635>
-+ <https://physionet.org/content/mimiciii-demo/1.4/>
++ <https://physionet.org/content/mimiciii-demo/1.4>
 + <https://learn.microsoft.com/en-us/azure/azure-sql/database/connect-query-python>
 + <https://learn.microsoft.com/en-us/sql/connect/odbc/linux-mac/known-issues-in-this-version-of-the-driver>
 + <https://api.python.langchain.com/en/latest/utilities/langchain.utilities.sql_database.SQLDatabase.html>
-+ <https://www.openai.com/>
++ <https://www.openai.com>
 + <https://python.langchain.com/docs/integrations/toolkits/sql_database>
