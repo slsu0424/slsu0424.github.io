@@ -7,7 +7,7 @@ comments: false
     
 <!-- Home Intro
 ================================================== -->
-{% if page.url == "/" %} 
+<!-- {% if page.url == "/" %} -->
 <div class="rounded mb-5 hero">
   <div class="row align-items-center justify-content-between">
     <div class="col-md-6">
@@ -20,4 +20,4 @@ comments: false
     </div>
   </div>
 </div>
-{% endif %}
+<!-- {% endif %} -->
