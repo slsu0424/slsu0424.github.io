@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Resources
+title: Landing
 permalink: /landing
 comments: false
 ---
