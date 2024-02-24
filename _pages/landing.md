@@ -23,4 +23,4 @@ comments: false
 <!-- {% endif %} -->
 
 
-<<!-- a class="nav-link" href="{{ site.baseurl }}/about">About</a> -->
+<!-- a class="nav-link" href="{{ site.baseurl }}/about">About</a> -->
