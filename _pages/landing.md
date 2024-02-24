@@ -6,6 +6,5 @@ comments: true
 ---
 
 <div class="col-md-4">
-  <img class="featured-image img-fluid" src="{{ site.baseurl }}/assets/images/1.jpg" alt="{{ page.title }}">
-</div>
+  <img class="featured-image img-fluid" src="{{ site.baseurl }}/assets/images/intro.svg" alt="{{ page.title }}">
 </div>
