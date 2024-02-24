@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Landing
-permalink: /landing
+permalink: /bleh
 comments: false
 ---
     
