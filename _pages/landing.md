@@ -5,8 +5,6 @@ permalink: /landing
 comments: false
 ---
     
-<!-- Sticky - add sticky tag to the post you want to highlight here - tags: [sticky] -->
-
 <div class="jumbotron jumbotron-fluid jumbotron-home pt-0 pb-0 mt-3 mb-2rem bg-lightblue position-relative">
     <div class="pl-4 pr-0 h-100 tofront">
         <div class="row justify-content-between">
@@ -21,4 +19,4 @@ comments: false
             </div>
         </div>
     </div>
-</div> 
+</div>
