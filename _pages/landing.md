@@ -16,8 +16,11 @@ comments: false
       <!-- <a href="{{site.baseurl}}/about" class="btn btn-dark text-white px-5 btn-lg">About me</a> -->
     </div>
     <div class="col-md-6 text-right pl-0 pl-lg-4">
-      <img class="intro" height="500" src="{{site.baseurl}}/assets/images/intro.svg">      
+      <img class="intro" height="500" src="{{ site.baseurl }}/assets/images/intro.svg">      
     </div>
   </div>
 </div>
 <!-- {% endif %} -->
+
+
+<<!-- a class="nav-link" href="{{ site.baseurl }}/about">About</a> -->
