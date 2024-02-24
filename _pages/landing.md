@@ -13,6 +13,3 @@ comments: false
     <img class="intro" height="500" src="{{ site.baseurl }}/assets/images/intro.svg">      
 </div>
 <!-- {% endif %} -->
-
-
-<!-- a class="nav-link" href="{{ site.baseurl }}/about">About</a> -->
