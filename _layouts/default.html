@@ -70,8 +70,12 @@ ga('send', 'pageview');
                 {% else %}
                 <li class="nav-item">
                 {% endif %}
-                <a class="nav-link" href="{{ site.baseurl }}/index.html">Blog</a>
+                <a class="nav-link" href="{{ site.baseurl }}/index.html">Home</a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ site.baseurl }}/blog.html">Blog</a>
+                    </li>
 
                 <li class="nav-item">
                 <a class="nav-link" href="{{ site.baseurl }}/about">About</a>
@@ -120,6 +124,7 @@ ga('send', 'pageview');
 {% if site.mailchimp-list %}
 <!-- Bottom Alert Bar
 ================================================== -->
+<!--
 <div class="alertbar">
 	<div class="container text-center">
 		<span><img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{site.title}}"> &nbsp; Never miss a <b>story</b> from us, subscribe to our newsletter</span>
@@ -131,12 +136,14 @@ ga('send', 'pageview');
         </form>
 	</div>
 </div>
+-->
 {% endif %}
     
 </div>
 
 <!-- Categories Jumbotron
 ================================================== -->
+<!--
 <div class="jumbotron fortags">
 	<div class="d-md-flex h-100">
 		<div class="col-md-4 transpdark align-self-center text-center h-100">
@@ -159,6 +166,7 @@ ga('send', 'pageview');
 		</div>
 	</div>
 </div>
+-->
 
 <!-- Begin Footer
 ================================================== -->
