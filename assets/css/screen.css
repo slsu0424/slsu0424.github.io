@@ -313,11 +313,6 @@ span.post-read-more a:hover {
     margin-bottom: 1rem;
 }
 
-.mainheading h1.posttitle-meta {
-    font-weight: 400;
-    font-size: 0.95rem;
-}
-
 .footer {
     border-top: 1px solid rgba(0, 0, 0, .05) !important;
     padding-top: 15px;
