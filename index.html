@@ -7,6 +7,8 @@ background: '/img/bg-index.jpg'
 <!-- Home Intro
 ================================================== -->
 {% if page.url == "/" %} 
+
+<!--
 <div class="rounded mb-5 hero">
   <div class="row align-items-center justify-content-between">
     <div class="col-md-6">
@@ -19,4 +21,46 @@ background: '/img/bg-index.jpg'
     </div>
   </div>
 </div>
+-->
+
+<div class="rounded mb-5 hero">
+  <div class="jumbotron jumbotron-fluid jumbotron-home pt-0 pb-0 mt-3 mb-2rem bg-lightblue position-relative">
+    <div class="pl-4 pr-0 h-100 tofront">
+        <div class="row justify-content-between">
+            <div class="col-md-6 pt-6 pb-6 pr-lg-4 align-self-center">
+              <h1 class="font-weight-bold mb-4 serif-font">Improving healthcare through technology</h1>
+              <p class="lead mb-4">My name is Sandy, and I'm here to share with you my knowledge and experience of over 10 years of monetizing my blog.</p>
+              <a href="{{site.baseurl}}/about" class="btn btn-dark text-white px-5 btn-lg">About me</a>
+            </div>
+          <div class="col-md-6 d-none d-md-block pr-0">
+            <img class="intro" height="500" src="{{site.baseurl}}/assets/images/intro.svg">      
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endif %}
+
+
+
+<!--
+{% for post in site.posts %} 
+{% if post.tags contains "sticky" %}
+<div class="jumbotron jumbotron-fluid jumbotron-home pt-0 pb-0 mt-3 mb-2rem bg-lightblue position-relative">
+    <div class="pl-4 pr-0 h-100 tofront">
+        <div class="row justify-content-between">
+            <div class="col-md-6 pt-6 pb-6 pr-lg-4 align-self-center">
+                <h1 class="mb-3">{{post.title}}</h1>
+                <p class="mb-3 lead">
+                    {{ post.excerpt | strip_html | strip_newlines | truncate: 136 }}
+                </p>
+                <a href="{{site.baseurl}}{{post.url}}" class="btn btn-dark">Read More</a>
+            </div>
+            <div class="col-md-6 d-none d-md-block pr-0" style="background-size:cover;background-image:url({{site.baseurl}}/{{ post.image }});">	
+            </div>
+        </div>
+    </div>
+</div> 
+-->
+{% endif %}
+{% endfor %}
