@@ -34,21 +34,8 @@ layout: default
 <!--              <img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}">  -->
 <!--              <img class="author-thumb" src="https://www.gravatar.com/avatar/{{ sandy.gravatar }}?s=250&d=mm&r=x" alt="{{ sandy.display_name }}">  -->
 <!--              <img class="author-thumb" src="{{site.baseurl}}/assets/images/1.jpg">  -->
-              </div>
+            </div>
 		</div>
-		<div class="col-md-8 p-5 align-self-center text-center">
-            {% assign categories_list = site.categories %}
-            {% if categories_list.first[0] == null %}
-                {% for category in categories_list %}
-                    <a class="mt-1 mb-1" href="{{site.baseurl}}/categories#{{ category | url_escape | strip | replace: ' ', '-' }}">{{ category | camelcase }} ({{ site.tags[category].size }})</a>
-                {% endfor %}
-            {% else %}
-                {% for category in categories_list %}
-                    <a class="mt-1 mb-1" href="{{site.baseurl}}/categories#{{ category[0] | url_escape | strip | replace: ' ', '-' }}">{{ category[0] | camelcase }} ({{ category[1].size }})</a>
-                {% endfor %}
-            {% endif %}
-            {% assign categories_list = nil %}
-		</div> 
 	</div>
 </div>
 
