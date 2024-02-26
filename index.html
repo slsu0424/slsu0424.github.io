@@ -30,7 +30,7 @@ layout: default
         <h1 class="sitetitle">Sandy Su</h1>
         <p class="lead mb-4">I'm a data strategist and cloud architect, focused on the Healthcare & Life Sciences industry.  I specialize in advanced analytics and AI solutions and technologies.</p>
           <a href="{{site.baseurl}}/about" class="btn btn-dark text-white px-5 btn-lg">About me</a>
-
+        <br>
           {% include contact.html %}
         </div>
       <!--
@@ -45,20 +45,32 @@ layout: default
 </div>
 {% endif %}
 
+<!-- Mediator Theme
+<div class="teaserimage">
+  <div class="teaserimage-image" {% if site.cover %}style="background-image: url({{ site.cover | prepend: site.baseurl }})"{% endif %}>
+      Teaser Image
+  </div>
+</div>
 
-<!--
-<aside class="sidebar">
-  <header>
-    <div class="about">
-      <div class="cover-author-image">
-        <a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/assets/img/{% if site.author-img %}{{site.author-img}}{% endif %}" alt="{{site.author}}"></a>
-      </div>
-      <div class="author-name">{{site.author}}</div>
-      <p>{{site.about-author}}</p>
-    </div>
-  </header> 
+<header class="blog-header">
+  {% if site.logo %}
+    <a class="blog-logo" href="{{site.url}}{{site.baseurl}}" style="background-image: url('{{ site.logo | prepend: site.baseurl }}')">{{ site.title }}</a>
+  {% endif %}
+  <h1 class="blog-title">{{ site.title }}</h1>
+  <h2 class="blog-description">{{ site.description }}</h2>
+  <div class="custom-links">
+    {% for social in site.social %}
+      {% if social.url %}
+          <a class="icon-{{ social.icon }}" href="{{ social.url }}" {% if social.desc %} title="{{ social.desc }}"{% endif %}">
+            <i class="fa fa-{{ social.icon }}"></i>
+          </a>
+          &nbsp;&nbsp;·&nbsp;&nbsp;
+      {% endif %}
+    {% endfor %}
+    <a href={{ "/about/" | prepend: site.baseurl }}>About</a>
+  </div>
+</header>
 -->
-
 
 
 <!--
