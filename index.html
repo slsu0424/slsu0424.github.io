@@ -7,41 +7,53 @@ layout: default
 ================================================== -->
 {% if page.url == "/" %} 
 
-<!--
-<div class="rounded mb-5 hero">
-  <div class="row align-items-center justify-content-between">
-    <div class="col-md-6">
-      <h1 class="font-weight-bold mb-4 serif-font">Improving healthcare through technology</h1>
-      <p class="lead mb-4">My name is Sandy, and I'm here to share with you my knowledge and experience of over 10 years of monetizing my blog.</p>
-      <a href="{{site.baseurl}}/about" class="btn btn-dark text-white px-5 btn-lg">About me</a>
+<!-- Flexible Jekyll Theme - revised
+<aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/assets/img/{% if site.author-img %}{{site.author-img}}{% endif %}" alt="{{site.author}}"></a>
+      </div>
+      <div class="author-name">{{site.author}}</div>
+      <p>{{site.about-author}}</p>
     </div>
-    <div class="col-md-6 text-right pl-0 pl-lg-4">
-      <img class="intro" height="500" src="{{site.baseurl}}/assets/images/intro.svg">      
-    </div>
-  </div>
-</div>
+  </header> 
 -->
 
-<div class="jumbotron jumbotron-fluid jumbotron-home pt-0 pb-0 mt-3 mb-2rem bg-lightblue position-relative">
-  <div class="pl-4 pr-0 h-100 tofront">
-    <div class="row justify-content-between">
-      <div class="col-md-6 pt-6 pb-6 pr-lg-4 align-self-center">
-      <h1 class="font-weight-bold mb-4 serif-font">Welcome</h1>
-<!--        <h1 class="sitetitle">Sandy Su</h1> -->
-        <p class="lead mb-4">Hi, I'm Sandy.  I'm a data strategist and cloud architect, focused on advanced analytics and AI solutions.  I specialize in the Healthcare & Life Sciences industry, using technology to improve healthcare delivery.</p>
-          <a href="{{site.baseurl}}/about" class="btn btn-dark text-white px-5 btn-lg">About me</a>
-        </div>
-      <!--
-        <div class="col-md-6 d-none d-md-block pr-0" style="background-size:cover;background-image:url({{site.baseurl}}/assets/images/intro.svg)">	
-        -->     
-      <div class="col-md-6 d-none d-md-block pr-0">
-        <img class="intro" height="500" src="{{site.baseurl}}/assets/images/intro.svg">     
-      </div>
-      </div>
-    </div>
-  </div>
+<!--
+<img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}">
+-->                                             
+
+
+<!-- Jumbotron - revised - add as background? -->
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+            <div class="d-md-flex align-items-center justify-content-center h-100">
+<!--              <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2> -->
+                  <img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}">
+            </div>
+		</div>
+<!--		<div class="col-md-8 p-5 align-self-center text-center">
+            {% assign categories_list = site.categories %}
+            {% if categories_list.first[0] == null %}
+                {% for category in categories_list %}
+                    <a class="mt-1 mb-1" href="{{site.baseurl}}/categories#{{ category | url_escape | strip | replace: ' ', '-' }}">{{ category | camelcase }} ({{ site.tags[category].size }})</a>
+                {% endfor %}
+            {% else %}
+                {% for category in categories_list %}
+                    <a class="mt-1 mb-1" href="{{site.baseurl}}/categories#{{ category[0] | url_escape | strip | replace: ' ', '-' }}">{{ category[0] | camelcase }} ({{ category[1].size }})</a>
+                {% endfor %}
+            {% endif %}
+            {% assign categories_list = nil %}
+		</div> 
+-->
+	</div>
 </div>
-{% endif %}
+
+
+
+
 
 <!-- Flexible Jekyll Theme
 <aside class="sidebar">
@@ -105,5 +117,49 @@ layout: default
     </div>
 </div> 
 -->
+
+
+<!-- Affiliates Jekyll Theme - revised
+<div class="rounded mb-5 hero">
+  <div class="row align-items-center justify-content-between">
+    <div class="col-md-6">
+      <h1 class="font-weight-bold mb-4 serif-font">Improving healthcare through technology</h1>
+      <p class="lead mb-4">My name is Sandy, and I'm here to share with you my knowledge and experience of over 10 years of monetizing my blog.</p>
+      <a href="{{site.baseurl}}/about" class="btn btn-dark text-white px-5 btn-lg">About me</a>
+    </div>
+    <div class="col-md-6 text-right pl-0 pl-lg-4">
+      <img class="intro" height="500" src="{{site.baseurl}}/assets/images/intro.svg">      
+    </div>
+  </div>
+</div>
+-->
+
+
+<!-- Mundana Theme Jekyll - revised
+<div class="jumbotron jumbotron-fluid jumbotron-home pt-0 pb-0 mt-3 mb-2rem bg-lightblue position-relative">
+  <div class="pl-4 pr-0 h-100 tofront">
+    <div class="row justify-content-between">
+      <div class="col-md-6 pt-6 pb-6 pr-lg-4 align-self-center">
+      <h1 class="font-weight-bold mb-4 serif-font">Welcome</h1> -->
+<!--        <h1 class="sitetitle">Sandy Su</h1> -->
+<!--        <p class="lead mb-4">Hi, I'm Sandy.  I am a data strategist and cloud architect, focused on advanced analytics and AI solutions.  I specialize in the Healthcare & Life Sciences industry, using technology to improve healthcare delivery.</p>
+          <a href="{{site.baseurl}}/about" class="btn btn-dark text-white px-5 btn-lg">About me</a>
+        </div>
+-->
+      <!--
+        <div class="col-md-6 d-none d-md-block pr-0" style="background-size:cover;background-image:url({{site.baseurl}}/assets/images/intro.svg)">	
+        -->  
+      <!--    
+      <div class="col-md-6 d-none d-md-block pr-0">
+        <img class="intro" height="500" src="{{site.baseurl}}/assets/images/intro.svg">     
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+-->
+
+
 {% endif %}
 {% endfor %}
