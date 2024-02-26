@@ -305,7 +305,8 @@ span.post-read-more a:hover {
 }
 
 .mainheading h1.sitetitle {
-    font-family: Righteous;
+   /* font-family: Righteous; */
+    font-family: "Gill Sans Extrabold", sans-serif;
 }
 
 .mainheading h1.posttitle {
@@ -904,3 +905,19 @@ iframe {
     opacity: 0;
     transition: opacity .25s;
 }
+
+/* 2/26/24 - adding new for landing page */  
+.about {
+    margin: 0 0 40px;
+    text-align: center;
+  }
+  
+  .about .cover-author-image {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 10px;
+    -webkit-border-radius: 100%;
+            border-radius: 100%;
+    overflow: hidden;
+    background-color: #333030;
+  }
