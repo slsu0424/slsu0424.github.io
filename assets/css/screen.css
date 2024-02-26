@@ -318,6 +318,12 @@ span.post-read-more a:hover {
     font-size: 0.95rem;
 }
 
+/* 2024-02-25 Add empty vertical space */
+.top-three {
+     margin-top: 3cm;
+}
+
+
 .footer {
     border-top: 1px solid rgba(0, 0, 0, .05) !important;
     padding-top: 15px;
