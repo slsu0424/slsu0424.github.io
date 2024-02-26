@@ -22,14 +22,6 @@ layout: default
 </div>
 -->
 
-
-<!--
-    <h1 class="sitetitle">{{ site.name }}</h1>
-    <p class="lead">
-        {{ }}
-    </p>
--->
-
 <div class="jumbotron jumbotron-fluid jumbotron-home pt-0 pb-0 mt-3 mb-2rem bg-lightblue position-relative">
   <div class="pl-4 pr-0 h-100 tofront">
     <div class="row justify-content-between">
@@ -50,6 +42,22 @@ layout: default
   </div>
 </div>
 {% endif %}
+
+{% include contact.html %}
+
+
+<!--
+<aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/assets/img/{% if site.author-img %}{{site.author-img}}{% endif %}" alt="{{site.author}}"></a>
+      </div>
+      <div class="author-name">{{site.author}}</div>
+      <p>{{site.about-author}}</p>
+    </div>
+  </header> 
+-->
 
 
 
