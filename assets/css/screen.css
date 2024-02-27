@@ -923,9 +923,10 @@ iframe {
 */
 
 .cover-author-image {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 10px;
+    width: 200px;
+    height: 200px;
+ /*   margin: 0 auto 10px; */
+    margin: 0 auto 0;
     -webkit-border-radius: 100%;
             border-radius: 100%;
     overflow: hidden;
