@@ -925,10 +925,9 @@ iframe {
 .cover-author-image {
     width: 200px;
     height: 200px;
- /*   margin: 0 auto 10px; */
-    margin: 0 auto 0;
+    margin: 0 auto 10px;
     -webkit-border-radius: 100%;
             border-radius: 100%;
     overflow: hidden;
-/*  background-color: #333030; */
+    background-color: #333030;
 }
