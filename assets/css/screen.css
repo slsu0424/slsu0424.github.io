@@ -932,3 +932,7 @@ iframe {
     overflow: hidden;
     background-color: #333030;
 }
+
+.box {
+    display: flex;
+  }
