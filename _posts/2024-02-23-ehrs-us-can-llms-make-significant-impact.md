@@ -29,7 +29,7 @@ Discussion:
 ## Considerations for the technologist
 Earlier in my career, I remember talking to a physician friend about what IBM Watson was doing in healthcare.  In a voice of skepticism, they responded "Sounds like a solution looking for a problem".  
 
-I'll never forget that feedback.
+I'll never forget that statement.
 
 In my experience, the next big tech idea in healthcare does not always fix problems.  Oftentimes, it introduces new ones.  There has to be a clear and compelling problem that technology can actually solve, and one with a demonstratable ROI.  
 
