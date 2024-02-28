@@ -23,7 +23,7 @@ Key findings on US clinicians:
 Discussion:
 1. Recent [research](https://www.healthsystemtracker.org/chart-collection/quality-u-s-healthcare-system-compare-countries) has shown that US healthcare organizations do not surpass neighboring countries in most process quality measures during care delivery.  Its unlikely that information technology could help improve these measures significantly.
 2. The [Meaningful Use](https://www.ama-assn.org/practice-management/medicare-medicaid/meaningful-use-electronic-health-record-ehr-incentive) incentive program mandated both secure messaging with patients and electronic prescribing.  This has meant additional time spent by US clinicians on handling messages.
-3. EHR functions, such as e-prescribing, may improve safety and save time in the care delivery process.  Non-US clinicians may write prescriptions manually.
+3. EHR functions, such as [e-prescribing](https://www.cms.gov/medicare/regulations-guidance/electronic-prescribing), may improve safety and save time in the care delivery process.  Non-US clinicians may write prescriptions manually.
 4. US clinicians used EHRs in different ways that are driven by unique workflows or policy.  A multipayer billing environment and Meaningful Use requirements may contribute to clinicians overdocumenting to ensure reimbursable claims or to prevent malpractice lawsuits.  
 
 ## Considerations for the technologist
@@ -52,6 +52,7 @@ This paper was insightful to understand the differences in EHR adoption in the U
 + <https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2774129>
 + <https://www.healthsystemtracker.org/chart-collection/quality-u-s-healthcare-system-compare-countries>
 + <https://www.ama-assn.org/practice-management/medicare-medicaid/meaningful-use-electronic-health-record-ehr-incentive>
++ <https://www.cms.gov/medicare/regulations-guidance/electronic-prescribing>
 + <https://www.kaufmanhall.com/insights/thoughts-ken-kaufman/numbers-behind-national-hospital-flash-report>
 + <https://www.techtarget.com/searchhealthit/feature/How-4-EHR-Vendors-Are-Leveraging-Generative-AI-in-Clinical-Workflows>
 + <https://www.computerworld.com/article/3712789/how-rag-makes-generative-ai-tools-even-better.html>
