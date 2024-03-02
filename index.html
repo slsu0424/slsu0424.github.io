@@ -7,19 +7,26 @@ layout: default
 ================================================== -->
 <head>
 <style>
-.container {
-    display: flex;           /* establish flex container */
-    flex-direction: column;  /* make main axis vertical */
-    justify-content: center; /* center items vertically, in this case */
-    align-items: center;     /* center items horizontally, in this case */
-    height: 300px;
+
+#container {
+    display: flex; /* establish flex container */
+    flex-direction: column; /* make main-axis vertical */
+    justify-content: center; /* align items vertically, in this case */
+    align-items: center; /* align items horizontally, in this case */
+    height: 300px; /* for demo purposes */
+    border: 1px solid black; /* for demo purposes */
+    background-color: #eee; /* for demo purposes */
 }
 
 .box {
     width: 300px;
     margin: 5px;
-    text-align: center;     /* will center text in <p>, which is not a flex item */
+    text-align: center;
 }
+
+bluebox { background: aqua; }
+redbox { background: red; }
+
 </style>
 </head>
 
