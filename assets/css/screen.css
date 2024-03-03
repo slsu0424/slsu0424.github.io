@@ -46,7 +46,7 @@ pre {
 
 .main-content {
     min-height: 300px;
-    background-color: #53239c; /* for demo purposes */
+/*    background-color: #53239c; /* for demo purposes */
 }
 
 .site-content {
@@ -54,7 +54,7 @@ pre {
     padding-top: 1.5rem;
     margin-top: 57px;
     transition: all 0.4s;
-    background-color: #c52020; /* for demo purposes */
+/*    background-color: #c52020; /* for demo purposes */
 }
 
 section {
