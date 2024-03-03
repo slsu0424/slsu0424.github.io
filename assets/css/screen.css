@@ -933,6 +933,7 @@ iframe {
     background-color: #333030;
 }
 
+/*
 .box {
     display: inline-flex;
     flex-direction: row;
@@ -940,3 +941,4 @@ iframe {
     justify-content: flex-start;
     border: 1px solid black;
   }
+ */ 
