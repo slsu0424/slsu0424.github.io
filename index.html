@@ -18,10 +18,11 @@ layout: default
 }
 
 .box {
-    width: 300px;
-    margin: 5px;
-    text-align: center;
-    vertical-align: middle;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  border: 3px solid green;
 }
 
 #bluebox { background: aqua; }
@@ -31,8 +32,8 @@ layout: default
 
 
 <!-- <body> -->
-<!-- <div class="container bg-info">    -->
-<div class="container_test bg-info">
+<div class="container bg-info">
+<!-- <div class="container_test bg-info">   -->
     <div class="box" id="bluebox"><!-- flex item -->
         <p>DIV #1</p>
     </div>
