@@ -27,6 +27,7 @@ comments: false
 -->
 
 </div>
+</div>
 
 <div class="col-md-4">
 
@@ -39,6 +40,5 @@ comments: false
 
 <a target="_blank" href="https://www.wowthemes.net/donate/" class="btn btn-danger">Buy me a coffee</a> <a target="_blank" href="https://bootstrapstarter.com/bootstrap-templates/template-mediumish-bootstrap-jekyll/" class="btn btn-warning">Documentation</a>
 -->
-</div>
 </div>
 </div>
