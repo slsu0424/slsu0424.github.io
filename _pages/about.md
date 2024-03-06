@@ -14,7 +14,7 @@ comments: false
 
 <p>My background spans nearly two decades covering the healthcare/life sciences industry at Johnson & Johnson, IBM Watson Health, Cloudera, and Microsoft.  In those experiences, I found not only my passion in building solutions (tinkering with technologies ranging from web development to analytics to AI), but also a desire to understand the enormous complexity across payers, providers, and suppliers.  
 
-I consider myself a technologist, deeply passionate and excited at the potential of emerging technologies.  Yet I am also analytical and pragmatic, often analyzing how and where technology can improve health outcomes.  As I've often hear over the years, medicine is an art and not a science, which I think makes the field of technology exciting and challenging at the same time.</p> 
+I consider myself a technologist, deeply passionate and excited at the potential of emerging technologies.  Yet I am also analytical and pragmatic, often analyzing how and where technology can improve health outcomes.  As I've often heard over the years, medicine is an art and not a science.  It what I think makes the field of technology exciting and challenging at the same time.</p> 
 
 <p>I continue to be amazed by the recent advances in computing, and I dream of a future where these technologies can improve healthcare innovation and patient outcomes.</p> 
 
