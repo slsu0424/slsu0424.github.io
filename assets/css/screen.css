@@ -925,7 +925,6 @@ iframe {
 */
 
 .cover-author-image {
-/*    display: block; */
     width: 200px;
     height: 200px;
     margin: 20px auto 20px;
@@ -938,3 +937,12 @@ iframe {
     overflow: hidden;
     background-color: white;
 }
+
+/* https://www.w3schools.com/cssref/pr_margin.php
+
+If the margin property has three values:
+
+margin: 10px 5px 15px;
+top margin is 10px
+right and left margins are 5px 
+bottom margin is 15px
