@@ -12,9 +12,9 @@ comments: false
   
 <p>I am a cloud architect, data science and AI practitioner, and health informatics strategist.  This is a professional site to share my learnings on the evolving landscape of technology in healthcare.</p>
 
-<p>My background spans nearly two decades covering the healthcare/life sciences industry at Johnson & Johnson, IBM Watson Health, Cloudera, and Microsoft.  I found not only my passion in building solutions (tinkering with databases to big data to AI), but also a desire to understand the enormous complexities across payers, providers, and suppliers.  I also came to appreciate the capabilities of emerging technologies, and the lessons learned in bringing these to market.</p>
+<p>My background spans nearly two decades covering the healthcare/life sciences industry at Johnson & Johnson, IBM Watson Health, Cloudera, and Microsoft.  I found not only my niche in building solutions (tinkering with databases to big data to AI), but also a desire to understand the enormous complexities across payers, providers, and suppliers.  I also came to appreciate the capabilities of emerging technologies, and the lessons learned in bringing these to market.</p>
 
-<p>I consider myself a technologist, deeply passionate about technologies that change the way we use data for healthcare.  I am also a pragmatic strategist, often analyzing different angles of how and where technology should be used.  As I've often heard over the years, medicine is an art and not a science.  It's what makes the field of healthcare technology so unique.</p> 
+<p>I am deeply passionate about technologies that are changing the way we interact with data.  Yet, I believe its equally important to critically examine how and where such technology should be used in healthcare.  As I've often heard over the years, medicine is an art and not a science.  It's what makes the field of healthcare technology so unique.</p> 
 
 <p>I continue to be amazed by the recent advances in computing, and I dream of a future where these technologies can improve healthcare innovation and patient outcomes.</p> 
 
