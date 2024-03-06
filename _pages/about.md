@@ -16,7 +16,7 @@ comments: false
 
 <p>I am passionate about technologies that will change the way data is used in healthcare.  Yet I believe it is more important to critically examine how and where such technology should be used.  As I've often heard over the years, medicine is an art and not a science.  It's what makes the field of healthcare technology so unique.</p> 
 
-<p>Continuing advances in computing enable us to reimagine healthcare, and I dream of a future for better healthcare innovation and patient outcomes.</p> 
+<p>Advances in computing will enable us to reimagine healthcare, and I dream of a future for better healthcare innovation and patient outcomes.</p> 
 
 <p>All views represented here are my own.</p>
 
