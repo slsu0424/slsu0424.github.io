@@ -23,7 +23,7 @@ comments: false
 <!--
 <br />
 
-{% include contact.htm %} 
+{% include contact.html %} 
 -->
 
 </div>
