@@ -932,8 +932,7 @@ iframe {
     -webkit-border-radius: 100%;
             border-radius: 100%;
     overflow: hidden;
-    background-color: #333030;
-    border: 1px solid black; /* for demo purposes */
+    background-color: white;
 }
 
 /*
