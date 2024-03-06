@@ -933,6 +933,7 @@ iframe {
             border-radius: 100%;
     overflow: hidden;
     background-color: #333030;
+    border: 1px solid black; /* for demo purposes */
 }
 
 /*
