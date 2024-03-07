@@ -923,7 +923,7 @@ iframe {
 .cover-author-image {
     width: 200px;
     height: 200px;
-    margin: 20px auto 5px;
+    margin: 20px auto 20px;
     -webkit-border-radius: 100%;
             border-radius: 100%;
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
