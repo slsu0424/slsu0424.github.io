@@ -14,7 +14,7 @@ comments: false
 
 <p>My background spans nearly two decades covering the healthcare/life sciences industry at Johnson & Johnson, IBM Watson Health, Cloudera, and Microsoft.  I found my passion in building solutions, as well as understanding the complexities of the US healthcare system.  I also came to appreciate the capabilities of emerging technologies, and the lessons learned in bringing these to market.</p>
 
-<p>I am optimistic about technologies that will change the way healthcare data is used.  Yet I believe it is more important to examine how and where such technology should be used.  As I've often heard over the years, medicine is an art and not a science.  It's what makes the field of healthcare technology so unique.</p> 
+<p>I am optimistic about technologies that will change the way healthcare data is used.  Yet I believe it is more important to examine how and where such technology should be used.  As I've often heard over the years, medicine is an art and not a science.</p> 
 
 <p>Advances in computing enable us to reimagine healthcare, and I dream of a future with better healthcare innovation and patient outcomes.</p> 
 
