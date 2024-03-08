@@ -14,7 +14,7 @@ comments: false
 
 <p>My background spans nearly two decades covering the healthcare/life sciences industry at Johnson & Johnson, IBM Watson Health, Cloudera, and Microsoft.  I found my passion in building solutions, working on technologies such as databases and SaaS to big data and AI.  I also learned the complexities of the US healthcare system, and the challenges of commercializing these solutions in a highly regulated market.</p>
 
-<p>I am particularly interested in emerging technologies, and their potential to change healthcare.  Yet I believe it is more important to assess how and where such technology should be used.  Emerging tech is inspiring, but its  adoption in healthcare must be carefully vetted.</p> 
+<p>I am particularly interested in emerging technologies, and their potential to change healthcare.  Yet I believe it is more important to understand how and where such technology should be used.  Emerging tech is inspiring, but its  adoption in healthcare must be carefully evaluated.</p> 
 
 <p>Advances in computing enable us to reimagine healthcare, and I dream of a future with better healthcare innovation and patient outcomes.</p> 
 
