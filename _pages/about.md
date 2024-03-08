@@ -16,7 +16,7 @@ comments: false
 
 <p>I am particularly interested in emerging technologies, and their potential to change healthcare.  Yet I believe it is more important to examine how and where such technology should be used.  As the practice of medicine is an art and a science, the use of technology must be used responsibly.</p> 
 
-<p>Advaces in computing enable us to reimagine healthcare, and I dream of a future with better healthcare innovation and patient outcomes.</p> 
+<p>Advances in computing enable us to reimagine healthcare, and I dream of a future with better healthcare innovation and patient outcomes.</p> 
 
 <p>All views represented here are my own.</p>
 
