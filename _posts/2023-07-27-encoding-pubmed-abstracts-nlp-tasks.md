@@ -12,7 +12,7 @@ Last month, I gave a [talk](https://www.meetup.com/new-jersey-sql-data-platform-
 This article will begin a series of technical tutorials that are geared towards healthcare care use cases.  While there is no shortage of resources to learn about LLMs, neural networks, or the latest ML algorithms, my focus will be to reinforce technical concepts related to deep learning.
 
 
-## A simple approach to NLP - one-hot encoding
+## A simple approach to NLP: One-hot encoding
 To start, I wanted to backtrack the origins of LLMs, which are a type of neural network.  A neural network is a type of machine learning approach that attempts to mimic the way the brain works (biological neural network).  This approach has been shown to perform better on NLP tasks than previous methods.  For a great overview of NLP, check out this [guide](https://www.deeplearning.ai/resources/natural-language-processing).
 
 The goal of NLP is to enable computers to "understand" natural language in order to perform some task, such as sentiment analysis.  In order to do so, natural language (text) has to be converted (encode) into a numerical format.
