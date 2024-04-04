@@ -3,21 +3,21 @@ layout: post
 title:  "Could healthcare be transformed by the AI revolution?"
 author: sandy
 categories: [ healthcare, EHR, AI ]
-image: assets/images/20240322Downloads/iStock-1025882206.jpg
+image: assets/images/2024-03/iStock-1025882206_license.jpg
 description: "Could healthcare be transformed by the AI revolution?"
 featured: false
 hidden: false
 ---
 
-"Healthcare loves a new new thing and generative AI is now it", stated Robert Galvin, MD, an executive advisor of The Blackstone Group, in this Forbes [piece](https://www.forbes.com/sites/sachinjain/2023/12/14/2024-healthcare-insiders-predict-the-future) predicting the top 2024 healthcare trends.  In following the latest announcements from VIVE to HIMSS, it was refreshing to see emerging technologies take center stage to great fanfare.  However, as much as new technology is revolutionary, healthcare has always been a laggard.  Yet, in this unique time of technological progress, most people (including myself) would argue that healthcare should become revolutionary.  But *could* healthcare become revolutionary?
+"Healthcare loves a new new thing and generative AI is now it", stated Robert Galvin, MD, an executive advisor of The Blackstone Group, in this Forbes [piece](https://www.forbes.com/sites/sachinjain/2023/12/14/2024-healthcare-insiders-predict-the-future) predicting the top 2024 healthcare trends.  In following the latest announcements from VIVE to HIMSS, it was refreshing to see emerging technologies take center stage to great fanfare.  However, as much as new technology is revolutionary, healthcare has always been a laggard.  Yet, in this unique time of technological progress, could healthcare be revolutionized with AI?
 
 ## Generative AI is having its moment in the clinic
 AI is nothing new, and I've noted in recent conversations that this wave seems reminiscent of IBM Watson's heyday.  Has anything changed since then?  To a degree, I would say yes.  One could consider this moment in AI as the "perfect storm", as hospitals look to regain profitability post-pandemic and computing has become more powerful, cheap, and smart.  
 As highlighted in Harvard Business Review's [Why the Tech Industry Won’t Disrupt Health Care](https://hbr.org/2024/02/why-the-tech-industry-wont-disrupt-health-care), healthcare organizations must transform themselves to stay relevant.  Failure to reduce costs, improve quality, and expand access will render them obsolete.
 
-Technology transformation is nothing new for healthcare.  As the HBR authors note, providers have transformed consistently but slowly, including reimbursement changes, EHR adoption, and increased focus on [whole person health](https://www.nccih.nih.gov/health/whole-person-health-what-you-need-to-know).  I would hardly call any of these changes revolutionary though, unlike Big Tech which has completely revolutionized other industries.  The HBR authors argue that this is by design, and any new entrants will find it difficult to uproot existing healthcare dynamics.
+Technology transformation is nothing new for healthcare.  As the HBR authors note, providers have transformed consistently but slowly, including reimbursement changes, EHR adoption, and increased focus on [whole person health](https://www.nccih.nih.gov/health/whole-person-health-what-you-need-to-know).  I would hardly call any of these changes revolutionary though, unlike Big Tech which has completely overhauled other industries.  The HBR authors argue that this is by design, and any new entrants will find it difficult to uproot existing healthcare dynamics.
 
-Of course, generative AI capabilities are truly impressive.  While the machine learning models underpinning generative AI have [been around](https://news.mit.edu/2023/explained-generative-ai-1109) for decades, its popularity has soared due to the complexity of tasks (images, audio, etc.) that can be performed and the amount of data (scale) on which these tasks are trained.  For text generation (ChatGPT), the underlying [transformer architecture](https://learnopencv.com/attention-mechanism-in-transformer-neural-networks/ and https://arxiv.org/abs/1706.03762) has allowed AI systems to generate new text with remarkable accuracy over its predecessors.  This technology is being seen as a huge boon in the clinic, with use cases ranging from patient case summarization to drafting responses to patient messages.
+Of course, generative AI capabilities are truly impressive.  While the machine learning models underpinning generative AI have [been around](https://news.mit.edu/2023/explained-generative-ai-1109) for decades, its popularity has soared due to the complexity of tasks (images, audio, etc.) that can be performed and the amount of data (scale) on which these tasks are trained.  This technology is being seen as a huge boon in the clinic, with use cases ranging from patient case summarization to drafting responses to patient messages.
 
 ## Revolutionary vs. evolutionary technology
 But could healthcare eventually be disrupted in the same ways that Big Tech has done with other industries?
