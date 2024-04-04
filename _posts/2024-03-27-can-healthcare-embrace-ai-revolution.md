@@ -2,7 +2,7 @@
 layout: post
 title:  "Can healthcare embrace the AI revolution?"
 author: sandy
-categories: [ healthcare, EHR, AI ]
+categories: [ healthcare, AI ]
 image: assets/images/2024-03/iStock-1025882206_license_resize.jpg
 featured: false
 hidden: false
