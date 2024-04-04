@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Could healthcare be transformed by the AI revolution?"
+title:  "Can healthcare follow the AI revolution?"
 author: sandy
 categories: [ healthcare, EHR, AI ]
 image: assets/images/2024-03/iStock-1025882206_license_resize.jpg
-description: "Could healthcare follow the AI revolution?"
+description: "Can healthcare follow the AI revolution?"
 featured: false
 hidden: false
 ---
