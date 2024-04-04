@@ -3,7 +3,7 @@ layout: post
 title:  "Could healthcare be transformed by the AI revolution?"
 author: sandy
 categories: [ healthcare, EHR, AI ]
-image: assets/images/2024-03/iStock-1025882206_license.jpg
+image: assets/images/2024-03/iStock-1025882206_license_resize.jpg
 description: "Could healthcare be transformed by the AI revolution?"
 featured: false
 hidden: false
