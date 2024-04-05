@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Can healthcare embrace the AI revolution?"
+title:  "Embracing the AI revolution in healthcare: Hints of progress"
 author: sandy
 categories: [ healthcare, AI ]
 image: assets/images/2024-03/iStock-1025882206_license_resize.jpg
@@ -11,11 +11,11 @@ hidden: false
 "Healthcare loves a new new thing and generative AI is now it", stated Robert Galvin, MD, an executive advisor of The Blackstone Group, in this Forbes [article](https://www.forbes.com/sites/sachinjain/2023/12/14/2024-healthcare-insiders-predict-the-future) predicting the top 2024 healthcare trends.  In following the latest announcements from VIVE to HIMSS, it was refreshing to see emerging technologies take center stage to great fanfare.  However, as much as new technology is revolutionary, healthcare has always been a laggard.  Given this unique time of technological progress, can healthcare embrace the AI revolution effectively?
 
 ## Generative AI is having its moment in the clinic
-AI is nothing new, and I've noted in recent conversations that this wave seems reminiscent of IBM Watson's heyday.  Has anything changed since then?  To a degree, I would say yes.  One could consider this moment in AI as the "perfect storm", as hospitals look to regain profitability post-pandemic and computing has become more powerful, cheap, and smart.  As highlighted in Harvard Business Review's [Why the Tech Industry Won’t Disrupt Health Care](https://hbr.org/2024/02/why-the-tech-industry-wont-disrupt-health-care), healthcare organizations must transform themselves to stay relevant.  Failure to reduce costs, improve quality, and expand access will render them obsolete.
+AI is nothing new, and I've noted in recent conversations that this wave seems reminiscent of IBM Watson's heyday.  Has anything changed since then?  To a degree, I would say yes.  One could consider this moment in AI as the "perfect storm", as hospitals look to regain [financial stability](https://www.hfma.org/finance-and-business-strategy/strategic-planning/2024-outlook-hospitals-can-expect-a-steadier-year-financially-but-key-questions-loom) post-pandemic and computing has become more powerful, cheap, and smart.  As highlighted in Harvard Business Review's [Why the Tech Industry Won’t Disrupt Health Care](https://hbr.org/2024/02/why-the-tech-industry-wont-disrupt-health-care), healthcare organizations must transform themselves to stay relevant.  Failure to reduce costs, improve quality, and expand access will render them obsolete.
 
 Technology transformation is nothing new for healthcare.  Providers have transformed consistently but slowly, including reimbursement changes, EHR adoption, and increased focus on [whole person health](https://www.nccih.nih.gov/health/whole-person-health-what-you-need-to-know).  I would hardly call any of these changes revolutionary though, unlike Big Tech which has completely overhauled other industries.  The HBR authors argue that this is by design, and any new entrants will find it difficult to uproot existing healthcare entities.
 
-Of course, generative AI capabilities are truly impressive.  While the machine learning models underpinning generative AI have [been around](https://news.mit.edu/2023/explained-generative-ai-1109) for decades, its popularity has soared due to the complexity of tasks (images, audio, etc.) that can be performed and the amount of data (scale) on which these tasks are trained.  This technology is being seen as a huge boon in the clinic, with use cases ranging from patient case summarization to drafting responses to patient messages.  I am bullish on these types of administrative use cases that can save time and cost.
+At the same time, we should not cast doubt that generative AI's capabilities are impressive.  While the machine learning models underpinning generative AI have [been around](https://news.mit.edu/2023/explained-generative-ai-1109) for decades, its popularity has soared due to the complexity of tasks (images, audio, etc.) that can be performed and the amount of data (scale) on which these tasks are trained.  This technology is being seen as a huge boon in the clinic, with use cases ranging from patient case summarization to drafting responses to patient messages.  I am bullish on these types of administrative use cases that can save time and cost.
 
 ## Revolutionary vs. evolutionary technology
 But could healthcare eventually be disrupted in the same ways that Big Tech has done with other industries?
@@ -38,6 +38,7 @@ It is clear that AI in healthcare has been making significant headway in the las
 
 ## References
 + <https://www.forbes.com/sites/sachinjain/2023/12/14/2024-healthcare-insiders-predict-the-future>
++ <https://www.hfma.org/finance-and-business-strategy/strategic-planning/2024-outlook-hospitals-can-expect-a-steadier-year-financially-but-key-questions-loom>
 + <https://hbr.org/2024/02/why-the-tech-industry-wont-disrupt-health-care>
 + <https://www.nccih.nih.gov/health/whole-person-health-what-you-need-to-know>
 + <https://news.mit.edu/2023/explained-generative-ai-1109>
