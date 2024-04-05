@@ -38,6 +38,7 @@ It is clear that AI in healthcare has been making significant headway in the las
 
 ## References
 + <https://www.forbes.com/sites/sachinjain/2023/12/14/2024-healthcare-insiders-predict-the-future>
++ <https://www.hfma.org/finance-and-business-strategy/strategic-planning/2024-outlook-hospitals-can-expect-a-steadier-year-financially-but-key-questions-loom>
 + <https://hbr.org/2024/02/why-the-tech-industry-wont-disrupt-health-care>
 + <https://www.nccih.nih.gov/health/whole-person-health-what-you-need-to-know>
 + <https://news.mit.edu/2023/explained-generative-ai-1109>
