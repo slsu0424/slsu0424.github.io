@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Can healthcare embrace the AI revolution?"
+title:  "Embracing the AI revolution in healthcare: Hints of progress"
 author: sandy
 categories: [ healthcare, AI ]
 image: assets/images/2024-03/iStock-1025882206_license_resize.jpg
