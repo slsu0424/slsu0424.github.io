@@ -12,9 +12,9 @@ comments: false
   
 <p>I am a cloud architect, data science and AI practitioner, and health informatics strategist.  This is a professional site to share my learnings on the evolving landscape of technology in healthcare.</p>
 
-<p>My background spans nearly two decades covering the healthcare/life sciences industry at Johnson & Johnson, IBM Watson Health, Cloudera, and Microsoft.  I found my passion in building solutions, working on technologies such as databases and SaaS to big data and AI.  I also learned the complexities of the US healthcare system, and the challenges of commercializing these solutions in a highly regulated market.</p>
+<p>My background spans nearly two decades covering the healthcare/life sciences industry at Johnson & Johnson, IBM Watson Health, Cloudera, and Microsoft.  I found my passion in building solutions, working on technologies ranging from databases to big data and AI.  I also learned the complexities of the US healthcare system, and the challenges of commercializing these solutions in a highly regulated market.</p>
 
-<p>I am particularly interested in emerging technologies, and their potential to improve healthcare.  While emerging technologies can be revolutionary, their adoption in healthcare must be purposeful, safe, and fair.</p> 
+<p>I am particularly interested in emerging technologies, and their potential to improve healthcare.  While these offerings can be revolutionary, their adoption in healthcare must be purposeful and equitable.</p> 
 
 <p>Advances in computing enable us to reimagine healthcare, and I dream of a future with better healthcare innovation and patient outcomes.</p> 
 
