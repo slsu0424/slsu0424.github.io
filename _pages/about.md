@@ -18,7 +18,7 @@ comments: false
 
 <p>Advances in computing enable us to reimagine healthcare, and I dream of a better future for healthcare innovation and patient outcomes.</p> 
 
-<p>ll views represented here are my own.</p>
+<p>All views represented here are my own.</p>
 
 </div>
 </div>
