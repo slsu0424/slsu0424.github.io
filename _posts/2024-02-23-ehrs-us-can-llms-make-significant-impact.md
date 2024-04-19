@@ -4,7 +4,6 @@ title:  "EHRs in the US: Can LLMs make a significant impact?"
 author: sandy
 categories: [ healthcare, EHR, AI ]
 image: assets/images/2024-02/iStock-815517436_license_resize.png
-description: "EHRs in the US: Can LLMs make a significant impact?"
 featured: false
 hidden: false
 ---
