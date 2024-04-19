@@ -4,7 +4,6 @@ title:  "Emerging tech's value in a time of healthcare verticalization"
 author: sandy
 categories: [ healthcare, economics ]
 image: assets/images/2024-01/shutterstock_170931503_license_resize.png
-description: "Technology's value in a time of healthcare verticalization"
 featured: false
 hidden: false
 ---
