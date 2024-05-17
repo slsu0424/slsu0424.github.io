@@ -50,7 +50,7 @@ In each of these examples, transformer models appear to provide varying levels o
 Despite this debate, what excites me the most is the overall effort from clinicians, researchers, and informaticists to wrestle with these challenges.  In my view, these groups must be at the forefront to advocate for the right use of this technology for patient care.
 
 ## Conclusion
-The "gold rush" to adopt generative AI in healthcare is exciting, yet problematic.  The transformer architecture has markedly improved NLP performance, giving way to potentially limitless applications in healthcare.  I believe transformer models are best suited for clinical summarization tasks, but I remain skeptical on their utility for clinical decisions.  Perhaps the latter will improve over time with specialized models and governance frameworks.
+The "gold rush" to adopt generative AI in healthcare is exciting, yet problematic.  The transformer model has markedly improved NLP performance, giving way to potentially limitless applications in healthcare.  I believe transformer models are best suited for clinical summarization tasks, but I remain skeptical on their utility for clinical decisions.  Perhaps the latter will improve over time with specialized models and governance frameworks.
 
 
 ## References
