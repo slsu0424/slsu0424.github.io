@@ -8,7 +8,7 @@ featured: false
 hidden: false
 ---
 
-Recently, healthcare workers openly voiced concerns about the rush to adopt [generative AI in healthcare](https://aiin.healthcare/topics/artificial-intelligence/overheard-around-kaiser-nurses-protest-over-ai-healthcare), pitting the novel technology against the humanization of care.  Healthcare is arguably at an inflection point where innovation is needed, but what happens to the patients and those who care for them?  As a business leader or technologist, it is important to ask:  In what ways are these new AI models superior to their predecessors?  What problem can these AI models actually solve?  In this post, I take a deeper look into transformer models and their potential utility in healthcare.
+Recently, healthcare workers openly voiced concerns about the rush to adopt [generative AI in healthcare](https://aiin.healthcare/topics/artificial-intelligence/overheard-around-kaiser-nurses-protest-over-ai-healthcare), pitting the novel technology against the humanization of care.  Healthcare is arguably at an inflection point where innovation is needed, but what happens when the technology sits in between a patient and those who directly care for them?  As a business leader or technologist, it is important to ask:  In what ways are these new AI models superior to their predecessors?  Are these AI models actually solving a problem or introducing new ones?
 
 ## A primer on transformer models
 There is no shortage of resources to learn about transformers such as the Generative Pre-trained Transformer (GPT).  I will not go into the details here, but provide links to blogs that best illustrate key concepts.  
