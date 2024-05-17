@@ -13,7 +13,7 @@ Recently, healthcare workers openly voiced concerns about the rush to adopt [gen
 ## A primer on transformer models
 There is no shortage of resources to learn about transformers such as the Generative Pre-trained Transformer (GPT).  I will not go into the details here, but provide links to blogs that best illustrate key concepts.  
 
-At a high-level, transfomer models make use of the [self-attention mechanism](https://arxiv.org/abs/1706.03762), which is a ML technique that calculates the importance between different pairs of words in an input sequence and processes them in parallel.  This enables the model to more accurately focus on the most relevant words (irregardless of distance) when generating new output.  Check ot these technical blogs for further details:
+At a high-level, transfomer models make use of the [self-attention mechanism](https://arxiv.org/abs/1706.03762), which is a ML technique that calculates the importance between different pairs of words in an input sequence and processes them in parallel.  This enables the model to more accurately focus on the most relevant words (irregardless of distance) when generating new output.  Check out these technical blogs for further details:
 - [What Is ChatGPT Doing … and Why Does It Work?](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work)
 - [Visualizing A Neural Machine Translation Model](https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention)
 - [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer)
