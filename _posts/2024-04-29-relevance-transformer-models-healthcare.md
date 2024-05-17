@@ -8,7 +8,7 @@ featured: false
 hidden: false
 ---
 
-Recently, healthcare workers openly voiced concerns about the rush to adopt [generative AI in healthcare](https://aiin.healthcare/topics/artificial-intelligence/overheard-around-kaiser-nurses-protest-over-ai-healthcare), pitting the novel technology against the humanization of care.  Healthcare is arguably at an inflection point where innovation is needed, but what happens when the technology sits in between a patient and those who directly care for them?  As a business leader or technologist, it is important to ask:  In what ways are these new AI models superior to their predecessors?  Are these AI models actually solving a problem or introducing new ones?
+Recently, healthcare workers openly voiced concerns about the rush to adopt [generative AI in healthcare](https://aiin.healthcare/topics/artificial-intelligence/overheard-around-kaiser-nurses-protest-over-ai-healthcare), pitting the novel technology against the humanization of care.  Healthcare is arguably at an inflection point where innovation is needed, but what happens when the technology sits in between a patient and those who directly care for them?  As a business, technology, or informatics leader, it is important to ask:  In what ways are these new AI models superior to their predecessors?  Are these AI models actually solving a problem or introducing new ones?
 
 ## A primer on transformer models
 There is no shortage of resources to learn about transformers such as the Generative Pre-trained Transformer (GPT).  I will not go into the details here, but provide links to blogs that best illustrate key concepts.  
@@ -47,11 +47,11 @@ This Stanford [study](https://www.nature.com/articles/s41746-024-01010-1) set ou
 ## Reasons to remain (cautiously) optimistic
 In each of these examples, transformer models appear to provide varying levels of utility, with perhaps the greatest potential for administrative tasks such as patient summarization and patient education.  I personally feel that clinical decision-making, or anything that involves human intuition, will never be replaced by a computer.  Some argue that generative AI can be a powerful aid for all healthcare stakeholders.  Others argue it will add unnecessary steps to the clinical workflow.  
 
-Yet, what excites me the most is the overall effort by clinicians, researchers, and informaticists to wrestle with the challenges introduced by this technology.  In my view, these groups must be at the forefront to advocate for the right use of this technology to improve patient care.
+Yet, what excites me the most is the overall effort from clinicians, researchers, and informaticists to wrestle with the challenges introduced by this technology.  In my view, these groups must be at the forefront to advocate for the right use of this technology to improve patient care.
 
 
 ## Conclusion
-The "gold rush" to adopt generative AI in healthcare is exciting yet problematic.  The transformer architecture has markedly improved NLP performance, giving way to potentially limitless applications in healthcare.  I believe transformer models are best suited for clinical summarization tasks, but I remain skeptical on their utility for clinical decisions.  Perhaps the latter will improve over time with specialized models and frameworks.
+The "gold rush" to adopt generative AI in healthcare is exciting yet problematic.  The transformer architecture has markedly improved NLP performance, giving way to potentially limitless applications in healthcare.  I believe transformer models are best suited for clinical summarization tasks, but I remain skeptical on their utility for clinical decisions.  Perhaps the latter will improve over time with specialized models and governance frameworks.
 
 
 ## References
