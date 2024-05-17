@@ -55,7 +55,7 @@ The "gold rush" to adopt generative AI in healthcare is exciting yet problematic
 
 
 ## References
-+<https://aiin.healthcare/topics/artificial-intelligence/overheard-around-kaiser-nurses-protest-over-ai-healthcare>
++ <https://aiin.healthcare/topics/artificial-intelligence/overheard-around-kaiser-nurses-protest-over-ai-healthcare>
 + <https://arxiv.org/abs/1706.03762>
 + <https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention>
 + <https://jalammar.github.io/illustrated-transformer>
