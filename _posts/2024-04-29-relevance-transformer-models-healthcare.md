@@ -39,7 +39,7 @@ It should not come as a surprise that one of the biggest benefits would be impro
 
 However, when it comes to clinical decision-making, one of the biggest challenges is addressing the "black box" phenomenon by which LLMs generates answers.  As highlighted in this [paper](https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/s12911-024-02459-6#author-information), transfomer models have faced challenges such as navigating ambiguous or complex [clinical scenarios](https://www.medrxiv.org/content/10.1101/2023.02.21.23285886v1), including biases from training data, and the inablity to take into account a patient's social determinants of health.  This recognition has given rise to building domain-specific LLMs, and adding in other diagnostic criteria to provide a more holistic patient profile.
 
-This Stanford [study](https://www.nature.com/articles/s41746-024-01010-1#author-information) set out to address this problem using specialized instructional prompts that mimic the diagnostic reasoning criteria used by physicians.  They compared this technique to [Chain-Of-Thought (CoT)](https://arxiv.org/abs/2201.11903) prompting, to assess whether LLMs could exhibit clinical reasoning.  They found that LLMs can imitate clinical reasoning processes when using the specialized prompts, but still cannot reason like a human.  The authors conclude that the finding is still significant, in that the LLM provides rationale which can be vetted for accuracy by clinicians.
+This Stanford [study](https://www.nature.com/articles/s41746-024-01010-1) set out to address this problem using specialized instructional prompts that mimic the diagnostic reasoning criteria used by physicians.  They compared this technique to [Chain-Of-Thought (CoT)](https://arxiv.org/abs/2201.11903) prompting, to assess whether LLMs could exhibit clinical reasoning.  They found that LLMs can imitate clinical reasoning processes when using the specialized prompts, but still cannot reason like a human.  The authors conclude that the finding is still significant, in that the LLM provides rationale which can be vetted for accuracy by clinicians.
 
 ![Fig1](/assets/images/2024-04/Fig1.png)
 
@@ -62,5 +62,5 @@ The "gold rush" to adopt generative AI in healthcare is exciting yet problematic
 + <https://devennn.github.io/2020/self-and-multihead-attention>
 + <https://link.springer.com/article/10.1007/s10916-024-02043-5>
 + <https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/s12911-024-02459-6#author-information>
-+ <https://www.nature.com/articles/s41746-024-01010-1#author-information>
++ <https://www.nature.com/articles/s41746-024-01010-1>
 + <https://arxiv.org/abs/2201.11903>
