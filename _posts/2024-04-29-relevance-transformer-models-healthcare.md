@@ -2,7 +2,7 @@
 layout: post
 title:  "Relevance of transformer models in healthcare"
 author: sandy
-categories: [ healthcare, EHR, AI ]
+categories: [ healthcare, AI ]
 image: assets/images/2024-04/iStock-1937350031_license_resize.jpg
 featured: false
 hidden: false
