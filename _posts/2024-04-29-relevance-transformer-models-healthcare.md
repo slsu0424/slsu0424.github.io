@@ -14,9 +14,10 @@ Recently, healthcare workers openly voiced concerns about the rush to adopt [gen
 There is no shortage of resources to learn about transformers such as the Generative Pre-trained Transformer (GPT).  I will not go into the details here, but provide links to blogs that best illustrate key concepts.  
 
 At a high-level, transfomer models make use of the [self-attention mechanism](https://arxiv.org/abs/1706.03762), which is a ML technique that calculates the importance between different pairs of words in an input sequence and processes them in parallel.  This enables the model to more accurately focus on the most relevant words (irregardless of distance) when generating new output.  Check out these technical blogs for further details:
-- [Attention to improve machine translation models](https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention)
-- [Transformers (illustrated)](https://jalammar.github.io/illustrated-transformer)
-- [Self-attention & multi-head attention](https://devennn.github.io/2020/self-and-multihead-attention) 
+- [What Is ChatGPT Doing … and Why Does It Work?](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work)
+- [Visualizing A Neural Machine Translation Model](https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention)
+- [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer)
+- [Understanding Self and Multi-Head Attention](https://devennn.github.io/2020/self-and-multihead-attention) 
 
 Here is a simplified [visual](https://towardsdatascience.com/illustrated-guide-to-transformers-step-by-step-explanation-f74876522bc0) of how attention mechanism works, and how it compares to LTSM and RNN architectures:
 
@@ -56,6 +57,7 @@ The "gold rush" to adopt generative AI in healthcare is exciting, yet problemati
 ## References
 + <https://aiin.healthcare/topics/artificial-intelligence/overheard-around-kaiser-nurses-protest-over-ai-healthcare>
 + <https://arxiv.org/abs/1706.03762>
++ <https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work>
 + <https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention>
 + <https://jalammar.github.io/illustrated-transformer>
 + <https://devennn.github.io/2020/self-and-multihead-attention>
