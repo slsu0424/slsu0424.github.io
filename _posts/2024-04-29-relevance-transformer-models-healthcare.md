@@ -61,6 +61,6 @@ The "gold rush" to adopt generative AI in healthcare is exciting, yet problemati
 + <https://jalammar.github.io/illustrated-transformer>
 + <https://devennn.github.io/2020/self-and-multihead-attention>
 + <https://link.springer.com/article/10.1007/s10916-024-02043-5>
-+ <https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/s12911-024-02459-6#author-information>
++ <https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/s12911-024-02459-6>
 + <https://www.nature.com/articles/s41746-024-01010-1>
 + <https://arxiv.org/abs/2201.11903>
