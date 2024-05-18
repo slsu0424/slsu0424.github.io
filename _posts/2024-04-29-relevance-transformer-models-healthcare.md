@@ -48,10 +48,10 @@ This Stanford [study](https://www.nature.com/articles/s41746-024-01010-1) set ou
 ## Reasons to remain (cautiously) optimistic
 In each of these examples, transformer models appear to provide varying levels of utility, with perhaps the greatest potential (and ROI) for administrative tasks such as patient summarization and patient education.  I personally feel that  clinical decision-making, or anything that involves human intuition, will never be replaced by a computer.  But what if we call it augmented intelligence?  Sure.  But what if brings more noise, and ends up being more hassle than its worth?  Some argue that generative AI can be a powerful aid for all healthcare stakeholders.  Others argue it will add unnecessary steps to the clinical workflow.  
 
-Despite this debate, what excites me the most is the overall effort from clinicians, researchers, and informaticists to wrestle with these challenges.  In my view, these groups must be at the forefront to advocate for the right use of this technology for patient care.
+Despite this debate, what excites me the most is the overall effort from clinicians and informaticists to patients and regulators as they wrestle with these challenges.  In my view, these groups must be at the forefront to advocate for the right use of this technology for patient care.
 
 ## Conclusion
-The "gold rush" to adopt generative AI in healthcare is exciting, yet problematic.  The transformer model has markedly improved NLP performance, giving way to potentially limitless applications in healthcare.  I believe transformer models are best suited for clinical summarization tasks, but I remain skeptical on their utility for clinical decisions.  Perhaps the latter will improve over time with specialized models, governance frameworks, and industry/academia/regulatory collaborations.
+The "gold rush" to adopt generative AI in healthcare is exciting, yet problematic.  The transformer model has markedly improved NLP performance, giving way to potentially limitless applications in healthcare.  I believe transformer models are best suited for clinical summarization tasks, but I remain skeptical on their utility for clinical decisions.  Perhaps the latter will improve over time with specialized models, governance frameworks, and industry/academia/government collaborations.
 
 
 ## References
