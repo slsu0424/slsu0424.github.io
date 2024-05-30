@@ -26,7 +26,7 @@ If one wants to get a good look at what governance for AI in healthcare should l
 
 1.  Not all healthcare organizations have the resources to develop AI review processes.  Government can help here.
 2. Governance should involve how an AI algorithm works within a clinical workflow.  Who is to ensure that clinical staff uses AI the way that it was intended by developers?
-3. The government should establish standards for using AI tools in healthcare.  However, regulation needs to be agile and should reside within a consensus-building entity (i.e., [Coalition for Health AI](https://jamanetwork.com/journals/jama/fullarticle/2813425)).  Federally regulated programs, such as Medicare, Medicaid, the VA health system, should adhere to these standards.
+3. The government should establish standards for using AI tools in healthcare.  However, regulation needs to be agile and should reside within a consensus-building entity (e.g., [Coalition for Health AI](https://jamanetwork.com/journals/jama/fullarticle/2813425)).  Federally regulated programs, such as Medicare, Medicaid, the VA health system, should adhere to these standards.
 
 Lastly, Dr. Mello notes that health insurers also need AI regulation, and points to the example of unregulated AI used by Medicare Advantage plans to [deny care](https://www.statnews.com/2023/03/13/medicare-advantage-plans-denial-artificial-intelligence) for seniors in need.
 
