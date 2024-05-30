@@ -35,7 +35,7 @@ If one wants to get a good look at what regulation for AI in healthcare should l
 Lastly, Dr. Mello notes that health insurers also need AI regulation, and points to the example of unregulated AI used by Medicare Advantage plans to [deny care](https://www.statnews.com/2023/03/13/medicare-advantage-plans-denial-artificial-intelligence) for seniors in need.  It highlights the risk when individual circumstances are not taken into account - when the patient should be getting more care than what an algorithm suggests. 
 
 ## Conclusion
-Throughout this recent journey in researching the societal effects of AI in healthcare, its become clear that we are navigating choppy waters with the rapid development of these tools.  I believe this innovation is a good thing, and the healthcare industry is finally listening.  I like the idea of consensus-built AI standards, and there should be more scrutiny from every angle.  Its not out of reach to say that AI can improve health outcomes for all, but implementation will require thoughtful investment across the ecosystem. 
+Throughout this journey in researching the societal effects of AI in healthcare, its become clear that we are navigating choppy waters with the rapid development of these tools.  I believe this innovation is a good thing, and the healthcare industry is finally listening.  I like the idea of consensus-built AI standards, and there should be more scrutiny from every angle.  Its not out of reach to say that AI can improve health outcomes for all, but implementation will require thoughtful investment across the ecosystem. 
 
 ## References
 + <https://www.politico.com/news/2024/03/24/who-pays-when-your-doctors-ai-goes-rogue-00148447>
