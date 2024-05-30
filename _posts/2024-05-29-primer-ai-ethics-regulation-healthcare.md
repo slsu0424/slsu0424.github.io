@@ -17,7 +17,7 @@ According to Dr. Michelle Mello, a Stanford health law scholar:
 
 >Unregulated tools could be more vulnerable to lawsuits, ... because they aren’t protected by the “preemption doctrine,” which bars some claims against regulated devices on the theory that they’re known to be safe enough and effective enough to have received FDA clearance.
 
-I found this comment striking because to my knowledge, there are no known LLMs that have been [approved](https://www.fdli.org/2023/12/tech-support-fdas-evolving-regulatory-plan-for-drug-and-device-enabling-software) by the FDA.  To note, this should not be mistaken for AI-enabled devices that use deep learning algorithms that have been recently approved by the FDA (e.g., [Eko Low Ejection Fraction Tool (ELEFT)](https://www.accessdata.fda.gov/cdrh_docs/pdf23/K233409.pdf)) 
+I found this comment striking because to my knowledge, there are no known LLMs that have been [approved](https://www.fdli.org/2023/12/tech-support-fdas-evolving-regulatory-plan-for-drug-and-device-enabling-software) by the FDA.  To note, this should not be mistaken for AI-enabled devices that use deep learning algorithms that have been recently approved by the FDA (e.g., [Eko Low Ejection Fraction Tool](https://www.accessdata.fda.gov/cdrh_docs/pdf23/K233409.pdf)) 
 
 If there is increased liability for using such tools, then there is little incentive for adopting these in real-world settings.
 
@@ -26,7 +26,7 @@ If one wants to get a good look at what regulation for AI in healthcare should l
 
 1.  Not all healthcare organizations have the resources to develop AI review processes.
 2. Governance should involve how an AI algorithm works within a clinical workflow.  Who is to ensure that clinical staff uses AI the way that it was intended by software developers?
-3. The government should establish standards for using AI tools in healthcare.  However, regulation needs to be agile and should reside within a consensus-building entity.  Federally regulated programs, such as Medicare, Medicaid, the VA health system, should adhere to these standards.
+3. The government should establish standards for using AI tools in healthcare.  However, regulation needs to be agile and should reside within a consensus-building entity (e.g., [Coalition for Health AI](https://jamanetwork.com/journals/jama/fullarticle/2813425)).  Federally regulated programs, such as Medicare, Medicaid, the VA health system, should adhere to these standards.
 
 Lastly, Dr. Mello notes that health insurers also need AI regulation, and points to the example of unregulated AI used by Medicare Advantage plans to [deny care](https://www.statnews.com/2023/03/13/medicare-advantage-plans-denial-artificial-intelligence) for seniors in need.
 
@@ -40,4 +40,5 @@ Throughout this recent journey in researching the societal effects of AI in heal
 + <https://www.fdli.org/2023/12/tech-support-fdas-evolving-regulatory-plan-for-drug-and-device-enabling-software>
 + <https://www.accessdata.fda.gov/cdrh_docs/pdf23/K233409.pdf>
 + <https://www.finance.senate.gov/imo/media/doc/02082024_mello_testimony.pdf>
++ <https://jamanetwork.com/journals/jama/fullarticle/2813425>
 + <https://www.statnews.com/2023/03/13/medicare-advantage-plans-denial-artificial-intelligence>
