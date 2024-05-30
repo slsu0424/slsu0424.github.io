@@ -21,7 +21,7 @@ I found this comment striking because to my knowledge, there are no known LLMs t
 
 If there is increased liability for using such tools, then there is little incentive for adopting these in real-world settings.
 
-## Ensuring governance to protect all
+## Ensuring governance for all
 If one wants to get a good look at what regulation for AI in healthcare should look like, I found Dr. Mello's [February 2024 testimony](https://www.finance.senate.gov/imo/media/doc/02082024_mello_testimony.pdf) to the U.S. Senate Committee on Finance to be an excellent resource.  In the document, she highlights key learnings from evaluating AI tools:
 
 1.  Not all healthcare organizations have the resources to develop AI review processes.  Government can help here.
