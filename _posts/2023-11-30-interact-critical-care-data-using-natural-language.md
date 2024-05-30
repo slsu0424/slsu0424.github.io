@@ -2,7 +2,7 @@
 layout: post
 title:  "Interact with critical care data using natural language"
 author: sandy
-categories: [ azure, langChain, ChatGPT, python, SQL, tutorial ]
+categories: [ azure, langChain, ChatGPT, python, SQL, tutorial, EHR ]
 #image: assets/images/2023-11/mimic_resize.png
 image: assets/images/2023-11/shutterstock_1111028177_license_resize.png
 ---
