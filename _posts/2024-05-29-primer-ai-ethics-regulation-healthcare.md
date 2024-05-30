@@ -32,7 +32,7 @@ Lastly, Dr. Mello notes that health insurers also need AI regulation, and points
 
 
 ## Conclusion
-Throughout this recent journey in researching the societal effects of AI in healthcare, its become clear that we are navigating choppy waters with the rapid development of these tools.  I believe this innovation is a good thing, and the healthcare industry is finally listening.  I like the idea of consensus-built AI standards, and there should be more scrutiny from every angle.  Its not out of reach to say that AI can improve health outcomes for all, but implementing it will require investment across the ecosystem. 
+Throughout this recent journey in researching the societal effects of AI in healthcare, its become clear that we are navigating choppy waters with the rapid development of these tools.  I believe this innovation is a good thing, and the healthcare industry is finally listening.  I like the idea of consensus-built AI standards, and there should be more scrutiny from every angle.  Its not out of reach to say that AI can improve health outcomes for all, but implementation will require thoughtful investment across the ecosystem. 
 
 ## References
 + <https://www.politico.com/news/2024/03/24/who-pays-when-your-doctors-ai-goes-rogue-00148447>
