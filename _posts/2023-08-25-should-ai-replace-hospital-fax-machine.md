@@ -22,7 +22,6 @@ The article states that instead of healthtech companies developing new software,
 
 A good piece of software is one that will handle the simple things like document capture, reconciliation, etc.  I agree with the article that the first revolution will be non-clinical use cases.  If AI can help us get past that hurdle, then I think we will have achieved productivity.
 
-
 ## Marginal improvements are worth the effort
 Having worked in high-tech technical roles over the last decade, I have seen the evolution of more advanced computing capabilities.  Working in big data and cloud platforms have shown the ability to create powerful solutions with seemingly limitless compute power.  I may even argue that next-gen AI solutions and the infrastructure that powers them will produce 10x the value that will displace outdated technologies.
 
@@ -34,7 +33,6 @@ But there could also be a cloud outage, a malicious entity that wants to conduct
 
 There's nothing wrong with marginal improvements.  Is it better to misdiagnose 1 patient or 1000 patients?  A small error allows time to investigate and course correct.
 
-
 ## A world-class AI doctor in your pocket: Do I really want one?
 Good technology works seamlessly and increases productivity.  Much like today's travel apps, it would be amazing to have a doctor that knows everything about me in the future.  There are some models already out there that attempt this - Livongo by Teladoc, as an example.  However, even if it is covered by insurance, I haven't really used it unless out of necessity.  
 
@@ -43,11 +41,9 @@ An AI doctor might sit as one of those unused apps on my phone.  Most people can
 However, I like the idea of AI enabling earlier diagnosis - this is one use case I believe will see more rapid adoption. 
 
 ## Conclusion
-
 I appreciated this insightful and hopeful article for the future of healthcare.  Perhaps with this new wave of AI, there is a renewed commitment by people and processes to enable a better healthcare experience for everyone.  Perhaps we can put that fax machine to rest.
 
 ## References
-
 + <https://a16z.com/2023/08/02/where-will-ai-have-the-biggest-impact-healthcare>
 + <https://www.computerworld.com/article/3697270/the-fax-is-still-king-in-healthcare-and-its-not-going-away-anytime-soon.html>
 + <https://hbr.org/2022/03/why-ai-failed-to-live-up-to-its-potential-during-the-pandemic>
