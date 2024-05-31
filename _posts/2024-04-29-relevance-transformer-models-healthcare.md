@@ -19,7 +19,7 @@ At a high-level, transfomer models make use of the [self-attention mechanism](ht
 - [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer)
 - [Understanding Self and Multi-Head Attention](https://devennn.github.io/2020/self-and-multihead-attention) 
 
-Here is a simplified [visual](https://towardsdatascience.com/illustrated-guide-to-transformers-step-by-step-explanation-f74876522bc0) of how attention mechanism works, and how it compares to LTSM and RNN models:
+Here is a simplified [visual](https://towardsdatascience.com/illustrated-guide-to-transformers-step-by-step-explanation-f74876522bc0) of how the attention mechanism works, and how it compares to LTSM and RNN models:
 
 ![AttentionMechanism](/assets/images/2024-04/atm.png)
 
