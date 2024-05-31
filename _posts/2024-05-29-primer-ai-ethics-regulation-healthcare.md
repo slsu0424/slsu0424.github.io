@@ -21,7 +21,7 @@ I found this comment striking because to my knowledge, there are no known LLMs t
 
 > Due to AI/ML software’s hallmark characteristic of continuous, automated development and evolution, this new type of software does not fit within FDA’s current regulatory framework for device component modifications, which typically requires that manufacturers of software components receive approval and/or clearance from FDA before introducing a software modification that materially affects the safety and/or efficacy of the device ... 
 
-To compound [the] FDA’s regulatory challenge in this space, AI/ML capabilities have increased significantly in recent years, and even in recent months, without signs of slowing, due to the development of [LLMs] ... Although [the] FDA has not cleared or approved any LLM software products to date, it will no doubt be a significant item on the regulatory agenda moving forward.
+To compound FDA’s regulatory challenge in this space, AI/ML capabilities have increased significantly in recent years, and even in recent months, without signs of slowing, due to the development of [LLMs] ... Although FDA has not cleared or approved any LLM software products to date, it will no doubt be a significant item on the regulatory agenda moving forward.
 
 To note, this should not be mistaken for AI-enabled devices that use other deep learning algorithms that have been recently approved by the FDA (e.g., [Eko Low Ejection Fraction Tool](https://www.accessdata.fda.gov/cdrh_docs/pdf23/K233409.pdf)) 
 
