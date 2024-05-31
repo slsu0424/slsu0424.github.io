@@ -41,7 +41,7 @@ Throughout this journey in researching the societal effects of AI in healthcare,
 + <https://www.politico.com/news/2024/03/24/who-pays-when-your-doctors-ai-goes-rogue-00148447>
 + <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8452365>
 + <https://www.fdli.org/2023/12/tech-support-fdas-evolving-regulatory-plan-for-drug-and-device-enabling-software>
-+ <https://www.accessdata.fda.gov/cdrh_docs/pdf23/K233409.pdf>
++ <https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K233409>
 + <https://www.finance.senate.gov/imo/media/doc/02082024_mello_testimony.pdf>
 + <https://jamanetwork.com/journals/jama/fullarticle/2813425>
 + <https://www.statnews.com/2023/03/13/medicare-advantage-plans-denial-artificial-intelligence>
