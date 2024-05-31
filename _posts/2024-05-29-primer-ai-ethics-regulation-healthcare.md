@@ -21,7 +21,7 @@ I found this comment striking because to my knowledge, there are no known LLMs t
 
 > To compound FDA’s regulatory challenge in this space, AI/ML capabilities have increased significantly in recent years, and even in recent months, without signs of slowing, due to the development of [LLMs] ... Although FDA has not cleared or approved any LLM software products to date, it will no doubt be a significant item on the regulatory agenda moving forward.
 
-To note, this should not be mistaken for AI-enabled devices that use other deep learning algorithms that have been recently approved by the FDA.  For example, the [Eko Low Ejection Fraction Tool (ELEFT)](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K233409) was approved for cardiology use on March 24, 2024.  It makes use of deep neural network and convolutional neural network models for classification, per their summary document.
+To note, this should not be mistaken for AI-enabled devices that use other deep learning algorithms that have been approved by the FDA.  For example, the [Eko Low Ejection Fraction Tool (ELEFT)](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K233409) was approved for cardiology use on March 24, 2024.  It makes use of deep neural network and convolutional neural network models for classification, per their summary document.
 
 If there is increased liability for using such tools, then there is little incentive for adopting these in real-world settings.
 
