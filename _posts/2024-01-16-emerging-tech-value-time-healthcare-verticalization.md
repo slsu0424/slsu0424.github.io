@@ -16,9 +16,7 @@ According to the [Peterson Center-KFF Health System Tracker](https://www.healths
 ![PC-KFF](/assets/images/2024-01/life-expectancy-at-birth-in-years-1980-2022_resize.png){:.centered}
 
 {:.image-caption}
-*Credit: Denecke, K., May, R. & Rivera-Romero, O. Transformer Models in Healthcare: A Survey and Thematic Analysis of Potentials, Shortcomings and Risks. J Med Syst 48, 23 (2024).  Used under [CC BY 4.0.](https://creativecommons.org/licenses/by/4.0)*
-
-By Shameek Rakshit, S., McGough, M., and Amin, K.  How does U.S. life expectancy compare to other countries? Peterson-KFF Health System Tracker (January 30, 2024). Used under [CC BY 3.0.](https://creativecommons.org/licenses/by-nc-nd/3.0/us/deed.en)* 
+*Credit: Rakshit, S., McGough, M., and Amin, K. How does U.S. life expectancy compare to other countries? Peterson-KFF Health System Tracker (January 30, 2024). Used under [CC BY 3.0.](https://creativecommons.org/licenses/by-nc-nd/3.0/us/deed.en)* 
 
 Now let's look at health expenditures: In 2022, the US spent over $4,000 more per person than the next highest spending country (Germany), and almost twice as much as the average of comparable countries.  Note that the US life expectancy still ranks the lowest in the list:
 
