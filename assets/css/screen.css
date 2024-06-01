@@ -940,3 +940,10 @@ margin: 10px 5px 15px;
 top margin is 10px
 right and left margins are 5px 
 bottom margin is 15px
+*/
+
+/* 5/31/24 - adding new for centering images/captions  */
+img[src*='#center'] { 
+    display: block;
+    margin: auto;
+}
