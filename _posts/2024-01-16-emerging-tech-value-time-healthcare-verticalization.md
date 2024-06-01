@@ -11,7 +11,7 @@ hidden: false
 For 2024, I'm going to be switching up some of my posts to focus a bit more on the healthcare industry and current trends.  2023 was a fun time exploring the newest toy in tech (generative AI), but it also came with its share of optimists and pessimists/realists when talking tech in healthcare.  I realized it warranted deeper inspection beyond the technology itself, which I will attempt to explore from various perspectives.
 
 ## Poor health outcomes still plague the US
-According to this Peterson Center-KFF Health System Tracker [report](https://www.healthsystemtracker.org/chart-collection/u-s-life-expectancy-compare-countries), in 2022, the US life expectancy at birth still lagged behind its peer countries:
+According to the [Peterson Center-KFF Health System Tracker](https://www.healthsystemtracker.org/chart-collection/u-s-life-expectancy-compare-countries), in 2022, the US life expectancy at birth still lagged behind its peer countries:
 
 ![PC-KFF](/assets/images/2024-01/life-expectancy-at-birth-in-years-1980-2022_resize.png){:.centered}
 
