@@ -945,7 +945,10 @@ bottom margin is 15px
 /* 5/31/24 - adding new for centering images/captions  
 https://stackoverflow.com/questions/3912694/using-markdown-how-do-i-center-an-image-and-its-caption
 
-https://stackoverflow.com/questions/19331362/using-an-image-caption-in-markdown-jekyll */
+https://stackoverflow.com/questions/19331362/using-an-image-caption-in-markdown-jekyll
+
+https://stackoverflow.com/questions/23819197/jekyll-blog-post-centering-images
+*/
 
 .image-caption {
     text-align: center;
@@ -953,7 +956,7 @@ https://stackoverflow.com/questions/19331362/using-an-image-caption-in-markdown-
     color: lightgrey;
 }
 
-.image-center {
+img.centered {
     display: block;
     margin-left:auto; 
     margin-right:auto;
