@@ -37,7 +37,7 @@ In this [paper](https://link.springer.com/article/10.1007/s10916-024-02043-5), a
 ![Fig2](/assets/images/2024-04/Fig2.png#center)
 
 {:.image-caption}
-*Credit: "Transformer Models in Healthcare: A Survey and Thematic Analysis of Potentials, Shortcomings and Risks" by Kerstin Denecke, Richard May, Octavio Rivera-Romero3, used under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)*
+*Credit: Denecke, K., May, R. & Rivera-Romero, O. Transformer Models in Healthcare: A Survey and Thematic Analysis of Potentials, Shortcomings and Risks. J Med Syst 48, 23 (2024). https://doi.org/10.1007/s10916-024-02043-5, used under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)*
 
 It should not come as a surprise that one of the biggest benefits would be improved operational efficiencies (A1-A4).  While EU counterparts probably face less documentation requirements than the US (as I wrote about in a previous [post](https://slsu0424.github.io/ehrs-us-can-llms-make-significant-impact)), it highlights a main value of these AI systems: synthesizing data quickly.  
 
