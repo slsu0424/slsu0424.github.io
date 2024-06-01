@@ -956,7 +956,7 @@ https://stackoverflow.com/questions/23819197/jekyll-blog-post-centering-images
     color: lightgrey;
 }
 
-img.centered {
+.centered {
     display: block;
     margin-left:auto; 
     margin-right:auto;
