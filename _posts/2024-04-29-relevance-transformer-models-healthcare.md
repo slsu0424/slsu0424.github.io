@@ -35,7 +35,7 @@ Now that we see how the transformer model has succeeeded over previous NLP model
 In this [paper](https://link.springer.com/article/10.1007/s10916-024-02043-5), authors from Europe highlighted some of the key benefits and challenges with these models:
 
 {:.centered}
-![Fig1](/assets/images/2024-04/Fig1.png)
+![Fig1](/assets/images/2024-04/Fig1.png){:.centered}
 
 {:.image-caption}
 *Credit: Denecke, K., May, R. & Rivera-Romero, O. Transformer Models in Healthcare: A Survey and Thematic Analysis of Potentials, Shortcomings and Risks. J Med Syst 48, 23 (2024).  Used under [CC BY 4.0.](https://creativecommons.org/licenses/by/4.0)*
