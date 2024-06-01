@@ -34,7 +34,6 @@ Now that we see how the transformer model has succeeeded over previous NLP model
 
 In this [paper](https://link.springer.com/article/10.1007/s10916-024-02043-5), authors from Europe highlighted some of the key benefits and challenges with these models:
 
-{:.centered}
 ![Fig1](/assets/images/2024-04/Fig1.png){:.centered}
 
 {:.image-caption}
@@ -46,8 +45,7 @@ However, when it comes to clinical decision-making, one of the biggest challenge
 
 This Stanford [study](https://www.nature.com/articles/s41746-024-01010-1) set out to address this problem using specialized instructional prompts to an LLM (GPT-3.5, GPT-4) that mimic the diagnostic reasoning criteria used by physicians.  They compared this technique to [Chain-Of-Thought (CoT)](https://promptengineering.org/master-prompting-concepts-chain-of-thought-prompting) prompting, to assess whether LLMs could exhibit clinical reasoning.  They found that LLMs can imitate clinical reasoning processes when using the specialized prompts, but still cannot reason like a human.  The authors conclude that the finding is still significant, in that the LLM provides rationale which can be evaluated by clinicians.
 
-{:.centered}
-![Fig2](/assets/images/2024-04/Fig2.png)
+![Fig2](/assets/images/2024-04/Fig2.png){:.centered}
 
 {:.image-caption}
 *Credit: Savage, T., Nayak, A., Gallo, R. et al. Diagnostic reasoning prompts reveal the potential for large language model interpretability in medicine. npj Digit. Med. 7, 20 (2024).  Used under [CC BY 4.0.](https://creativecommons.org/licenses/by/4.0)*
