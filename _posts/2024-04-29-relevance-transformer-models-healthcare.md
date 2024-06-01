@@ -21,11 +21,15 @@ At a high-level, transfomer models make use of the [self-attention mechanism](ht
 
 Here is a helpful [visual](https://towardsdatascience.com/illustrated-guide-to-transformers-step-by-step-explanation-f74876522bc0) of how the attention mechanism works, and how it compares to LTSM and RNN models:
 
-![AttentionMechanism](/assets/images/2024-04/atm.png)
+![AttentionMechanism](/assets/images/2024-04/atm.png){:.centered}
 
-![LSTM](/assets/images/2024-04/lstm.png)
+![LSTM](/assets/images/2024-04/lstm.png){:.centered}
 
-![RNN](/assets/images/2024-04/rnn.png)
+![RNN](/assets/images/2024-04/rnn.png){:.centered}
+
+{:.image-caption}
+*Credit: Phi, Michael. Illustrated Guide to Transformers- Step by Step Explanation.*
+
 
 As shown above, this technique overcomes the limitation of previous NLP models which ran into the problem of having short-term memory.  As a result, these AI models can more accurately retain the meaning of longer input sequences when generating new output. 
 
