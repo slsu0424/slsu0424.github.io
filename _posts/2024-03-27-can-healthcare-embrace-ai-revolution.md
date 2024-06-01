@@ -20,7 +20,7 @@ At the same time, we should not cast doubt that generative AI's capabilities are
 ## Revolutionary vs. evolutionary technology
 But could healthcare eventually be disrupted in the same ways that Big Tech has done with other industries?
 
-Dr. Galvin goes on to say that "CHAT GPT 4 and other large learning and generative models are truly revolutionary, but change in clinical medical is always evolutionary".  In a previous [interview](https://catalyst.nejm.org/doi/full/10.1056/CAT.19.0619) with Dr. David Blumenthal and Dr. Namita Seth Mohta in 2019, they went on to highlight some of the challenges with new tech in healthcare:
+Dr. Galvin goes on to say that "CHAT GPT 4 and other large learning and generative models are truly revolutionary, but change in clinical medical is always evolutionary".  In a 2019 [interview](https://catalyst.nejm.org/doi/full/10.1056/CAT.19.0619) with Dr. David Blumenthal and Dr. Namita Seth Mohta, they went on to highlight some of the challenges with new tech in healthcare:
 
 > "Galvin:  Sometimes the unintended consequences exceed the benefits, to be honest. When you get into a system as big as health care, as resistant to change in health care, and inherently much more complicated, this is not buying goods and services over Amazon; this is not getting an Uber or using Lyft. These are in many cases very sick people with complicated diseases in a system that’s already very complicated.
 
