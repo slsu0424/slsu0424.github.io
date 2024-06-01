@@ -22,6 +22,7 @@ Now let's look at health expenditures: In 2022, the US spent over $4,000 more pe
 
 ![PC-KFF](/assets/images/2024-01/life-expectancy-and-per-capita-healthcare-spending-ppp-adjusted-2022_resize.png){:.centered}
 
+{:.image-caption}
 *Credit: Rakshit, S., McGough, M., and Amin, K. How does U.S. life expectancy compare to other countries? Peterson-KFF Health System Tracker (January 30, 2024). Used under [CC BY 3.0.](https://creativecommons.org/licenses/by-nc-nd/3.0/us)* 
 
 When looking at these stats compared to other countries, I couldn't help but question why - despite the fact that [the US is #1](https://finance.yahoo.com/news/15-countries-produce-best-software-222422955.html) in producing the best software engineers - our health outcomes still fare worse than our neighbors.
