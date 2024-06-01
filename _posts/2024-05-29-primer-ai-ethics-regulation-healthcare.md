@@ -26,7 +26,7 @@ To note, this should not be mistaken for AI-enabled devices that use other deep 
 If there is increased liability for using such tools, then there is little incentive for adopting these in real-world settings.
 
 ## Ensuring governance for all
-If one wants to get a good look at what regulation for AI in healthcare should look like, I found Dr. Mello's [February 2024 testimony](https://www.finance.senate.gov/imo/media/doc/02082024_mello_testimony.pdf) to the U.S. Senate Committee on Finance to be an excellent resource.  In the document, she highlights key learnings from evaluating AI tools:
+If one wants to get a good look at what regulation for AI in healthcare should look like, I found Dr. Mello's February 2024 [testimony](https://www.finance.senate.gov/imo/media/doc/02082024_mello_testimony.pdf) to the U.S. Senate Committee on Finance to be an excellent resource.  In the document, she highlights key learnings from evaluating AI tools:
 
 1.  Not all healthcare organizations have the resources to develop AI review processes.
 2. Governance should involve how an AI algorithm works within a clinical workflow.  Who is to ensure that clinical staff uses AI the way that it was intended by software developers?
