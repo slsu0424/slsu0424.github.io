@@ -28,7 +28,7 @@ Here is a helpful [visual](https://towardsdatascience.com/illustrated-guide-to-t
 ![RNN](/assets/images/2024-04/rnn.png){:.centered}
 
 {:.image-caption}
-*Credit: Phi, Michael. Illustrated Guide to Transformers- Step by Step Explanation. Towards Data Science (2020 April 30).*
+*Credit: Phi, M. Illustrated Guide to Transformers- Step by Step Explanation. Towards Data Science (April 30, 2020).*
 
 
 As shown above, this technique overcomes the limitation of previous NLP models which ran into the problem of having short-term memory.  As a result, these AI models can more accurately retain the meaning of longer input sequences when generating new output. 
