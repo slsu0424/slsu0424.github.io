@@ -36,7 +36,7 @@ As shown above, this technique overcomes the limitation of previous NLP models w
 ## Are transformers useful in healthcare?
 Now that we see how the transformer model has succeeeded over previous NLP models, let's take a look at how it is being applied in healthcare.  I should caveat this section by saying that this field is evolving very rapidly, so what has been published in recent months is likely be challenged and revised.  My goal here is to provide a small snapshot of studies I found compelling.  
 
-In this [research paper](https://link.springer.com/article/10.1007/s10916-024-02043-5), authors from Europe highlighted some of the key benefits and challenges with these models:
+In this [research article](https://link.springer.com/article/10.1007/s10916-024-02043-5), authors from Europe highlighted some of the key benefits and challenges with these models:
 
 ![Fig1](/assets/images/2024-04/Fig1.png){:.centered}
 
