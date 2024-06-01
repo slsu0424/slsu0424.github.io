@@ -37,7 +37,7 @@ In this [paper](https://link.springer.com/article/10.1007/s10916-024-02043-5), a
 ![Fig2](/assets/images/2024-04/Fig2.png#center)
 
 {:.image-caption}
-*Credit: Denecke, K., May, R. & Rivera-Romero, O. Transformer Models in Healthcare: A Survey and Thematic Analysis of Potentials, Shortcomings and Risks. J Med Syst 48, 23 (2024). https://doi.org/10.1007/s10916-024-02043-5, used under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)*
+*Credit: Denecke, K., May, R. & Rivera-Romero, O. Transformer Models in Healthcare: A Survey and Thematic Analysis of Potentials, Shortcomings and Risks. J Med Syst 48, 23 (2024).  Used under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)*
 
 It should not come as a surprise that one of the biggest benefits would be improved operational efficiencies (A1-A4).  While EU counterparts probably face less documentation requirements than the US (as I wrote about in a previous [post](https://slsu0424.github.io/ehrs-us-can-llms-make-significant-impact)), it highlights a main value of these AI systems: synthesizing data quickly.  
 
@@ -48,7 +48,7 @@ This Stanford [study](https://www.nature.com/articles/s41746-024-01010-1) set ou
 ![Fig1](/assets/images/2024-04/Fig1.png)
 
 {:.image-caption}
-*Credit: Savage, T., Nayak, A., Gallo, R. et al. Diagnostic reasoning prompts reveal the potential for large language model interpretability in medicine. npj Digit. Med. 7, 20 (2024). https://doi.org/10.1038/s41746-024-01010-1, used under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)*
+*Credit: Savage, T., Nayak, A., Gallo, R. et al. Diagnostic reasoning prompts reveal the potential for large language model interpretability in medicine. npj Digit. Med. 7, 20 (2024).  Used under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)*
 
 
 ## Reasons to remain (cautiously) optimistic
