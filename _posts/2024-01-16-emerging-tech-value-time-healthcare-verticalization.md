@@ -11,7 +11,7 @@ hidden: false
 For 2024, I'm going to be switching up some of my posts to focus a bit more on the healthcare industry and current trends.  2023 was a fun time exploring the newest toy in tech (generative AI), but it also came with its share of optimists and pessimists/realists when talking tech in healthcare.  I realized it warranted deeper inspection beyond the technology itself, which I will attempt to explore from various perspectives.
 
 ## Poor health outcomes still plague the US
-According to this Peterson Center-KFF Health System Tracker [report](https://www.healthsystemtracker.org/chart-collection/u-s-life-expectancy-compare-countries), in 2022, the US life expectancy at birth still lagged behind its peer countries:
+According to the [Peterson Center-KFF Health System Tracker](https://www.healthsystemtracker.org/chart-collection/u-s-life-expectancy-compare-countries), in 2022, the US life expectancy at birth still lagged behind its peer countries:
 
 ![PC-KFF](/assets/images/2024-01/life-expectancy-at-birth-in-years-1980-2022_resize.png){:.centered}
 
@@ -34,8 +34,6 @@ I am not a health economist, but I am reorienting myself to understand the econo
 Not only was 2023 a big year in tech, it was also a big year for healthcare consolidation.  A few months ago, the [Economist](https://www.economist.com/business/2023/10/08/who-profits-most-from-americas-baffling-health-care-system) provided some interesting analysis into the recent cost drivers of the US healthcare system, focusing on 3rd party brokers or "big health" (i.e., insurance, drug distributors, PBMs) vs. pharmaceutical companies and health systems.
 
 Most of this activity involved verticalization by such companies.  For example, over the last decade, there has been progressive M&A activity by big names such as CVS Health, Cigna, and UnitedHealth.  These transactions have amounted to over $300B across more than 130 deals:
-
-![Economist](/assets/images/2024-01/economist.png){:.centered}
 
 Perhaps most striking was that these 3rd party players were not just buying up their competitors - CVS buying Aetna (insurer/insurer), Cigna buying Express Scripts (insurer/PBM) - they were also going after healthcare providers.  In February 2023, Optum quietly [purchased](https://rockinst.org/blog/a-mid-year-update-on-2023-healthcare-trends/) Crystal Run Healthcare, a 400-person physician group in New York.  In April 2023, California-based Kaiser [acquired](https://medcitynews.com/2023/04/kaiser-permanente-acquire-geisinger-hospital-merger/) Geisinger, a Pennslyvania-based health system with more than 1,700 physicians.  While the financial terms of these deals were not disclosed, Amazon's completion of its $3.9B [acquisition](https://www.forbes.com/sites/brucejapsen/2023/02/22/amazon-achieves-closing-of-one-medical-deal-officially-entering-doctor-clinic-business/?sh=28ba5b7f747b) of One Medical in February 2023 gives some insight into the magnitude and importance for these buyers.
 
