@@ -943,7 +943,8 @@ bottom margin is 15px
 */
 
 /* 5/31/24 - adding new for centering images/captions  */
-img[src*='#center'] { 
-    display: block;
-    margin: auto;
+.image-caption {
+    text-align: center;
+    font-size: .8rem;
+    color: lightgrey;
 }
