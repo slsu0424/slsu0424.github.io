@@ -946,6 +946,6 @@ bottom margin is 15px
 https://stackoverflow.com/questions/19331362/using-an-image-caption-in-markdown-jekyll*/
 .image-caption {
     text-align: center;
-    font-size: .5rem;
+    font-size: .8rem;
     color: lightgrey;
 }
