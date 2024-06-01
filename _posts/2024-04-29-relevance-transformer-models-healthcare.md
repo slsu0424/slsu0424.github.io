@@ -36,7 +36,7 @@ As shown above, this technique overcomes the limitation of previous NLP models w
 ## Are transformers useful in healthcare?
 Now that we see how the transformer model has succeeeded over previous NLP models, let's take a look at how it is being applied in healthcare.  I should caveat this section by saying that this field is evolving very rapidly, so what has been published in recent months is likely be challenged and revised.  My goal here is to provide a small snapshot of studies I found compelling.  
 
-According to this February 2024 article published in the [The Journal of Medical Systems: The Home of Clinical Informatics Research](https://link.springer.com/article/10.1007/s10916-024-02043-5), authors from Europe highlighted some of the key benefits and challenges with these models:
+According to the [The Journal of Medical Systems: The Home of Clinical Informatics Research](https://link.springer.com/article/10.1007/s10916-024-02043-5), authors from Europe highlighted some of the key benefits and challenges with these models:
 
 ![Fig1](/assets/images/2024-04/Fig1.png){:.centered}
 
@@ -47,7 +47,7 @@ It should not come as a surprise that one of the biggest benefits would be impro
 
 However, when it comes to clinical decision-making, one of the biggest challenges is addressing the "black box" phenomenon by which LLMs generate answers.  As highlighted in this [scoping review](https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/s12911-024-02459-6), transformer models have faced potential challenges such as navigating ambiguous or complex [clinical scenarios](https://www.medrxiv.org/content/10.1101/2023.02.21.23285886v1.full-text), including biases from training data, or the inablity to consider a patient's social determinants of health.  This recognition has given rise to domain-specific LLMs, and adding in other diagnostic criteria to provide a more holistic patient profile.
 
-Earlier this year, this Stanford [study](https://www.nature.com/articles/s41746-024-01010-1) set out to address this problem using specialized instructional prompts to an LLM (GPT-3.5, GPT-4) that mimic the diagnostic reasoning criteria used by physicians.  They compared this technique to [Chain-Of-Thought (CoT)](https://promptengineering.org/master-prompting-concepts-chain-of-thought-prompting) prompting, to assess whether LLMs could exhibit clinical reasoning.  They found that LLMs can imitate clinical reasoning processes when using the specialized prompts, but still cannot reason like a human.  The authors conclude that the finding is still significant, in that the LLM provides rationale which can be evaluated by medical professionals.
+Earlier this year, the [npj Digital Medicine](https://www.nature.com/articles/s41746-024-01010-1) published a study by Stanford researchers who set out to address this problem using specialized instructional prompts to an LLM (GPT-3.5, GPT-4) that mimic the diagnostic reasoning criteria used by physicians.  They compared this technique to [Chain-Of-Thought (CoT)](https://promptengineering.org/master-prompting-concepts-chain-of-thought-prompting) prompting, to assess whether LLMs could exhibit clinical reasoning.  They found that LLMs can imitate clinical reasoning processes when using the specialized prompts, but still cannot reason like a human.  The authors conclude that the finding is still significant, in that the LLM provides rationale which can be evaluated by medical professionals.
 
 ![Fig2](/assets/images/2024-04/Fig2.png){:.centered}
 
