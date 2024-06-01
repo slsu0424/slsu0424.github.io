@@ -945,6 +945,6 @@ bottom margin is 15px
 /* 5/31/24 - adding new for centering images/captions  */
 .image-caption {
     text-align: center;
-    font-size: .8rem;
+    font-size: .5rem;
     color: lightgrey;
 }
