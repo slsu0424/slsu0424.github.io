@@ -942,7 +942,8 @@ right and left margins are 5px
 bottom margin is 15px
 */
 
-/* 5/31/24 - adding new for centering images/captions  */
+/* 5/31/24 - adding new for centering images/captions  
+https://stackoverflow.com/questions/19331362/using-an-image-caption-in-markdown-jekyll*/
 .image-caption {
     text-align: center;
     font-size: .5rem;
