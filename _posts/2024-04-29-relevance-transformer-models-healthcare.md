@@ -71,6 +71,7 @@ The "gold rush" to adopt generative AI in healthcare is exciting, yet problemati
 + <https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention>
 + <https://jalammar.github.io/illustrated-transformer>
 + <https://devennn.github.io/2020/self-and-multihead-attention>
++ <https://towardsdatascience.com/illustrated-guide-to-transformers-step-by-step-explanation-f74876522bc0>
 + <https://link.springer.com/article/10.1007/s10916-024-02043-5>
 + <https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/s12911-024-02459-6>
 + <https://www.medrxiv.org/content/10.1101/2023.02.21.23285886v1.full-text>
