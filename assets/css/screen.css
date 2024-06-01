@@ -946,6 +946,6 @@ bottom margin is 15px
 https://stackoverflow.com/questions/3912694/using-markdown-how-do-i-center-an-image-and-its-caption*/
 .image-caption {
     text-align: center;
-    font-size: .8rem;
+    font-size: .95rem;
     color: lightgrey;
 }
