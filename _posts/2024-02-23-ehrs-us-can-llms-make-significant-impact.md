@@ -11,7 +11,7 @@ hidden: false
 Continuing on from my previous post on emerging tech's value in healthcare, I was intrigued to review electronic health record (EHR) adoption in the US and across other countries.  While we should applaud the fact that [96% of US hospitals](https://www.beckershospitalreview.com/ehrs/96-of-us-hospitals-have-ehrs-but-barriers-remain-to-interoperability-onc-says.html) have EHRs as of 2022, fulfilling [policies](https://www.healthcareitnews.com/news/10-years-meaningful-use-major-progress-despite-challenges) set forth by Presidents Bush and Obama, it has produced [frustration](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7647027) among many physicians.  Recently, LLMs have shown promise to alleviate some of this burden by mining EHR data in novel ways.  But is this emerging tech significant enough to improve overall health outcomes?
 
 ## EHR use in the US vs. abroad
-A 2020 JAMA [report](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2774129) set out to compare clinician usage of EHRs in the United States and in other countries.  The report studied EHR metadata of 371 health systems in the US and abroad.  I will focus on the paper's key findings and discussion, and its implications from a technology perspective.
+A 2020 JAMA [study](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2774129) set out to compare clinician usage of EHRs in the United States and in other countries.  The report studied EHR metadata of 371 health systems in the US and abroad.  I will focus on the paper's key findings and discussion, and its implications from a technology perspective.
 
 Key findings on US clinicians:
 1. Spent more time per day using the EHR
