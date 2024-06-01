@@ -21,7 +21,7 @@ I found this comment striking because to my knowledge, there are no known LLMs t
 
 > To compound FDA’s regulatory challenge in this space, AI/ML capabilities have increased significantly in recent years, and even in recent months, without signs of slowing, due to the development of [LLMs] ... Although FDA has not cleared or approved any LLM software products to date, it will no doubt be a significant item on the regulatory agenda moving forward.
 
-To note, this should not be mistaken for AI-enabled devices that use other deep learning algorithms that have been approved by the FDA.  For example, the [Eko Low Ejection Fraction Tool (ELEFT)](https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-and-machine-learning-aiml-enabled-medical-devices) was approved for cardiology use on March 28, 2024.  It makes use of deep neural network and convolutional neural network models for classification, per their summary document.
+To note, this should not be mistaken for AI-enabled devices that use other deep learning algorithms that have been approved by the FDA.  For example, the [Eko Low Ejection Fraction Tool (ELEFT)](https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-and-machine-learning-aiml-enabled-medical-devices) was approved for cardiology use on March 28, 2024.  It makes use of deep neural network and convolutional neural network models for classification, per their [summary](https://www.accessdata.fda.gov/cdrh_docs/pdf23/K233409.pdf) document.
 
 If there is increased liability for using such tools, then there is little incentive for adopting these in real-world settings.
 
@@ -42,6 +42,7 @@ Throughout this journey in researching the societal effects of AI in healthcare,
 + <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8452365>
 + <https://www.fdli.org/2023/12/tech-support-fdas-evolving-regulatory-plan-for-drug-and-device-enabling-software>
 + <https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-and-machine-learning-aiml-enabled-medical-devices>
++ <https://www.accessdata.fda.gov/cdrh_docs/pdf23/K233409.pdf>
 + <https://www.finance.senate.gov/imo/media/doc/02082024_mello_testimony.pdf>
 + <https://jamanetwork.com/journals/jama/fullarticle/2813425>
 + <https://www.statnews.com/2023/03/13/medicare-advantage-plans-denial-artificial-intelligence>
