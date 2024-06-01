@@ -56,7 +56,7 @@ Earlier this year, this Stanford [study](https://www.nature.com/articles/s41746-
 
 
 ## Reasons to remain (cautiously) optimistic
-In each of these examples, transformer models appear to provide varying levels of utility, with perhaps the greatest potential (and ROI) for administrative tasks such as patient summarization and patient education.  I personally feel that  clinical decision-making, or anything that involves human intuition, will never be replaced by a computer.  Some argue that generative AI can be a powerful aid for all healthcare stakeholders.  Others argue it will add unnecessary steps to the clinical workflow.  
+In each of these examples, transformer models appear to provide varying levels of utility, with perhaps the greatest ROI for administrative tasks such as patient summarization and patient education.  I personally feel that  clinical decision-making, or anything that involves human intuition, will never be replaced by a computer.  Some argue that generative AI can be a powerful aid for all healthcare stakeholders.  Others argue it will add unnecessary steps to the clinical workflow.  
 
 Despite this debate, what excites me the most is the overall effort from clinicians and informaticists to patients and government entities as they wrestle with these challenges.  In my view, these groups must be at the forefront to advocate for the right use of this technology for patient care.
 
