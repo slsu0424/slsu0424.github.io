@@ -32,12 +32,12 @@ As shown above, this technique overcomes the limitation of previous NLP models w
 ## Are transformers useful in healthcare?
 Now that we see how the transformer model has succeeeded over previous NLP models, let's take a look at how it is being applied in healthcare.  I should caveat this section by saying that this field is evolving very rapidly, so what has been published in recent months is likely be challenged and revised.  My goal here is to provide a small snapshot of studies I found compelling.  
 
-In this February 2024 paper, [Transformer Models in Healthcare: A Survey and Thematic Analysis of Potentials, Shortcomings and Risks](https://link.springer.com/article/10.1007/s10916-024-02043-5), authors from Europe highlighted some of the key benefits and challenges with these models:
+In this [paper](https://link.springer.com/article/10.1007/s10916-024-02043-5), authors from Europe highlighted some of the key benefits and challenges with these models:
 
 ![Fig2](/assets/images/2024-04/Fig2.png#center)
 
 {:.image-caption}
-*Credit: "Transformer Models in Healthcare: A Survey and Thematic Analysis of Potentials, Shortcomings and Risks" by Kerstin Denecke, Richard May, Octavio Rivera-Romero3, used under CC BY 4.0*
+*Credit: "Transformer Models in Healthcare: A Survey and Thematic Analysis of Potentials, Shortcomings and Risks" by Kerstin Denecke, Richard May, Octavio Rivera-Romero3, used under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)*
 
 It should not come as a surprise that one of the biggest benefits would be improved operational efficiencies (A1-A4).  While EU counterparts probably face less documentation requirements than the US (as I wrote about in a previous [post](https://slsu0424.github.io/ehrs-us-can-llms-make-significant-impact)), it highlights a main value of these AI systems: synthesizing data quickly.  
 
@@ -46,6 +46,9 @@ However, when it comes to clinical decision-making, one of the biggest challenge
 This Stanford [study](https://www.nature.com/articles/s41746-024-01010-1) set out to address this problem using specialized instructional prompts to an LLM (GPT-3.5, GPT-4) that mimic the diagnostic reasoning criteria used by physicians.  They compared this technique to [Chain-Of-Thought (CoT)](https://arxiv.org/abs/2201.11903) prompting, to assess whether LLMs could exhibit clinical reasoning.  They found that LLMs can imitate clinical reasoning processes when using the specialized prompts, but still cannot reason like a human.  The authors conclude that the finding is still significant, in that the LLM provides rationale which can be evaluated by clinicians.
 
 ![Fig1](/assets/images/2024-04/Fig1.png)
+
+{:.image-caption}
+*Credit: Savage, T., Nayak, A., Gallo, R. et al. Diagnostic reasoning prompts reveal the potential for large language model interpretability in medicine. npj Digit. Med. 7, 20 (2024). https://doi.org/10.1038/s41746-024-01010-1, used under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)*
 
 
 ## Reasons to remain (cautiously) optimistic
