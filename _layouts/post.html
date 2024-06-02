@@ -43,7 +43,7 @@ post_class: post-template
                     <span class="post-date">
                         <span>Published on </span>
                             <time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time>
-                        <span> (Updated: <time datetime="{{ page.last_modified_at | date: '%Y:%B:%A:%d:%S:%R' }}"></time>)          
+                        <span> (Updated: <time datetime="{{ page.last_modified_at | ddate:"%Y-%m-%d" }}"></time>)          
                         <span> | {% include reading-time.html %}
                     </span>
                 </h1>
