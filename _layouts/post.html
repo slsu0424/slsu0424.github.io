@@ -46,7 +46,7 @@ post_class: post-template
                         <!-- {% if page.last_modified_at %} -->
                         <span><i> (Updated: </i></span>
                         <!-- <i><time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date: "%b %-d, %Y" }}</time></i>) -->
-                            {% last_modified {{ post.path }} %}
+                            {% last_modified {{ post.path }} %} )
                         <!-- {% endif %} -->
                         <span> | {% include reading-time.html %}</span>
                 </h1>
