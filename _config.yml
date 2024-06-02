@@ -47,7 +47,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-archives
   - jekyll-last-modified-at
-
     
 # Archives
 jekyll-archives:
