@@ -33,4 +33,4 @@ module Jekyll
   end
 end
 
-# Liquid::Template.register_tag('last_modified', Jekyll::LastModifiedTag)
+# iquid::Template.register_tag('last_modified', Jekyll::LastModifiedTag)
