@@ -45,8 +45,7 @@ post_class: post-template
                             <time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time>
                         <span><i> (Updated: </i></span>
                             <time class="updated-date" datetime="{{ page.last_modified_at | date:"%Y-%m-%d" }}"></time>)          
-                        <span> | {% include reading-time.html %}
-                    </span>
+                        <span> | {% include reading-time.html %}</span>
                 </h1>
             </div>
 
