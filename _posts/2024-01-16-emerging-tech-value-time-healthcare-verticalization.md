@@ -44,6 +44,9 @@ Industry executives think so, with the idea that verticalization will bring all 
 
 ![Commonwealth](/assets/images/2024-01/high_us_health_care_spending_where_is_it_all_going_exhibit_resize.png){:.centered}
 
+{:.image-caption}
+*Credit: Turner, Ani, Miller, G., and Lowry, E., High U.S. Health Care Spending: Where Is It All Going? Commonwealth Fund (Oct 2023).*
+
 But will this hurt patients in the end?  The Economist suggests that there could be unfair competition due to consolidation.  Quality of patient care may suffer.  All the while, these healthcare intermediaries have been producing excess returns greater than the S&P 500.  Much of this has not come to fruition yet, so it will be interesting to see if these strategies pay off.  As the Commonwealth Fund notes, regulators and researchers will be watching closely. 
 
 ## The role of emerging technology
