@@ -43,7 +43,9 @@ post_class: post-template
                     <span class="post-date">
                         <span>Published on </span>
                             <time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time>
+                            {% capture lastModificationDate %}{% last_modified {{ page.path }} %}{% endcapture %}
                         <span> | {% include reading-time.html %}</span>
+
                 </h1>
             </div>
 
