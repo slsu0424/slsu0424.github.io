@@ -17,5 +17,5 @@ group :jekyll_plugins do
     gem 'jekyll-archives'
     gem 'kramdown'
     gem 'rouge'
-    gem 'jekyll-last-modified-at'
+#   gem 'jekyll-last-modified-at'
 end

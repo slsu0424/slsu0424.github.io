@@ -6,7 +6,7 @@ categories: [ healthcare, AI, ethics, regulation ]
 image: assets/images/2024-05/tingey-injury-law-firm-resize.jpg
 featured: false
 hidden: false
-last_modified_at: 2024-06-01 0:00:00 +0000
+# last_modified_at: 2024-06-01 0:00:00 +0000
 ---
 
 I had nt explored much into AI ethics and regulation until recently, when this [article](https://www.politico.com/news/2024/03/24/who-pays-when-your-doctors-ai-goes-rogue-00148447) shed light into the [on-going dilemma](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8452365) of liabilty when AI is used for patient care.  The reason this is important now is because AI tools are proliferating in healthcare more than ever before.  Should physicians ultimately be on the hook?  What role do regulators play?  What would it take to integrate AI tools to become standards of care?  In this post, I review the current discussion around these questions and recommended paths going forward.  
