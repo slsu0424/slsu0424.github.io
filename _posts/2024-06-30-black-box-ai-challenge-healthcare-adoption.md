@@ -8,7 +8,7 @@ image: assets/images/2024-06/aditya-patil-QKkiJ7AXarU-unsplash_resize.jpg
 After writing my last post, I was intrigued to learn a bit more about the black box phenomenon in AI models.  More pressing is understanding their implication for healthcare.  This is not to say that AI has not already been embedded into medical devices today, judging by the increasing number of FDA-approved AI algorithms.  However, I think it is important to understand the distinction of the algorithms embedded into such devices.  In this post, I aim to provide a technical lens on this topic.  
 
 ## A database of FDA-approved AI algorithms
-I was able to dig up a 2020 article in [Nature](https://www.nature.com/articles/s41746-020-00324-0), which was the first I saw to categorize these AI medical device by algorithm type in a [database](https://medicalfuturist.com/fda-approved-ai-based-algorithms).  It looks like it stopped updating in mid-2021, as it [gave way](https://medicalfuturist.com/the-current-state-of-fda-approved-ai-based-medical-devices) to the FDA officially tracking this on its [website](https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-and-machine-learning-aiml-enabled-medical-devices).  I also recommend reading the Non-FDA publicly available resources listed on the FDA website for additional context.
+I was able to dig up a 2020 article in [Nature](https://www.nature.com/articles/s41746-020-00324-0), which was the first I saw to categorize these AI medical device by algorithm type in a [database](https://medicalfuturist.com/fda-approved-ai-based-algorithms).  It looks like it stopped updating in mid-2021, as it [gave way](https://medicalfuturist.com/the-current-state-of-fda-approved-ai-based-medical-devices) to the FDA officially [tracking](https://www.fda.gov/medical-devices/software-medical-device-samd) this.  I also recommend reading the Non-FDA publicly available resources listed on the FDA site for additional context.
 
 I was interested in finding devices that used neural networks, given their rise in popularity in recent years.  I settled on the first mention of an artificial neural network in the database.  Eko Devices Inc. developed the Eko Analysis Software (EAS), which was approved by the FDA on January 15, 2020.  According to their [summary](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K192004) document, the tool is described as follows:
 
@@ -21,7 +21,7 @@ transferred from multiple mobile or computer based applications.
 I will focus on the neural networks component.  
 
 ## Discriminative vs. Generative models
-Before I dive into discriminative and generative models, I found it helpful to review the main approaches to perform machine learning tasks: [supervised and unsupervised learning](https://www.enjoyalgorithms.com/blogs/supervised-unsupervised-and-semisupervised-learning).  
+To give some context for neural networks, its helpful to understand where they sit as discriminative or generative models.  First, let's review the main approaches to perform machine learning tasks: [supervised and unsupervised learning](https://www.enjoyalgorithms.com/blogs/supervised-unsupervised-and-semisupervised-learning).  
 
 At a high level, supervised learning uses labeled inputs (x) and outputs (y) to fit a model.  Here, the machine algorithm estimates, or learns, a function that best relates the input ("labeled data") to output ("labels"):  
 
