@@ -3,7 +3,7 @@ layout: post
 title:  "Black box AI: The challenge for healthcare adoption"
 author: sandy
 categories: [ AI, healthcare, algorithms ]
-image: assets/images/2024-06/box.jpg
+image: assets/images/2024-06/aditya-patil-QKkiJ7AXarU-unsplash_resize.jpg
 ---
 After writing my last post, I was intrigued to learn a bit more about the black box phenomenon in AI models.  More pressing is understanding their implication for healthcare.  This is not to say that AI has not already been embedded into medical products today, judging by the increasing number of FDA-approved AI algorithms.  However, I think it is important to understand the distinction of the algorithms embedded into such products.  In this post, I aim to provide a technical lens into this topic.  
 
@@ -23,14 +23,14 @@ I will focus on the neural networks component.
 ## Discriminative vs. Generative models
 Before I dive into discriminative and generative models, I found it helpful to review the main approaches to perform machine learning tasks: supervised and unsupervised learning.  
 
-At a high level, [supervised learning](https://www.enjoyalgorithms.com/blogs/supervised-unsupervised-and-semisupervised-learning) uses labeled inputs (x) and outputs (y) to fit a model.  Here, the machine algorithm estimates, or learns, a function that best relates the input ("labeled data") to output ("labels").  
+At a high level, [supervised learning](https://www.enjoyalgorithms.com/blogs/supervised-unsupervised-and-semisupervised-learning) uses labeled inputs (x) and outputs (y) to fit a model.  Here, the machine algorithm estimates, or learns, a function that best relates the input ("labeled data") to output ("labels"):  
 
 ![supervised](/assets/images/2024-06/supervised.png){:.centered}
 
 {:.image-caption}
 *Credit: Kumar, R. Supervised, Unsupervised and Semi-supervised Learning with Real-life Usecase.  EnjoyAlgorithms.*
 
-In contrast, unsupervised learning has no labeled inputs nor outputs.  Here, the machine learning algorithm estimates a function that finds similarity among the input samples, and groups them based on that similarity as the output.  
+In contrast, unsupervised learning has no labeled inputs nor outputs.  Here, the machine learning algorithm estimates a function that finds similarity among the input samples, and groups them based on that similarity as the output:  
 
 ![unsupervised](/assets/images/2024-06/unsupervised.png){:.centered}
 
