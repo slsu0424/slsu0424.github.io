@@ -30,7 +30,7 @@ At a high level, [supervised learning](https://www.enjoyalgorithms.com/blogs/sup
 {:.image-caption}
 *Credit: Kumar, R. Supervised, Unsupervised and Semi-supervised Learning with Real-life Usecase.  EnjoyAlgorithms.*
 
-n contrast, unsupervised learning has no labeled inputs nor outputs.  Here, the machine learning algorithm estimates a function that finds similarity among the input samples, and groups them based on that similarity as the output.  
+In contrast, unsupervised learning has no labeled inputs nor outputs.  Here, the machine learning algorithm estimates a function that finds similarity among the input samples, and groups them based on that similarity as the output.  
 
 ![unsupervised](/assets/images/2024-06/unsupervised.png){:.centered}
 
