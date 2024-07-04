@@ -55,7 +55,7 @@ So with all this discussion on discriminative vs. generative models, why does th
 
 Much of this advancement is due to the "deep learning revolution" in 2012.  As written in [Ars Technica](https://arstechnica.com/science/2019/12/how-neural-networks-work-and-why-theyve-become-a-big-business), simple (single-layer) neural networks were first developed in the early 1950s, but started to see more mainstream success from 2012 onwards.  The main contributors to this success were a combination of:
 
-- Deeper networks (multiple layers)
+- Deeper networks (more layers)
 - Large datasets (more data)
 - Powerful compute (more processing efficiency)
 
@@ -81,6 +81,7 @@ Exploring the black box phenomenon really opened my eyes into the technical adva
 + <https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-and-machine-learning-aiml-enabled-medical-devices>
 + <https://www.nature.com/articles/s41746-020-00324-0>
 + <https://medicalfuturist.com/fda-approved-ai-based-algorithms>
++ <https://medicalfuturist.com/the-current-state-of-fda-approved-ai-based-medical-device>
 + <https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K192004>
 + <https://learnopencv.com/generative-and-discriminative-models>
 + <https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-supervised-learning>
