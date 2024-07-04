@@ -18,8 +18,6 @@ uses several methods to interpret the acquired signals including signal processi
 neural networks. The API can be electronically interfaced, and perform analysis with data
 transferred from multiple mobile or computer based applications. 
 
-I will focus on the neural networks component.  
-
 ## Discriminative vs. Generative models
 To give some context for neural networks, its helpful to understand where they sit in the spectrum of discriminative and generative models.  First, let's review the main approaches to perform machine learning tasks: [supervised and unsupervised learning](https://www.enjoyalgorithms.com/blogs/supervised-unsupervised-and-semisupervised-learning).  
 
