@@ -55,11 +55,11 @@ So with all this discussion on discriminative vs. generative models, why does th
 
 Much of this advancement is due to the "deep learning revolution" in 2012.  As written in [Ars Technica](https://arstechnica.com/science/2019/12/how-neural-networks-work-and-why-theyve-become-a-big-business), simple (single-layer) neural networks were first developed in the early 1950s, but started to see more mainstream success from 2012 onwards.  The main contributors to this success were a combination of:
 
-- Deeper networks (more layers)
+- Deeper networks (multiple layers)
 - Large datasets (more data)
 - Powerful compute (more processing efficiency)
 
-Why it matters: These systems can now model much more complex relationships on their own.  On the one hand, this is much more efficient than explicit coding by a human being; on the other, it becomes harder to decipher the reasoning why the system has made the decisions it did throughout the network.  In this sense, discriminative models are more interpretable than generative models, since the relationship between the inputs and outputs remains consistent (outputs are variable in generative models).
+Why it matters: These systems can now model much more complex relationships on their own.  On the one hand, this is much more efficient than explicit coding by a human being; on the other, it is harder to decipher the reasoning why the system has made the decisions it did throughout the network.  In this sense, discriminative models are more interpretable than generative models, since the relationship between the inputs and outputs remains consistent (outputs are variable in generative models).
 
 To see why, let's take a look at the [intricacies](https://spectrum.ieee.org/what-is-deep-learning) involved in a neural network with many layers:
 
@@ -72,7 +72,7 @@ Imagine trying to unravel this and explain it to a non-technical person, let alo
 
 Some argue that these increasingly sophisticated AI (specifically generative) systems pose a [risk](https://www.techtarget.com/healthtechanalytics/feature/Navigating-the-black-box-AI-debate-in-healthcare) for patient care.  If an AI system makes a diagnosis, how did it come to that conclusion?  Would it come to that same conclusion the next time?  There appears to be some consensus that in low-stakes use cases, such as administrative tasks, black box AI is not much of an issue.  However, there are high-stakes for clinical decision making, where accountability and liability are still not well-defined.  As a result, the lack of transparency may hinder more widespread adoption of healthcare AI.
 
-Healthcare would be better served with [glass box AI](https://theconversation.com/what-is-a-black-box-a-computer-scientist-explains-what-it-means-when-the-inner-workings-of-ais-are-hidden-203888), where the algorithms, training data, and the model are freely available.  There is on-going development around explainable AI to help mitigate these risks, although my take is that it remains to be seen what will constitute a satisfactory explanation.
+Healthcare would be better served with [glass box AI](https://theconversation.com/what-is-a-black-box-a-computer-scientist-explains-what-it-means-when-the-inner-workings-of-ais-are-hidden-203888), where the algorithms, training data, and the model are freely available.  There is on-going development around explainable AI to help mitigate these risks, although it remains to be seen what constitutes a satisfactory explanation.
 
 ## Conclusion
 Exploring the black box phenomenon really opened my eyes into the technical advances and societal challenges posed by AI.  As with many emerging technologies that have come before it, these are now indispensible in our everyday lives.  Likewise, society has had to adjust to the ill-effects of such technology.  Whether that's through regulation, education, or testing frameworks, I remain bullish that these advances in AI will be a boon for healthcare.
