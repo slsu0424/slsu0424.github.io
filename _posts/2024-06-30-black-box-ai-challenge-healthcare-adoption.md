@@ -21,7 +21,7 @@ transferred from multiple mobile or computer based applications.
 I will focus on the neural networks component.  
 
 ## Discriminative vs. Generative models
-To give some context for neural networks, its helpful to understand where they sit as discriminative or generative models.  First, let's review the main approaches to perform machine learning tasks: [supervised and unsupervised learning](https://www.enjoyalgorithms.com/blogs/supervised-unsupervised-and-semisupervised-learning).  
+To give some context for neural networks, its helpful to understand where they sit in the spectrum of discriminative and generative models.  First, let's review the main approaches to perform machine learning tasks: [supervised and unsupervised learning](https://www.enjoyalgorithms.com/blogs/supervised-unsupervised-and-semisupervised-learning).  
 
 At a high level, supervised learning uses labeled inputs (x) and outputs (y) to fit a model.  Here, the machine algorithm estimates, or learns, a function that best relates the input ("labeled data") to output ("labels"):  
 
