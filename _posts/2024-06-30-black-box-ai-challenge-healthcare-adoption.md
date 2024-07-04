@@ -19,7 +19,7 @@ neural networks. The API can be electronically interfaced, and perform analysis 
 transferred from multiple mobile or computer based applications. 
 
 ## Discriminative vs. Generative models
-To better understand the impact of neural networks, we should know where they sit on the spectrum of discriminative vs. generative models.  First, let's review the main approaches to perform machine learning tasks: [supervised and unsupervised learning](https://www.enjoyalgorithms.com/blogs/supervised-unsupervised-and-semisupervised-learning).  
+To better understand the significance of neural networks, we should know where they sit on the spectrum of discriminative vs. generative models.  First, let's review the main approaches to perform machine learning tasks: [supervised and unsupervised learning](https://www.enjoyalgorithms.com/blogs/supervised-unsupervised-and-semisupervised-learning).  
 
 At a high level, supervised learning uses labeled inputs (x) and outputs (y) to fit a model.  Here, the machine algorithm estimates, or learns, a function that best relates the input ("labeled data") to output ("labels"):  
 
@@ -72,10 +72,10 @@ Imagine trying to unravel this and explain it to a non-technical person, let alo
 
 Some argue that these increasingly sophisticated AI (specifically generative) systems pose a [risk](https://www.techtarget.com/healthtechanalytics/feature/Navigating-the-black-box-AI-debate-in-healthcare) for patient care.  If an AI system makes a diagnosis, how did it come to that conclusion?  Would it come to that same conclusion the next time?  There appears to be some consensus that in low-stakes use cases, such as administrative tasks, black box AI is not much of an issue.  However, there are high-stakes for clinical decision making, where accountability and liability are still not well-defined.  As a result, the lack of transparency may hinder more widespread adoption of healthcare AI.
 
-Healthcare would be better served with [glass box AI](https://theconversation.com/what-is-a-black-box-a-computer-scientist-explains-what-it-means-when-the-inner-workings-of-ais-are-hidden-203888), where the algorithms, training data, and the model are freely available.  There is on-going development around explainable AI to help mitigate these risks, although it remains to be seen what constitutes a satisfactory explanation.
+I believe healthcare would be better served with [glass box AI](https://theconversation.com/what-is-a-black-box-a-computer-scientist-explains-what-it-means-when-the-inner-workings-of-ais-are-hidden-203888), where the algorithms, training data, and the model are freely available.  There is on-going development around explainable AI to help mitigate these risks, although it remains to be seen what constitutes a satisfactory explanation.
 
 ## Conclusion
-Exploring the black box phenomenon really opened my eyes into the technical advances and societal challenges posed by AI.  As with many emerging technologies that have come before it, these are now indispensible in our everyday lives.  Likewise, society has had to adjust to the ill-effects of such technology.  Whether that's through regulation, education, or testing frameworks, I remain bullish that these advances in AI will be a boon for healthcare.
+Exploring the black box phenomenon really opened my eyes into the technical advances and societal challenges posed by AI.  As with many emerging technologies that have come before it, these are now an indispensible part of daily life.  It would be a dream for healthcare.  Whether that's through regulation, education, or testing frameworks, I remain bullish that these advances in AI will be a boon for healthcare.
 
 ## References
 + <https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-and-machine-learning-aiml-enabled-medical-devices>
