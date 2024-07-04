@@ -34,6 +34,9 @@ In contrast, unsupervised learning has no labeled inputs nor outputs.  Here, the
 
 ![unsupervised](/assets/images/2024-06/unsupervised.png){:.centered}
 
+{:.image-caption}
+*Credit: Kumar, R. Supervised, Unsupervised and Semi-supervised Learning with Real-life Usecase.  EnjoyAlgorithms.*
+
 The models that fall under each approach can be generally categorized as [discriminative or generative](https://learnopencv.com/generative-and-discriminative-models).  By discriminative, the model aims to separate data points into different classes and learn the decision boundaries.  By generative, the model aims to generate new data points similar to the data it was trained on:
 
 ![gen_disc_model-1](/assets/images/2024-06/gen_disc_model-1.png){:.centered}
