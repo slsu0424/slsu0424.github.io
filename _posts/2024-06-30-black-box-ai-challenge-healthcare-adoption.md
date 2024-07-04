@@ -70,6 +70,9 @@ To see why this is, let's take a look at the [intricacies](https://spectrum.ieee
 
 ![nn](/assets/images/2024-06/nn.png){:.centered}
 
+{:.image-caption}
+*Credit: Moore, S., Schneider, D., Strickland, E. How Deep Learning Works.  IEEE Spectrum (September 2021).*
+
 Imagine trying to unravel all of this and explaining it to a non-technical person, let alone someone in a completely different field like healthcare.
 
 Some argue that these increasingly sophisticated AI (specifically generative) systems pose a [risk](https://www.techtarget.com/healthtechanalytics/feature/Navigating-the-black-box-AI-debate-in-healthcare) for patient care.  If an AI system makes a diagnosis, how did it come to that conclusion?  Would it come to that same conclusion the next time?  There appears to be some consensus that in low-stakes use cases, such as administrative tasks, black box AI is not much of an issue.  However, there are high-stakes for clinical decision making, where accountability and liability are still not well-defined.  As a result, the lack of transparency may hinder more widespread adoption of healthcare AI.
