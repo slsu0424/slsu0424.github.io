@@ -45,6 +45,7 @@ The models that fall under each approach can be generally categorized as [discri
 
 ![math](/assets/images/2024-06/math.png){:.centered}
 
+{:.image-caption}
 *Credit: Amidi, S and Amidi, A. CS 229 - Machine Learning.  Stanford.*
 
 While neural networks are typically associated with unsupervised learning, the lines are somewhat blurred as discussed in some [online forums](https://stats.stackexchange.com/questions/403968/linking-generative-discriminative-models-to-supervised-and-unsupervised-learnin).  Thus, I would say they can be either discriminative or generative models, based on the specific use case.  For example, neural networks can be used for image classification (convolutional neural networks) or for generating new data (transformers).
