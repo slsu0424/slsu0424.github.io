@@ -10,7 +10,7 @@ After writing my last post, I was intrigued to learn a bit more about the black 
 ## A database of FDA-approved AI algorithms
 I was able to dig up a 2020 article in [Nature](https://www.nature.com/articles/s41746-020-00324-0), which was the first I saw to categorize these AI medical device by algorithm type in a [database](https://medicalfuturist.com/fda-approved-ai-based-algorithms).  It looks like it stopped updating in mid-2021, as it [gave way](https://medicalfuturist.com/the-current-state-of-fda-approved-ai-based-medical-devices) to the FDA officially [tracking](https://www.fda.gov/medical-devices/software-medical-device-samd) this.  I also recommend reading the Non-FDA publicly available resources listed on the FDA site for additional context.
 
-I was interested in finding devices that used neural networks, given their rise in popularity in recent years.  I settled on the first mention of an artificial neural network in the database.  Eko Devices Inc. developed the Eko Analysis Software (EAS), which was approved by the FDA on January 15, 2020.  According to their [summary](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K192004) document, the tool is described as follows:
+I was interested in finding devices that used neural networks, given their rise in popularity in recent years (more on this later).  I settled on the first mention of an artificial neural network in the database.  Eko Devices Inc. developed the Eko Analysis Software (EAS), which was approved by the FDA on January 15, 2020.  According to their [summary](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K192004) document, the tool is described as follows:
 
 >The Eko Analysis Software is a cloud-based software API that allows a user to upload
 synchronized ECG and heart sound/phonocardiogram (PCG) data for analysis. The software
@@ -19,7 +19,7 @@ neural networks. The API can be electronically interfaced, and perform analysis 
 transferred from multiple mobile or computer based applications. 
 
 ## Discriminative vs. Generative models
-To give some context for neural networks, its helpful to understand where they sit in the spectrum of discriminative and generative models.  First, let's review the main approaches to perform machine learning tasks: [supervised and unsupervised learning](https://www.enjoyalgorithms.com/blogs/supervised-unsupervised-and-semisupervised-learning).  
+To better understand the impact of neural networks, we should know where they sit on the spectrum of discriminative vs. generative models.  First, let's review the main approaches to perform machine learning tasks: [supervised and unsupervised learning](https://www.enjoyalgorithms.com/blogs/supervised-unsupervised-and-semisupervised-learning).  
 
 At a high level, supervised learning uses labeled inputs (x) and outputs (y) to fit a model.  Here, the machine algorithm estimates, or learns, a function that best relates the input ("labeled data") to output ("labels"):  
 
@@ -53,7 +53,7 @@ As for the Eko Analysis System, the underlying neural networks are probably disc
 # Black box AI vs. glass box AI
 So with all this discussion on discriminative vs. generative models, why does this matter in practice?  AI systems as black boxes are nothing new, as I first encountered this during my time at IBM Watson.  Fast forward a decade, and the algorithms powering today's AI systems are far more advanced and not easily understood, even by the researchers who developed them.  
 
-Much of this advancement is due to the "deep learning revolution" in 2012.  As written in [Ars Technica](https://arstechnica.com/science/2019/12/how-neural-networks-work-and-why-theyve-become-a-big-business), simple (single-layer) neural networks were first developed in the early 1950s, but started to see more mainstream success from 2012 onwards.  The main contributors to this success were a combination of:
+Much of this advancement is due to the "deep learning revolution" in 2012.  As written in [Ars Technica](https://arstechnica.com/science/2019/12/how-neural-networks-work-and-why-theyve-become-a-big-business), simple (single-layer) neural networks were first developed in the late 1950s, but started to see more success in 2012 and thereafter.  The main contributors to this success were a combination of:
 
 - Deeper networks (more layers)
 - Large datasets (more data)
