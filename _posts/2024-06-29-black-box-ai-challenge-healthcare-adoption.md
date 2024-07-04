@@ -5,7 +5,7 @@ author: sandy
 categories: [ AI, healthcare, algorithms ]
 image: assets/images/2024-06/box.jpg
 ---
-After writing my last post, I was intrigued to learn a bit more about the black box phenomenon in AI models.  More pressing is understanding their implication for healthcare (perceived vs. actual).  This is not to say that AI has not already been embedded into medical products today, judging by the increasing number of FDA-approved AI algorithms.  However, I think it is important to understand the distinction of the algorithms embedded into such products.  In this post, I aim to provide a technical lens into this topic.  
+After writing my last post, I was intrigued to learn a bit more about the black box phenomenon in AI models.  More pressing is understanding their implication for healthcare.  This is not to say that AI has not already been embedded into medical products today, judging by the increasing number of FDA-approved AI algorithms.  However, I think it is important to understand the distinction of the algorithms embedded into such products.  In this post, I aim to provide a technical lens into this topic.  
 
 ## A database of FDA-approved AI algorithms
 For those that are not aware, the FDA regularly tracks and publishes [AI/ML-enabled medical devices](https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-and-machine-learning-aiml-enabled-medical-devices) that have gained regulatory approval.  Fortunately, I was also able to dig up a 2020 article in [Nature](https://www.nature.com/articles/s41746-020-00324-0) which organizes these device algorithms into a database.  Although it looks like it has not been updated since mid-2021, it is a good reference point for analysis.  
