@@ -55,11 +55,11 @@ So with all this discussion on discriminative vs. generative models, why does th
 
 Much of this advancement is due to the "deep learning revolution" in 2012.  As written in [Ars Technica](https://arstechnica.com/science/2019/12/how-neural-networks-work-and-why-theyve-become-a-big-business), simple (single-layer) neural networks were first developed in the early 1950s, but started to see more mainstream success from 2012 onwards.  The main contributors to this success were a combination of:
 
-- Deeper networks (more layers)
+- Deeper networks (multiple layers)
 - Large datasets (more data)
 - Powerful compute (more processing efficiency)
 
-Why it matters: These systems can now model much more complex relationships on their own.  On the one hand, this is much more efficient than explicit coding by a human being; on the other, it becomes harder to decipher the reasoning why the system has made the decisions it did throughout the network.  In this sense, discriminative models are more interpretable than generative models, since the relationship between the inputs and outputs remains consistent (outputs are variable in generative models).
+Why it matters: These systems can now model much more complex relationships on their own.  On the one hand, this is much more efficient than explicit coding by a human being; on the other, it is harder to decipher the reasoning why the system has made the decisions it did throughout the network.  In this sense, discriminative models are more interpretable than generative models, since the relationship between the inputs and outputs remains consistent (outputs are variable in generative models).
 
 To see why, let's take a look at the [intricacies](https://spectrum.ieee.org/what-is-deep-learning) involved in a neural network with many layers:
 
