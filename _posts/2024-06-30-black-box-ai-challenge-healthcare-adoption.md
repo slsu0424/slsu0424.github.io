@@ -19,7 +19,7 @@ neural networks. The API can be electronically interfaced, and perform analysis 
 transferred from multiple mobile or computer based applications. 
 
 ## Discriminative vs. Generative models
-To better understand the impact of neural networks, its helpful to understand where they sit on the spectrum of discriminative and generative models.  First, let's review the main approaches to perform machine learning tasks: [supervised and unsupervised learning](https://www.enjoyalgorithms.com/blogs/supervised-unsupervised-and-semisupervised-learning).  
+To better understand the impact of neural networks, we should know where they sit on the spectrum of discriminative vs. generative models.  First, let's review the main approaches to perform machine learning tasks: [supervised and unsupervised learning](https://www.enjoyalgorithms.com/blogs/supervised-unsupervised-and-semisupervised-learning).  
 
 At a high level, supervised learning uses labeled inputs (x) and outputs (y) to fit a model.  Here, the machine algorithm estimates, or learns, a function that best relates the input ("labeled data") to output ("labels"):  
 
