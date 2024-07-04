@@ -5,12 +5,12 @@ author: sandy
 categories: [ AI, healthcare, algorithms ]
 image: assets/images/2024-06/aditya-patil-QKkiJ7AXarU-unsplash_resize.jpg
 ---
-After writing my last post, I was intrigued to learn a bit more about the black box phenomenon in AI models.  More pressing is understanding their implication for healthcare.  This is not to say that AI has not already been embedded into medical products today, judging by the increasing number of FDA-approved AI algorithms.  However, I think it is important to understand the distinction of the algorithms embedded into such products.  In this post, I aim to provide a technical lens into this topic.  
+After writing my last post, I was intrigued to learn a bit more about the black box phenomenon in AI models.  More pressing is understanding their implication for healthcare.  This is not to say that AI has not already been embedded into medical devices today, judging by the increasing number of FDA-approved AI algorithms.  However, I think it is important to understand the distinction of the algorithms embedded into such devices.  In this post, I aim to provide a technical lens into this topic.  
 
 ## A database of FDA-approved AI algorithms
 For those that are not aware, the FDA regularly tracks and publishes [AI/ML-enabled medical devices](https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-and-machine-learning-aiml-enabled-medical-devices) that have gained regulatory approval.  I was also able to dig up a 2020 article in [Nature](https://www.nature.com/articles/s41746-020-00324-0) which went a step further to categorize these algorithms in a [database](https://medicalfuturist.com/fda-approved-ai-based-algorithms).  Although it looks like it has not been updated since mid-2021, it is a good reference point for analysis.  
 
-As an example, Eko Devices Inc. developed the Eko Analysis Software (EAS), which was approved by the FDA on January 15, 2020.  According to their [summary](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K192004) document, the tool is described as follows:
+I was interested in finding devices that were focused on neural networks, although the database does not provide specific algorithms used.  I decided to settle on devices used for cardiovascular care.  Eko Devices Inc. developed the Eko Analysis Software (EAS), which was approved by the FDA on January 15, 2020.  According to their [summary](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K192004) document, the tool is described as follows:
 
 >The Eko Analysis Software is a cloud-based software API that allows a user to upload
 synchronized ECG and heart sound/phonocardiogram (PCG) data for analysis. The software
@@ -70,7 +70,7 @@ To see why this is, let's take a look at the [intricacies](https://spectrum.ieee
 {:.image-caption}
 *Credit: Moore, S., Schneider, D., Strickland, E. How Deep Learning Works.  IEEE Spectrum (September 2021).*
 
-Imagine trying to unravel all of this and explaining it to a non-technical person, let alone someone in a completely different field like healthcare.
+Imagine trying to unravel this and explain it to a non-technical person, let alone someone in a completely different field like healthcare.
 
 Some argue that these increasingly sophisticated AI (specifically generative) systems pose a [risk](https://www.techtarget.com/healthtechanalytics/feature/Navigating-the-black-box-AI-debate-in-healthcare) for patient care.  If an AI system makes a diagnosis, how did it come to that conclusion?  Would it come to that same conclusion the next time?  There appears to be some consensus that in low-stakes use cases, such as administrative tasks, black box AI is not much of an issue.  However, there are high-stakes for clinical decision making, where accountability and liability are still not well-defined.  As a result, the lack of transparency may hinder more widespread adoption of healthcare AI.
 
