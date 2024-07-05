@@ -51,7 +51,7 @@ While neural networks are typically associated with unsupervised learning, the l
 As for the Eko Analysis System, the underlying neural networks are discriminative models (classification).  This is stated in pages 3-4 of the summary document, where the ECG recordings are classified as either Normal or Atrial Fibrillation.  No new data is being generated.  It is also important to note that the FDA has not cleared any generative AI devices to-date.  
 
 # Black box AI vs. glass box AI
-So with all this discussion on discriminative vs. generative models, why does this matter in practice?  AI systems as black boxes are nothing new, as I first encountered this during my time at IBM Watson.  Fast forward a decade, and the algorithms powering today's AI systems are far more advanced and not easily understood, even by the researchers who developed them.  
+So with all this discussion on discriminative vs. generative models, why does this matter in practice?  AI systems as black boxes are nothing new, as I first encountered this during my time at IBM Watson.  Fast forward a decade, and the algorithms powering today's AI systems are far more advanced and not easily understood, even by the [researchers])https://www.cbsnews.com/news/geoffrey-hinton-ai-dangers-60-minutes-transcript) who developed them.  
 
 Much of this advancement is due to the "deep learning revolution" in 2012.  As written in [Ars Technica](https://arstechnica.com/science/2019/12/how-neural-networks-work-and-why-theyve-become-a-big-business), simple (single-layer) neural networks were first developed in the late 1950s, but started to see more success in 2012 and thereafter.  The main contributors to this success were a combination of:
 
@@ -86,7 +86,8 @@ Exploring the black box phenomenon really opened my eyes into the technical adva
 + <https://learnopencv.com/generative-and-discriminative-models>
 + <https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-supervised-learning>
 + <https://stats.stackexchange.com/questions/403968/linking-generative-discriminative-models-to-supervised-and-unsupervised-learnin>
-+ <https://arstechnica.com/science/2019/12/how-neural-networks-work-and-why-theyve-become-a-big-business>
++ <https://www.cbsnews.com/news/geoffrey-hinton-ai-dangers-60-minutes-transcript> 
+<https://arstechnica.com/science/2019/12/how-neural-networks-work-and-why-theyve-become-a-big-business>
 + <https://colah.github.io/posts/2014-03-NN-Manifolds-Topology>
 + <https://spectrum.ieee.org/what-is-deep-learning>
 + <https://www.techtarget.com/healthtechanalytics/feature/Navigating-the-black-box-AI-debate-in-healthcare>
