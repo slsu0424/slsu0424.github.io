@@ -59,7 +59,7 @@ Much of this advancement is due to the "deep learning revolution" in 2012.  As w
 - Large datasets (more data)
 - Powerful compute (more processing efficiency)
 
-Why it matters: These systems can now model much more complex relationships on their own.  On the one hand, this is much more efficient than explicit coding by a human being; on the other, it is harder to decipher the reasoning why the system has made the decisions it did throughout the network.  In this sense, discriminative models are more interpretable than generative models, since the relationship between the inputs and outputs remains consistent.
+Why it matters: These systems can now model much more complex relationships on their own.  On the one hand, this is much more efficient than explicit coding by a human being; on the other, it is harder to [decipher](https://colah.github.io/posts/2014-03-NN-Manifolds-Topology) the reasoning why the system has made the decisions it did throughout the network.  In this sense, discriminative models are more interpretable than generative models, since the relationship between the inputs and outputs remains consistent.
 
 To see why, let's take a look at the [intricacies](https://spectrum.ieee.org/what-is-deep-learning) involved in a neural network with many layers:
 
@@ -87,6 +87,7 @@ Exploring the black box phenomenon really opened my eyes into the technical adva
 + <https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-supervised-learning>
 + <https://stats.stackexchange.com/questions/403968/linking-generative-discriminative-models-to-supervised-and-unsupervised-learnin>
 + <https://arstechnica.com/science/2019/12/how-neural-networks-work-and-why-theyve-become-a-big-business>
++ <https://colah.github.io/posts/2014-03-NN-Manifolds-Topology>
 + <https://spectrum.ieee.org/what-is-deep-learning>
 + <https://www.techtarget.com/healthtechanalytics/feature/Navigating-the-black-box-AI-debate-in-healthcare>
 + <https://theconversation.com/what-is-a-black-box-a-computer-scientist-explains-what-it-means-when-the-inner-workings-of-ais-are-hidden-203888>
