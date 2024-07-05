@@ -59,7 +59,7 @@ Much of this advancement is due to the "deep learning revolution" in 2012.  As w
 - Large datasets (more data)
 - Powerful compute (more processing efficiency)
 
-Why it matters: These systems can now model much more complex relationships on their own.  On the one hand, this is much more efficient than explicit coding by a human being; on the other, it is harder to [decipher](https://colah.github.io/posts/2014-03-NN-Manifolds-Topology) the reasoning why the system has made the decisions it did throughout the network.  In this sense, discriminative models are more interpretable than generative models, since the relationship between the inputs and outputs remains consistent.
+Why it matters: These systems can now model much more complex relationships on their own.  On the one hand, this is much more efficient than explicit coding by a human being; on the other, it is far harder to [decipher](https://colah.github.io/posts/2014-03-NN-Manifolds-Topology) why the system has made the decisions it did throughout the network.  In this sense, discriminative models are more interpretable than generative models, since the relationship between the inputs and outputs remains consistent.
 
 To get a bird's eye view, let's take a look at the [complexity](https://spectrum.ieee.org/what-is-deep-learning) involved in a neural network with many layers:
 
