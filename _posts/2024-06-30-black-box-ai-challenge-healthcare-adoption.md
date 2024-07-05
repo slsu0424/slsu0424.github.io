@@ -75,7 +75,7 @@ Some argue that these increasingly sophisticated AI (specifically generative) sy
 Healthcare would be better served with [glass box AI](https://theconversation.com/what-is-a-black-box-a-computer-scientist-explains-what-it-means-when-the-inner-workings-of-ais-are-hidden-203888), where the algorithms, training data, and the model are freely available.  There is on-going development around explainable AI to help mitigate these risks, although it remains to be seen what constitutes a satisfactory explanation.
 
 ## Conclusion
-Exploring the black box phenomenon really opened my eyes into the technical advances and societal challenges posed by AI.  As with many emerging technologies that have come before it, these are now an indispensible part of daily life.  It should be a reality for healthcare, and I believe the benefits outweigh the risks.  Whether that's through regulation, education, or robust testing and evaluation, I remain bullish that these advances in AI will be a boon for the industry.
+Exploring the black box phenomenon really opened my eyes into the technical advances and societal challenges posed by AI.  As with many emerging technologies that have come before it, these are now an indispensible part of daily life.  It should be a reality for healthcare, and I believe the benefits outweigh the risks.  Whether that's through regulation, education, or robust testing and evaluation, I remain bullish that these AI advances will be a boon for the industry.
 
 ## References
 + <https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-and-machine-learning-aiml-enabled-medical-devices>
