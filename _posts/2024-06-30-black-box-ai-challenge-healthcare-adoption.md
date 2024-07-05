@@ -10,7 +10,7 @@ After writing my last post, I was intrigued to learn a bit more about the black 
 ## A database of FDA-approved AI algorithms
 I was able to dig up a 2020 article in [Nature](https://www.nature.com/articles/s41746-020-00324-0), which was the first I saw to categorize these AI medical device by algorithm type in a [database](https://medicalfuturist.com/fda-approved-ai-based-algorithms).  It looks like it stopped updating in mid-2021, as it [gave way](https://medicalfuturist.com/the-current-state-of-fda-approved-ai-based-medical-devices) to the FDA officially [tracking](https://www.fda.gov/medical-devices/software-medical-device-samd) this.  I also recommend reading the Non-FDA publicly available resources listed on the FDA site for additional context.
 
-I was interested in finding devices that used neural networks, given their rise in popularity in recent years (more on this later).  I settled on the first mention of an artificial neural network in the database.  Eko Devices Inc. developed the Eko Analysis Software (EAS), which was approved by the FDA on January 15, 2020.  According to their [summary](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K192004) document, the tool is described as follows:
+I was interested in finding devices that used neural networks, given their rise in popularity in recent years (more on this later).  I settled on the first mention of an artificial neural network in the database.  Eko Devices Inc. developed the Eko Analysis Software (EAS), which was approved by the FDA on January 15, 2020.  According to their [summary](https://www.accessdata.fda.gov/cdrh_docs/pdf19/K192004.pdf) document, the tool is described as follows:
 
 >The Eko Analysis Software is a cloud-based software API that allows a user to upload
 synchronized ECG and heart sound/phonocardiogram (PCG) data for analysis. The software
@@ -82,7 +82,7 @@ Exploring the black box phenomenon really opened my eyes into the technical adva
 + <https://www.nature.com/articles/s41746-020-00324-0>
 + <https://medicalfuturist.com/fda-approved-ai-based-algorithms>
 + <https://medicalfuturist.com/the-current-state-of-fda-approved-ai-based-medical-device>
-+ <https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K192004>
++ <https://www.accessdata.fda.gov/cdrh_docs/pdf19/K192004.pdf>
 + <https://learnopencv.com/generative-and-discriminative-models>
 + <https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-supervised-learning>
 + <https://stats.stackexchange.com/questions/403968/linking-generative-discriminative-models-to-supervised-and-unsupervised-learnin>
