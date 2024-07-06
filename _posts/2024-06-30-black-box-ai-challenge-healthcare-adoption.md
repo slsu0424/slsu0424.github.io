@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Black box AI: The challenge for healthcare adoption"
+title:  "Black box AI: A deeper look into neural networks"
 author: sandy
 categories: [ AI, healthcare, algorithms ]
 image: assets/images/2024-06/aditya-patil-QKkiJ7AXarU-unsplash_resize.jpg
