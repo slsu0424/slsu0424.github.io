@@ -49,7 +49,6 @@ While I believe a correct diagnosis matters in all cases, more common cases may 
 Currently, there are more focused LLMs trained on the medical domain that are under development, with the idea that narrower models may mitigate these hallucinations.
 
 ## Conclusion
-
 Despite these limitations, I agree with the authors that LLMs still have value in healthcare.  My key takeaways:
 * ChatGPT may be better suited to situations where common medical conditions are seen and have a standard treatment plan (i.e., primary care) 
 * Automating common cases can free up physician time for more complex cases or other tasks

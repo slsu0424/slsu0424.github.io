@@ -46,7 +46,7 @@ While neural networks are typically associated with unsupervised learning, the l
 
 As for the Eko Analysis System, the underlying neural networks are probably discriminative models.  According to their [FAQs](https://support.ekohealth.com/hc/en-us/articles/13180195624347-Eko-App-FAQ), it states that "The software [EAS] analyzes simultaneous ECG and heart sounds. The software detects the presence of atrial fibrillation and normal sinus rhythm from the ECG signal."  There does not seem to be any indication that the software is generating new data, but rather is classifying the data points into distinct categories.  It is also important to note that the FDA has not cleared any generative AI devices to-date.  
 
-# Black boxes vs. glass boxes
+# Black box AI vs. glass box AI
 So with all this discussion on discriminative vs. generative models, why does this matter in practice?  AI systems as black boxes are nothing new, as I first encountered this during my time at IBM Watson.  Fast forward a decade, and the algorithms powering today's AI systems are far more advanced and not easily understood, even by the researchers who developed them.  
 
 Much of this advancement was due to the "deep learning revolution" in 2012.  This Ars Technica [article](https://arstechnica.com/science/2019/12/how-neural-networks-work-and-why-theyve-become-a-big-business/?comments=1&comments-page=1) gives a nice summary of the history of neural networks.  While simple (single-layer) neural networks were first developed in the early 1950s, it started to see more mainstream success from 2012 onwards.  As the article highlights, the main contributors to its success were a combination of:
