@@ -34,8 +34,8 @@ Here is a helpful [visual](https://towardsdatascience.com/illustrated-guide-to-t
 
 As shown above, this technique overcomes the limitation of previous NLP models which ran into the problem of having short-term memory.  As a result, these AI models can more accurately retain the meaning of longer input sequences when generating new output. 
 
-## Are transformers useful in healthcare?
-Now that we see how the transformer model has succeeeded over previous NLP models, let's take a look at how it is being applied in healthcare.  I should caveat this section by saying that this field is evolving very rapidly, so what has been published in recent months is likely be challenged and revised.  My goal here is to provide a small snapshot of studies I found compelling.  
+## Are transformers useful for clinical care?
+Now that we see how the transformer model has succeeeded over previous NLP models, let's take a look at how it is being applied in real-world settings.  I should caveat this section by saying that this field is evolving very rapidly, so what has been published in recent months is likely be challenged and revised.  My goal here is to provide a small snapshot of studies I found compelling.  
 
 According to the [The Journal of Medical Systems: The Home of Clinical Informatics Research](https://link.springer.com/article/10.1007/s10916-024-02043-5), authors from Europe highlighted some of the key benefits and challenges with these models:
 
