@@ -45,11 +45,8 @@ post_class: post-template
                             <time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time>
                         {% if page.last_modified_at %}
                         <span><i> (Updated: </i></span>
-                        <i><time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date: "%b %-d, %Y" }}</time></i>)
-                       <!--    {% last_modified {{ post.path }} %} )
-                            {% capture lastModificationDate %}{% last_modified {{ page.path }} %}{% endcapture %} )
-                            {% endif %} -->  
-                            <span> | {% include reading-time.html %}</span>
+                            <i><time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date: "%b %-d, %Y" }}</time></i>)
+                        <span> | {% include reading-time.html %}</span>
 
                 </h1>
             </div>
