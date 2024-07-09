@@ -3,7 +3,7 @@ layout: post
 title:  "Black box AI: The challenge for healthcare adoption"
 author: sandy
 categories: [ AI, healthcare, algorithms ]
-imge: assets/images/2024-06/aditya-patil-QKkiJ7AXarU-unsplash_resize.jpg
+image: assets/images/2024-06/aditya-patil-QKkiJ7AXarU-unsplash_resize.jpg
 ---
 After writing my last post, I wanted to revisit the black box phenomenon in AI models.  AI is already embedded into many medical devices today, and the number of FDA-approved AI algorithms continues to increase.  However, I think it is important to understand the distinction of the algorithms built into such devices.  In this post, I aim to provide a technical lens on this topic.  
 
