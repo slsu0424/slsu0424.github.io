@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Relevance of transformer models in healthcare"
+title:  "Relevance of transformer models for healthcare"
 author: sandy
 categories: [ healthcare, AI, NLP ]
 image: assets/images/2024-04/iStock-1937350031_license_resize.jpg
