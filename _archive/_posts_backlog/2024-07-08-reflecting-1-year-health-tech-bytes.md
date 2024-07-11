@@ -11,7 +11,7 @@ hidden: false
 June was a busy month, but I wanted to share some insights into year one of writing my blog, Health Tech Bytes.  In this post, I share my motivation for writing, important lessons I learned along the way, and what's next for year two.  I hope my journey is helpful for anyone looking for fresh ways to educate themselves, teach others, or find a passion project.
 
 ## Goal
-I had toyed around with the idea of starting a blog for some time, but I never found the time to do it.  I now see why - blogging is a lot of work.  It is not for the faint of heart, so it is important to feel personally motivated to do it.  I was learning a lot of new cool technology over the years, but I never had a chance to go really deep into any of it.  I also wanted to further explore healthcare issues that continue to plague this country, irregardless of what technology is available.  I wanted to nerd out a bit and spend time to learn, think, ask.
+I had toyed around with the idea of starting a blog for some time, but I never found the time to do it.  I now see why - blogging is a lot of work.  It is not for the faint of heart, so it is important to feel personally motivated to do it.  I was learning a lot of new cool technology over the years, but I never had a chance to go really deep into any of it.  I also wanted to further explore healthcare issues that continue to plague this country, irregardless of what technology is available.  I wanted to nerd out a bit and spend some time to learn, think, ask.
 
 ## Lessons learned:
 I wanted to document some of the things I discovered in this journey, some of which were surprising and fun, and others that were downright challenging.  Here are the top things that come to mind:
