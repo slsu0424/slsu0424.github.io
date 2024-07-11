@@ -3,7 +3,7 @@ layout: post
 title:  "A primer on AI ethics and regulation in healthcare"
 author: sandy
 categories: [ healthcare, AI, ethics, regulation ]
-image: assets/images/2024-05/tingey-injury-law-firm-resize.jpg
+image: assets/images/2024-05/tingey-injury-law-firm_resize.jpg
 featured: false
 hidden: false
 ---
