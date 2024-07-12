@@ -28,7 +28,7 @@ Writing a quality blog post takes a lot of time, and a lot of research.  It take
 ### 4. Less is more  
 Did you know that a blog post that reads between 5-7 minutes has the highest level of engagement?  This requires being able to explore a topic with enough depth, without completely losing your audience.  There were some posts I would have loved to expand in detail, but I ended up having to delegate further discussion in a link or leave it out completely. 
 
-### 5. Tech tutorials are hard
+### 5. Tech tutorials are challenging
 Perhaps my least favorite was writing the technical tutorials.  The coding part was easy, but it was way harder to explain it.  The task of synthesizing technical information for the everyday reader is a bit of an art, and took a lot more time than I realized.
 
 ### 6. The post where I learned the most
@@ -41,4 +41,4 @@ I was actually surprised that I found a lot of inspiration in music.  I really i
 Athough I am embarking on a new journey soon, I have an ever-growing topic list I would like to explore in the next year.  There are so many facets to healthcare and technology, especially with AI becoming mainstream.  I will also be experimenting with writing shorter articles, and hopefully writing more frequently.  I don't forsee the ability to go as in-depth as I would like to, so that could take some adjustment.  However, I am committed to being consistent.
 
 ## Conclusion
-I never foresaw how much time writing (especially for the public) would take, but I've enjoyed the process and learned a lot about myself.  In a world where we're often in operator mode, I recognize it is a rarity to step back and take a look around you.  What do you want to learn?  What are the things that are important to you and why?  Writing is not just for career growth, but for personal growth as well.  I had the opportunity to tinker with code at a detailed level, and think about healthcare challenges at a broad level.  Its interesting to see how much knowledge you acquire when you force yourself to write!  Here's looking forward to another year of writing and growing.
+I never foresaw how much time public writing would take, but I've enjoyed the process and learned a lot about myself.  In a world where we're often in operator mode, I recognize it is a rarity to step back and take a look around you.  What do you want to learn?  What are the things that are important to you and why?  Writing is not just for career growth, but for personal growth as well.  I had the opportunity to tinker with code at a detailed level, and think about healthcare challenges at a broad level.  Plenty of knowledge is acquired when you force yourself to write for others.  Here's looking forward to another year of writing and growing.
