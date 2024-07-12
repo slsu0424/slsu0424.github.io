@@ -17,7 +17,7 @@ I had toyed around with the idea of starting a blog for some time, but I never f
 I wanted to document some of the things I discovered in this journey, some of which were surprising and fun, and others that were downright challenging.  Here are the top things that come to mind:
 
 ### 1. Owning content 
-I knew LinkedIn, Medium, and Substack were popular places for people to share their thoughts, but they didn't really own their content.  I wanted more control over the look and feel for my work, and chose to host my site using GitHub pages and Jekyll.  This took a bit of work in re-learning web development, which I hadn't done since the mid-2000s.
+I knew LinkedIn, Medium, and Substack were popular places for people to share their thoughts, but they didn't really own their content.  I wanted more control over the look and feel for my work, and chose to host my site using GitHub pages and Jekyll.  This took a bit of work in learning a new web development stack.
 
 ### 2. Time commitment
 I wanted my writing to be more substantial than a LinkedIn post, but I also did not want it to become a research paper (there is value in both).  I set a modest target, which was to publish once a month.  A big thumbs up to those who write much more often than that, and I hope to become a more proficient writer over time.
