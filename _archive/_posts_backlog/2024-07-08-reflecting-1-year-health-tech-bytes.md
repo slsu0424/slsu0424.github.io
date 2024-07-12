@@ -41,7 +41,6 @@ I was actually surprised that I found a lot of inspiration in music.  I really i
 Athough I am embarking on a new journey soon, I have an ever-growing topic list I would like to explore in the next year.  There are so many facets to healthcare and technology, especially with AI becoming mainstream.  I will also be experimenting with writing shorter articles, and hopefully writing more frequently.  I don't forsee the ability to go as in-depth as I would like to, so that could take some adjustment.  However, I am committed to being consistent.
 
 ## Conclusion
-I never foresaw how much time writing (especially for the public) would take, but I've enjoyed the process and learned a lot about myself.  For me, writing is not just for career growth, but for personal growth as well.  I had the opportunity to tinker with code at the lowest level, while writing about strategy at a broad level.  
+I never foresaw how much time writing (especially for the public) would take, but I've enjoyed the process and learned a lot about myself.  Writing is not just for career growth, but for personal growth as well.  I had the opportunity to tinker with code at a detailed level, and think about healthcare challenges at a broad level.  
 
-
-I wanted to be able to see how my thoughts evolved over time, and how my views of today are different than my views from some years ago.  Its interesting to see how much knowledge you acquire when you force yourself to write!  Here's looking forward to another year of writing and growing.
+I want to be able to see how my thoughts evolve over time, and how my views of today are different than my views from some years ago.  Its interesting to see how much knowledge you acquire when you force yourself to write!  Here's looking forward to another year of writing and growing.
