@@ -8,10 +8,10 @@ featured: false
 hidden: false
 ---
 
-June was a busy month, but I wanted to share some insights into year one of writing my blog, Health Tech Bytes.  In this post, I share my motivation for writing, important lessons I learned along the way, and what's next for year two.  I hope my journey is helpful for anyone looking for fresh ways to educate themselves, teach others, or find a passion project.
+June was a busy month, but I wanted to share some insights into year one of writing my blog, Health Tech Bytes.  In this post, I share my motivation for writing, important lessons I learned along the way, and what's next for year two.  I hope my journey is helpful for anyone looking for fresh ways to educate themselves, teach others, or pursue a passion project.
 
 ## Goal
-I had toyed around with the idea of starting a blog for some time, but I never found the time to do it.  I now see why - blogging is a lot of work.  It is not for the faint of heart, so it is important to feel personally motivated to do it.  I was learning a lot of new cool technology over the years, but I never had a chance to go really deep into any of it.  I also wanted to further explore healthcare issues that continue to plague this country, irregardless of what new technology is available.  I wanted quality time to learn, think, ask.
+I had toyed around with the idea of starting a blog for some time, but I never found the time to do it.  I now see why - blogging is a lot of work.  It is not for the faint of heart, so it is important to feel personally motivated to do it.  I was learning a lot of new cool technology over the years, but I never had a chance to go really deep into any of it.  I also wanted to further explore healthcare issues that continue to plague this country, irregardless of what new technology is available.  I wanted an avenue to learn, think, ask.
 
 ## Lessons learned:
 I wanted to document some of the things I discovered in this journey, some of which were surprising and fun, and others that were downright challenging.  Here are the top things that come to mind:
@@ -41,6 +41,4 @@ I was actually surprised that I found a lot of inspiration in music.  I really i
 Athough I am embarking on a new journey soon, I have an ever-growing topic list I would like to explore in the next year.  There are so many facets to healthcare and technology, especially with AI becoming mainstream.  I will also be experimenting with writing shorter articles, and hopefully writing more frequently.  I don't forsee the ability to go as in-depth as I would like to, so that could take some adjustment.  However, I am committed to being consistent.
 
 ## Conclusion
-I never foresaw how much time writing (especially for the public) would take, but I've enjoyed the process and learned a lot about myself.  Writing is not just for career growth, but for personal growth as well.  I had the opportunity to tinker with code at a detailed level, and think about healthcare challenges at a broad level.  
-
-I want to be able to see how my thoughts evolve over time, and how my views of today are different than my views from some years ago.  Its interesting to see how much knowledge you acquire when you force yourself to write!  Here's looking forward to another year of writing and growing.
+I never foresaw how much time writing (especially for the public) would take, but I've enjoyed the process and learned a lot about myself.  In a world where we're often in operator mode, I recognize it is a rarity to step back and take a look around you.  What do you want to learn?  What are the things that are important to you and why?  Writing is not just for career growth, but for personal growth as well.  I had the opportunity to tinker with code at a detailed level, and think about healthcare challenges at a broad level.  Its interesting to see how much knowledge you acquire when you force yourself to write!  Here's looking forward to another year of writing and growing.
