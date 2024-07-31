@@ -14,7 +14,7 @@ July ended up being a busy month transitioning to a new opportunity, but I wante
 I had toyed around with the idea of starting a blog for some time, but I never found the time to do it.  I now see why - blogging is a lot of work.  It is not for the faint of heart, so it is important to feel personally motivated to do it.  I was learning a lot of new information technologies over the years, but I never had a chance to go really deep into any of it.  I also wanted to further explore healthcare issues that continue to affect loved ones around us, irregardless of what new technology is available.  I wanted an avenue to learn, think, ask.
 
 ## Lessons learned:
-I wanted to document some of the things I discovered in this journey, some of which were surprising and fun, and others that were downright challenging.  Here are the top things that come to mind:
+I wanted to document some of the things I discovered in this journey, some of which were surprising and fun, and others that were challenging.  Here are the top things that come to mind:
 
 ### 1. Owning content 
 I knew LinkedIn, Medium, and Substack were popular places for people to share their thoughts, but they didn't really own their content.  I wanted more control over the look and feel for my work, and chose to host my site using GitHub pages and Jekyll.  This took a bit of work in learning a new web development stack.
@@ -41,4 +41,4 @@ I was actually surprised that I found a lot of inspiration in music.  I really i
 I have an ever-growing topic list I would like to explore in the next year.  There are so many facets to technology in healthcare, especially with AI becoming mainstream.  I will also be experimenting with trying to write shorter articles, and writing more frequently.  I don't forsee the ability to go as in-depth as I would like to, so that could take some adjustment.  However, I am committed to being consistent.
 
 ## Conclusion
-I never foresaw how much time writing a blog would take, but I've enjoyed the process and learned a lot about myself.  In a world where we're often in operator mode, I recognize it is a rarity to step back and take a look around you.  What do you want to learn?  What are the things that are important to you and why?  Writing is not just for career growth, but for personal growth as well.  Here's looking forward to another year exploring new tech innovations for health.
+I underestimated how much time writing a blog would take, but I've enjoyed exploring challenging topics.  In a world where we're often in operator mode, I recognize it is a rarity to step back and take a look around you.  What do you want to learn?  What are the things that are important to you and why?  Writing is not just for career growth, but for personal growth as well.  Here's looking forward to another year exploring new tech innovations for health.
