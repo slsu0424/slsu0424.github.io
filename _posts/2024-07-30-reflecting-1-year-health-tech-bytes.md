@@ -34,8 +34,8 @@ Perhaps my least favorite was writing the technical tutorials.  The coding part 
 ### 6. The post where I learned the most
 When I survey the different topics I wrote about, I ended up learning the most from my post on word embeddings.  It turned out to be my longest post and the most challenging one to translate.  It really forced me to understand one of the key building blocks of deep learning frameworks.
 
-### 7. Sources of inspiration  
-I was actually surprised that I found a lot of inspiration in music.  I really identified with the creative process involved in making music, which I would often find in behind-the-scene videos.  It certainly made me appreciate the amount of creativity, effort, and time that goes into making something from nothing. 
+### 7. Source of inspiration  
+I was actually surprised that I found a lot of inspiration in music.  I really identified with the creative process involved in making music, which I would often find in behind-the-scenes videos.  It certainly made me appreciate the amount of creativity, effort, and time that goes into making something from nothing. 
 
 ## What's next
 I have an ever-growing topic list I would like to explore in the next year.  There are so many facets to technology in healthcare, especially with AI becoming mainstream.  I will also be experimenting with trying to write shorter articles.  I don't forsee the ability to go as in-depth as I would like to, so that could take some adjustment.  However, I am committed to being consistent.
