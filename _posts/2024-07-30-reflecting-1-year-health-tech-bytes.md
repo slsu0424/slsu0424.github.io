@@ -35,10 +35,10 @@ Perhaps my least favorite was writing the technical tutorials.  The coding part 
 When I survey the different topics I wrote about, I ended up learning the most from my post on word embeddings.  It turned out to be my longest post and the most challenging one to translate.  It really forced me to understand one of the key building blocks of deep learning frameworks.
 
 ### 7. Source of inspiration  
-I was actually surprised that I found a lot of inspiration in music.  I really identified with the creative process involved in making music, which I would often find in behind-the-scenes videos.  It certainly made me appreciate the amount of creativity, effort, and time that goes into making something from nothing. 
+I was actually surprised that I found a lot of inspiration in music.  I really identified with the creative process involved in making music, and behind-the-scenes videos just amazed me.  It made me appreciate the amount of creativity, effort, and time that goes into making something from nothing. 
 
 ## What's next
 I have an ever-growing topic list I would like to explore in the next year.  There are so many facets to technology in healthcare, especially with AI becoming mainstream.  I will also be experimenting with trying to write shorter articles.  I don't forsee the ability to go as in-depth as I would like to, so that could take some adjustment.  However, I am committed to being consistent.
 
 ## Conclusion
-I underestimated how much time writing a blog would take, but the process prompted me to ask: What did I want to learn?  What things were important to me and why?  I learned that writing is not just for career growth, but for personal growth as well.  Here's looking forward to another year finding new tech innovations to improve health.
+I underestimated how much time writing a blog would take, but the process prompted me to ask: What did I want to learn?  What things were important to me and why?  My experience is that writing is not just a wonderful outlet for career growth, but for personal growth as well.  Here's looking forward to another year finding new tech innovations to improve health.
