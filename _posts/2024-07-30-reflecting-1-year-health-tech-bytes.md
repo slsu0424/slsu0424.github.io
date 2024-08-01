@@ -26,7 +26,7 @@ I wanted my writing to be more substantial than a LinkedIn post, but I also did 
 Writing a quality blog post takes a lot of time, and a lot of research.  It takes a different set of skills to identify the topic you want to write about, and then find the information to support it.  I often found myself digging around in LinkedIn and business journals to academic research papers and technical blogs.  
 
 ### 4. Less is more  
-id you know that a blog post that reads between 5-7 minutes has the highest level of engagement?  This requires being able to explore a topic with enough depth, without completely losing your audience.  There were some posts I would have loved to expand in detail, but I ended up having to delegate further discussion in a link or leave it out completely. 
+Did you know that a blog post that reads between 5-7 minutes has the highest level of engagement?  This requires being able to explore a topic with enough depth, without completely losing your audience.  There were some posts I would have loved to expand in detail, but I ended up having to delegate further discussion in a link or leave it out completely. 
 
 ### 5. Tech tutorials are challenging
 Perhaps my least favorite was writing the technical tutorials.  The coding part was easy, but it was way harder to explain it.  The task of synthesizing technical information for the everyday reader is a bit of an art, and took a lot more time than I realized.
