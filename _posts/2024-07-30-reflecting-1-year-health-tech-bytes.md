@@ -2,7 +2,7 @@
 layout: post
 title:  "Reflecting on 1 year with Health Tech Bytes"
 author: sandy
-categories: [ writing ]
+categories: [ healthcare, writing ]
 image: assets/images/2024-07/javier-allegue-barros-unsplash_resize.jpg
 featured: false
 hidden: false
@@ -11,13 +11,13 @@ hidden: false
 July ended up being a busy month transitioning to a new opportunity, but I wanted to reflect on one year of writing my blog, Health Tech Bytes.  In this post, I share my motivation for writing, important lessons I learned, and what's next for year two.  I hope my journey is helpful for anyone looking for fresh ways to educate themselves, teach others, or pursue a passion project.
 
 ## Goal
-I had toyed around with the idea of starting a blog for some time, but I never found the time to do it.  I now see why - blogging is a lot of work.  It is not for the faint of heart, so it is important to feel personally motivated to do it.  I was learning a lot of new technologies over the years, but it was increasingly harder to go in-depth into any of it.  I also wanted to investigate into challenging healthcare issues (e.g., access, quality), irregardless of what new technology is available.  I wanted an avenue to learn, think, ask.
+I had toyed around with the idea of starting a blog for some time, but I never found the time to do it.  I now see why - blogging is a lot of work.  It is not for the faint of heart, so it is important to feel personally motivated to do it.  I was learning a lot of new technologies over the years, but it was increasingly harder to go in-depth into any of it.  In the same vein, I was becoming increasingly aware and frustrated by persistent healthcare issues (e.g., access, quality), irregardless of what new technology was available.  I wanted an avenue to learn, think, and ask the hard questions.
 
 ## Lessons learned:
 I wanted to document some of the things I discovered in this journey, some of which were surprising and fun, and others that were challenging.  Here are the top things that come to mind:
 
 ### 1. Owning content 
-I knew LinkedIn, Medium, and Substack were popular places for people to share their thoughts, but they didn't really own their content.  I wanted more control over the look and feel for my work, and chose to host my site using GitHub pages and Jekyll.  This took a bit of work in learning a new web development stack.
+I knew LinkedIn, Medium, and Substack were popular places for people to share their thoughts, but they didn't really own their content.  I wanted more control over the look and feel for my work, and chose to host my site using GitHub pages and Jekyll.  This took a bit of work in learning a new web development stack and setting up the infrastructure.
 
 ### 2. Time commitment
 I wanted my writing to be more substantial than a LinkedIn post, but I also did not want it to become a research paper (there is value in both).  I set a modest target, which was to publish once a month.  A big thumbs up to those who write much more often than that, and I hope to become a more proficient writer over time.
