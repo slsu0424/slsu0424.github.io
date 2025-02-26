@@ -8,7 +8,7 @@ featured: false
 hidden: false
 ---
 
-Lately, I have been reading quite a bit about environmental factors affecting healthcare, or what is more commonly known social determinants of health (SDoH).  These include one's financial situation, social circles, and the places they live, work, and play.  Interestingly, I came across a recent paper which highlights these non-clinical factors as playing a much bigger role in an individual's health outcome than utilizing healthcare services themselves.  What if we lived in a world where our healthcare services were optimized for the sickest of the sick? In this post, I take a look at our government's initiative for health and promising research using LLMs to mine for SDoH from EHRs.
+Lately, I have been reading quite a bit about environmental factors affecting healthcare, or what is more commonly known social determinants of health (SDoH).  These include one's financial situation, social circles, and the places they live, work, and play.  Interestingly, I came across a recent paper which highlights these non-clinical factors as playing a much bigger role in an individual's health outcome than utilizing healthcare services themselves.  What if we lived in a world where our healthcare services were optimized for the sickest of the sick? In this post, I take a brief look at our government's initiative for health and promising research using LLMs to mine for SDoH from EHRs.
 
 ## White House Healthy People 2030
 Did you know that every decade since 1979, the US Department of Health and Human Services (HHS) puts out an iteration of the Health People Initiative?  The initiative aims to create a healthier nation and track data-driven outcomes to measure progress towards that goal.  In 2020, HHS released the 5th iteration - Healthy People 2030.  
@@ -17,7 +17,7 @@ By background, SDoH has remained a core concept of the Healthy People since its 
 
 Here are the 5 social determinants of health domains used in Healthy People:
 
-[!][SDOH](/assets/images/2024-08/sdoh.png){:.centered}
+![SDOH](/assets/images/2024-08/sdoh.png){:.centered}
 
 So what's new for 2030?  SDOH is now a [core priority](https://odphp.health.gov/healthypeople/priority-areas), with health disparaties brought to light during the COVID-19 pandemic.  According to the [Journal of Public Health Management & Practice](https://journals.lww.com/jphmp/Fulltext/2021/11001/Healthy_People_2030__A_Call_to_Action_to_Lead.5.aspx), the pandemic highlighted how many Americans fell into a high-risk category for COVID-19 due to underlying health conditions.  Not surprisingly, this is a reflection of disparities in health, access to care, and underlying social determinants.  
 
