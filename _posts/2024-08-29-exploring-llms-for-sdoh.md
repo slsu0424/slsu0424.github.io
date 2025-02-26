@@ -32,7 +32,7 @@ Given the increased focus on SDoH post-pandemic, I think this is an exciting tim
 Another paper by researchers at [Emory University](https://arxiv.org/html/2407.09688) sought to answer the question "Can LLMs streamline integration of SDOH for clinical studies by performing accurate, automatic, generalizable annotation of SDOH variables?"  The team looked at using LLMs to annotate >700 SDoH variables from multiple data sources (including EHRs). The incorporation of these additional variables improved model performance for predicting 30-day hospital readmission.  By using LLMs to automate annotation, they were able to avoid laborious manual annotation - a potentially huge time saver.
 
 ## Conclusion
-In this post, I reviewed SDoH as a key set of non-clinical factors affecting health outcomes.  Such health disparities surfaced during the COVID-19 pandemic, and became an area of focus for the White House Healthy People 2030 initiative.  Recent AI advances, particularly LLMs, have demonstrated the capability to effectively mine data sources for SDoH evidence.  I remain bullish that these technologies can provide better insights and tailored treatments for at-risk patients.
+In this post, I reviewed SDoH as a key set of non-clinical factors affecting health outcomes.  Such health disparities surfaced during the COVID-19 pandemic, and became an area of focus for the White House Healthy People 2030 initiative.  Recent AI advances, particularly LLMs, have demonstrated the ability to mine data sources for SDoH evidence.  I remain bullish that these technologies can provide better insights and tailored treatments for at-risk patients.
 
 ## References
 + <https://pmc.ncbi.nlm.nih.gov/articles/PMC8478310>
