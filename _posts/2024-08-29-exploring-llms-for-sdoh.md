@@ -24,7 +24,7 @@ So what's new for 2030?  SDoH is now a [core priority](https://odphp.health.gov/
 
 How is progress measured?  A summary of the improvement measures towards the Healthy People 2030 targets can be found [here](https://www.cdc.gov/nchs/healthy_people/hp2030/hp2030-methods.htm).  The 2 measures used are fairly self-explanatory, including “percentage of targeted change achieved” and "percentage change from baseline”.  Perhaps the most interesting resource I found here is the [Health Disparities Tracking Tool](https://www.cdc.gov/nchs/data/hp2030/HD_Tracking_Tool_Template.xlsb), which allows end-users to calculate health disparities from input data, assess changes over time, and generate corresponding reports.
 
-I think that a SDoH focus is a step in the right direction, as increasing disease burden continues to wear on healthcare stakeholders clinically and financially. 
+I think that a SDoH focus is a step in the right direction, as increasing disease burden continues to affect healthcare stakeholders across the spectrum. 
 
 ## Mining EHRs for SDoH evidence
 Given the increased focus on SDoH post-pandemic, I think this is an exciting time for using AI with SDoH.  A few research papers have explored using large language models (LLMs) with social determinants of health. For example, this January 2024 study published in [NPJ Digital Medicine](https://arxiv.org/abs/2308.06354) explored extracting SDoH from free text in EHRs.  The results indicate that fine-tuned language models (i.e., retraining pre-trained models for a specialized task) were capable of extracting SDoH from clinical text.  This is a promising application of LLMs, by improving real-world evidence of SDoH.
