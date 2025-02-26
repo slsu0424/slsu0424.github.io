@@ -6,7 +6,7 @@ categories: [ healthcare, AI, ChatGPT]
 image: assets/images/2024-08/kenny-eliason-unsplash-resize.jpg
 featured: false
 hidden: false
-last_modified_at: 2025-02-25
+last_modified_at: 2025-02-26
 ---
 
 Lately, I have been reading quite a bit about environmental factors affecting healthcare, or what is more commonly known social determinants of health (SDoH).  These include one's financial situation, social circles, and the places they live, work, and play.  Interestingly, I came across a recent paper which highlights these non-clinical factors as playing a much bigger role in an individual's health outcome than utilizing healthcare services themselves.  What if we lived in a world where our healthcare services were optimized for the sickest of the sick? In this post, I take a brief look at our government's initiative for health and promising research using LLMs to mine for SDoH from EHRs.
@@ -14,15 +14,13 @@ Lately, I have been reading quite a bit about environmental factors affecting he
 ## White House Healthy People 2030
 Did you know that every decade since 1979, the US Department of Health and Human Services (HHS) puts out an iteration of the Health People Initiative?  The initiative aims to create a healthier nation and track data-driven outcomes to measure progress towards that goal.  In 2020, HHS released the 5th iteration - Healthy People 2030.  
 
-By background, SDoH has remained a core concept of the Healthy People since its inception, with its definition and importance evolving over time.  According to [authors](https://pmc.ncbi.nlm.nih.gov/articles/PMC8478310) from the [Office of Disease Prevention and Health Promotion (ODPHP)](https://odphp.health.gov) under the US Department of Health and Human Services (HHS), Healthy People 2020 included a goal to address social and physical environments that influence health - a clear commitment to reducing health inequities.  SDoH were defined as “the conditions in the environments where people are born, live, learn, work, play, worship, and age that affect a wide range of health, functioning, and quality-of-life outcomes and risks.”
+By background, SDoH has remained a core concept of the Healthy People since its inception, with its definition and importance evolving over time.  According to [authors](https://pmc.ncbi.nlm.nih.gov/articles/PMC8478310) from the HHS [Office of Disease Prevention and Health Promotion (ODPHP)](https://odphp.health.gov), Healthy People 2020 included a goal to address social and physical environments that influence health - a clear commitment to reducing health inequities.  SDoH were defined as “the conditions in the environments where people are born, live, learn, work, play, worship, and age that affect a wide range of health, functioning, and quality-of-life outcomes and risks.”
 
 Here are the 5 social determinants of health domains used in Healthy People:
 
 ![SDOH](/assets/images/2024-08/sdoh.png){:.centered}
 
 So what's new for 2030?  SDoH is now a [core priority](https://odphp.health.gov/healthypeople/priority-areas), with health disparaties brought to light during the COVID-19 pandemic.  According to the [Journal of Public Health Management & Practice](https://journals.lww.com/jphmp/Fulltext/2021/11001/Healthy_People_2030__A_Call_to_Action_to_Lead.5.aspx), the pandemic highlighted how many Americans fell into a high-risk category for COVID-19 due to underlying health conditions.  Not surprisingly, this is a reflection of disparities in health, access to care, and underlying social determinants.  
-
-How is progress measured?  A summary of the improvement measures towards the Healthy People 2030 targets can be found [here](https://www.cdc.gov/nchs/healthy_people/hp2030/hp2030-methods.htm).  The 2 measures used are fairly self-explanatory, including “percentage of targeted change achieved” and "percentage change from baseline”.  Perhaps the most interesting resource I found here is the [Health Disparities Tracking Tool](https://www.cdc.gov/nchs/data/hp2030/HD_Tracking_Tool_Template.xlsb), which allows end-users to calculate health disparities from input data, assess changes over time, and generate corresponding reports.
 
 I think that a SDoH focus is a step in the right direction, as increasing disease burden continues to affect healthcare stakeholders across the spectrum. 
 
@@ -39,7 +37,5 @@ In this post, I reviewed SDoH as a key set of non-clinical factors affecting hea
 + <https://odphp.health.gov>
 + <https://odphp.health.gov/healthypeople/priority-areas>
 + <https://journals.lww.com/jphmp/Fulltext/2021/11001/Healthy_People_2030__A_Call_to_Action_to_Lead.5.aspx>
-+ <https://www.cdc.gov/nchs/healthy_people/hp2030/hp2030-methods.htm>
-+ <https://www.cdc.gov/nchs/data/hp2030/HD_Tracking_Tool_Template.xlsb>
 + <https://arxiv.org/abs/2308.06354>
 + <https://arxiv.org/html/2407.09688>
