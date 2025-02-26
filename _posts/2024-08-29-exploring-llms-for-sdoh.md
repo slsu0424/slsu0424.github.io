@@ -3,7 +3,7 @@ layout: post
 title:  "Exploring LLMs for Social Determinants of Health (SDoH)"
 author: sandy
 categories: [ healthcare, AI, ChatGPT]
-image: assets/images/2024-07/javier-allegue-barros-unsplash_resize.jpg
+image: assets/images/2024-08/assets/images/kenny-eliason-unsplash-resize.jpg
 featured: false
 hidden: false
 ---
