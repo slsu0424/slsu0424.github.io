@@ -13,7 +13,7 @@ Lately, I have been reading quite a bit about environmental factors affecting he
 ## White House Healthy People 2030
 Did you know that every decade since 1979, the US Department of Health and Human Services (HHS) puts out an iteration of the Health People Initiative?  The initiative aims to create a healthier nation and track data-driven outcomes to measure progress towards that goal.  In 2020, HHS released the 5th iteration - Healthy People 2030.  
 
-By background, SDoH has remained a core concept of the Healthy People since its inception, with its definition and importance evolving over time.  According to [authors](https://pmc.ncbi.nlm.nih.gov/articles/PMC8478310) from the Office of Disease Prevention and Health Promotion (ODPHP) under the US Department of Health and Human Services (HHS), Healthy People 2020 included a goal to address social and physical environments that influence health - a clear commitment to reducing health inequities.  SDoH were defined as “the conditions in the environments where people are born, live, learn, work, play, worship, and age that affect a wide range of health, functioning, and quality-of-life outcomes and risks.”
+By background, SDoH has remained a core concept of the Healthy People since its inception, with its definition and importance evolving over time.  According to [authors](https://pmc.ncbi.nlm.nih.gov/articles/PMC8478310) from the [Office of Disease Prevention and Health Promotion (ODPHP)](https://odphp.health.gov) under the US Department of Health and Human Services (HHS), Healthy People 2020 included a goal to address social and physical environments that influence health - a clear commitment to reducing health inequities.  SDoH were defined as “the conditions in the environments where people are born, live, learn, work, play, worship, and age that affect a wide range of health, functioning, and quality-of-life outcomes and risks.”
 
 Here are the 5 social determinants of health domains used in Healthy People:
 
@@ -32,3 +32,13 @@ Another paper by researchers at [Emory University](https://arxiv.org/html/2407.0
 
 ## Conclusion
 In this post, I reviewed SDoH as a key set of non-clinical factors affecting health outcomes.  Such health disparities were brought to light during the COVID-19 pandemic, and became an area of focus for the White House Healthy People 2030 initiative.  Recent AI advances, particularly LLMs, have demonstrated the capability to effectively mine data sources for SDoH evidence.  I remain bullish that these technologies can provide better insights and tailored treatments for at-risk patients.
+
+## References
++ <https://pmc.ncbi.nlm.nih.gov/articles/PMC8478310>
++ <https://odphp.health.gov>
++ <https://odphp.health.gov/healthypeople/priority-areas>
++ <https://journals.lww.com/jphmp/Fulltext/2021/11001/Healthy_People_2030__A_Call_to_Action_to_Lead.5.aspx>
++ <https://www.cdc.gov/nchs/healthy_people/hp2030/hp2030-methods.htm>
++ <https://www.cdc.gov/nchs/data/hp2030/HD_Tracking_Tool_Template.xlsb>
++ <https://arxiv.org/abs/2308.06354>
++ <https://arxiv.org/html/2407.09688>
