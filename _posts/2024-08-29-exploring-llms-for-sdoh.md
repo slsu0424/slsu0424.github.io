@@ -35,7 +35,6 @@ In this post, I reviewed SDoH as a key set of non-clinical factors affecting hea
 ## References
 + <https://www.sciencedirect.com/science/article/abs/pii/S0749379715005140>
 + <https://pmc.ncbi.nlm.nih.gov/articles/PMC8478310>
-+ <https://odphp.health.gov>
 + <https://odphp.health.gov/healthypeople/priority-areas>
 + <https://journals.lww.com/jphmp/Fulltext/2021/11001/Healthy_People_2030__A_Call_to_Action_to_Lead.5.aspx>
 + <https://arxiv.org/abs/2308.06354>
