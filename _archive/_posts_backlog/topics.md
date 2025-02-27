@@ -1,5 +1,8 @@
 
 - Building a GPT from scratch
+	- https://pub.towardsai.net/build-and-train-gpt-from-scratch-8ae985a8fc25
+	- https://medium.com/@fareedkhandev/create-gpt-from-scratch-using-python-part-1-bd89ccf6206a
+	- https://devshahs.medium.com/build-gpt-with-me-implementing-gpt-from-scratch-step-by-step-b2efe4e2f7e0 
 - CNNs with images
 - Explainable AI for healthcare
 - Why are healthcare systems consistenly ranked top in Switz, Aus
@@ -8,6 +11,8 @@
 - Generative AI for missing healthcare data
 - Patient education as a use case for generative AI
 - Creativity vs. Consistency in AI models (for drug discovery, rare disease)
+- Decision criteria for using generative AI or not - what healthcare use cases are not good for generative AI?
+- Chain-of-Thought prompting - why is it important in healthcare?
 
 ---
 
