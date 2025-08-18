@@ -6,6 +6,7 @@ categories: [ healthcare, writing ]
 image: assets/images/2024-07/javier-allegue-barros-unsplash_resize.jpg
 featured: false
 hidden: false
+last_modified_at: 2025-08-18
 ---
 
 July ended up being a busy month transitioning to a new opportunity, but I wanted to reflect on one year of writing my blog, Health Tech Bytes.  In this post, I share my motivation for writing, important lessons I learned, and what's next for year two.  I hope my journey is helpful for anyone looking for fresh ways to educate themselves, teach others, or pursue a passion project.
@@ -38,7 +39,7 @@ When I survey the different topics I wrote about, I ended up learning the most f
 I was actually surprised that I found a lot of inspiration in music.  I really identified with the creative process in making music, and behind-the-scenes videos just amazed me.  It made me appreciate the amount of creativity, effort, and time that goes into making something from nothing. 
 
 ## What's next
-I have an ever-growing topic list I would like to explore in the next year.  There are so many facets to technology in healthcare, especially with AI becoming mainstream.  I will also be experimenting with trying to write shorter articles.  I don't forsee the ability to go as in-depth as I would like to, so that could take some adjustment.  However, I am committed to being consistent.
+I have an ever-growing topic list I would like to explore in the next year.  There are so many facets to technology in healthcare, especially with AI becoming mainstream.  I will also be experimenting with trying to write shorter articles.  I don't forsee the ability to go as in-depth as I would like to, but my goal is to keep this blog updated on occassion.  
 
 ## Conclusion
-I underestimated how much time writing a blog post would take, but the process of putting fingers to keyboard often began with: What did I want to learn next?  What did I read that was interesting or troubling to me and why?  Why now?  I learned that writing is not just a wonderful outlet for career growth, but for personal growth as well.  Here's looking forward to another year of finding the next tech innovations for health.
+I underestimated how much time writing a blog post would take, but the process often began with: What did I want to learn next?  What did I read that was interesting in healthcare and why?  Why now?  I learned that writing is not just a wonderful outlet for career growth, but for personal growth as well.  If you are a writer, what are some of your thoughts on blogging?  How has it help you grow, personally and/or professionally?  I look forward to the next year of finding the next tech innovations in health.
