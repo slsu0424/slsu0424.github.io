@@ -6,7 +6,6 @@ categories: [ healthcare, AI, ChatGPT]
 image: assets/images/2024-08/gabin-vallet-unsplash_resize.jpg
 featured: false
 hidden: false
-last_modified_at: 2025-02-26
 ---
 
 Lately, I have been reading quite a bit about environmental factors affecting healthcare, or what is more commonly known social determinants of health (SDoH).  These include one's financial situation, social circles, and the places they live, work, and play.  Interestingly, I came across a 2016 research paper from the [American Journal of Preventitive Medicine](https://www.sciencedirect.com/science/article/abs/pii/S0749379715005140), which highlights these non-clinical factors as playing a much bigger role in an individual's health outcome vs. utilizing healthcare services.  What if we lived in a world where our healthcare services were optimized for the sickest of the sick? In this post, I take a brief look at our government's initiative for health and promising research using LLMs to mine for SDoH from EHRs.
