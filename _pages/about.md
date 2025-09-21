@@ -10,9 +10,9 @@ comments: false
 
 <p>Welcome, I'm Sandy.</p>
   
-<p>I am a cloud architect, data science and AI practitioner, and health informatics strategist.  This site is to share my learnings on the evolving landscape of information technology in healthcare.</p>
+<p>I am a cloud architect, data science and AI practitioner, and health technology advisor.  This site is to share my learnings on the evolving landscape of information technology in healthcare.</p>
 
-<p>My background spans more than two decades covering the healthcare/life sciences industry at Johnson & Johnson, IBM Watson Health, Cloudera, and Microsoft.  I found my passion in building solutions, working with databases and SaaS to big data and AI.</p>
+<p>My background spans more than two decades covering the healthcare/life sciences industry at Johnson & Johnson, IBM Watson Health, Cloudera, and Microsoft.  I found my passion in tinkering and building software, first developing database systems to working with SaaS platforms and big data/AI.</p>
 
 <p>I am particularly interested in emerging technologies, and their potential to improve healthcare.  While these offerings can be revolutionary, their adoption must be purposeful and accessible.</p> 
 
