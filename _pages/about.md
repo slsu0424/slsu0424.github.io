@@ -8,11 +8,11 @@ comments: false
 <div class="row justify-content-between">
 <div class="col-md-8 pr-5">
 
-<p>Welcome, I'm Sandy.</p>
+<p>Welcome, my name is Sandy.</p>
   
-<p>I am a healthcare technology advisor. cloud architect, and data science and AI practitioner.  This site is to share my learnings on the evolving landscape of information technology in healthcare.</p>
+<p>I'm a principal healthcare technology advisor, cloud architect, and data science and AI practitioner.  This site is to share my learnings on the evolving landscape of information technology in healthcare.</p>
 
-<p>My background spans more than two decades covering the healthcare/life sciences industry at Johnson & Johnson, IBM Watson Health, Cloudera, and Microsoft.  I found my passion in tinkering with and building software, first developing database systems to working on cloud platforms specializing in big data/AI.</p>
+<p>My background spans more than two decades covering the healthcare/life sciences industry at Johnson & Johnson, IBM Watson Health, Cloudera, and Microsoft.  I've most recently been working in the public health sector, as a federal contractor to the U.S. Department of Health & Human Services.  I discovered my passion with computers by tinkering and building software, first developing database systems (anybody remember MSAccess?) to working on cloud platforms specializing in big data/AI.</p>
 
 <p>I am particularly interested in emerging technologies, and their potential to improve healthcare.  These offerings can be considered revolutionary, yet their adoption must be purposeful and accessible.</p> 
 
